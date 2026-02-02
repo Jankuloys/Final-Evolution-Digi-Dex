@@ -186,6 +186,7 @@
       <div class="spacer"></div>
       <a class="navlink active" href="./index.html">Home</a>
       <a class="navlink" href="./digimon.html">Digi‑Dex</a>
+      <a class="navlink" href="./tamers.html">Tamers</a>
       <a class="navlink" href="./about.html">About</a>
     </div>
   </nav>
@@ -230,10 +231,6 @@
         <p class="section-description">Essential game data to help you understand the core mechanics and characters.</p>
         
         <div class="section-grid">
-          <a href="#tamer" class="mini-card">
-            <span class="mini-card-icon">⚔️</span>
-            <strong>Hero / Tamer</strong>
-          </a>
           <a href="#equipment" class="mini-card">
             <span class="mini-card-icon">🛡️</span>
             <strong>Equipment</strong>
@@ -288,104 +285,104 @@
     </div>
 
     <!-- DIGIMON SECTION -->
-<div class="section-card">
-  <div class="section-header">
-    <h2><span class="section-icon">🦕</span> Digimon Database</h2>
-  </div>
-  <div class="section-body">
-    <p class="section-description">Complete database of all Digimon with evolution lines, groups, and detailed information.</p>
-    
-    <div style="display:grid;gap:12px;margin-top:20px">
-      <div style="background:var(--panel-2);border:1px solid var(--ring);border-radius:10px;padding:16px">
-        <div style="font-size:28px;font-weight:800;color:#59a6ff" id="digimon-count">Loading...</div>
-        <div style="color:var(--muted);font-size:14px">Total Digimon</div>
+    <div class="section-card">
+      <div class="section-header">
+        <h2><span class="section-icon">🦕</span> Digimon Database</h2>
       </div>
-      
-      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">
-        <div id="child-card" style="background:var(--chip);padding:10px;border-radius:8px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-          <div style="font-weight:700;font-size:18px" id="child-count">-</div>
-          <div style="font-size:12px;color:#b9c6ff">Child</div>
+      <div class="section-body">
+        <p class="section-description">Complete database of all Digimon with evolution lines, groups, and detailed information.</p>
+        
+        <div style="display:grid;gap:12px;margin-top:20px">
+          <div style="background:var(--panel-2);border:1px solid var(--ring);border-radius:10px;padding:16px">
+            <div style="font-size:28px;font-weight:800;color:#59a6ff" id="digimon-count">Loading...</div>
+            <div style="color:var(--muted);font-size:14px">Total Digimon</div>
+          </div>
+          
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">
+            <div class="stage-card" data-stage="Child" style="background:var(--chip);padding:10px;border-radius:8px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+              <div style="font-weight:700;font-size:18px" id="child-count">-</div>
+              <div style="font-size:12px;color:#b9c6ff">Child</div>
+            </div>
+            <div class="stage-card" data-stage="Adult" style="background:var(--chip);padding:10px;border-radius:8px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+              <div style="font-weight:700;font-size:18px" id="adult-count">-</div>
+              <div style="font-size:12px;color:#b9c6ff">Adult</div>
+            </div>
+            <div class="stage-card" data-stage="Perfect" style="background:var(--chip);padding:10px;border-radius:8px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+              <div style="font-weight:700;font-size:18px" id="perfect-count">-</div>
+              <div style="font-size:12px;color:#b9c6ff">Perfect</div>
+            </div>
+            <div class="stage-card" data-stage="Ultimate" style="background:var(--chip);padding:10px;border-radius:8px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+              <div style="font-weight:700;font-size:18px" id="ultimate-count">-</div>
+              <div style="font-size:12px;color:#b9c6ff">Ultimate</div>
+            </div>
+            <div class="stage-card" data-stage="Ultimate+" style="background:var(--chip);padding:10px;border-radius:8px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+              <div style="font-weight:700;font-size:18px" id="ultimate-plus-count">-</div>
+              <div style="font-size:12px;color:#b9c6ff">Ultimate+</div>
+            </div>
+          </div>
         </div>
-        <div id="adult-card" style="background:var(--chip);padding:10px;border-radius:8px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-          <div style="font-weight:700;font-size:18px" id="adult-count">-</div>
-          <div style="font-size:12px;color:#b9c6ff">Adult</div>
-        </div>
-        <div id="perfect-card" style="background:var(--chip);padding:10px;border-radius:8px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-          <div style="font-weight:700;font-size:18px" id="perfect-count">-</div>
-          <div style="font-size:12px;color:#b9c6ff">Perfect</div>
-        </div>
-        <div id="ultimate-card" style="background:var(--chip);padding:10px;border-radius:8px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-          <div style="font-weight:700;font-size:18px" id="ultimate-count">-</div>
-          <div style="font-size:12px;color:#b9c6ff">Ultimate</div>
-        </div>
-        <div id="ultimate-plus-card" style="background:var(--chip);padding:10px;border-radius:8px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-          <div style="font-weight:700;font-size:18px" id="ultimate-plus-count">-</div>
-          <div style="font-size:12px;color:#b9c6ff">Ultimate+</div>
-        </div>
+        
+        <a href="./digimon.html" class="action-btn" style="background:#ffd166;color:#0b1020;margin-top:20px;display:block;text-align:center">
+          Open Digi‑Dex
+        </a>
       </div>
     </div>
-    
-    <a href="./digimon.html" class="action-btn" style="background:#ffd166;color:#0b1020;margin-top:20px;display:block;text-align:center">
-      Open Digi‑Dex
-    </a>
-  </div>
-</div>
 
     <!-- TAMERS SECTION -->
-<div class="section-card">
-  <div class="section-header">
-    <h2><span class="section-icon">👥</span> Tamers Database</h2>
-  </div>
-  <div class="section-body">
-    <p class="section-description">Meet the chosen children who partner with Digimon to protect both worlds.</p>
-    
-    <div style="display:grid;gap:12px;margin-top:20px">
-      <div style="background:var(--panel-2);border:1px solid var(--ring);border-radius:10px;padding:16px">
-        <div style="font-size:28px;font-weight:800;color:#59a6ff" id="tamer-count">Loading...</div>
-        <div style="color:var(--muted);font-size:14px">Total Tamers</div>
+    <div class="section-card">
+      <div class="section-header">
+        <h2><span class="section-icon">👥</span> Hero / Tamer Database</h2>
       </div>
-      
-      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">
-        <a href="./tamers.html#taichi_yagami" class="mini-card" style="background:linear-gradient(135deg,#FF9800,#2441ff);text-decoration:none">
-          <span class="mini-card-icon">🔥</span>
-          <strong>Taichi</strong>
-        </a>
-        <a href="./tamers.html#yamato_ishida" class="mini-card" style="background:linear-gradient(135deg,#4CAF50,#2441ff);text-decoration:none">
-          <span class="mini-card-icon">🌲</span>
-          <strong>Yamato</strong>
-        </a>
-        <a href="./tamers.html#sora_takenouchi" class="mini-card" style="background:linear-gradient(135deg,#03A9F4,#2441ff);text-decoration:none">
-          <span class="mini-card-icon">🕊️</span>
-          <strong>Sora</strong>
-        </a>
-        <a href="./tamers.html#koushiro_izumi" class="mini-card" style="background:linear-gradient(135deg,#9E9E9E,#2441ff);text-decoration:none">
-          <span class="mini-card-icon">💻</span>
-          <strong>Koushiro</strong>
-        </a>
-        <a href="./tamers.html#mimi_tachikawa" class="mini-card" style="background:linear-gradient(135deg,#8BC34A,#2441ff);text-decoration:none">
-          <span class="mini-card-icon">🌸</span>
-          <strong>Mimi</strong>
-        </a>
-        <a href="./tamers.html#jou_kido" class="mini-card" style="background:linear-gradient(135deg,#2196F3,#2441ff);text-decoration:none">
-          <span class="mini-card-icon">🌊</span>
-          <strong>Jou</strong>
-        </a>
-        <a href="./tamers.html#takeru_takaishi" class="mini-card" style="background:linear-gradient(135deg,#FFC107,#2441ff);text-decoration:none">
-          <span class="mini-card-icon">✨</span>
-          <strong>Takeru</strong>
-        </a>
-        <a href="./tamers.html#hikari_yagami" class="mini-card" style="background:linear-gradient(135deg,#9C27B0,#2441ff);text-decoration:none">
-          <span class="mini-card-icon">🌙</span>
-          <strong>Hikari</strong>
+      <div class="section-body">
+        <p class="section-description">Meet the chosen children who partner with Digimon to protect both worlds.</p>
+        
+        <div style="display:grid;gap:12px;margin-top:20px">
+          <div style="background:var(--panel-2);border:1px solid var(--ring);border-radius:10px;padding:16px">
+            <div style="font-size:28px;font-weight:800;color:#59a6ff" id="tamer-count">Loading...</div>
+            <div style="color:var(--muted);font-size:14px">Total Tamers</div>
+          </div>
+          
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">
+            <a href="./tamers.html#taichi_yagami" class="mini-card" style="background:linear-gradient(135deg,#FF9800,#2441ff);text-decoration:none">
+              <span class="mini-card-icon">🔥</span>
+              <strong>Taichi</strong>
+            </a>
+            <a href="./tamers.html#yamato_ishida" class="mini-card" style="background:linear-gradient(135deg,#4CAF50,#2441ff);text-decoration:none">
+              <span class="mini-card-icon">🌲</span>
+              <strong>Yamato</strong>
+            </a>
+            <a href="./tamers.html#sora_takenouchi" class="mini-card" style="background:linear-gradient(135deg,#03A9F4,#2441ff);text-decoration:none">
+              <span class="mini-card-icon">🕊️</span>
+              <strong>Sora</strong>
+            </a>
+            <a href="./tamers.html#koushiro_izumi" class="mini-card" style="background:linear-gradient(135deg,#9E9E9E,#2441ff);text-decoration:none">
+              <span class="mini-card-icon">💻</span>
+              <strong>Koushiro</strong>
+            </a>
+            <a href="./tamers.html#mimi_tachikawa" class="mini-card" style="background:linear-gradient(135deg,#8BC34A,#2441ff);text-decoration:none">
+              <span class="mini-card-icon">🌸</span>
+              <strong>Mimi</strong>
+            </a>
+            <a href="./tamers.html#jou_kido" class="mini-card" style="background:linear-gradient(135deg,#2196F3,#2441ff);text-decoration:none">
+              <span class="mini-card-icon">🌊</span>
+              <strong>Jou</strong>
+            </a>
+            <a href="./tamers.html#takeru_takaishi" class="mini-card" style="background:linear-gradient(135deg,#FFC107,#2441ff);text-decoration:none">
+              <span class="mini-card-icon">✨</span>
+              <strong>Takeru</strong>
+            </a>
+            <a href="./tamers.html#hikari_yagami" class="mini-card" style="background:linear-gradient(135deg,#9C27B0,#2441ff);text-decoration:none">
+              <span class="mini-card-icon">🌙</span>
+              <strong>Hikari</strong>
+            </a>
+          </div>
+        </div>
+        
+        <a href="./tamers.html" class="action-btn" style="background:#ffd166;color:#0b1020;margin-top:20px;display:block;text-align:center">
+          View All Tamers
         </a>
       </div>
     </div>
-    
-    <a href="./tamers.html" class="action-btn" style="background:#ffd166;color:#0b1020;margin-top:20px;display:block;text-align:center">
-      View All Tamers
-    </a>
-  </div>
-</div>
 
     <!-- COMMUNITY SECTION -->
     <div class="section-card">
@@ -417,6 +414,7 @@
     <div class="footer-links">
       <a href="./index.html">Home</a>
       <a href="./digimon.html">Digi‑Dex</a>
+      <a href="./tamers.html">Tamers</a>
       <a href="./about.html">About</a>
       <a href="https://chat.whatsapp.com/Fa28jqgueSs7aZCHh4332y" target="_blank">WhatsApp</a>
     </div>
@@ -428,63 +426,71 @@
   </footer>
 
   <script>
-// Load Digimon & Tamers data to show stats
-const DIGIMON_URL = 'data/digimon_evolution_lines.json';
-const TAMERS_URL = 'data/tamers.json';
+  // Load Digimon & Tamers data to show stats
+  const DIGIMON_URL = 'data/digimon_evolution_lines.json';
+  const TAMERS_URL = 'data/tamers.json';
 
-async function loadStats(){
-  try{
-    const [digimonRes, tamerRes] = await Promise.all([
-      fetch(DIGIMON_URL, { cache:'no-store' }),
-      fetch(TAMERS_URL, { cache:'no-store' })
-    ]);
-    
-    if(!digimonRes.ok) throw new Error('Gagal memuat data Digimon');
-    if(!tamerRes.ok) throw new Error('Gagal memuat data Tamers');
-    
-    const digimonData = await digimonRes.json();
-    const tamerData = await tamerRes.json();
-    
-    // Count total digimon
-    document.getElementById('digimon-count').textContent = digimonData.length;
-    document.getElementById('stat-digimon').textContent = digimonData.length;
-    
-    // Count by stage
-    const stageCounts = {
-      'Child': 0,
-      'Adult': 0,
-      'Perfect': 0,
-      'Ultimate': 0,
-      'Ultimate+': 0
-    };
-    
-    digimonData.forEach(d => {
-      if(stageCounts[d.stage] !== undefined){
-        stageCounts[d.stage]++;
-      }
-    });
-    
-    document.getElementById('child-count').textContent = stageCounts.Child;
-    document.getElementById('adult-count').textContent = stageCounts.Adult;
-    document.getElementById('perfect-count').textContent = stageCounts.Perfect;
-    document.getElementById('ultimate-count').textContent = stageCounts.Ultimate;
-    document.getElementById('ultimate-plus-count').textContent = stageCounts['Ultimate+'];
-    
-    // Count total tamers
-    document.getElementById('tamer-count').textContent = tamerData.length;
-    document.getElementById('stat-tamers').textContent = tamerData.length;
-    
-    // Placeholder stats for other categories
-    document.getElementById('stat-items').textContent = '87';
-    document.getElementById('stat-materials').textContent = '45';
-    
-  }catch(e){
-    console.error('Error loading stats:', e);
+  async function loadStats(){
+    try{
+      const [digimonRes, tamerRes] = await Promise.all([
+        fetch(DIGIMON_URL, { cache:'no-store' }),
+        fetch(TAMERS_URL, { cache:'no-store' })
+      ]);
+      
+      if(!digimonRes.ok) throw new Error('Gagal memuat data Digimon');
+      if(!tamerRes.ok) throw new Error('Gagal memuat data Tamers');
+      
+      const digimonData = await digimonRes.json();
+      const tamerData = await tamerRes.json();
+      
+      // Count total digimon
+      document.getElementById('digimon-count').textContent = digimonData.length;
+      document.getElementById('stat-digimon').textContent = digimonData.length;
+      
+      // Count by stage
+      const stageCounts = {
+        'Child': 0,
+        'Adult': 0,
+        'Perfect': 0,
+        'Ultimate': 0,
+        'Ultimate+': 0
+      };
+      
+      digimonData.forEach(d => {
+        if(stageCounts[d.stage] !== undefined){
+          stageCounts[d.stage]++;
+        }
+      });
+      
+      document.getElementById('child-count').textContent = stageCounts.Child;
+      document.getElementById('adult-count').textContent = stageCounts.Adult;
+      document.getElementById('perfect-count').textContent = stageCounts.Perfect;
+      document.getElementById('ultimate-count').textContent = stageCounts.Ultimate;
+      document.getElementById('ultimate-plus-count').textContent = stageCounts['Ultimate+'];
+      
+      // Count total tamers
+      document.getElementById('tamer-count').textContent = tamerData.length;
+      document.getElementById('stat-tamers').textContent = tamerData.length;
+      
+      // Placeholder stats for other categories
+      document.getElementById('stat-items').textContent = '87';
+      document.getElementById('stat-materials').textContent = '45';
+      
+      // Add click handlers for stage cards
+      document.querySelectorAll('.stage-card').forEach(card => {
+        card.addEventListener('click', () => {
+          const stage = card.dataset.stage;
+          window.location.href = `./digimon.html#stage:${stage}`;
+        });
+      });
+      
+    }catch(e){
+      console.error('Error loading stats:', e);
+    }
   }
-}
 
-// Initialize
-document.addEventListener('DOMContentLoaded', loadStats);
-</script>
+  // Initialize
+  document.addEventListener('DOMContentLoaded', loadStats);
+  </script>
 </body>
 </html>
