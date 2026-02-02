@@ -288,44 +288,48 @@
     </div>
 
     <!-- DIGIMON SECTION -->
-    <div class="section-card">
-      <div class="section-header">
-        <h2><span class="section-icon">🦕</span> Digimon Database</h2>
+<div class="section-card">
+  <div class="section-header">
+    <h2><span class="section-icon">🦕</span> Digimon Database</h2>
+  </div>
+  <div class="section-body">
+    <p class="section-description">Complete database of all Digimon with evolution lines, groups, and detailed information.</p>
+    
+    <div style="display:grid;gap:12px;margin-top:20px">
+      <div style="background:var(--panel-2);border:1px solid var(--ring);border-radius:10px;padding:16px">
+        <div style="font-size:28px;font-weight:800;color:#59a6ff" id="digimon-count">Loading...</div>
+        <div style="color:var(--muted);font-size:14px">Total Digimon</div>
       </div>
-      <div class="section-body">
-        <p class="section-description">Complete database of all Digimon with evolution lines, groups, and detailed information.</p>
-        
-        <div style="display:grid;gap:12px;margin-top:20px">
-          <div style="background:var(--panel-2);border:1px solid var(--ring);border-radius:10px;padding:16px">
-            <div style="font-size:28px;font-weight:800;color:#59a6ff" id="digimon-count">Loading...</div>
-            <div style="color:var(--muted);font-size:14px">Total Digimon</div>
-          </div>
-          
-          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">
-            <div style="background:var(--chip);padding:10px;border-radius:8px;text-align:center">
-              <div style="font-weight:700;font-size:18px" id="child-count">-</div>
-              <div style="font-size:12px;color:#b9c6ff">Child</div>
-            </div>
-            <div style="background:var(--chip);padding:10px;border-radius:8px;text-align:center">
-              <div style="font-weight:700;font-size:18px" id="adult-count">-</div>
-              <div style="font-size:12px;color:#b9c6ff">Adult</div>
-            </div>
-            <div style="background:var(--chip);padding:10px;border-radius:8px;text-align:center">
-              <div style="font-weight:700;font-size:18px" id="perfect-count">-</div>
-              <div style="font-size:12px;color:#b9c6ff">Perfect</div>
-            </div>
-            <div style="background:var(--chip);padding:10px;border-radius:8px;text-align:center">
-              <div style="font-weight:700;font-size:18px" id="ultimate-count">-</div>
-              <div style="font-size:12px;color:#b9c6ff">Ultimate</div>
-            </div>
-          </div>
+      
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">
+        <div id="child-card" style="background:var(--chip);padding:10px;border-radius:8px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+          <div style="font-weight:700;font-size:18px" id="child-count">-</div>
+          <div style="font-size:12px;color:#b9c6ff">Child</div>
         </div>
-        
-        <a href="./digimon.html" class="action-btn" style="background:#ffd166;color:#0b1020;margin-top:20px;display:block;text-align:center">
-          Open Digi‑Dex
-        </a>
+        <div id="adult-card" style="background:var(--chip);padding:10px;border-radius:8px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+          <div style="font-weight:700;font-size:18px" id="adult-count">-</div>
+          <div style="font-size:12px;color:#b9c6ff">Adult</div>
+        </div>
+        <div id="perfect-card" style="background:var(--chip);padding:10px;border-radius:8px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+          <div style="font-weight:700;font-size:18px" id="perfect-count">-</div>
+          <div style="font-size:12px;color:#b9c6ff">Perfect</div>
+        </div>
+        <div id="ultimate-card" style="background:var(--chip);padding:10px;border-radius:8px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+          <div style="font-weight:700;font-size:18px" id="ultimate-count">-</div>
+          <div style="font-size:12px;color:#b9c6ff">Ultimate</div>
+        </div>
+        <div id="ultimate-plus-card" style="background:var(--chip);padding:10px;border-radius:8px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+          <div style="font-weight:700;font-size:18px" id="ultimate-plus-count">-</div>
+          <div style="font-size:12px;color:#b9c6ff">Ultimate+</div>
+        </div>
       </div>
     </div>
+    
+    <a href="./digimon.html" class="action-btn" style="background:#ffd166;color:#0b1020;margin-top:20px;display:block;text-align:center">
+      Open Digi‑Dex
+    </a>
+  </div>
+</div>
 
     <!-- COMMUNITY SECTION -->
     <div class="section-card">
@@ -368,51 +372,60 @@
   </footer>
 
   <script>
-  // Load Digimon data to show stats
-  const JSON_URL = 'data/digimon_evolution_lines.json';
-  
-  async function loadStats(){
-    try{
-      const res = await fetch(JSON_URL, { cache:'no-store' });
-      if(!res.ok) throw new Error('Gagal memuat data');
-      const data = await res.json();
-      
-      // Count total digimon
-      document.getElementById('digimon-count').textContent = data.length;
-      document.getElementById('stat-digimon').textContent = data.length;
-      
-      // Count by stage
-      const stageCounts = {
-        'Child': 0,
-        'Adult': 0,
-        'Perfect': 0,
-        'Ultimate': 0,
-        'Ultimate+': 0
-      };
-      
-      data.forEach(d => {
-        if(stageCounts[d.stage] !== undefined){
-          stageCounts[d.stage]++;
-        }
-      });
-      
-      document.getElementById('child-count').textContent = stageCounts.Child;
-      document.getElementById('adult-count').textContent = stageCounts.Adult;
-      document.getElementById('perfect-count').textContent = stageCounts.Perfect;
-      document.getElementById('ultimate-count').textContent = stageCounts.Ultimate + stageCounts['Ultimate+'];
-      
-      // Placeholder stats for other categories
-      document.getElementById('stat-tamers').textContent = '12';
-      document.getElementById('stat-items').textContent = '87';
-      document.getElementById('stat-materials').textContent = '45';
-      
-    }catch(e){
-      console.error('Error loading stats:', e);
-    }
+// Load Digimon data to show stats
+const JSON_URL = 'data/digimon_evolution_lines.json';
+
+async function loadStats(){
+  try{
+    const res = await fetch(JSON_URL, { cache:'no-store' });
+    if(!res.ok) throw new Error('Gagal memuat data');
+    const data = await res.json();
+    
+    // Count total digimon
+    document.getElementById('digimon-count').textContent = data.length;
+    document.getElementById('stat-digimon').textContent = data.length;
+    
+    // Count by stage
+    const stageCounts = {
+      'Child': 0,
+      'Adult': 0,
+      'Perfect': 0,
+      'Ultimate': 0,
+      'Ultimate+': 0
+    };
+    
+    data.forEach(d => {
+      if(stageCounts[d.stage] !== undefined){
+        stageCounts[d.stage]++;
+      }
+    });
+    
+    // Update counts
+    document.getElementById('child-count').textContent = stageCounts.Child;
+    document.getElementById('adult-count').textContent = stageCounts.Adult;
+    document.getElementById('perfect-count').textContent = stageCounts.Perfect;
+    document.getElementById('ultimate-count').textContent = stageCounts.Ultimate;
+    document.getElementById('ultimate-plus-count').textContent = stageCounts['Ultimate+'];
+    
+    // Make stage cards clickable
+    document.getElementById('child-card').onclick = () => window.location.href = './digimon.html#stage:Child';
+    document.getElementById('adult-card').onclick = () => window.location.href = './digimon.html#stage:Adult';
+    document.getElementById('perfect-card').onclick = () => window.location.href = './digimon.html#stage:Perfect';
+    document.getElementById('ultimate-card').onclick = () => window.location.href = './digimon.html#stage:Ultimate';
+    document.getElementById('ultimate-plus-card').onclick = () => window.location.href = './digimon.html#stage:Ultimate+';
+    
+    // Placeholder stats for other categories
+    document.getElementById('stat-tamers').textContent = '12';
+    document.getElementById('stat-items').textContent = '87';
+    document.getElementById('stat-materials').textContent = '45';
+    
+  }catch(e){
+    console.error('Error loading stats:', e);
   }
-  
-  // Initialize
-  document.addEventListener('DOMContentLoaded', loadStats);
-  </script>
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', loadStats);
+</script>
 </body>
 </html>
