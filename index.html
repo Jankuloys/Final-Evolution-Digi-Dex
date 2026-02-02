@@ -155,22 +155,22 @@ footer{border-top:1px solid var(--ring);color:var(--muted);text-align:center;pad
 </footer>
 <script>
 /* ====== KONFIG ====== */
-// Pastikan file JSON ini ada di /data/ dengan struktur field: id, displayName, aliases[], stage, evolvesFrom[], evolvesTo[]
-// (mengikuti file yang sudah kamu update dari Excel dengan aturan "/" sebagai alias) — siap dipakai langsung.
-const JSON_URL = 'data/digimon_evolution_lines.json'; /* [1](blob:https://www.microsoft365.com/6ab40f3a-bdcb-4e3b-94ed-ca00a110495f) */
+const JSON_URL = 'data/digimon_evolution_lines.json';
 /* ====== STATE ====== */
 let DB = [];
-let CURRENT_MODE = 'alphabet'; // 'alphabet' | 'stage'
+let CURRENT_MODE = 'alphabet';
 let CURRENT_LETTER = 'A';
 let CURRENT_STAGE = 'Child';
-let CURRENT_GROUP = null; // null or string like "Royal Knights"
+let CURRENT_GROUP = null;
 const $ = (id) => document.getElementById(id);
+
 /* ====== LOAD ====== */
 async function loadData(){
 const res = await fetch(JSON_URL, { cache:'no-store' });
 if(!res.ok) throw new Error('Gagal memuat data: ' + res.status);
 return res.json();
 }
+
 /* ====== HELPERS ====== */
 function firstLetter(name){
 if(!name || !name.length) return '#';
@@ -194,36 +194,35 @@ return map;
 function groupByStage(list){
 const stages = ['Child','Adult','Perfect','Ultimate','Ultimate+'];
 const map = {}; stages.forEach(s => map[s] = []);
-list.forEach(d => { (map[d.stage] ||= []).push(d); });Object.keys(map).forEach(k => map[k].sort((a,b)=> a.displayName.localeCompare(b.displayName)));
+list.forEach(d => { (map[d.stage] ||= []).push(d); });
+Object.keys(map).forEach(k => map[k].sort((a,b)=> a.displayName.localeCompare(b.displayName)));
 return map;
 }
 function groupByGroup(list){
 const map = {};
 list.forEach(d => {
 if (d.groups && Array.isArray(d.groups)) {
-d.groups.forEach(g => {
-(map[g] ||= []).push(d);
+d.groups.forEach(g => {(map[g] ||= []).push(d);
 });
 }
 });
 Object.keys(map).forEach(k => map[k].sort((a,b)=> a.displayName.localeCompare(b.displayName)));
 return map;
 }
+
 /* ====== RENDER: MODE SWITCH ====== */
 function setMode(mode){
 CURRENT_MODE = mode;
-// tombol aktif
 const btnAlpha = $('btnAlpha'), btnStage = $('btnStage');
 btnAlpha.classList.toggle('active', mode==='alphabet');
 btnAlpha.setAttribute('aria-selected', mode==='alphabet');
 btnStage.classList.toggle('active', mode==='stage');
 btnStage.setAttribute('aria-selected', mode==='stage');
-// bar yang tampil
 $('alphaBar').style.display = (mode==='alphabet') ? '' : 'none';
 $('stageBar').style.display = (mode==='stage') ? '' : 'none';
-// refresh daftar
 syncList();
 }
+
 /* ====== RENDER: A-Z BAR ====== */
 function renderAlphaBar(){
 const bar = $('alphaBar');
@@ -240,25 +239,27 @@ $('nameList')?.scrollIntoView({behavior:'smooth', block:'start'});
 });
 });
 }
+
 /* ====== RENDER: NAME LIST ====== */
 let GROUPS_ALPHA = {}, GROUPS_STAGE = {}, GROUPS_BY_NAME = {};
 function syncList(){
-let arr = [];let title = '';
+let arr = [];
+let title = '';
 if (CURRENT_GROUP) {
 arr = GROUPS_BY_NAME[CURRENT_GROUP] || [];
 title = `(Group: ${CURRENT_GROUP})`;
 } else if (CURRENT_MODE === 'alphabet'){
 title = `(Alphabet: ${CURRENT_LETTER})`;
 arr = GROUPS_ALPHA[CURRENT_LETTER] || [];
-} else {
-title = `(Stage: ${CURRENT_STAGE})`;
+} else {title = `(Stage: ${CURRENT_STAGE})`;
 arr = GROUPS_STAGE[CURRENT_STAGE] || [];
 }
 $('alphaTitle').textContent = title;
 $('nameList').innerHTML = arr.map(namePill).join('');
 $('emptyNames').hidden = arr.length > 0;
 }
-/* ====== RENDER: CARD (DETAIL) ====== */
+
+/* ====== RENDER: CARD ====== */
 function renderCard(id){
 const node = byId(id);
 const nameEl = $('c-name'), meta = $('c-meta'), stage = $('c-stage'), aliases = $('c-aliases'), groupsEl = $('c-groups');
@@ -280,10 +281,10 @@ stage.textContent = node.stage;
 aliases.textContent = (node.aliases && node.aliases.length) ? node.aliases.join(', ') : '-';
 if (thumb) thumb.textContent = (node.displayName || '?').charAt(0).toUpperCase();
 
-// Render Groups as clickable chips
+// Render Groups — SAFE with data attribute
 if (node.groups && node.groups.length) {
 groupsEl.innerHTML = node.groups.map(g =>
-`<a class="name-pill" href="javascript:void(0)" onclick="showGroup('${g.replace(/'/g, "\\'")}');">${g}</a>`
+`<a class="name-pill group-link" href="javascript:void(0)" data-group="${g.replace(/"/g, '"')}">${g}</a>`
 ).join(' ');
 } else {
 groupsEl.textContent = '-';
@@ -292,13 +293,17 @@ groupsEl.textContent = '-';
 const from = (node.evolvesFrom||[]).map(byId).filter(Boolean);
 const to   = (node.evolvesTo||[]).map(byId).filter(Boolean);
 prevBox.innerHTML = from.length
-? from.map(n => `<a class="name-pill" href="#${encodeURIComponent(n.id)}">${n.displayName}</a>`).join(' '): chip('(tidak ada)');
+? from.map(n => `<a class="name-pill" href="#${encodeURIComponent(n.id)}">${n.displayName}</a>`).join(' ')
+: chip('(tidak ada)');
 nextBox.innerHTML = to.length
 ? to.map(n => `<a class="name-pill" href="#${encodeURIComponent(n.id)}">${n.displayName}</a>`).join(' ')
 : chip('(tidak ada)');
 }
 
-function showGroup(groupName){
+/* ====== HANDLE GROUP CLICK (Event Delegation) ====== */function handleGroupClick(e) {
+if (e.target.classList.contains('group-link')) {
+const groupName = e.target.dataset.group;
+if (groupName) {
 CURRENT_GROUP = groupName;
 CURRENT_MODE = 'alphabet';
 CURRENT_LETTER = 'A';
@@ -306,14 +311,15 @@ setMode('alphabet');
 syncList();
 $('alphaTitle').textContent = `(Group: ${groupName})`;
 }
+}
+}
 
-/* ====== ROUTER (hash -> card) ====== */
+/* ====== ROUTER ====== */
 function syncRoute(){
 const id = decodeHash();
 if(id){
 const node = byId(id);
 if(node){
-// Sinkronkan bar dengan item yang sedang dibuka
 if (!CURRENT_GROUP) {
 if (CURRENT_MODE === 'alphabet'){
 const L = firstLetter(node.displayName);
@@ -326,6 +332,7 @@ renderCard(id);
 }
 }
 window.addEventListener('hashchange', syncRoute);
+
 /* ====== STAGE BAR ====== */
 function markActiveStage(){
 document.querySelectorAll('#stageBar a').forEach(a=>{
@@ -341,25 +348,26 @@ markActiveStage();
 setMode('stage');
 });
 });
-markActiveStage();}
+markActiveStage();
+}
 /* ====== INIT ====== */
 (async function init(){
 try{
-DB = await loadData(); // Ambil dari data/digimon_evolution_lines.json (struktur field sesuai file evolusi)  /* [1](blob:https://www.microsoft365.com/6ab40f3a-bdcb-4e3b-94ed-ca00a110495f) */
-// Grouping
+DB = await loadData();
 GROUPS_ALPHA = groupByLetter(DB);
 GROUPS_STAGE = groupByStage(DB);
 GROUPS_BY_NAME = groupByGroup(DB);
-// Bars
 renderAlphaBar();
 bindStageBar();
-// Mode switch
 $('btnAlpha').addEventListener('click', ()=> { CURRENT_GROUP = null; setMode('alphabet'); });
 $('btnStage').addEventListener('click', ()=> { CURRENT_GROUP = null; setMode('stage'); });
-// Render awal
-setMode('alphabet');       // default tampilan A-Z
+
+// 🔥 Tambahkan event listener untuk group link
+document.getElementById('card').addEventListener('click', handleGroupClick);
+
+setMode('alphabet');
 syncList();
-syncRoute();               // jika URL sudah berisi #id
+syncRoute();
 }catch(e){
 console.error(e);
 document.querySelector('.wrap')?.insertAdjacentHTML('beforeend',
@@ -369,3 +377,4 @@ document.querySelector('.wrap')?.insertAdjacentHTML('beforeend',
 </script>
 </body>
 </html>
+
