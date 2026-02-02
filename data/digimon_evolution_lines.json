@@ -2931,7 +2931,7 @@
 "megaseadramon"
 ],
 "evolvesTo": [],
-"groups": []
+"groups": ["Dark Masters"]
 },
 {
 "id": "minervamon",
@@ -2965,7 +2965,7 @@
 "skullgreymon"
 ],
 "evolvesTo": [],
-"groups": []
+"groups": ["Dark Masters"]
 },
 {
 "id": "naptunemon",
@@ -3023,7 +3023,7 @@
 "fantomon"
 ],
 "evolvesTo": [],
-"groups": []
+"groups": ["Dark Masters"]
 },
 {
 "id": "pinochimon",
@@ -3036,7 +3036,7 @@
 "jyureimon"
 ],
 "evolvesTo": [],
-"groups": []
+"groups": ["Dark Masters"]
 },
 {
 "id": "plesiomon",
