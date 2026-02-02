@@ -2291,7 +2291,7 @@
 },
 {"id": "sleipmon",
 "displayName": "Sleipmon",
-"aliases": [Kentaurosmon],
+"aliases": ["Kentaurosmon"],
 "stage": "Perfect",
 "evolvesFrom": [
 "tylinmon"
