@@ -1,0 +1,129 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "lastUpdated": "2026-02-03",
+    "description": "Reference data for Digimon attributes including Factions/Families and Types/Races"
+  },
+  
+  "factions": [
+    {
+      "id": "nsp",
+      "code": "NSp",
+      "name": "Nature Spirits",
+      "aliases": ["Spirits of Nature"],
+      "description": "Digimon that embody the forces of nature and natural elements.",
+      "color": "#4CAF50",
+      "icon": "🌿"
+    },
+    {
+      "id": "dr",
+      "code": "DR",
+      "name": "Dragon Roar",
+      "aliases": ["Roar of Dragons"],
+      "description": "Digimon with dragon lineage and powerful draconic abilities.",
+      "color": "#FF9800",
+      "icon": "🐉"
+    },
+    {
+      "id": "me",
+      "code": "ME",
+      "name": "Metal Empire",
+      "aliases": ["Empire of Precious Metals"],
+      "description": "Mechanical and metallic Digimon with advanced technology.",
+      "color": "#9E9E9E",
+      "icon": "⚙️"
+    },
+    {
+      "id": "vb",
+      "code": "VB",
+      "name": "Virus Busters",
+      "aliases": ["Virus Hunters"],
+      "description": "Digimon dedicated to fighting against viral threats and corruption.",
+      "color": "#2196F3",
+      "icon": "🛡️"
+    },
+    {
+      "id": "jt",
+      "code": "JT",
+      "name": "Jungle Trooper",
+      "aliases": ["Jungle Warriors"],
+      "description": "Digimon that thrive in wild environments and possess primal strength.",
+      "color": "#8BC34A",
+      "icon": "🌴"
+    },
+    {
+      "id": "ds",
+      "code": "DS",
+      "name": "Deep Savers",
+      "aliases": ["Savers of the Deep Blue"],
+      "description": "Aquatic Digimon that protect the oceans and water realms.",
+      "color": "#2196F3",
+      "icon": "🌊"
+    },
+    {
+      "id": "nso",
+      "code": "NSo",
+      "name": "Nightmare Soldiers",
+      "aliases": ["Soldiers of Nightmare"],
+      "description": "Dark Digimon that wield the power of nightmares and shadows.",
+      "color": "#9C27B0",
+      "icon": "🌑"
+    },
+    {
+      "id": "wg",
+      "code": "WG",
+      "name": "Wind Guardians",
+      "aliases": ["Guardian of the Wind"],
+      "description": "Aerial Digimon that control wind and sky domains.",
+      "color": "#03A9F4",
+      "icon": "🌪️"
+    }
+  ],
+  
+  "types": [
+    {
+      "id": "virus",
+      "name": "Virus",
+      "description": "Malicious Digimon that spread corruption and seek to destroy.",
+      "color": "#F44336",
+      "icon": "🦠",
+      "weakAgainst": ["vaccine"],
+      "strongAgainst": ["data"]
+    },
+    {
+      "id": "vaccine",
+      "name": "Vaccine",
+      "description": "Benevolent Digimon that protect the Digital World and fight viruses.",
+      "color": "#4CAF50",
+      "icon": "💉",
+      "weakAgainst": ["data"],
+      "strongAgainst": ["virus"]
+    },
+    {
+      "id": "data",
+      "name": "Data",
+      "description": "Neutral Digimon that don't align with virus or vaccine factions.",
+      "color": "#FFC107",
+      "icon": "💾",
+      "weakAgainst": ["virus"],
+      "strongAgainst": ["vaccine"]
+    }
+  ],
+  
+  "attributes": {
+    "field": [
+      "Virus",
+      "Vaccine",
+      "Data",
+      "Free"
+    ],
+    "rarity": [
+      "Common",
+      "Uncommon",
+      "Rare",
+      "Epic",
+      "Legendary",
+      "Mythic"
+    ]
+  }
+}
