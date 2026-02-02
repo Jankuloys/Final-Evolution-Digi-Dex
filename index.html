@@ -53,19 +53,6 @@
     }
     .search-input::placeholder{color:var(--muted)}
 
-    /* STAGE FILTER */
-    .stage-filter{
-      display:flex; flex-wrap:wrap; gap:8px; margin-top:8px;
-    }
-    .stage-filter label{
-      display:flex; align-items:center; gap:6px; color:var(--muted); font-size:14px;
-    }
-    .stage-checkbox{
-      width:18px; height:18px; border-radius:6px; border:1px solid var(--ring);
-      background:var(--panel-2); accent-color:var(--brand); cursor:pointer;
-      transition:var(--transition);
-    }
-
     /* MODE SWITCH */
     .mode-switch{display:flex; gap:8px; flex-wrap:wrap; justify-content:space-between}
     .seg-btn{
@@ -78,6 +65,21 @@
       border-color:#2a3d86; 
       background:linear-gradient(135deg, #1a2345, #151e3a);
       box-shadow:0 0 0 2px rgba(42,61,134,.5);
+    }
+
+    /* STAGE FILTER (di bagian daftar digimon) */
+    .stage-filter{
+      display:flex; flex-wrap:wrap; gap:12px; margin-top:8px; padding:12px; 
+      background:var(--panel-2); border-radius:12px; border:1px solid var(--ring);
+    }
+    .stage-filter label{
+      display:flex; align-items:center; gap:6px; color:var(--muted); font-size:14px;
+      cursor:pointer;
+    }
+    .stage-checkbox{
+      width:18px; height:18px; border-radius:6px; border:1px solid var(--ring);
+      background:var(--panel-2); accent-color:var(--brand); cursor:pointer;
+      transition:var(--transition);
     }
 
     /* BARS */
@@ -166,6 +168,7 @@
     .chip{ 
       background:var(--chip); color:#b9c6ff; padding:6px 12px; border-radius:999px; 
       font-size:13px; font-weight:600; transition:var(--transition);
+      cursor:pointer;
     }
     .chip:hover{
       background:linear-gradient(135deg, #2a3d86, #243570);
@@ -206,7 +209,7 @@
   <!-- HERO -->
   <header class="hero">
     <h1>Final Evolution: Digi‑Dex</h1>
-    <p>The Ultimate Digimon Evolution Database for Indonesian Fans</p>
+    <p>The Ultimate Final Evolution: Digi Database for Indonesian Fans</p>
   </header>
 
   <!-- CONTROLS (Mode Switch + Bars) -->
@@ -217,20 +220,20 @@
         <input type="text" id="searchInput" class="search-input" placeholder="🔍 Cari Digimon atau Alias (contoh: Greymon, Sleipmon, dll...)">
       </div>
 
-      <!-- STAGE FILTER (only visible in Alphabet mode) -->
+      <!-- MODE SWITCH -->
+      <div class="mode-switch" role="tablist" aria-label="Mode tampilan">
+        <button id="btnAlpha" class="seg-btn active" data-mode="alphabet" role="tab" aria-selected="true">Alphabet</button>
+        <button id="btnStage" class="seg-btn" data-mode="stage" role="tab" aria-selected="false">Stage</button>
+        <button id="btnGroup" class="seg-btn" data-mode="group" role="tab" aria-selected="false">Group</button>
+      </div>
+
+      <!-- STAGE FILTER (di bagian daftar digimon) -->
       <div class="stage-filter" id="stageFilter" style="display:none">
         <label><input type="checkbox" class="stage-checkbox" data-stage="Child" checked> Child</label>
         <label><input type="checkbox" class="stage-checkbox" data-stage="Adult" checked> Adult</label>
         <label><input type="checkbox" class="stage-checkbox" data-stage="Perfect" checked> Perfect</label>
         <label><input type="checkbox" class="stage-checkbox" data-stage="Ultimate" checked> Ultimate</label>
         <label><input type="checkbox" class="stage-checkbox" data-stage="Ultimate+" checked> Ultimate+</label>
-      </div>
-
-      <!-- MODE SWITCH -->
-      <div class="mode-switch" role="tablist" aria-label="Mode tampilan">
-        <button id="btnAlpha" class="seg-btn active" data-mode="alphabet" role="tab" aria-selected="true">Alphabet</button>
-        <button id="btnStage" class="seg-btn" data-mode="stage" role="tab" aria-selected="false">Stage</button>
-        <button id="btnGroup" class="seg-btn" data-mode="group" role="tab" aria-selected="false">Group</button>
       </div>
 
       <!-- A-Z BAR -->
@@ -244,6 +247,9 @@
         <a href="javascript:void(0)" data-stage="Ultimate">Ultimate</a>
         <a href="javascript:void(0)" data-stage="Ultimate+">Ultimate+</a>
       </nav>
+
+      <!-- GROUP BAR -->
+      <nav id="groupBar" class="stagebar" aria-label="Filter group" style="display:none"></nav>
     </div>
   </section>
 
@@ -283,7 +289,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <div style="font-size:16px; font-weight:600">© Final Evolution • Digi‑Dex • On Progress by Joe</div>
+    <div style="font-size:16px; font-weight:600">© Final Evolution: Digi‑Dex • On Progress by Joe</div>
     <div class="disclaimer">Digimon adalah merek dagang milik Bandai Namco Holdings Inc. Ini adalah proyek penggemar non‑komersial.</div>
   </footer>
 
@@ -298,7 +304,7 @@
   let CURRENT_STAGE = 'Child';
   let CURRENT_GROUP = null;
   let SEARCH_QUERY = '';
-  let STAGE_FILTERS = {
+  const STAGE_FILTERS = {
     'Child': true,
     'Adult': true,
     'Perfect': true,
@@ -306,13 +312,6 @@
     'Ultimate+': true
   };
   const $ = (id) => document.getElementById(id);
-
-  /* ====== LOAD ====== */
-  async function loadData(){
-    const res = await fetch(JSON_URL, { cache:'no-store' });
-    if(!res.ok) throw new Error('Gagal memuat data: ' + res.status);
-    return res.json();
-  }
 
   /* ====== HELPERS ====== */
   function firstLetter(name){
@@ -329,6 +328,7 @@
   function searchDigimon(query){
     if(!query || query.trim() === ''){
       SEARCH_QUERY = '';
+      $('stageFilter').style.display = 'block';
       syncList();
       return;
     }
@@ -341,9 +341,7 @@
       if(d.displayName.toLowerCase().includes(SEARCH_QUERY)) return true;
       
       // Cek aliases
-      if(d.aliases && d.aliases.length){
-        return d.aliases.some(alias => alias.toLowerCase().includes(SEARCH_QUERY));
-      }
+      if(d.aliases && d.aliases.some(alias => alias.toLowerCase().includes(SEARCH_QUERY))) return true;
       
       return false;
     });
@@ -361,12 +359,12 @@
     $('emptyNames').hidden = results.length > 0;
     $('emptyNames').textContent = results.length === 0 ? 'Tidak ada Digimon yang cocok dengan pencarian.' : '';
     $('alphaTitle').textContent = `(Search: "${query}")`;
+    $('stageFilter').style.display = 'none';
   }
 
   /* ====== FILTER BY STAGE ====== */
   function applyStageFilters(list){
-    if(CURRENT_MODE !== 'alphabet' || !SEARCH_QUERY) return list;
-    
+    if(CURRENT_MODE !== 'alphabet' || SEARCH_QUERY) return list;
     return list.filter(d => STAGE_FILTERS[d.stage] === true);
   }
 
@@ -403,8 +401,9 @@
 
     // bar yang tampil
     $('alphaBar').style.display = (mode==='alphabet') ? '' : 'none';
-    $('stageBar').style.display = (mode==='stage' || mode==='group') ? '' : 'none';
-    $('stageFilter').style.display = (mode==='alphabet') ? '' : 'none';
+    $('stageBar').style.display = (mode==='stage') ? '' : 'none';
+    $('groupBar').style.display = (mode==='group') ? '' : 'none';
+    $('stageFilter').style.display = (mode==='alphabet' && !SEARCH_QUERY) ? '' : 'none';
 
     // Update title & render bar sesuai mode
     if (mode === 'group') {
@@ -435,9 +434,67 @@
     bar.querySelectorAll('a').forEach(a=>{
       a.addEventListener('click', () => {
         CURRENT_LETTER = a.dataset.letter;
-        syncList(); renderAlphaBar();
+        syncList(); 
+        renderAlphaBar();
         $('nameList')?.scrollIntoView({behavior:'smooth', block:'start'});
       });
+    });
+  }
+
+  /* ====== RENDER: STAGE BAR ====== */
+  function renderStageBar(){
+    const stages = ['Child', 'Adult', 'Perfect', 'Ultimate', 'Ultimate+'];
+    const bar = $('stageBar');
+    bar.innerHTML = stages.map(s =>
+      `<a href="javascript:void(0)" data-stage="${s}" class="${CURRENT_STAGE===s?'active':''}">${s}</a>`
+    ).join('');
+    
+    bar.querySelectorAll('a').forEach(a=>{
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        CURRENT_STAGE = a.dataset.stage;
+        markActiveStage();
+        syncList();
+      });
+    });
+  }
+
+  function markActiveStage(){
+    document.querySelectorAll('#stageBar a').forEach(a=>{
+      a.classList.toggle('active', a.dataset.stage === CURRENT_STAGE);
+    });
+  }
+
+  /* ====== RENDER: GROUP BAR ====== */
+  function extractAllGroups(){
+    const map = new Set();
+    DB.forEach(d => {
+      const groups = d.groups || [];
+      groups.forEach(g => map.add(g));
+    });
+    return Array.from(map).sort();
+  }
+
+  function renderGroupBar(){
+    const groups = extractAllGroups();
+    const bar = $('groupBar');
+    bar.innerHTML = groups.map(g =>
+      `<a href="javascript:void(0)" data-group="${encodeURIComponent(g)}" class="${CURRENT_GROUP===g?'active':''}">${g}</a>`
+    ).join('');
+    
+    bar.querySelectorAll('a').forEach(a=>{
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        CURRENT_GROUP = decodeURIComponent(a.dataset.group);
+        markActiveGroup();
+        syncList();
+      });
+    });
+  }
+
+  function markActiveGroup(){
+    document.querySelectorAll('#groupBar a').forEach(a=>{
+      a.classList.toggle('active', decodeURIComponent(a.dataset.group) === CURRENT_GROUP);
     });
   }
 
@@ -447,13 +504,13 @@
     let arr = [];
     
     if(SEARCH_QUERY){
-      // Kalau ada search query, biarkan search function yang handle
+      // Search sudah handle di searchDigimon()
       return;
     }
     
     if (CURRENT_MODE === 'alphabet'){
       arr = GROUPS_ALPHA[CURRENT_LETTER] || [];
-      arr = applyStageFilters(arr); // Apply stage filter
+      arr = applyStageFilters(arr);
       $('alphaTitle').textContent = `(Alphabet: ${CURRENT_LETTER})`;
       
     } else if (CURRENT_MODE === 'stage'){
@@ -474,9 +531,7 @@
     $('nameList').innerHTML = arr.map(namePill).join('');
     $('emptyNames').hidden = arr.length > 0;
     
-    // Update title panel
     if (CURRENT_MODE === 'group' && !CURRENT_GROUP) {
-      $('alphaTitle').textContent = '';
       $('emptyNames').textContent = 'Pilih group di atas untuk melihat daftar Digimon';
       $('emptyNames').hidden = false;
     }
@@ -511,7 +566,7 @@
     const groups = node.groups || [];
     if (groups.length > 0) {
       group.innerHTML = groups.map(g => 
-        `<a href="javascript:void(0)" class="chip" data-group-click="${encodeURIComponent(g)}">${g}</a>`
+        `<span class="chip" data-group-click="${encodeURIComponent(g)}">${g}</span>`
       ).join(' ');
     } else {
       group.textContent = '-';
@@ -549,82 +604,17 @@
   }
   window.addEventListener('hashchange', syncRoute);
 
-  /* ====== STAGE BAR ====== */
-  function markActiveStage(){
-    document.querySelectorAll('#stageBar a').forEach(a=>{
-      a.classList.toggle('active', a.dataset.stage === CURRENT_STAGE);
-    });
-  }
-
-  /* ====== RENDER: STAGE BAR ====== */
-  function renderStageBar(){
-    const stages = ['Child', 'Adult', 'Perfect', 'Ultimate', 'Ultimate+'];
-    const bar = $('stageBar');
-    if (!bar) return;
-    
-    bar.innerHTML = stages.map(s =>
-      `<a href="javascript:void(0)" data-stage="${s}" class="${CURRENT_STAGE===s?'active':''}">${s}</a>`
-    ).join('');
-    
-    bar.querySelectorAll('a').forEach(a=>{
-      a.addEventListener('click', (e) => {
-        e.preventDefault();
-        CURRENT_STAGE = a.dataset.stage;
-        markActiveStage();
-        syncList();
-      });
-    });
-  }
-
-  /* ====== RENDER: GROUP BAR ====== */
-  let ALL_GROUPS = [];
-  function extractAllGroups(){
-    const map = new Set();
-    DB.forEach(d => {
-      const groups = d.groups || [];
-      groups.forEach(g => map.add(g));
-    });
-    return Array.from(map).sort();
-  }
-
-  function renderGroupBar(){
-    const groups = extractAllGroups();
-    ALL_GROUPS = groups;
-    
-    const bar = $('stageBar');
-    if (!bar) return;
-    
-    bar.innerHTML = groups.map(g =>
-      `<a href="javascript:void(0)" data-group="${encodeURIComponent(g)}" class="${CURRENT_GROUP===g?'active':''}">${g}</a>`
-    ).join('');
-    
-    bar.querySelectorAll('a').forEach(a=>{
-      a.addEventListener('click', (e) => {
-        e.preventDefault();
-        CURRENT_GROUP = decodeURIComponent(a.dataset.group);
-        markActiveGroup();
-        syncList();
-      });
-    });
-  }
-
-  function markActiveGroup(){
-    document.querySelectorAll('#stageBar a').forEach(a=>{
-      a.classList.toggle('active', decodeURIComponent(a.dataset.group) === CURRENT_GROUP);
-    });
-  }
-
   /* ====== INIT ====== */
   (async function init(){
     try{
-      DB = await loadData();
+      // Load data
+      const res = await fetch(JSON_URL, { cache:'no-store' });
+      if(!res.ok) throw new Error('Gagal memuat  ' + res.status);
+      DB = await res.json();
 
       // Grouping
       GROUPS_ALPHA = groupByLetter(DB);
       GROUPS_STAGE = groupByStage(DB);
-
-      // Extract all groups
-      ALL_GROUPS = extractAllGroups();
 
       // Search handler
       $('searchInput').addEventListener('input', (e) => {
@@ -641,13 +631,25 @@
         });
       });
 
-      // Bars
-      renderAlphaBar();
-
-      // MODE SWITCH
-      $('btnAlpha').addEventListener('click', () => setMode('alphabet'));
-      $('btnStage').addEventListener('click', () => setMode('stage'));
+      // Mode switch buttons
+      $('btnAlpha').addEventListener('click', () => {
+        SEARCH_QUERY = '';
+        $('searchInput').value = '';
+        $('stageFilter').style.display = 'block';
+        setMode('alphabet');
+      });
+      
+      $('btnStage').addEventListener('click', () => {
+        SEARCH_QUERY = '';
+        $('searchInput').value = '';
+        $('stageFilter').style.display = 'none';
+        setMode('stage');
+      });
+      
       $('btnGroup').addEventListener('click', () => {
+        SEARCH_QUERY = '';
+        $('searchInput').value = '';
+        $('stageFilter').style.display = 'none';
         CURRENT_GROUP = null;
         setMode('group');
       });
@@ -673,6 +675,8 @@
       });
 
       // Render awal
+      renderAlphaBar();
+      renderStageBar();
       setMode('alphabet');
       syncList();
       syncRoute();
@@ -686,4 +690,3 @@
   </script>
 </body>
 </html>
-
