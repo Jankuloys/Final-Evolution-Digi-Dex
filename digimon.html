@@ -686,7 +686,25 @@
       document.querySelector('.wrap')?.insertAdjacentHTML('beforeend',
         `<p style="color:#ff9aa2; padding:16px; background:var(--panel-2); border-radius:12px">❌ Error: ${e.message}<br><small>Periksa console (F12) untuk detail error.</small></p>`);
     }
+
+    // Handle stage hash on page load
+function handleStageHash(){
+  const hash = window.location.hash.replace(/^#/, '');
+  if(hash.startsWith('stage:')){
+    const stageName = hash.replace('stage:', '');
+    if(['Child', 'Adult', 'Perfect', 'Ultimate', 'Ultimate+'].includes(stageName)){
+      CURRENT_STAGE = stageName;
+      setMode('stage');
+      // Scroll to top
+      document.querySelector('.wrap')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+}
+
+// Call this at the end of init()
+handleStageHash();
   })();
   </script>
 </body>
 </html>
+
