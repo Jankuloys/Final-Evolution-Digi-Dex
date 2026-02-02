@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tamers • Final Evolution: Digi</title>
+  <meta name="color-scheme" content="dark light">
+  <style>
+    :root{
+      --bg:#0b1020; --panel:#101735; --panel-2:#0d1330; --text:#e9ecf7; --muted:#9aa3c4;
+      --brand:#59a6ff; --accent:#ffd166; --chip:#1e2a54; --ring:#1b2547; --ok:#31d0aa; --warn:#ff7a7a;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --shadow-sm: 0 4px 12px rgba(0,0,0,.25);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,Segoe UI,Roboto,Inter,Arial}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* NAVBAR */
+    .nav{position:sticky; top:0; z-index:50; background:linear-gradient(180deg,#0b1020,rgba(11,16,32,.72)); border-bottom:1px solid var(--ring); backdrop-filter: blur(10px);}
+    .nav-inner{max-width:1400px;margin:auto;padding:12px 18px;display:flex;align-items:center;gap:16px}
+    .brand{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.3px}
+    .brand .logo{width:28px;height:28px;border-radius:7px;background:
+      radial-gradient(120% 120% at 20% 20%, #5ac8ff 0%, #2441ff 38%, #0b1020 80%); box-shadow: 0 0 0 1px #2b3772 inset, 0 4px 16px rgba(36,65,255,.35);}
+    .nav a.navlink{color:var(--text);text-decoration:none;opacity:.9;transition:var(--transition);padding:8px 12px;border-radius:8px}
+    .nav a.navlink:hover{opacity:1;color:#cfe0ff;background:rgba(42,61,134,.2)}
+    .nav a.navlink.active{background:rgba(42,61,134,.3);color:#59a6ff}
+
+    /* HERO BANNER */
+    .hero-banner{
+      max-width:1400px;margin:20px auto;padding:0 18px;text-align:center;
+      background:linear-gradient(135deg, rgba(89,166,255,.1), rgba(255,209,102,.05));
+      border-radius:20px;overflow:hidden;position:relative;
+      box-shadow:var(--shadow);
+    }
+    .hero-banner::before{
+      content:"";position:absolute;top:0;left:0;width:100%;height:100%;
+      background:radial-gradient(circle at 30% 50%, rgba(89,166,255,.15), transparent 70%);
+      z-index:-1;
+    }
+    .hero-content{
+      max-width:900px;margin:auto;padding:60px 20px;
+      position:relative;z-index:1;
+    }
+    .hero-content h1{
+      margin:0 0 16px;font-size:clamp(36px,6vw,64px);
+      background:linear-gradient(90deg,#59a6ff,#ffd166);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+      font-weight:800;line-height:1.2;
+    }
+    .hero-content p{
+      margin:0 0 24px;color:var(--muted);font-size:18px;line-height:1.6;
+    }
+
+    /* TAMERS GRID */
+    .tamers-grid{
+      max-width:1400px;margin:30px auto;padding:0 18px;
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+      gap:24px;
+    }
+
+    /* TAMER CARD */
+    .tamer-card{
+      background:var(--panel);border:1px solid var(--ring);border-radius:16px;
+      box-shadow:var(--shadow);overflow:hidden;transition:var(--transition);
+      position:relative;
+    }
+    .tamer-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 15px 40px rgba(0,0,0,.45);
+      border-color:#2a3d86;
+    }
+    .tamer-header{
+      padding:20px;background:linear-gradient(135deg,var(--panel),#151e40);
+      border-bottom:2px solid var(--ring);
+      display:flex;align-items:center;gap:16px;
+    }
+    .tamer-avatar{
+      width:80px;height:80px;border-radius:50%;
+      background:linear-gradient(135deg,#59a6ff,#2441ff);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:800;font-size:32px;
+      box-shadow:0 4px 12px rgba(0,0,0,.3);
+    }
+    .tamer-header h2{
+      margin:0;font-size:28px;color:#cfe0ff;
+    }
+    .tamer-alias{
+      margin:4px 0 0;font-size:14px;color:var(--muted);
+    }
+    .tamer-body{
+      padding:20px;
+    }
+    .tamer-info{
+      display:grid;grid-template-columns:120px 1fr;gap:8px 12px;margin-bottom:16px;
+    }
+    .tamer-info b{
+      color:#cfe0ff;font-weight:600;
+    }
+    .skill-card{
+      background:var(--panel-2);border:1px solid var(--ring);border-radius:10px;
+      padding:16px;margin-bottom:20px;
+    }
+    .skill-name{
+      font-size:20px;font-weight:700;color:#59a6ff;margin:0 0 8px;
+      display:flex;align-items:center;gap:8px;
+    }
+    .skill-desc{
+      font-size:14px;color:var(--muted);margin:0 0 8px;
+    }
+    .skill-buff{
+      display:grid;grid-template-columns:80px 1fr;gap:8px;
+      font-size:14px;margin-top:8px;
+    }
+    .skill-buff b{
+      color:#cfe0ff;font-weight:600;
+    }
+    .buff-value{
+      display:inline-block;padding:4px 10px;border-radius:6px;
+      background:rgba(89,166,255,.2);color:#59a6ff;font-weight:600;
+    }
+    .story-section{
+      margin-top:20px;padding-top:16px;border-top:1px solid var(--ring);
+    }
+    .story-title{
+      font-size:16px;font-weight:700;color:#cfe0ff;margin:0 0 12px;
+      display:flex;align-items:center;gap:8px;
+    }
+    .story-content{
+      font-size:14px;line-height:1.8;color:var(--muted);
+    }
+    .lesson-box{
+      background:linear-gradient(135deg,#1e2a54,#151e40);
+      border-left:4px solid var(--brand);padding:14px;margin-top:16px;
+      border-radius:0 8px 8px 0;
+    }
+    .lesson-title{
+      font-size:14px;font-weight:700;color:#59a6ff;margin:0 0 6px;
+      display:flex;align-items:center;gap:6px;
+    }
+    .lesson-content{
+      font-size:13px;line-height:1.6;color:#b9c6ff;
+    }
+
+    /* FOOTER */
+    footer{
+      border-top:1px solid var(--ring);color:var(--muted);
+      text-align:center;padding:30px 18px;margin-top:40px;
+    }
+    .footer-links{
+      display:flex;justify-content:center;gap:24px;margin:16px 0;
+    }
+    .footer-links a{
+      color:var(--muted);text-decoration:none;
+      transition:var(--transition);padding:6px 12px;
+      border-radius:6px;
+    }
+    .footer-links a:hover{
+      color:var(--brand);background:rgba(42,61,134,.2);
+    }
+    .disclaimer{
+      font-size:12px;color:#8e96b5;margin-top:12px;
+    }
+
+    @media (max-width:768px){
+      .tamers-grid{grid-template-columns:1fr;}
+      .hero-content h1{font-size:40px;}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <span>Final Evolution: <span style="color:#cfe0ff">Digi</span></span>
+      </div>
+      <div class="spacer"></div>
+      <a class="navlink" href="./index.html">Home</a>
+      <a class="navlink" href="./digimon.html">Digi‑Dex</a>
+      <a class="navlink active" href="./tamers.html">Tamers</a>
+      <a class="navlink" href="./about.html">About</a>
+    </div>
+  </nav>
+
+  <!-- HERO BANNER -->
+  <section class="hero-banner">
+    <div class="hero-content">
+      <h1>Digimon Tamers</h1>
+      <p>Meet the chosen children who partner with Digimon to protect both the Digital World and the Real World.</p>
+    </div>
+  </section>
+
+  <!-- TAMERS GRID -->
+  <section class="tamers-grid" id="tamersGrid">
+    <!-- Tamer cards will be loaded here dynamically -->
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div style="font-size:18px;font-weight:700">Final Evolution: Digi</div>
+    <div class="footer-links">
+      <a href="./index.html">Home</a>
+      <a href="./digimon.html">Digi‑Dex</a>
+      <a href="./tamers.html">Tamers</a>
+      <a href="./about.html">About</a>
+      <a href="https://chat.whatsapp.com/Fa28jqgueSs7aZCHh4332y" target="_blank">WhatsApp</a>
+    </div>
+    <div class="disclaimer">
+      Digimon and all related characters are trademarks of Bandai Namco Holdings Inc.<br>
+      This is a non-commercial fan project created by the Digimon World Indonesia community.<br>
+      © 2026 Final Evolution: Digi • On Progress by Joe
+    </div>
+  </footer>
+
+  <script>
+  // Tamer stories and additional info
+  const TAMER_STORIES = {
+    'taichi_yagami': {
+      emoji: '🔥',
+      story: 'Taichi Yagami memulai petualangannya sebagai pemimpin Digidestined yang impulsif namun berhati emas. Awalnya sering gegabah dan ingin menyelesaikan segala sesuatu dengan kekerasan, Taichi belajar arti tanggung jawab dan kepemimpinan melalui perjalanan bersama Agumon. Di Digimon Adventure 02, ia tumbuh menjadi remaja yang lebih dewasa dan bijaksana. Hingga Last Evolution, Taichi harus menghadapi kenyataan bahwa waktu bersama Digimon terbatas, mengajarkan kita untuk menghargai setiap momen bersama orang-orang terkasih.',
+      lesson: 'Kepemimpinan sejati bukan tentang kekuatan, tapi tentang tanggung jawab dan kemampuan menginspirasi orang lain.'
+    },
+    'yamato_ishida': {
+      emoji: '🌲',
+      story: 'Yamato Ishida awalnya digambarkan sebagai anak yang dingin dan tertutup karena trauma keluarga. Hubungan tegang dengan Taichi mencerminkan konflik batinnya. Namun melalui Garurumon, Yamato belajar membuka hati dan menerima kelemahan diri sendiri. Di Adventure 02, ia menjadi kakak yang protektif untuk Takeru. Last Evolution menunjukkan kedewasaan Yamato yang menerima kenyataan pahit dengan kepala tegak, mengajarkan kita bahwa kekuatan sejati datang dari penerimaan diri.',
+      lesson: 'Memaafkan diri sendiri dan orang lain adalah langkah pertama menuju kedamaian batin.'
+    },
+    'sora_takenouchi': {
+      emoji: '🕊️',
+      story: 'Sora Takenouchi adalah sosok yang penuh kasih sayang dan empati. Awalnya kurang percaya diri dengan kemampuannya, Sora menemukan kekuatan sejatinya melalui Biyomon. Ia belajar bahwa kelembutan bukanlah kelemahan, melainkan kekuatan yang luar biasa. Di Adventure 02, Sora tumbuh menjadi gadis muda yang mandiri. Kisahnya mengajarkan kita untuk tidak meragukan nilai-nilai feminin dan kekuatan cinta dalam menghadapi tantangan hidup.',
+      lesson: 'Empati dan kasih sayang adalah kekuatan terbesar yang bisa mengubah dunia.'
+    },
+    'koushiro_izumi': {
+      emoji: '💻',
+      story: 'Koushiro Izumi adalah otak di balik tim Digidestined. Awalnya terlalu mengandalkan logika dan teknologi, Koushiro belajar bahwa ada hal-hal yang tidak bisa dijelaskan dengan data semata. Melalui Tentomon, ia menemukan keseimbangan antara akal dan hati. Di Adventure 02, Koushiro menjadi ahli teknologi yang membantu tim dari belakang layar. Last Evolution menunjukkan bahwa pengetahuan sejati datang dari pengalaman dan hubungan manusia.',
+      lesson: 'Kecerdasan sejati adalah kemampuan menggabungkan logika dengan empati.'
+    },
+    'mimi_tachikawa': {
+      emoji: '🌸',
+      story: 'Mimi Tachikawa memulai sebagai gadis manja yang takut pada tantangan. Namun melalui Palmon, Mimi menemukan keberanian dan kekuatan dalam dirinya sendiri. Ia belajar bahwa kecantikan sejati bukan dari penampilan, tapi dari hati yang tulus. Di Adventure 02, Mimi tumbuh menjadi gadis yang lebih kuat dan percaya diri. Kisahnya mengajarkan kita untuk tidak menilai seseorang dari luar, dan bahwa setiap orang punya potensi luar biasa.',
+      lesson: 'Kecantikan sejati bersinar dari dalam, melalui kebaikan hati dan ketulusan.'
+    },
+    'jou_kido': {
+      emoji: '🌊',
+      story: 'Jou Kido dikenal sebagai "si penakut" yang selalu khawatir dan berhati-hati. Awalnya sering dianggap lemah, Jou membuktikan bahwa kehati-hatian dan perhatian terhadap detail adalah kekuatan tersendiri. Melalui Gomamon, ia belajar untuk lebih percaya diri dan mengambil risiko yang tepat. Di Adventure 02, Jou menjadi remaja yang lebih berani namun tetap mempertahankan sifat hati-hatinya. Kisahnya mengajarkan kita untuk menerima kelemahan kita sebagai bagian dari kekuatan.',
+      lesson: 'Kehati-hatian bukanlah kelemahan, tapi bentuk kebijaksanaan yang berharga.'
+    },
+    'takeru_takaishi': {
+      emoji: '✨',
+      story: 'Takeru Takaishi adalah jiwa murni dari tim Digidestined. Sebagai yang termuda, Takeru sering diremehkan, namun ia membuktikan bahwa kepolosan dan kepercayaan pada kebaikan adalah kekuatan luar biasa. Melalui Patamon, Takeru belajar tentang pengorbanan dan cinta tanpa syarat. Di Adventure 02, ia tumbuh menjadi pemimpin muda yang bijaksana. Last Evolution menunjukkan kedewasaan Takeru yang menerima kenyataan dengan hati yang kuat, mengajarkan kita untuk tidak kehilangan kepolosan meski dihadapkan pada kenyataan pahit.',
+      lesson: 'Kepercayaan pada kebaikan dan cinta tanpa syarat adalah kekuatan terbesar.'
+    },
+    'hikari_yagami': {
+      emoji: '🌙',
+      story: 'Hikari Yagami adalah cahaya dalam kegelapan. Awalnya digambarkan sebagai gadis lembut yang sering membutuhkan perlindungan, Hikari menemukan kekuatan sejatinya sebagai pemegang Crest of Light. Melalui Tailmon, ia belajar bahwa cahaya sejati berasal dari dalam diri. Di Adventure 02, Hikari menjadi remaja yang lebih percaya diri dan mandiri. Last Evolution menunjukkan bahwa Hikari adalah simbol harapan yang tak pernah padam, mengajarkan kita bahwa bahkan dalam kegelapan terdalam, selalu ada cahaya yang menuntun jalan.',
+      lesson: 'Cahaya sejati berasal dari dalam diri, dan mampu menerangi jalan bahkan dalam kegelapan terdalam.'
+    }
+  };
+
+  // Load reference data for faction info
+  async function loadReferenceData(){
+    try{
+      const res = await fetch('data/digimon_reference.json');
+      if(!res.ok) throw new Error('Gagal memuat reference data');
+      return await res.json();
+    }catch(e){
+      console.error('Error loading reference data:', e);
+      return null;
+    }
+  }
+
+  // Load tamers data
+  async function loadTamersData(){
+    try{
+      const res = await fetch('data/tamers.json');
+      if(!res.ok) throw new Error('Gagal memuat data tamers');
+      return await res.json();
+    }catch(e){
+      console.error('Error loading tamers data:', e);
+      return [];
+    }
+  }
+
+  // Get faction info
+  function getFactionInfo(code, refData){
+    if(!refData || !refData.factions) return null;
+    return refData.factions.find(f => f.code.trim() === code.trim());
+  }
+
+  // Render tamer card
+  function renderTamerCard(tamer, refData){
+    const story = TAMER_STORIES[tamer.id.trim()] || { emoji: '⭐', story: 'Story coming soon...', lesson: 'Stay tuned!' };
+    const faction = getFactionInfo(tamer.givingBuffFor.trim(), refData);
+    
+    const factionColor = faction ? faction.color.trim() : '#59a6ff';
+    const factionName = faction ? faction.name.trim() : tamer.givingBuffFor.trim();
+    const factionIcon = faction ? faction.icon.trim() : '⭐';
+    
+    return `
+      <div class="tamer-card">
+        <div class="tamer-header">
+          <div class="tamer-avatar" style="background:linear-gradient(135deg,${factionColor},#2441ff)">
+            ${story.emoji}
+          </div>
+          <div>
+            <h2>${tamer.name.trim()}</h2>
+            <div class="tamer-alias">${tamer.aliases.map(a => a.trim()).join(', ')}</div>
+          </div>
+        </div>
+        <div class="tamer-body">
+          <div class="skill-card">
+            <div class="skill-name">⚔️ ${tamer.skillName.trim()}</div>
+            <div class="skill-desc">Special skill that enhances Digimon performance</div>
+            <div class="skill-buff">
+              <b>Buff Type:</b>
+              <span class="buff-value" style="background:${factionColor}22;color:${factionColor}">${factionIcon} ${factionName}</span>
+            </div>
+          </div>
+          
+          <div class="story-section">
+            <div class="story-title">📖 Story & Journey</div>
+            <div class="story-content">${story.story}</div>
+            
+            <div class="lesson-box">
+              <div class="lesson-title">💡 Life Lesson</div>
+              <div class="lesson-content">${story.lesson}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  // Initialize
+  async function init(){
+    try{
+      const [tamers, refData] = await Promise.all([
+        loadTamersData(),
+        loadReferenceData()
+      ]);
+      
+      const grid = document.getElementById('tamersGrid');
+      
+      if(tamers.length === 0){
+        grid.innerHTML = `
+          <div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)">
+            <div style="font-size:24px;margin-bottom:16px">📭 No Tamers Data Found</div>
+            <div>Please check if tamers.json exists in the data folder</div>
+          </div>
+        `;
+        return;
+      }
+      
+      // Sort tamers by their appearance order
+      const order = ['taichi_yagami', 'yamato_ishida', 'sora_takenouchi', 'koushiro_izumi', 
+                    'mimi_tachikawa', 'jou_kido', 'takeru_takaishi', 'hikari_yagami'];
+      
+      tamers.sort((a, b) => {
+        const aIndex = order.indexOf(a.id.trim());
+        const bIndex = order.indexOf(b.id.trim());
+        return aIndex - bIndex;
+      });
+      
+      grid.innerHTML = tamers.map(t => renderTamerCard(t, refData)).join('');
+      
+    }catch(e){
+      console.error('Error initializing tamers page:', e);
+      document.getElementById('tamersGrid').innerHTML = `
+        <div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--warn)">
+          <div style="font-size:24px;margin-bottom:16px">❌ Error Loading Tamers</div>
+          <div>${e.message}</div>
+        </div>
+      `;
+    }
+  }
+
+  // Start loading when page is ready
+  document.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
