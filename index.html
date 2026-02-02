@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="id">
 <head>
@@ -15,54 +16,28 @@
     html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,Segoe UI,Roboto,Inter,Arial}
     a{color:var(--brand);text-decoration:none}
     a:hover{text-decoration:underline}
-
     /* NAVBAR */
-    .nav{
-      position:sticky; top:0; z-index:50;
-      background:linear-gradient(180deg,#0b1020,rgba(11,16,32,.72));
-      border-bottom:1px solid var(--ring);
-      backdrop-filter: blur(10px);
-    }
+    .nav{position:sticky; top:0; z-index:50; background:linear-gradient(180deg,#0b1020,rgba(11,16,32,.72)); border-bottom:1px solid var(--ring); backdrop-filter: blur(10px);}
     .nav-inner{max-width:1200px;margin:auto;padding:12px 18px;display:flex;align-items:center;gap:16px}
     .brand{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.3px}
-    .brand .logo{
-      width:28px;height:28px;border-radius:7px;background:
-        radial-gradient(120% 120% at 20% 20%, #5ac8ff 0%, #2441ff 38%, #0b1020 80%);
-      box-shadow: 0 0 0 1px #2b3772 inset, 0 4px 16px rgba(36,65,255,.35);
-    }
+    .brand .logo{width:28px;height:28px;border-radius:7px;background:
+      radial-gradient(120% 120% at 20% 20%, #5ac8ff 0%, #2441ff 38%, #0b1020 80%); box-shadow: 0 0 0 1px #2b3772 inset, 0 4px 16px rgba(36,65,255,.35);}
     .nav a.navlink{color:var(--text);text-decoration:none;opacity:.9}
     .nav a.navlink:hover{opacity:1;color:#cfe0ff}
     .spacer{flex:1}
-
     /* HERO */
     .hero{max-width:1200px;margin:20px auto 8px;padding:0 18px}
     .hero h1{margin:6px 0 6px;font-size:clamp(22px,4vw,36px)}
     .hero p{margin:0;color:var(--muted)}
-
     /* CONTROLS */
     .panel{max-width:1200px;margin:14px auto;padding:14px 18px}
-    .controls{
-      background:var(--panel);
-      border:1px solid var(--ring); border-radius:16px; box-shadow:var(--shadow);
-      display:flex;flex-wrap:wrap;gap:10px; padding:12px;
-    }
-    .controls input,.controls select{
-      background:var(--panel-2);
-      border:1px solid var(--ring); color:var(--text);
-      padding:10px 12px;border-radius:12px; outline:none;
-    }
+    .controls{background:var(--panel); border:1px solid var(--ring); border-radius:16px; box-shadow:var(--shadow); display:flex;flex-wrap:wrap;gap:10px; padding:12px;}
+    .controls input,.controls select{background:var(--panel-2); border:1px solid var(--ring); color:var(--text); padding:10px 12px;border-radius:12px; outline:none;}
     .controls input{flex:1 1 280px}
     .controls .hint{color:var(--muted);font-size:12px;margin-left:auto;display:flex;align-items:center}
-
     /* GRID */
-    .grid{max-width:1200px;margin:0 auto 30px;padding:0 18px;display:grid;gap:14px;
-      grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
-    .card{
-      background:var(--panel);
-      border:1px solid var(--ring);
-      border-radius:16px; overflow:hidden; box-shadow:var(--shadow);
-      transition: transform .15s ease,border-color .2s;
-    }
+    .grid{max-width:1200px;margin:0 auto 30px;padding:0 18px;display:grid;gap:14px; grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+    .card{background:var(--panel); border:1px solid var(--ring); border-radius:16px; overflow:hidden; box-shadow:var(--shadow); transition: transform .15s ease,border-color .2s;}
     .card:hover{transform:translateY(-3px); border-color:#2a3d86}
     .thumb{aspect-ratio:1/1; background:#0b132b; display:flex; align-items:center; justify-content:center}
     .thumb img{width:100%;height:100%;object-fit:contain;filter: drop-shadow(0 3px 12px rgba(0,0,0,.45))}
@@ -72,7 +47,6 @@
     .chip{background:var(--chip);color:#b9c6ff;padding:4px 8px;border-radius:999px;font-size:12px}
     .statline{display:flex;gap:12px;color:var(--muted);font-size:12px}
     .card-link{display:block;color:inherit;text-decoration:none}
-
     /* EMPTY & FOOTER */
     .empty{max-width:1200px;margin:10px auto 30px;padding:0 18px;color:var(--muted)}
     footer{border-top:1px solid var(--ring);color:var(--muted);text-align:center;padding:14px 18px}
@@ -103,27 +77,18 @@
   <!-- CONTROLS -->
   <section class="panel">
     <div class="controls">
-      <input id="q" type="search" placeholder="Cari nama / type / attribute / skill…" />
-      <select id="flv" aria-label="Filter level">
-        <option value="">Semua Level</option>
-        <option>In-Training</option>
-        <option>Rookie</option>
-        <option>Champion</option>
+      <input id="q" type="search" placeholder="Cari nama / alias / stage…" />
+      <select id="stage" aria-label="Filter stage">
+        <option value="">Semua Stage</option>
+        <option>Child</option>
+        <option>Adult</option>
+        <option>Perfect</option>
         <option>Ultimate</option>
-        <option>Mega</option>
-      </select>
-      <select id="fat" aria-label="Filter attribute">
-        <option value="">Semua Attribute</option>
-        <option>Vaccine</option>
-        <option>Data</option>
-        <option>Virus</option>
-        <option>Free</option>
+        <option>Ultimate+</option>
       </select>
       <select id="sort" aria-label="Urutkan">
         <option value="name-asc">Nama (A–Z)</option>
         <option value="name-desc">Nama (Z–A)</option>
-        <option value="atk-desc">ATK tertinggi</option>
-        <option value="spd-desc">SPD tertinggi</option>
       </select>
       <div class="hint">⌘/Ctrl + F untuk search cepat</div>
     </div>
@@ -140,150 +105,94 @@
   </footer>
 
   <script>
-    // ====== DATA SEMENTARA (bisa diganti fetch('data/digimon.json')) ======
-    const SAMPLE = [
-      {
-        id: "agumon",
-        name: "Agumon",
-        level: "Rookie",
-        type: "Reptile",
-        attribute: "Vaccine",
-        element: ["Fire"],
-        skills: [{name:"Pepper Breath"}],
-        stats: {hp: 620, atk: 140, def: 90, spd: 110, int: 80},
-        image: "./assets/images/digimon/agumon.webp"
-      },
-      {
-        id: "greymon",
-        name: "Greymon",
-        level: "Champion",
-        type: "Dinosaur",
-        attribute: "Vaccine",
-        element: ["Fire"],
-        skills: [{name:"Mega Flame"}],
-        stats: {hp: 980, atk: 220, def: 160, spd: 120, int: 100},
-        image: "./assets/images/digimon/greymon.webp"
-      },
-      {
-        id: "metalgreymon",
-        name: "MetalGreymon",
-        level: "Ultimate",
-        type: "Cyborg",
-        attribute: "Vaccine",
-        element: ["Fire","Metal"],
-        skills: [{name:"Giga Destroyer"}],
-        stats: {hp: 1320, atk: 300, def: 240, spd: 140, int: 120},
-        image: "./assets/images/digimon/metalgreymon.webp"
-      },
-      {
-        id: "wargreymon",
-        name: "WarGreymon",
-        level: "Mega",
-        type: "Dragon Warrior",
-        attribute: "Vaccine",
-        element: ["Fire","Earth"],
-        skills: [{name:"Terra Force"}],
-        stats: {hp: 1680, atk: 380, def: 300, spd: 170, int: 160},
-        image: "./assets/images/digimon/wargreymon.webp"
-      }
-    ];
+  /* ====== KONFIGURASI DATA ====== */
+  const JSON_URL = 'data/digimon_evolution_lines.json'; // gunakan file JSON evolusi
 
-    // ====== UTIL ======
-    const $ = (id) => document.getElementById(id);
-    function sorter(key){
-      const m = {
-        'name-asc': (a,b)=> a.name.localeCompare(b.name),
-        'name-desc':(a,b)=> b.name.localeCompare(a.name),
-        'atk-desc': (a,b)=> (b.stats?.atk||0)-(a.stats?.atk||0),
-        'spd-desc': (a,b)=> (b.stats?.spd||0)-(a.stats?.spd||0),
-      };
-      return m[key] || m['name-asc'];
-    }
-    function textIncludes(hay, term){
-      return (hay||'').toLowerCase().includes(term);
-    }
+  /* ====== STATE & UTIL ====== */
+  let DB = [];
+  const $ = (id) => document.getElementById(id);
 
-    // ====== RENDER ======
-    const grid = $('grid'), empty = $('empty');
-    const q = $('q'), flv = $('flv'), fat = $('fat'), sortSel = $('sort');
+  function chip(label){
+    return `<span class="chip">${label}</span>`;
+  }
+  function linkTo(id, label){
+    return `<a class="card-link" href="./digimon.html#${encodeURIComponent(id)}" aria-label="Buka detail ${label}">`;
+  }
 
-    // Ganti ke true untuk load dari file JSON eksternal
-    const USE_EXTERNAL_JSON = false;
+  /* ====== LOAD ====== */
+  async function loadData(){
+    const res = await fetch(JSON_URL, { cache: 'no-store' });
+    if(!res.ok) throw new Error(`Gagal memuat data: ${res.status}`);
+    return await res.json(); // Struktur: id, displayName, aliases[], stage, evolvesFrom[], evolvesTo[]
+  }
 
-    async function loadData(){
-      if (!USE_EXTERNAL_JSON) return SAMPLE;
-      const res = await fetch('./data/digimon.json', {cache:'no-store'});
-      if (!res.ok) throw new Error('Gagal memuat data');
-      return await res.json();
-    }
+  /* ====== SORTERS ====== */
+  function sorter(key){
+    const m = {
+      'name-asc': (a,b)=> a.displayName.localeCompare(b.displayName),
+      'name-desc':(a,b)=> b.displayName.localeCompare(a.displayName)
+    };
+    return m[key] || m['name-asc'];
+  }
 
-    function cardHTML(d){
-      const src = d.image || './assets/images/digimon/placeholder.webp';
-      const elements = (d.element||[]).map(e=>`<span class="chip">${e}</span>`).join('');
-      return `
-        <a class="card-link" href="./digimon.html#${encodeURIComponent(d.id)}" aria-label="Buka detail ${d.name}">
-          <article class="card">
-            <div class="thumb"><img src="${src}" alt="${d.name}" loading="lazy"></div>
-            <div class="body">
-              <h3>${d.name}</h3>
-              <div class="meta">
-                <span class="chip">${d.level}</span>
-                <span class="chip">${d.attribute}</span>
-                ${elements}
-              </div>
-              <div class="statline">
-                <span>ATK: ${d.stats?.atk ?? '-'}</span>
-                <span>SPD: ${d.stats?.spd ?? '-'}</span>
-              </div>
+  /* ====== RENDER LIST ====== */
+  const grid = $('grid'), empty = $('empty');
+  const q = $('q'), stageSel = $('stage'), sortSel = $('sort');
+
+  function cardHTML(d){
+    const aliasChip = (d.aliases && d.aliases.length) ? chip(d.aliases[0]) : '';
+    return `
+      ${linkTo(d.id, d.displayName)}
+        <article class="card">
+          <div class="thumb">
+            <!-- Placeholder kotak-inisial -->
+            <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#0b132b;color:#8ea3ff;font-weight:700;">
+              ${d.displayName.charAt(0)}
             </div>
-          </article>
-        </a>
-      `;
+          </div>
+          <div class="body">
+            <h3>${d.displayName}</h3>
+            <div class="meta">
+              ${chip(d.stage)} ${aliasChip}
+            </div>
+            <div class="statline">
+              <span>ID: ${d.id}</span>
+            </div>
+          </div>
+        </article>
+      </a>
+    `;
+  }
+
+  function applyFilters(data){
+    const term = (q.value || '').trim().toLowerCase();
+    const stage = stageSel.value;
+    const sort = sorter(sortSel.value);
+
+    return data.filter(d=>{
+      const okStage = !stage || d.stage === stage;
+      const hay = [d.displayName, d.id, d.stage, ...(d.aliases||[])].join(' | ').toLowerCase();
+      const okTerm = !term || hay.includes(term);
+      return okStage && okTerm;
+    }).sort(sort);
+  }
+
+  function render(list){
+    grid.innerHTML = list.map(cardHTML).join('');
+    empty.hidden = list.length > 0;
+  }
+
+  /* ====== BOOTSTRAP ====== */
+  (async function init(){
+    try{
+      DB = await loadData();
+      render(applyFilters(DB));
+      [q, stageSel, sortSel].forEach(el => el.addEventListener('input', ()=> render(applyFilters(DB))));
+    }catch(e){
+      console.error(e);
+      grid.innerHTML = `<p style="color:#ff9aa2">Error: ${e.message}</p>`;
     }
-
-    function render(list){
-      grid.innerHTML = list.map(cardHTML).join('');
-      empty.hidden = list.length > 0;
-    }
-
-    function applyFilters(data){
-      const term = (q.value||'').trim().toLowerCase();
-      const level = flv.value;
-      const attr = fat.value;
-      const sort = sorter(sortSel.value);
-
-      let out = data.filter(d=>{
-        const okLevel = !level || d.level === level;
-        const okAttr  = !attr || d.attribute === attr;
-        const hay = [
-          d.name, d.id, d.level, d.type, d.attribute,
-          ...(d.element||[]),
-          ...((d.skills||[]).map(s=>s.name))
-        ].join(' | ').toLowerCase();
-        const okTerm = !term || textIncludes(hay, term);
-        return okLevel && okAttr && okTerm;
-      }).sort(sort);
-
-      return out;
-    }
-
-    let DB = [];
-
-    async function init(){
-      try {
-        DB = await loadData();
-        render(applyFilters(DB));
-        [q, flv, fat, sortSel].forEach(el => el.addEventListener('input', () => {
-          render(applyFilters(DB));
-        }));
-      } catch (e){
-        console.error(e);
-        grid.innerHTML = `<p style="color:#ff9aa2">Error: ${e.message}</p>`;
-      }
-    }
-
-    init();
+  })();
   </script>
 </body>
 </html>
-
