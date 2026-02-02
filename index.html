@@ -349,32 +349,54 @@
 
   /* ====== INIT ====== */
   (async function init(){
-    try{
-      DB = await loadData(); // Ambil dari data/digimon_evolution_lines.json (struktur field sesuai file evolusi)  /* [1](blob:https://www.microsoft365.com/6ab40f3a-bdcb-4e3b-94ed-ca00a110495f) */
+  try{
+    DB = await loadData();
 
-      // Grouping
-      GROUPS_ALPHA = groupByLetter(DB);
-      GROUPS_STAGE = groupByStage(DB);
+    // Grouping
+    GROUPS_ALPHA = groupByLetter(DB);
+    GROUPS_STAGE = groupByStage(DB);
 
-      // Bars
-      renderAlphaBar();
-      bindStageBar();
+    // Bars
+    renderAlphaBar();
+    
+    // STAGE BAR BINDING — dipastikan DOM sudah ada
+    document.querySelectorAll('#stageBar a').forEach(a => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        CURRENT_STAGE = a.dataset.stage;
+        markActiveStage();
+        setMode('stage');
+      });
+    });
+    markActiveStage();
 
-      // Mode switch
-      $('btnAlpha').addEventListener('click', ()=> setMode('alphabet'));
-      $('btnStage').addEventListener('click', ()=> setMode('stage'));
+    // MODE SWITCH
+    $('btnAlpha').addEventListener('click', () => setMode('alphabet'));
+    $('btnStage').addEventListener('click', () => setMode('stage'));
 
-      // Render awal
-      setMode('alphabet');       // default tampilan A-Z
-      syncList();
-      syncRoute();               // jika URL sudah berisi #id
+    // 🔥 CRITICAL FIX: Name pill click handler (delegated)
+    $('nameList').addEventListener('click', (e) => {
+      const pill = e.target.closest('.name-pill');
+      if (!pill) return;
+      e.preventDefault();
+      const id = decodeURIComponent(pill.getAttribute('href').replace(/^#/, ''));
+      history.pushState(null, null, `#${encodeURIComponent(id)}`);
+      renderCard(id);
+      $('card')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
 
-    }catch(e){
-      console.error(e);
-      document.querySelector('.wrap')?.insertAdjacentHTML('beforeend',
-        `<p style="color:#ff9aa2">Error: ${e.message}</p>`);
-    }
-  })();
+    // Render awal
+    setMode('alphabet');
+    syncList();
+    syncRoute();
+
+  }catch(e){
+    console.error(e);
+    document.querySelector('.wrap')?.insertAdjacentHTML('beforeend',
+      `<p style="color:#ff9aa2; padding:16px; background:var(--panel-2); border-radius:12px">❌ Error: ${e.message}<br><small>Periksa console (F12) untuk detail error.</small></p>`);
+  }
+})();
   </script>
 </body>
 </html>
+
