@@ -292,17 +292,13 @@
 },
 {
 "id": "kudamon",
-"displayName": "Kudamon","aliases": [
-"Sleipmon"
-],
+"displayName": "Kudamon","aliases": [],
 "stage": "Child",
-"evolvesFrom": [
-"tylinmon"
-],
+"evolvesFrom": [],
 "evolvesTo": [
 "reppamon"
 ],
-"groups": ["Royal Knights"]
+"groups": []
 },
 {
 "id": "lalamon",
@@ -1911,7 +1907,7 @@
 "togemon"
 ],"evolvesTo": [
 "rosemon",
-"bancoulilimon"
+"banchoulilimon"
 ],
 "groups": []
 },
@@ -2248,7 +2244,7 @@
 "reppamon"
 ],
 "evolvesTo": [
-"kudamon"
+"sleipmon"
 ],
 "groups": []
 },
@@ -2292,6 +2288,16 @@
 "ancientgreymon"
 ],
 "groups": []
+},
+{"id": "sleipmon",
+"displayName": "Sleipmon",
+"aliases": [Kentaurosmon],
+"stage": "Perfect",
+"evolvesFrom": [
+"tylinmon"
+],
+"evolvesTo": [],
+"groups": ["Royal Knights"]
 },
 {
 "id": "wargrowlmon",
@@ -2440,8 +2446,8 @@
 "groups": []
 },
 {
-"id": "bancoulilimon",
-"displayName": "BancouLilimon",
+"id": "banchoulilimon",
+"displayName": "BanchouLilimon",
 "aliases": [
 "BanchouLillymon"
 ],
