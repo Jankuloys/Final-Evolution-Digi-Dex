@@ -331,6 +331,62 @@
   </div>
 </div>
 
+    <!-- TAMERS SECTION -->
+<div class="section-card">
+  <div class="section-header">
+    <h2><span class="section-icon">👥</span> Tamers Database</h2>
+  </div>
+  <div class="section-body">
+    <p class="section-description">Meet the chosen children who partner with Digimon to protect both worlds.</p>
+    
+    <div style="display:grid;gap:12px;margin-top:20px">
+      <div style="background:var(--panel-2);border:1px solid var(--ring);border-radius:10px;padding:16px">
+        <div style="font-size:28px;font-weight:800;color:#59a6ff" id="tamer-count">Loading...</div>
+        <div style="color:var(--muted);font-size:14px">Total Tamers</div>
+      </div>
+      
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">
+        <a href="./tamers.html#taichi_yagami" class="mini-card" style="background:linear-gradient(135deg,#FF9800,#2441ff);text-decoration:none">
+          <span class="mini-card-icon">🔥</span>
+          <strong>Taichi</strong>
+        </a>
+        <a href="./tamers.html#yamato_ishida" class="mini-card" style="background:linear-gradient(135deg,#4CAF50,#2441ff);text-decoration:none">
+          <span class="mini-card-icon">🌲</span>
+          <strong>Yamato</strong>
+        </a>
+        <a href="./tamers.html#sora_takenouchi" class="mini-card" style="background:linear-gradient(135deg,#03A9F4,#2441ff);text-decoration:none">
+          <span class="mini-card-icon">🕊️</span>
+          <strong>Sora</strong>
+        </a>
+        <a href="./tamers.html#koushiro_izumi" class="mini-card" style="background:linear-gradient(135deg,#9E9E9E,#2441ff);text-decoration:none">
+          <span class="mini-card-icon">💻</span>
+          <strong>Koushiro</strong>
+        </a>
+        <a href="./tamers.html#mimi_tachikawa" class="mini-card" style="background:linear-gradient(135deg,#8BC34A,#2441ff);text-decoration:none">
+          <span class="mini-card-icon">🌸</span>
+          <strong>Mimi</strong>
+        </a>
+        <a href="./tamers.html#jou_kido" class="mini-card" style="background:linear-gradient(135deg,#2196F3,#2441ff);text-decoration:none">
+          <span class="mini-card-icon">🌊</span>
+          <strong>Jou</strong>
+        </a>
+        <a href="./tamers.html#takeru_takaishi" class="mini-card" style="background:linear-gradient(135deg,#FFC107,#2441ff);text-decoration:none">
+          <span class="mini-card-icon">✨</span>
+          <strong>Takeru</strong>
+        </a>
+        <a href="./tamers.html#hikari_yagami" class="mini-card" style="background:linear-gradient(135deg,#9C27B0,#2441ff);text-decoration:none">
+          <span class="mini-card-icon">🌙</span>
+          <strong>Hikari</strong>
+        </a>
+      </div>
+    </div>
+    
+    <a href="./tamers.html" class="action-btn" style="background:#ffd166;color:#0b1020;margin-top:20px;display:block;text-align:center">
+      View All Tamers
+    </a>
+  </div>
+</div>
+
     <!-- COMMUNITY SECTION -->
     <div class="section-card">
       <div class="section-header">
@@ -372,18 +428,26 @@
   </footer>
 
   <script>
-// Load Digimon data to show stats
-const JSON_URL = 'data/digimon_evolution_lines.json';
+// Load Digimon & Tamers data to show stats
+const DIGIMON_URL = 'data/digimon_evolution_lines.json';
+const TAMERS_URL = 'data/tamers.json';
 
 async function loadStats(){
   try{
-    const res = await fetch(JSON_URL, { cache:'no-store' });
-    if(!res.ok) throw new Error('Gagal memuat data');
-    const data = await res.json();
+    const [digimonRes, tamerRes] = await Promise.all([
+      fetch(DIGIMON_URL, { cache:'no-store' }),
+      fetch(TAMERS_URL, { cache:'no-store' })
+    ]);
+    
+    if(!digimonRes.ok) throw new Error('Gagal memuat data Digimon');
+    if(!tamerRes.ok) throw new Error('Gagal memuat data Tamers');
+    
+    const digimonData = await digimonRes.json();
+    const tamerData = await tamerRes.json();
     
     // Count total digimon
-    document.getElementById('digimon-count').textContent = data.length;
-    document.getElementById('stat-digimon').textContent = data.length;
+    document.getElementById('digimon-count').textContent = digimonData.length;
+    document.getElementById('stat-digimon').textContent = digimonData.length;
     
     // Count by stage
     const stageCounts = {
@@ -394,28 +458,23 @@ async function loadStats(){
       'Ultimate+': 0
     };
     
-    data.forEach(d => {
+    digimonData.forEach(d => {
       if(stageCounts[d.stage] !== undefined){
         stageCounts[d.stage]++;
       }
     });
     
-    // Update counts
     document.getElementById('child-count').textContent = stageCounts.Child;
     document.getElementById('adult-count').textContent = stageCounts.Adult;
     document.getElementById('perfect-count').textContent = stageCounts.Perfect;
     document.getElementById('ultimate-count').textContent = stageCounts.Ultimate;
     document.getElementById('ultimate-plus-count').textContent = stageCounts['Ultimate+'];
     
-    // Make stage cards clickable
-    document.getElementById('child-card').onclick = () => window.location.href = './digimon.html#stage:Child';
-    document.getElementById('adult-card').onclick = () => window.location.href = './digimon.html#stage:Adult';
-    document.getElementById('perfect-card').onclick = () => window.location.href = './digimon.html#stage:Perfect';
-    document.getElementById('ultimate-card').onclick = () => window.location.href = './digimon.html#stage:Ultimate';
-    document.getElementById('ultimate-plus-card').onclick = () => window.location.href = './digimon.html#stage:Ultimate+';
+    // Count total tamers
+    document.getElementById('tamer-count').textContent = tamerData.length;
+    document.getElementById('stat-tamers').textContent = tamerData.length;
     
     // Placeholder stats for other categories
-    document.getElementById('stat-tamers').textContent = '8';
     document.getElementById('stat-items').textContent = '87';
     document.getElementById('stat-materials').textContent = '45';
     
