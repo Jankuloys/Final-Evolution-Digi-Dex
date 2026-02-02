@@ -120,9 +120,10 @@
   <section class="panel">
     <div class="controls">
       <div class="mode-switch" role="tablist" aria-label="Mode tampilan">
-        <button id="btnAlpha" class="seg-btn active" data-mode="alphabet" role="tab" aria-selected="true">Show based on Alphabet</button>
-        <button id="btnStage" class="seg-btn" data-mode="stage" role="tab" aria-selected="false">Show based on Stage</button>
-      </div>
+  <button id="btnAlpha" class="seg-btn active" data-mode="alphabet" role="tab" aria-selected="true">Alphabet</button>
+  <button id="btnStage" class="seg-btn" data-mode="stage" role="tab" aria-selected="false">Stage</button>
+  <button id="btnGroup" class="seg-btn" data-mode="group" role="tab" aria-selected="false">Group</button>
+</div>
 
       <!-- A-Z BAR -->
       <nav id="alphaBar" class="alpha" aria-label="Filter alfabet"></nav>
@@ -184,11 +185,12 @@
   const JSON_URL = 'data/digimon_evolution_lines.json'; /* [1](blob:https://www.microsoft365.com/6ab40f3a-bdcb-4e3b-94ed-ca00a110495f) */
 
   /* ====== STATE ====== */
-  let DB = [];
-  let CURRENT_MODE = 'alphabet'; // 'alphabet' | 'stage'
-  let CURRENT_LETTER = 'A';
-  let CURRENT_STAGE = 'Child';
-  const $ = (id) => document.getElementById(id);
+let DB = [];
+let CURRENT_MODE = 'alphabet'; // 'alphabet' | 'stage' | 'group'
+let CURRENT_LETTER = 'A';
+let CURRENT_STAGE = 'Child';
+let CURRENT_GROUP = null; // null atau nama group yang dipilih
+const $ = (id) => document.getElementById(id);
 
   /* ====== LOAD ====== */
   async function loadData(){
@@ -228,22 +230,37 @@
 
   /* ====== RENDER: MODE SWITCH ====== */
   function setMode(mode){
-    CURRENT_MODE = mode;
+  CURRENT_MODE = mode;
 
-    // tombol aktif
-    const btnAlpha = $('btnAlpha'), btnStage = $('btnStage');
-    btnAlpha.classList.toggle('active', mode==='alphabet');
-    btnAlpha.setAttribute('aria-selected', mode==='alphabet');
-    btnStage.classList.toggle('active', mode==='stage');
-    btnStage.setAttribute('aria-selected', mode==='stage');
+  // tombol aktif
+  const btnAlpha = $('btnAlpha'), btnStage = $('btnStage'), btnGroup = $('btnGroup');
+  btnAlpha.classList.toggle('active', mode==='alphabet');
+  btnAlpha.setAttribute('aria-selected', mode==='alphabet');
+  btnStage.classList.toggle('active', mode==='stage');
+  btnStage.setAttribute('aria-selected', mode==='stage');
+  btnGroup.classList.toggle('active', mode==='group');
+  btnGroup.setAttribute('aria-selected', mode==='group');
 
-    // bar yang tampil
-    $('alphaBar').style.display = (mode==='alphabet') ? '' : 'none';
-    $('stageBar').style.display = (mode==='stage') ? '' : 'none';
+  // bar yang tampil
+  $('alphaBar').style.display = (mode==='alphabet') ? '' : 'none';
+  $('stageBar').style.display = (mode==='stage' || mode==='group') ? '' : 'none';
 
-    // refresh daftar
-    syncList();
+  // Update title & render bar sesuai mode
+  if (mode === 'group') {
+    $('alphaTitle').textContent = `(Group: ${CURRENT_GROUP || 'All'})`;
+    renderGroupBar();
+    markActiveGroup();
+  } else if (mode === 'stage') {
+    $('alphaTitle').textContent = `(Stage: ${CURRENT_STAGE})`;
+    markActiveStage();
+  } else {
+    $('alphaTitle').textContent = `(Alphabet: ${CURRENT_LETTER})`;
+    renderAlphaBar();
   }
+
+  // refresh daftar
+  syncList();
+}
 
   /* ====== RENDER: A-Z BAR ====== */
   function renderAlphaBar(){
@@ -264,18 +281,38 @@
 
   /* ====== RENDER: NAME LIST ====== */
   let GROUPS_ALPHA = {}, GROUPS_STAGE = {};
-  function syncList(){
-    let arr = [];
-    if (CURRENT_MODE === 'alphabet'){
-      $('alphaTitle').textContent = `(Alphabet: ${CURRENT_LETTER})`;
-      arr = GROUPS_ALPHA[CURRENT_LETTER] || [];
+ function syncList(){
+  let arr = [];
+  
+  if (CURRENT_MODE === 'alphabet'){
+    $('alphaTitle').textContent = `(Alphabet: ${CURRENT_LETTER})`;
+    arr = GROUPS_ALPHA[CURRENT_LETTER] || [];
+    
+  } else if (CURRENT_MODE === 'stage'){
+    $('alphaTitle').textContent = `(Stage: ${CURRENT_STAGE})`;
+    arr = GROUPS_STAGE[CURRENT_STAGE] || [];
+    
+  } else if (CURRENT_MODE === 'group'){
+    $('alphaTitle').textContent = `(Group: ${CURRENT_GROUP || 'All'})`;
+    if (CURRENT_GROUP) {
+      arr = DB.filter(d => 
+        d.groups && d.groups.includes(CURRENT_GROUP)
+      ).sort((a,b) => a.displayName.localeCompare(b.displayName));
     } else {
-      $('alphaTitle').textContent = `(Stage: ${CURRENT_STAGE})`;
-      arr = GROUPS_STAGE[CURRENT_STAGE] || [];
+      arr = []; // kosong kalau belum pilih group
     }
-    $('nameList').innerHTML = arr.map(namePill).join('');
-    $('emptyNames').hidden = arr.length > 0;
   }
+  
+  $('nameList').innerHTML = arr.map(namePill).join('');
+  $('emptyNames').hidden = arr.length > 0;
+  
+  // Update title panel
+  if (CURRENT_MODE === 'group' && !CURRENT_GROUP) {
+    $('alphaTitle').textContent = '';
+    $('emptyNames').textContent = 'Pilih group di atas untuk melihat daftar Digimon';
+    $('emptyNames').hidden = false;
+  }
+}
 
   /* ====== RENDER: CARD (DETAIL) ====== */
   function renderCard(id){
@@ -304,9 +341,13 @@
   
   // 🔑 FIX: baca "groups" (plural) + handle empty array
   const groups = node.groups || [];
-  group.textContent = groups.length > 0 
-    ? groups.join(', ') 
-    : (node.group ? node.group : '-'); // fallback ke "group" singular kalau ada
+ if (groups.length > 0) {
+  group.innerHTML = groups.map(g => 
+    `<a href="javascript:void(0)" class="chip" data-group-click="${encodeURIComponent(g)}">${g}</a>`
+  ).join(' ');
+} else {
+  group.textContent = '-';
+}
 
   if (thumb) thumb.textContent = (node.displayName || '?').charAt(0).toUpperCase();
 
@@ -324,21 +365,23 @@
 
   /* ====== ROUTER (hash -> card) ====== */
   function syncRoute(){
-    const id = decodeHash();
-    if(id){
-      const node = byId(id);
-      if(node){
-        // Sinkronkan bar dengan item yang sedang dibuka
-        if (CURRENT_MODE === 'alphabet'){
-          const L = firstLetter(node.displayName);
-          if (L !== CURRENT_LETTER){ CURRENT_LETTER = L; renderAlphaBar(); syncList(); }
-        } else {
-          if (node.stage !== CURRENT_STAGE){ CURRENT_STAGE = node.stage; markActiveStage(); syncList(); }
-        }
+  const id = decodeHash();
+  if(id){
+    const node = byId(id);
+    if(node){
+      // Sinkronkan bar dengan item yang sedang dibuka
+      if (CURRENT_MODE === 'alphabet'){
+        const L = firstLetter(node.displayName);
+        if (L !== CURRENT_LETTER){ CURRENT_LETTER = L; renderAlphaBar(); syncList(); }
+      } else if (CURRENT_MODE === 'stage'){
+        if (node.stage !== CURRENT_STAGE){ CURRENT_STAGE = node.stage; markActiveStage(); syncList(); }
+      } else if (CURRENT_MODE === 'group'){
+        // Kalau buka Digimon dari group tertentu, maintain group filter
       }
-      renderCard(id);
     }
+    renderCard(id);
   }
+}
   window.addEventListener('hashchange', syncRoute);
 
   /* ====== STAGE BAR ====== */
@@ -357,7 +400,44 @@
     });
     markActiveStage();
   }
+    
+/* ====== RENDER: GROUP BAR ====== */
+let ALL_GROUPS = [];
 
+function extractAllGroups(){
+  const map = new Set();
+  DB.forEach(d => {
+    const groups = d.groups || [];
+    groups.forEach(g => map.add(g));
+  });
+  return Array.from(map).sort();
+}
+
+function renderGroupBar(){
+  const groups = extractAllGroups();
+  ALL_GROUPS = groups;
+  
+  const bar = $('stageBar'); // Reuse stageBar container
+  bar.innerHTML = groups.map(g =>
+    `<a href="javascript:void(0)" data-group="${encodeURIComponent(g)}" class="${CURRENT_GROUP===g?'active':''}">${g}</a>`
+  ).join('');
+  
+  bar.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      CURRENT_GROUP = decodeURIComponent(a.dataset.group);
+      setMode('group');
+    });
+  });
+}
+
+function markActiveGroup(){
+  if (!$('stageBar')) return;
+  document.querySelectorAll('#stageBar a').forEach(a=>{
+    a.classList.toggle('active', decodeURIComponent(a.dataset.group) === CURRENT_GROUP);
+  });
+}
+    
   /* ====== INIT ====== */
   (async function init(){
   try{
@@ -367,16 +447,31 @@
     GROUPS_ALPHA = groupByLetter(DB);
     GROUPS_STAGE = groupByStage(DB);
 
+    // Extract all groups
+    ALL_GROUPS = extractAllGroups();
+
     // Bars
     renderAlphaBar();
     
-    // STAGE BAR BINDING — dipastikan DOM sudah ada
+    // STAGE BAR BINDING
     document.querySelectorAll('#stageBar a').forEach(a => {
       a.addEventListener('click', (e) => {
         e.preventDefault();
-        CURRENT_STAGE = a.dataset.stage;
-        markActiveStage();
-        setMode('stage');
+        if (CURRENT_MODE === 'stage') {
+          CURRENT_STAGE = a.dataset.stage;
+          markActiveStage();
+          syncList();
+
+     // Handler klik group di card
+$('c-group').addEventListener('click', (e) => {
+  const chip = e.target.closest('.chip');
+  if (!chip || !chip.dataset.groupClick) return;
+  
+  CURRENT_GROUP = decodeURIComponent(chip.dataset.groupClick);
+  setMode('group');
+  document.getElementById('card')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});     
+        }
       });
     });
     markActiveStage();
@@ -384,6 +479,10 @@
     // MODE SWITCH
     $('btnAlpha').addEventListener('click', () => setMode('alphabet'));
     $('btnStage').addEventListener('click', () => setMode('stage'));
+    $('btnGroup').addEventListener('click', () => {
+      CURRENT_GROUP = null; // Reset group selection
+      setMode('group');
+    });
 
     // 🔥 CRITICAL FIX: Name pill click handler (delegated)
     $('nameList').addEventListener('click', (e) => {
@@ -394,6 +493,15 @@
       history.pushState(null, null, `#${encodeURIComponent(id)}`);
       renderCard(id);
       $('card')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+
+    // 🔥 Group chip click handler di card
+    $('c-group').addEventListener('click', (e) => {
+      const chip = e.target.closest('.chip');
+      if (!chip || !chip.dataset.groupClick) return;
+      CURRENT_GROUP = decodeURIComponent(chip.dataset.groupClick);
+      setMode('group');
+      document.querySelector('.wrap')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 
     // Render awal
@@ -410,6 +518,7 @@
   </script>
 </body>
 </html>
+
 
 
 
