@@ -2381,7 +2381,7 @@
 "vritramon"
 ],
 "evolvesTo": [],
-"groups": ["Ten Warriors"]
+"groups": ["Ten Legendary Warriors"]
 },
 {
 "id": "ancientvolcamon",
@@ -2392,7 +2392,7 @@
 "meteormon"
 ],
 "evolvesTo": [],
-"groups": ["Ten Warriors"]
+"groups": ["Ten Legendary Warriors"]
 },
 {
 "id": "apollomon",
@@ -2983,7 +2983,7 @@
 "angewomon"
 ],
 "evolvesTo": [],
-"groups": []
+"groups": ["Three Great Angels"]
 },
 {
 "id": "ouryumon",
@@ -3133,7 +3133,7 @@
 "holyangemon"
 ],
 "evolvesTo": [],
-"groups": []
+"groups": ["Three Great Angels"]
 },{
 "id": "shinegreymon",
 "displayName": "ShineGreymon",
@@ -3283,7 +3283,7 @@
 "evolvesFrom": [
 "andiramon"],
 "evolvesTo": [],
-"groups": []
+"groups": ["Three Great Angels"]
 },
 {
 "id": "z-dgarurumon",
