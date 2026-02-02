@@ -32,20 +32,29 @@
     .hero h1{margin:6px 0 6px;font-size:clamp(22px,4vw,36px)}
     .hero p{margin:0;color:var(--muted)}
 
-    /* ALPHABET BAR */
+    /* MODE SWITCH */
     .panel{max-width:1200px;margin:14px auto;padding:14px 18px}
-    .alpha{
-      background:var(--panel); border:1px solid var(--ring); border-radius:16px; box-shadow:var(--shadow);
-      display:flex;flex-wrap:wrap;gap:8px; padding:12px;
+    .controls{background:var(--panel); border:1px solid var(--ring); border-radius:16px; box-shadow:var(--shadow); padding:12px;}
+    .mode-switch{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px}
+    .seg-btn{
+      background:var(--panel-2); border:1px solid var(--ring); color:#cfe0ff;
+      padding:8px 12px; border-radius:10px; cursor:pointer; font-weight:700;
+      transition:transform .1s ease,border-color .2s;
     }
-    .alpha a{
+    .seg-btn:hover{ transform:translateY(-1px); }
+    .seg-btn.active{ border-color:#2a3d86; box-shadow:0 0 0 1px #2a3d86 inset; }
+
+    /* BARS */
+    .alpha, .stagebar{display:flex;flex-wrap:wrap;gap:8px}
+    .alpha a, .stagebar a{
       display:inline-flex; align-items:center; justify-content:center;
-      width:36px;height:36px;border-radius:8px; border:1px solid var(--ring);
+      min-width:36px; height:36px; padding:0 10px;
+      border-radius:8px; border:1px solid var(--ring);
       background:var(--panel-2); color:#cfe0ff; text-decoration:none; font-weight:700;
       transition:transform .1s ease, border-color .2s;
     }
-    .alpha a.active{ border-color:#2a3d86; box-shadow:0 0 0 1px #2a3d86 inset; }
-    .alpha a:hover{ transform:translateY(-1px); }
+    .alpha a:hover, .stagebar a:hover{ transform:translateY(-1px); }
+    .alpha a.active, .stagebar a.active{ border-color:#2a3d86; box-shadow:0 0 0 1px #2a3d86 inset; }
 
     /* LAYOUT: name list + card */
     .wrap{max-width:1200px;margin:0 auto 30px;padding:0 18px; display:grid; grid-template-columns: 1fr 1.2fr; gap:16px}
@@ -107,9 +116,27 @@
     <p>Masih scratch, hehe, nanti aku kabarin kalau selesai. ttd: Joe :P</p>
   </header>
 
-  <!-- A-Z BAR -->
+  <!-- CONTROLS (Mode Switch + Bars) -->
   <section class="panel">
-    <nav id="alphaBar" class="alpha" aria-label="Filter alfabet"></nav>
+    <div class="controls">
+      <div class="mode-switch" role="tablist" aria-label="Mode tampilan">
+        <button id="btnAlpha" class="seg-btn active" data-mode="alphabet" role="tab" aria-selected="true">Show based on Alphabet</button>
+        <button id="btnStage" class="seg-btn" data-mode="stage" role="tab" aria-selected="false">Show based on Stage</button>
+      </div>
+
+      <!-- A-Z BAR -->
+      <nav id="alphaBar" class="alpha" aria-label="Filter alfabet"></nav>
+
+      <!-- STAGE BAR -->
+      <nav id="stageBar" class="stagebar" aria-label="Filter stage" style="display:none">
+        <!-- Jika hanya ingin Child & Adult, hapus tombol yang lain -->
+        <a href="javascript:void(0)" data-stage="Child">Child</a>
+        <a href="javascript:void(0)" data-stage="Adult">Adult</a>
+        <a href="javascript:void(0)" data-stage="Perfect">Perfect</a>
+        <a href="javascript:void(0)" data-stage="Ultimate">Ultimate</a>
+        <a href="javascript:void(0)" data-stage="Ultimate+">Ultimate+</a>
+      </nav>
+    </div>
   </section>
 
   <!-- NAME LIST + CARD -->
@@ -117,7 +144,7 @@
     <div class="panel-box">
       <h3 style="margin:0 0 10px">Daftar Digimon <span id="alphaTitle" style="color:#9aa3c4"></span></h3>
       <div id="nameList" class="names"></div>
-      <p id="emptyNames" class="empty" hidden>Tidak ada nama untuk huruf ini.</p>
+      <p id="emptyNames" class="empty" hidden>Tidak ada nama untuk filter ini.</p>
     </div>
 
     <div class="panel-box">
@@ -149,149 +176,205 @@
     <div class="disclaimer">Digimon adalah merek dagang milik pemegang hak terkait. Ini proyek penggemar non‑komersial.</div>
   </footer>
 
-  
-<script>
-/* ====== KONFIG ====== */
-const JSON_URL = 'data/digimon_evolution_lines.json'; // file JSON evolusi (nama & path sesuai yang kamu pakai)
+  <script>
+  /* ====== KONFIG ====== */
+  // Pastikan file JSON ini ada di /data/ dengan struktur field: id, displayName, aliases[], stage, evolvesFrom[], evolvesTo[]
+  // (mengikuti file yang sudah kamu update dari Excel dengan aturan "/" sebagai alias) — siap dipakai langsung.
+  const JSON_URL = 'data/digimon_evolution_lines.json'; /* [1](blob:https://www.microsoft365.com/6ab40f3a-bdcb-4e3b-94ed-ca00a110495f) */
 
-/* ====== STATE ====== */
-let DB = [];
-let CURRENT_LETTER = 'A'; // default huruf awal
-const $ = (id) => document.getElementById(id);
+  /* ====== STATE ====== */
+  let DB = [];
+  let CURRENT_MODE = 'alphabet'; // 'alphabet' | 'stage'
+  let CURRENT_LETTER = 'A';
+  let CURRENT_STAGE = 'Child';
+  const $ = (id) => document.getElementById(id);
 
-/* ====== LOAD ====== */
-async function loadData(){
-  const res = await fetch(JSON_URL, { cache:'no-store' });
-  if(!res.ok) throw new Error('Gagal memuat data: ' + res.status);
-  return res.json(); // Struktur: id, displayName, aliases[], stage, evolvesFrom[], evolvesTo[]
-}
+  /* ====== LOAD ====== */
+  async function loadData(){
+    const res = await fetch(JSON_URL, { cache:'no-store' });
+    if(!res.ok) throw new Error('Gagal memuat data: ' + res.status);
+    return res.json();
+  }
 
-/* ====== HELPERS ====== */
-function firstLetter(name){
-  if(!name || !name.length) return '#';
-  const c = name.trim().charAt(0).toUpperCase();
-  return c >= 'A' && c <= 'Z' ? c : '#';
-}
-function chip(label){ return `<span class="chip">${label}</span>`; }
-function namePill(d){ return `<a class="name-pill" href="#${encodeURIComponent(d.id)}">${d.displayName}</a>`; }
-function byId(id){ return DB.find(x => x.id === id); }
-function decodeHash(){ return decodeURIComponent(location.hash||'').replace(/^#/,''); }
+  /* ====== HELPERS ====== */
+  function firstLetter(name){
+    if(!name || !name.length) return '#';
+    const c = name.trim().charAt(0).toUpperCase();
+    return c >= 'A' && c <= 'Z' ? c : '#';
+  }
+  function byId(id){ return DB.find(x => x.id === id); }
+  function chip(label){ return `<span class="chip">${label}</span>`; }
+  function namePill(d){ return `<a class="name-pill" href="#${encodeURIComponent(d.id)}">${d.displayName}</a>`; }
+  function decodeHash(){ return decodeURIComponent(location.hash||'').replace(/^#/,''); }
 
-function groupByLetter(list){
-  const map = {};
-  for (let i=65;i<=90;i++){ map[String.fromCharCode(i)] = []; }
-  map['#'] = []; // non A-Z
-  list.forEach(d => {
-    const L = firstLetter(d.displayName);
-    (map[L] ||= []).push(d);
-  });
-  // sort tiap grup
-  Object.keys(map).forEach(k => map[k].sort((a,b)=> a.displayName.localeCompare(b.displayName)));
-  return map;
-}
-
-/* ====== RENDER: ALPHA BAR ====== */
-function renderAlphaBar(active){
-  const bar = $('alphaBar');
-  const letters = Array.from({length:26}, (_,i)=> String.fromCharCode(65+i));
-  bar.innerHTML = letters.map(L =>
-    `<a href="javascript:void(0)" data-letter="${L}" class="${L===active?'active':''}">${L}</a>`
-  ).join('') +
-  `<a href="javascript:void(0)" data-letter="#" class="${active==='#'?'active':''}">#</a>`;
-
-  // bind click -> set CURRENT_LETTER dan refresh list
-  bar.querySelectorAll('a').forEach(a=>{
-    a.addEventListener('click', () => {
-      CURRENT_LETTER = a.dataset.letter;
-      syncList();
-      renderAlphaBar(CURRENT_LETTER);
-      // Optional: scroll daftar nama ke view
-      $('nameList')?.scrollIntoView({behavior:'smooth', block:'start'});
+  function groupByLetter(list){
+    const map = {}; for (let i=65;i<=90;i++){ map[String.fromCharCode(i)] = []; }
+    map['#'] = [];
+    list.forEach(d => {
+      const L = firstLetter(d.displayName);
+      (map[L] ||= []).push(d);
     });
-  });
-}
-
-/* ====== RENDER: NAME LIST ====== */
-let GROUPS = {};
-function syncList(){
-  $('alphaTitle').textContent = `(Huruf: ${CURRENT_LETTER})`;
-  const arr = GROUPS[CURRENT_LETTER] || [];
-  $('nameList').innerHTML = arr.map(namePill).join('');
-  $('emptyNames').hidden = arr.length > 0;
-}
-
-/* ====== RENDER: CARD (DETAIL SEDERHANA) ====== */
-function renderCard(id){
-  const node = byId(id);
-  const nameEl = $('c-name'), meta = $('c-meta'), stage = $('c-stage'), aliases = $('c-aliases');
-  const prevBox = $('c-prev'), nextBox = $('c-next');
-  const thumb = document.querySelector('#card .thumb .placeholder');
-
-  if(!node){
-    nameEl.textContent = 'Tidak ditemukan';
-    stage.textContent = '-';
-    aliases.textContent = '-';
-    prevBox.innerHTML = '';
-    nextBox.innerHTML = '';
-    if (thumb) thumb.textContent = '?';
-    return;
+    Object.keys(map).forEach(k => map[k].sort((a,b)=> a.displayName.localeCompare(b.displayName)));
+    return map;
+  }
+  function groupByStage(list){
+    const stages = ['Child','Adult','Perfect','Ultimate','Ultimate+'];
+    const map = {}; stages.forEach(s => map[s] = []);
+    list.forEach(d => { (map[d.stage] ||= []).push(d); });
+    Object.keys(map).forEach(k => map[k].sort((a,b)=> a.displayName.localeCompare(b.displayName)));
+    return map;
   }
 
-  nameEl.textContent = node.displayName;
-  meta.innerHTML = chip(node.stage) + (node.aliases && node.aliases.length ? ' ' + chip(node.aliases[0]) : '');
-  stage.textContent = node.stage;
-  aliases.textContent = (node.aliases && node.aliases.length) ? node.aliases.join(', ') : '-';
-  if (thumb) thumb.textContent = (node.displayName || '?').charAt(0).toUpperCase();
+  /* ====== RENDER: MODE SWITCH ====== */
+  function setMode(mode){
+    CURRENT_MODE = mode;
 
-  const from = (node.evolvesFrom||[]).map(byId).filter(Boolean);
-  const to   = (node.evolvesTo||[]).map(byId).filter(Boolean);
+    // tombol aktif
+    const btnAlpha = $('btnAlpha'), btnStage = $('btnStage');
+    btnAlpha.classList.toggle('active', mode==='alphabet');
+    btnAlpha.setAttribute('aria-selected', mode==='alphabet');
+    btnStage.classList.toggle('active', mode==='stage');
+    btnStage.setAttribute('aria-selected', mode==='stage');
 
-  // Tautan klikable ke card tujuan
-  prevBox.innerHTML = from.length
-    ? from.map(n => `<a class="name-pill" href="#${encodeURIComponent(n.id)}">${n.displayName}</a>`).join(' ')
-    : chip('(tidak ada)');
+    // bar yang tampil
+    $('alphaBar').style.display = (mode==='alphabet') ? '' : 'none';
+    $('stageBar').style.display = (mode==='stage') ? '' : 'none';
 
-  nextBox.innerHTML = to.length
-    ? to.map(n => `<a class="name-pill" href="#${encodeURIComponent(n.id)}">${n.displayName}</a>`).join(' ')
-    : chip('(tidak ada)');
-}
-
-/* ====== ROUTER (hash -> card) ====== */
-function syncRoute(){
-  const id = decodeHash();
-  if(id){
-    // set huruf aktif mengikuti nama yang dibuka (biar list kiri sesuai)
-    const node = byId(id);
-    if(node){
-      const L = firstLetter(node.displayName);
-      if (L !== CURRENT_LETTER){
-        CURRENT_LETTER = L;
-        syncList();
-        renderAlphaBar(CURRENT_LETTER);
-      }
-    }
-    renderCard(id);
-  }
-}
-window.addEventListener('hashchange', syncRoute);
-
-/* ====== INIT ====== */
-(async function init(){
-  try{
-    DB = await loadData(); // ← ambil data dari data/digimon_evolution_lines.json
-    GROUPS = groupByLetter(DB);
-    renderAlphaBar(CURRENT_LETTER);
+    // refresh daftar
     syncList();
-
-    // jika URL sudah memuat #id, langsung render card
-    syncRoute();
-  }catch(e){
-    console.error(e);
-    document.querySelector('.wrap')?.insertAdjacentHTML('beforeend',
-      `<p style="color:#ff9aa2">Error: ${e.message}</p>`);
   }
-})();
-</script>
+
+  /* ====== RENDER: A-Z BAR ====== */
+  function renderAlphaBar(){
+    const bar = $('alphaBar');
+    const letters = Array.from({length:26}, (_,i)=> String.fromCharCode(65+i));
+    bar.innerHTML = letters.map(L =>
+      `<a href="javascript:void(0)" data-letter="${L}" class="${L===CURRENT_LETTER?'active':''}">${L}</a>`
+    ).join('') + ` <a href="javascript:void(0)" data-letter="#" class="${CURRENT_LETTER==='#'?'active':''}">#</a>`;
+
+    bar.querySelectorAll('a').forEach(a=>{
+      a.addEventListener('click', () => {
+        CURRENT_LETTER = a.dataset.letter;
+        syncList(); renderAlphaBar();
+        $('nameList')?.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
+  }
+
+  /* ====== RENDER: NAME LIST ====== */
+  let GROUPS_ALPHA = {}, GROUPS_STAGE = {};
+  function syncList(){
+    let arr = [];
+    if (CURRENT_MODE === 'alphabet'){
+      $('alphaTitle').textContent = `(Alphabet: ${CURRENT_LETTER})`;
+      arr = GROUPS_ALPHA[CURRENT_LETTER] || [];
+    } else {
+      $('alphaTitle').textContent = `(Stage: ${CURRENT_STAGE})`;
+      arr = GROUPS_STAGE[CURRENT_STAGE] || [];
+    }
+    $('nameList').innerHTML = arr.map(namePill).join('');
+    $('emptyNames').hidden = arr.length > 0;
+  }
+
+  /* ====== RENDER: CARD (DETAIL) ====== */
+  function renderCard(id){
+    const node = byId(id);
+    const nameEl = $('c-name'), meta = $('c-meta'), stage = $('c-stage'), aliases = $('c-aliases');
+    const prevBox = $('c-prev'), nextBox = $('c-next');
+    const thumb = document.querySelector('#card .thumb .placeholder');
+
+    if(!node){
+      nameEl.textContent = 'Tidak ditemukan';
+      stage.textContent = '-';
+      aliases.textContent = '-';
+      prevBox.innerHTML = '';
+      nextBox.innerHTML = '';
+      if (thumb) thumb.textContent = '?';
+      return;
+    }
+
+    nameEl.textContent = node.displayName;
+    meta.innerHTML = chip(node.stage) + (node.aliases && node.aliases.length ? ' ' + chip(node.aliases[0]) : '');
+    stage.textContent = node.stage;
+    aliases.textContent = (node.aliases && node.aliases.length) ? node.aliases.join(', ') : '-';
+    if (thumb) thumb.textContent = (node.displayName || '?').charAt(0).toUpperCase();
+
+    const from = (node.evolvesFrom||[]).map(byId).filter(Boolean);
+    const to   = (node.evolvesTo||[]).map(byId).filter(Boolean);
+
+    prevBox.innerHTML = from.length
+      ? from.map(n => `<a class="name-pill" href="#${encodeURIComponent(n.id)}">${n.displayName}</a>`).join(' ')
+      : chip('(tidak ada)');
+
+    nextBox.innerHTML = to.length
+      ? to.map(n => `<a class="name-pill" href="#${encodeURIComponent(n.id)}">${n.displayName}</a>`).join(' ')
+      : chip('(tidak ada)');
+  }
+
+  /* ====== ROUTER (hash -> card) ====== */
+  function syncRoute(){
+    const id = decodeHash();
+    if(id){
+      const node = byId(id);
+      if(node){
+        // Sinkronkan bar dengan item yang sedang dibuka
+        if (CURRENT_MODE === 'alphabet'){
+          const L = firstLetter(node.displayName);
+          if (L !== CURRENT_LETTER){ CURRENT_LETTER = L; renderAlphaBar(); syncList(); }
+        } else {
+          if (node.stage !== CURRENT_STAGE){ CURRENT_STAGE = node.stage; markActiveStage(); syncList(); }
+        }
+      }
+      renderCard(id);
+    }
+  }
+  window.addEventListener('hashchange', syncRoute);
+
+  /* ====== STAGE BAR ====== */
+  function markActiveStage(){
+    document.querySelectorAll('#stageBar a').forEach(a=>{
+      a.classList.toggle('active', a.dataset.stage === CURRENT_STAGE);
+    });
+  }
+  function bindStageBar(){
+    document.querySelectorAll('#stageBar a').forEach(a=>{
+      a.addEventListener('click', ()=>{
+        CURRENT_STAGE = a.dataset.stage;
+        markActiveStage();
+        setMode('stage');
+      });
+    });
+    markActiveStage();
+  }
+
+  /* ====== INIT ====== */
+  (async function init(){
+    try{
+      DB = await loadData(); // Ambil dari data/digimon_evolution_lines.json (struktur field sesuai file evolusi)  /* [1](blob:https://www.microsoft365.com/6ab40f3a-bdcb-4e3b-94ed-ca00a110495f) */
+
+      // Grouping
+      GROUPS_ALPHA = groupByLetter(DB);
+      GROUPS_STAGE = groupByStage(DB);
+
+      // Bars
+      renderAlphaBar();
+      bindStageBar();
+
+      // Mode switch
+      $('btnAlpha').addEventListener('click', ()=> setMode('alphabet'));
+      $('btnStage').addEventListener('click', ()=> setMode('stage'));
+
+      // Render awal
+      setMode('alphabet');       // default tampilan A-Z
+      syncList();
+      syncRoute();               // jika URL sudah berisi #id
+
+    }catch(e){
+      console.error(e);
+      document.querySelector('.wrap')?.insertAdjacentHTML('beforeend',
+        `<p style="color:#ff9aa2">Error: ${e.message}</p>`);
+    }
+  })();
+  </script>
 </body>
 </html>
-
