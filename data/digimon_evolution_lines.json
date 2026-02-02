@@ -1,3260 +1,3391 @@
 [
-  {
-    "id": "agumon",
-    "displayName": "Agumon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "greymon",
-      "geogreymon",
-      "tyranomon"
-    ]
-  },
-  {
-    "id": "armadimon",
-    "displayName": "Armadimon",
-    "aliases": [
-      "Armadilomon"
-    ],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "ankylomon"
-    ]
-  },
-  {
-    "id": "betamon",
-    "displayName": "Betamon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "seadramon"
-    ]
-  },
-  {
-    "id": "blackagumon",
-    "displayName": "BlackAgumon",
-    "aliases": [
-      "Agumon (Black)"
-    ],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "blackgreymon"
-    ]
-  },
-  {
-    "id": "blackgabumon",
-    "displayName": "BlackGabumon",
-    "aliases": [
-      "Gabumon (Black)"
-    ],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "blackgarurumon"
-    ]
-  },
-  {
-    "id": "candlemon",
-    "displayName": "Candlemon",
-    "aliases": [
-      "Candmon"
-    ],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "meramon",
-      "bakemon"
-    ]
-  },
-  {
-    "id": "coronamon",
-    "displayName": "Coronamon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "firamon"
-    ]
-  },
-  {
-    "id": "cutemon",
-    "displayName": "Cutemon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "tunomon"
-    ]
-  },
-  {
-    "id": "dorumon",
-    "displayName": "Dorumon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "dorugamon",
-      "ginryumon"
-    ]
-  },
-  {
-    "id": "elecmon",
-    "displayName": "Elecmon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "leomon"
-    ]
-  },
-  {
-    "id": "falcomon",
-    "displayName": "Falcomon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "peckmon"
-    ]
-  },
-  {
-    "id": "flamon",
-    "displayName": "Flamon",
-    "aliases": [
-      "Flamemon"
-    ],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "agnimon"
-    ]
-  },
-  {
-    "id": "floramon",
-    "displayName": "Floramon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "kiwimon"
-    ]
-  },
-  {
-    "id": "gabumon",
-    "displayName": "Gabumon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "garurumon",
-      "drimogemon",
-      "bullmon"
-    ]
-  },
-  {
-    "id": "gaomon",
-    "displayName": "Gaomon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "gaogamon"
-    ]
-  },
-  {
-    "id": "gazimon",
-    "displayName": "Gazimon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "deltamon"
-    ]
-  },
-  {
-    "id": "goburimon",
-    "displayName": "Goburimon",
-    "aliases": [
-      "Goblimon"
-    ],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "ogremon"
-    ]
-  },
-  {
-    "id": "gomamon",
-    "displayName": "Gomamon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "ikkakumon"
-    ]
-  },
-  {
-    "id": "gotsumon",
-    "displayName": "Gotsumon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "icemon"
-    ]
-  },
-  {
-    "id": "guilmon",
-    "displayName": "Guilmon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "growlmon"
-    ]
-  },
-  {
-    "id": "hagurumon",
-    "displayName": "Hagurumon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "mechanorimon",
-      "guadromon"
-    ]
-  },
-  {
-    "id": "huckmon",
-    "displayName": "Huckmon",
-    "aliases": [
-      "Hackmon"
-    ],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "baohuckmon"
-    ]
-  },
-  {
-    "id": "impmon",
-    "displayName": "Impmon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "wizardmon"
-    ]
-  },
-  {
-    "id": "keramon",
-    "displayName": "Keramon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "chrysalimon"
-    ]
-  },
-  {
-    "id": "kotemon",
-    "displayName": "Kotemon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "gladimon"
-    ]
-  },
-  {
-    "id": "kudamon",
-    "displayName": "Kudamon",
-    "aliases": [
-      "Sleipmon"
-    ],
-    "stage": "Child",
-    "evolvesFrom": [
-      "tylinmon"
-    ],
-    "evolvesTo": [
-      "reppamon"
-    ]
-  },
-  {
-    "id": "lalamon",
-    "displayName": "Lalamon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "sunflowmon"
-    ]
-  },
-  {
-    "id": "lopmon",
-    "displayName": "Lopmon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "turueimon"
-    ]
-  },
-  {
-    "id": "lunamon",
-    "displayName": "Lunamon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "lekismon"
-    ]
-  },
-  {
-    "id": "monodramon",
-    "displayName": "Monodramon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "strikedramon"
-    ]
-  },
-  {
-    "id": "mushmon",
-    "displayName": "Mushmon",
-    "aliases": [
-      "Mushroomon"
-    ],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "woodmon"
-    ]
-  },
-  {
-    "id": "palmon",
-    "displayName": "Palmon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "togemon"
-    ]
-  },
-  {
-    "id": "patamon",
-    "displayName": "Patamon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "angemon",
-      "centaurmon"
-    ]
-  },
-  {
-    "id": "penmon",
-    "displayName": "Penmon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "yukidarumon",
-      "chackmon"
-    ]
-  },
-  {
-    "id": "phascomon",
-    "displayName": "Phascomon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "porcupamon"
-    ]
-  },
-  {
-    "id": "picodevimon",
-    "displayName": "PicoDevimon",
-    "aliases": [
-      "DemiDevimon"
-    ],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "devimon",
-      "icedevimon"
-    ]
-  },
-  {
-    "id": "piyomon",
-    "displayName": "Piyomon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "birdramon",
-      "cockatorimon"
-    ]
-  },
-  {
-    "id": "plotmon",
-    "displayName": "Plotmon",
-    "aliases": [
-      "Salamon"
-    ],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "tailmon",
-      "meicoomon"
-    ]
-  },
-  {
-    "id": "renamon",
-    "displayName": "Renamon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "kyubimon",
-      "youkomon"
-    ]
-  },
-  {
-    "id": "syakomon",
-    "displayName": "Syakomon",
-    "aliases": [
-      "Shakomon"
-    ],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "gesomon",
-      "ebidramon",
-      "shellmon"
-    ]
-  },
-  {
-    "id": "tentomon",
-    "displayName": "Tentomon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "kabuterimon",
-      "kuwagamon"
-    ]
-  },
-  {
-    "id": "terriermon",
-    "displayName": "Terriermon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "gargomon"
-    ]
-  },
-  {
-    "id": "tinkermon",
-    "displayName": "Tinkermon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "fairimon"
-    ]
-  },
-  {
-    "id": "tsukaimon",
-    "displayName": "Tsukaimon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "witchmon"
-    ]
-  },
-  {
-    "id": "tyumon",
-    "displayName": "Tyumon",
-    "aliases": [
-      "Chuumon"
-    ],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "numemon",
-      "scumon",
-      "nanimon"
-    ]
-  },
-  {
-    "id": "v-mon",
-    "displayName": "V-mon",
-    "aliases": [
-      "Veemon"
-    ],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "v-dramon",
-      "exveemon"
-    ]
-  },
-  {
-    "id": "wormmon",
-    "displayName": "Wormmon",
-    "aliases": [],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "stingmon"
-    ]
-  },
-  {
-    "id": "yukiagumon",
-    "displayName": "YukiAgumon",
-    "aliases": [
-      "SnowAgumon"
-    ],
-    "stage": "Child",
-    "evolvesFrom": [],
-    "evolvesTo": [
-      "mojyamon"
-    ]
-  },
-  {
-    "id": "agnimon",
-    "displayName": "Agnimon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "flamon"
-    ],
-    "evolvesTo": [
-      "vritramon"
-    ]
-  },
-  {
-    "id": "angemon",
-    "displayName": "Angemon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "patamon"
-    ],
-    "evolvesTo": [
-      "holyangemon"
-    ]
-  },
-  {
-    "id": "ankylomon",
-    "displayName": "Ankylomon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "armadimon"
-    ],
-    "evolvesTo": [
-      "brachimon",
-      "shakkoumon"
-    ]
-  },
-  {
-    "id": "bakemon",
-    "displayName": "Bakemon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "candlemon"
-    ],
-    "evolvesTo": [
-      "fantomon"
-    ]
-  },
-  {
-    "id": "baohuckmon",
-    "displayName": "BaoHuckmon",
-    "aliases": [
-      "BaoHackmon"
-    ],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "huckmon"
-    ],
-    "evolvesTo": [
-      "saviorhuckmon"
-    ]
-  },
-  {
-    "id": "birdramon",
-    "displayName": "Birdramon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "piyomon"
-    ],
-    "evolvesTo": [
-      "garudamon"
-    ]
-  },
-  {
-    "id": "blackgarurumon",
-    "displayName": "BlackGarurumon",
-    "aliases": [
-      "Garurumon (Black)"
-    ],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "blackgabumon"
-    ],
-    "evolvesTo": [
-      "blackweregarurumon"
-    ]
-  },
-  {
-    "id": "blackgreymon",
-    "displayName": "BlackGreymon",
-    "aliases": [
-      "Greymon (Blue)"
-    ],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "blackagumon"
-    ],
-    "evolvesTo": [
-      "blackmetalgreymon"
-    ]
-  },
-  {
-    "id": "bullmon",
-    "displayName": "Bullmon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "gabumon"
-    ],
-    "evolvesTo": [
-      "vajramon"
-    ]
-  },
-  {
-    "id": "centaurmon",
-    "displayName": "Centaurmon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "patamon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "chackmon",
-    "displayName": "Chackmon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "penmon"
-    ],
-    "evolvesTo": [
-      "blizzardmon"
-    ]
-  },
-  {
-    "id": "chrysalimon",
-    "displayName": "Chrysalimon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "keramon"
-    ],
-    "evolvesTo": [
-      "infermon"
-    ]
-  },
-  {
-    "id": "cockatorimon",
-    "displayName": "Cockatorimon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "piyomon"
-    ],
-    "evolvesTo": [
-      "parrotmon"
-    ]
-  },
-  {
-    "id": "deltamon",
-    "displayName": "Deltamon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "gazimon"
-    ],
-    "evolvesTo": [
-      "chimeramon"
-    ]
-  },
-  {
-    "id": "devimon",
-    "displayName": "Devimon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "picodevimon"
-    ],
-    "evolvesTo": [
-      "vamdemon"
-    ]
-  },
-  {
-    "id": "dorugamon",
-    "displayName": "Dorugamon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "dorumon"
-    ],
-    "evolvesTo": [
-      "dorugreymon"
-    ]
-  },
-  {
-    "id": "drimogemon",
-    "displayName": "Drimogemon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "gabumon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "ebidramon",
-    "displayName": "Ebidramon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "syakomon"
-    ],
-    "evolvesTo": [
-      "whamon"
-    ]
-  },
-  {
-    "id": "exveemon",
-    "displayName": "ExVeemon",
-    "aliases": [
-      "XV-Mon"
-    ],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "v-mon"
-    ],
-    "evolvesTo": [
-      "paildramon"
-    ]
-  },
-  {
-    "id": "fairimon",
-    "displayName": "Fairimon",
-    "aliases": [
-      "Kazemon"
-    ],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "tinkermon"
-    ],
-    "evolvesTo": [
-      "shutumon"
-    ]
-  },
-  {
-    "id": "firamon",
-    "displayName": "Firamon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "coronamon"
-    ],
-    "evolvesTo": [
-      "flaremon"
-    ]
-  },
-  {
-    "id": "gaogamon",
-    "displayName": "Gaogamon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "gaomon"
-    ],
-    "evolvesTo": [
-      "machgaogamon"
-    ]
-  },
-  {
-    "id": "gargomon",
-    "displayName": "Gargomon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "terriermon"
-    ],
-    "evolvesTo": [
-      "rapidmon"
-    ]
-  },
-  {
-    "id": "garurumon",
-    "displayName": "Garurumon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "gabumon"
-    ],
-    "evolvesTo": [
-      "weregarurumon"
-    ]
-  },
-  {
-    "id": "geogreymon",
-    "displayName": "GeoGreymon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "agumon"
-    ],
-    "evolvesTo": [
-      "rizegreymon"
-    ]
-  },
-  {
-    "id": "gesomon",
-    "displayName": "Gesomon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "syakomon"
-    ],
-    "evolvesTo": [
-      "marindevimon"
-    ]
-  },
-  {
-    "id": "ginryumon",
-    "displayName": "Ginryumon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "dorumon"
-    ],
-    "evolvesTo": [
-      "hisharyumon"
-    ]
-  },
-  {
-    "id": "gladimon",
-    "displayName": "Gladimon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "kotemon"
-    ],
-    "evolvesTo": [
-      "knightmon"
-    ]
-  },
-  {
-    "id": "greymon",
-    "displayName": "Greymon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "agumon"
-    ],
-    "evolvesTo": [
-      "metalgreymon",
-      "skullgreymon"
-    ]
-  },
-  {
-    "id": "growlmon",
-    "displayName": "Growlmon",
-    "aliases": [
-      "Growmon"
-    ],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "guilmon"
-    ],
-    "evolvesTo": [
-      "wargrowlmon"
-    ]
-  },
-  {
-    "id": "guadromon",
-    "displayName": "Guadromon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "hagurumon"
-    ],
-    "evolvesTo": [
-      "andromon"
-    ]
-  },
-  {
-    "id": "icedevimon",
-    "displayName": "IceDevimon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "picodevimon"
-    ],
-    "evolvesTo": [
-      "skullsatamon"
-    ]
-  },
-  {
-    "id": "icemon",
-    "displayName": "Icemon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "gotsumon"
-    ],
-    "evolvesTo": [
-      "meteormon"
-    ]
-  },
-  {
-    "id": "ikkakumon",
-    "displayName": "Ikkakumon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "gomamon"
-    ],
-    "evolvesTo": [
-      "zudomon"
-    ]
-  },
-  {
-    "id": "kabuterimon",
-    "displayName": "Kabuterimon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "tentomon"
-    ],
-    "evolvesTo": [
-      "atlurkabuterimon"
-    ]
-  },
-  {
-    "id": "kiwimon",
-    "displayName": "Kiwimon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "floramon"
-    ],
-    "evolvesTo": [
-      "delumon"
-    ]
-  },
-  {
-    "id": "kuwagamon",
-    "displayName": "Kuwagamon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "tentomon"
-    ],
-    "evolvesTo": [
-      "okuwamon"
-    ]
-  },
-  {
-    "id": "kyubimon",
-    "displayName": "Kyubimon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "renamon"
-    ],
-    "evolvesTo": [
-      "taomon"
-    ]
-  },
-  {
-    "id": "lekismon",
-    "displayName": "Lekismon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "lunamon"
-    ],
-    "evolvesTo": [
-      "crescemon"
-    ]
-  },
-  {
-    "id": "leomon",
-    "displayName": "Leomon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "elecmon"
-    ],
-    "evolvesTo": [
-      "panjyamon",
-      "grapleomon"
-    ]
-  },
-  {
-    "id": "mechanorimon",
-    "displayName": "Mechanorimon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "hagurumon"
-    ],
-    "evolvesTo": [
-      "nanomon"
-    ]
-  },
-  {
-    "id": "meicoomon",
-    "displayName": "Meicoomon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "plotmon"
-    ],
-    "evolvesTo": [
-      "meicrackmon-viscious-mode"
-    ]
-  },
-  {
-    "id": "meramon",
-    "displayName": "Meramon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "candlemon"
-    ],
-    "evolvesTo": [
-      "skullmeramon",
-      "asuramon"
-    ]
-  },
-  {
-    "id": "mojyamon",
-    "displayName": "Mojyamon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "yukiagumon"
-    ],
-    "evolvesTo": [
-      "mammothmon"
-    ]
-  },
-  {
-    "id": "nanimon",
-    "displayName": "Nanimon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "tyumon"
-    ],
-    "evolvesTo": [
-      "etemon"
-    ]
-  },
-  {
-    "id": "numemon",
-    "displayName": "Numemon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "tyumon"
-    ],
-    "evolvesTo": [
-      "monzaemon"
-    ]
-  },
-  {
-    "id": "ogremon",
-    "displayName": "Ogremon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "goburimon"
-    ],
-    "evolvesTo": [
-      "digitamamon"
-    ]
-  },
-  {
-    "id": "peckmon",
-    "displayName": "Peckmon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "falcomon"
-    ],
-    "evolvesTo": [
-      "yatagaramon"
-    ]
-  },
-  {
-    "id": "porcupamon",
-    "displayName": "Porcupamon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "phascomon"
-    ],
-    "evolvesTo": [
-      "astamon"
-    ]
-  },
-  {
-    "id": "reppamon",
-    "displayName": "Reppamon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "kudamon"
-    ],
-    "evolvesTo": [
-      "tylinmon"
-    ]
-  },
-  {
-    "id": "scumon",
-    "displayName": "Scumon",
-    "aliases": [
-      "Sukamon"
-    ],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "tyumon"
-    ],
-    "evolvesTo": [
-      "gerbemon"
-    ]
-  },
-  {
-    "id": "seadramon",
-    "displayName": "Seadramon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "betamon"
-    ],
-    "evolvesTo": [
-      "megaseadramon"
-    ]
-  },
-  {
-    "id": "shellmon",
-    "displayName": "Shellmon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "syakomon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "stingmon",
-    "displayName": "Stingmon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "wormmon"
-    ],
-    "evolvesTo": [
-      "jewelbeemon"
-    ]
-  },
-  {
-    "id": "strikedramon",
-    "displayName": "Strikedramon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "monodramon"
-    ],
-    "evolvesTo": [
-      "cyberdramon"
-    ]
-  },
-  {
-    "id": "sunflowmon",
-    "displayName": "Sunflowmon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "lalamon"
-    ],
-    "evolvesTo": [
-      "lilamon"
-    ]
-  },
-  {
-    "id": "tailmon",
-    "displayName": "Tailmon",
-    "aliases": [
-      "Gatomon"
-    ],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "plotmon"
-    ],
-    "evolvesTo": [
-      "angewomon"
-    ]
-  },
-  {
-    "id": "togemon",
-    "displayName": "Togemon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "palmon"
-    ],
-    "evolvesTo": [
-      "lilimon"
-    ]
-  },
-  {
-    "id": "tunomon",
-    "displayName": "Tunomon",
-    "aliases": [
-      "Unimon"
-    ],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "cutemon"
-    ],
-    "evolvesTo": [
-      "picklemon"
-    ]
-  },
-  {
-    "id": "turueimon",
-    "displayName": "Turueimon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "lopmon"
-    ],
-    "evolvesTo": [
-      "andiramon"
-    ]
-  },
-  {
-    "id": "tyranomon",
-    "displayName": "Tyranomon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "agumon"
-    ],
-    "evolvesTo": [
-      "megadramon"
-    ]
-  },
-  {
-    "id": "v-dramon",
-    "displayName": "V-Dramon",
-    "aliases": [
-      "Veedramon"
-    ],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "v-mon"
-    ],
-    "evolvesTo": [
-      "aerov-dramon"
-    ]
-  },
-  {
-    "id": "witchmon",
-    "displayName": "Witchmon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "tsukaimon"
-    ],
-    "evolvesTo": [
-      "ladydevimon",
-      "bastemon"
-    ]
-  },
-  {
-    "id": "wizardmon",
-    "displayName": "Wizardmon",
-    "aliases": [
-      "Wizarmon"
-    ],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "impmon"
-    ],
-    "evolvesTo": [
-      "wisemon",
-      "baalmon"
-    ]
-  },
-  {
-    "id": "woodmon",
-    "displayName": "Woodmon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "mushmon"
-    ],
-    "evolvesTo": [
-      "jyureimon"
-    ]
-  },
-  {
-    "id": "youkomon",
-    "displayName": "Youkomon",
-    "aliases": [],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "renamon"
-    ],
-    "evolvesTo": [
-      "doumon"
-    ]
-  },
-  {
-    "id": "yukidarumon",
-    "displayName": "Yukidarumon",
-    "aliases": [
-      "Yukiimon"
-    ],
-    "stage": "Adult",
-    "evolvesFrom": [
-      "penmon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "aerov-dramon",
-    "displayName": "AeroV-Dramon",
-    "aliases": [
-      "AeroVeedramon"
-    ],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "v-dramon"
-    ],
-    "evolvesTo": [
-      "ulforcev-dramon",
-      "dynasmon"
-    ]
-  },
-  {
-    "id": "andiramon",
-    "displayName": "Andiramon",
-    "aliases": [
-      "Antylamon"
-    ],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "turueimon"
-    ],
-    "evolvesTo": [
-      "whitecherubimon",
-      "blackcherubimon"
-    ],
-    "groups": [
-      "Devas"
-    ]
-  },
-  {
-    "id": "andromon",
-    "displayName": "Andromon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "guadromon"
-    ],
-    "evolvesTo": [
-      "hiandromon"
-    ]
-  },
-  {
-    "id": "angewomon",
-    "displayName": "Angewomon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "tailmon"
-    ],
-    "evolvesTo": [
-      "ophanimon",
-      "venusmon"
-    ]
-  },
-  {
-    "id": "astamon",
-    "displayName": "Astamon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "porcupamon"
-    ],
-    "evolvesTo": [
-      "belphemon-sleep-mode",
-      "magnakidmon"
-    ]
-  },
-  {
-    "id": "asuramon",
-    "displayName": "Asuramon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "meramon"
-    ],
-    "evolvesTo": [
-      "vulcanusmon"
-    ]
-  },
-  {
-    "id": "atlurkabuterimon",
-    "displayName": "AtlurKabuterimon",
-    "aliases": [
-      "MegaKabuterimon"
-    ],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "kabuterimon"
-    ],
-    "evolvesTo": [
-      "herculeskabuterimon"
-    ]
-  },
-  {
-    "id": "baalmon",
-    "displayName": "Baalmon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "wizardmon"
-    ],
-    "evolvesTo": [
-      "beelzemon"
-    ]
-  },
-  {
-    "id": "bastemon",
-    "displayName": "Bastemon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "witchmon"
-    ],
-    "evolvesTo": [
-      "babamon"
-    ]
-  },
-  {
-    "id": "blackmetalgreymon",
-    "displayName": "BlackMetalGreymon",
-    "aliases": [
-      "MetalGreymon (Blue)"
-    ],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "blackgreymon"
-    ],
-    "evolvesTo": [
-      "blackwargreymon"
-    ]
-  },
-  {
-    "id": "blackweregarurumon",
-    "displayName": "BlackWereGarurumon",
-    "aliases": [
-      "WereGarurumon (Black)"
-    ],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "blackgarurumon"
-    ],
-    "evolvesTo": [
-      "blackmetalgarurumon"
-    ]
-  },
-  {
-    "id": "blizzardmon",
-    "displayName": "Blizzardmon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "chackmon"
-    ],
-    "evolvesTo": [
-      "daipenmon"
-    ]
-  },
-  {
-    "id": "brachimon",
-    "displayName": "Brachimon",
-    "aliases": [
-      "Brachiomon"
-    ],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "ankylomon"
-    ],
-    "evolvesTo": [
-      "plesiomon"
-    ]
-  },
-  {
-    "id": "chimeramon",
-    "displayName": "Chimeramon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "deltamon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "crescemon",
-    "displayName": "Crescemon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "lekismon"
-    ],
-    "evolvesTo": [
-      "dianamon"
-    ]
-  },
-  {
-    "id": "cyberdramon",
-    "displayName": "Cyberdramon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "strikedramon"
-    ],
-    "evolvesTo": [
-      "justimon",
-      "fujinmon"
-    ]
-  },
-  {
-    "id": "delumon",
-    "displayName": "Delumon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "kiwimon"
-    ],
-    "evolvesTo": [
-      "griffomon"
-    ]
-  },
-  {
-    "id": "digitamamon",
-    "displayName": "Digitamamon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "ogremon"
-    ],
-    "evolvesTo": [
-      "titamon"
-    ]
-  },
-  {
-    "id": "dorugreymon",
-    "displayName": "DoruGreymon",
-    "aliases": [
-      "Doruguremon"
-    ],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "dorugamon"
-    ],
-    "evolvesTo": [
-      "dorugoramon"
-    ]
-  },
-  {
-    "id": "doumon",
-    "displayName": "Doumon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "youkomon"
-    ],
-    "evolvesTo": [
-      "kuzuhamon"
-    ]
-  },
-  {
-    "id": "etemon",
-    "displayName": "Etemon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "nanimon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "fantomon",
-    "displayName": "Fantomon",
-    "aliases": [
-      "Phantomon"
-    ],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "bakemon"
-    ],
-    "evolvesTo": [
-      "piedmon"
-    ]
-  },
-  {
-    "id": "flaremon",
-    "displayName": "Flaremon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "firamon"
-    ],
-    "evolvesTo": [
-      "apollomon"
-    ]
-  },
-  {
-    "id": "garudamon",
-    "displayName": "Garudamon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "birdramon"
-    ],
-    "evolvesTo": [
-      "hououmon"
-    ]
-  },
-  {
-    "id": "gerbemon",
-    "displayName": "Gerbemon",
-    "aliases": [
-      "Garbagemon"
-    ],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "scumon"
-    ],
-    "evolvesTo": [
-      "parasimon"
-    ]
-  },
-  {
-    "id": "grapleomon",
-    "displayName": "GrapLeomon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "leomon"
-    ],
-    "evolvesTo": [
-      "banchouleomon"
-    ]
-  },
-  {
-    "id": "hisharyumon",
-    "displayName": "Hisharyumon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "ginryumon"
-    ],
-    "evolvesTo": [
-      "ouryumon"
-    ]
-  },
-  {
-    "id": "holyangemon",
-    "displayName": "HolyAngemon",
-    "aliases": [
-      "MagnaAngemon"
-    ],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "angemon"
-    ],
-    "evolvesTo": [
-      "seraphimon"
-    ]
-  },
-  {
-    "id": "infermon",
-    "displayName": "Infermon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "chrysalimon"
-    ],
-    "evolvesTo": [
-      "diablomon"
-    ]
-  },
-  {
-    "id": "jewelbeemon",
-    "displayName": "JewelBeemon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "stingmon"
-    ],
-    "evolvesTo": [
-      "banchoustingmon"
-    ]
-  },
-  {
-    "id": "jyureimon",
-    "displayName": "Jyureimon",
-    "aliases": [
-      "Cherrymon"
-    ],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "woodmon"
-    ],
-    "evolvesTo": [
-      "pinochimon"
-    ]
-  },
-  {
-    "id": "knightmon",
-    "displayName": "Knightmon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "gladimon"
-    ],
-    "evolvesTo": [
-      "lordknightmon",
-      "craniummon",
-      "leopardmon"
-    ]
-  },
-  {
-    "id": "ladydevimon",
-    "displayName": "LadyDevimon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "witchmon"
-    ],
-    "evolvesTo": [
-      "lillithmon"
-    ]
-  },
-  {
-    "id": "lilamon",
-    "displayName": "Lilamon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "sunflowmon"
-    ],
-    "evolvesTo": [
-      "minervamon"
-    ]
-  },
-  {
-    "id": "lilimon",
-    "displayName": "Lilimon",
-    "aliases": [
-      "Lillymon"
-    ],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "togemon"
-    ],
-    "evolvesTo": [
-      "rosemon",
-      "bancoulilimon"
-    ]
-  },
-  {
-    "id": "machgaogamon",
-    "displayName": "MachGaogamon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "gaogamon"
-    ],
-    "evolvesTo": [
-      "miragegaogamon"
-    ]
-  },
-  {
-    "id": "mammothmon",
-    "displayName": "Mammothmon",
-    "aliases": [
-      "Mammon"
-    ],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "mojyamon"
-    ],
-    "evolvesTo": [
-      "skullmammothmon"
-    ]
-  },
-  {
-    "id": "marindevimon",
-    "displayName": "MarinDevimon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "gesomon"
-    ],
-    "evolvesTo": [
-      "leviamon"
-    ]
-  },
-  {
-    "id": "megadramon",
-    "displayName": "Megadramon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "tyranomon"
-    ],
-    "evolvesTo": [
-      "chaosdramon"
-    ]
-  },
-  {
-    "id": "megaseadramon",
-    "displayName": "MegaSeadramon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "seadramon"
-    ],
-    "evolvesTo": [
-      "metalseadramon"
-    ]
-  },
-  {
-    "id": "meicrackmon-viscious-mode",
-    "displayName": "Meicrackmon Viscious Mode",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "meicoomon"
-    ],
-    "evolvesTo": [
-      "raguelmon"
-    ]
-  },
-  {
-    "id": "metalgreymon",
-    "displayName": "MetalGreymon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "greymon"
-    ],
-    "evolvesTo": [
-      "wargreymon",
-      "blitzgreymon"
-    ]
-  },
-  {
-    "id": "meteormon",
-    "displayName": "Meteormon",
-    "aliases": [
-      "Insekimon"
-    ],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "icemon"
-    ],
-    "evolvesTo": [
-      "ancientvolcamon"
-    ]
-  },
-  {
-    "id": "monzaemon",
-    "displayName": "Monzaemon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "numemon"
-    ],
-    "evolvesTo": [
-      "jijimon"
-    ]
-  },
-  {
-    "id": "nanomon",
-    "displayName": "Nanomon",
-    "aliases": [
-      "Datamon"
-    ],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "mechanorimon"
-    ],
-    "evolvesTo": [
-      "raijinmon"
-    ]
-  },
-  {
-    "id": "okuwamon",
-    "displayName": "Okuwamon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "kuwagamon"
-    ],
-    "evolvesTo": [
-      "grankuwagamon"
-    ]
-  },
-  {
-    "id": "paildramon",
-    "displayName": "Paildramon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "exveemon"
-    ],
-    "evolvesTo": [
-      "imperialdramon-dragon-mode",
-      "magnamon"
-    ]
-  },
-  {
-    "id": "panjyamon",
-    "displayName": "Panjyamon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "leomon"
-    ],
-    "evolvesTo": [
-      "saberleomon"
-    ]
-  },
-  {
-    "id": "parrotmon",
-    "displayName": "Parrotmon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "cockatorimon"
-    ],
-    "evolvesTo": [
-      "crossmon"
-    ]
-  },
-  {
-    "id": "picklemon",
-    "displayName": "Picklemon",
-    "aliases": [
-      "Piximon"
-    ],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "tunomon"
-    ],
-    "evolvesTo": [
-      "marinangemon"
-    ]
-  },
-  {
-    "id": "rapidmon",
-    "displayName": "Rapidmon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "gargomon"
-    ],
-    "evolvesTo": [
-      "saintgargomon"
-    ]
-  },
-  {
-    "id": "rizegreymon",
-    "displayName": "RizeGreymon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "geogreymon"
-    ],
-    "evolvesTo": [
-      "shinegreymon",
-      "victorygreymon"
-    ]
-  },
-  {
-    "id": "saviorhuckmon",
-    "displayName": "SaviorHuckmon",
-    "aliases": [
-      "SaviorHackmon"
-    ],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "baohuckmon"
-    ],
-    "evolvesTo": [
-      "jesmon"
-    ]
-  },
-  {
-    "id": "shakkoumon",
-    "displayName": "Shakkoumon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "ankylomon"
-    ],
-    "evolvesTo": [
-      "slashangemon"
-    ]
-  },
-  {
-    "id": "shutumon",
-    "displayName": "Shutumon",
-    "aliases": [
-      "Zephyrmon"
-    ],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "fairimon"
-    ],
-    "evolvesTo": [
-      "junomon"
-    ]
-  },
-  {
-    "id": "skullgreymon",
-    "displayName": "SkullGreymon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "greymon"
-    ],
-    "evolvesTo": [
-      "mugendramon"
-    ]
-  },
-  {
-    "id": "skullmeramon",
-    "displayName": "SkullMeramon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "meramon"
-    ],
-    "evolvesTo": [
-      "gankoomon"
-    ]
-  },
-  {
-    "id": "skullsatamon",
-    "displayName": "SkullSatamon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "icedevimon"
-    ],
-    "evolvesTo": [
-      "demon",
-      "barbamon"
-    ]
-  },
-  {
-    "id": "taomon",
-    "displayName": "Taomon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "kyubimon"
-    ],
-    "evolvesTo": [
-      "sakuyalon"
-    ]
-  },
-  {
-    "id": "tylinmon",
-    "displayName": "Tylinmon",
-    "aliases": [
-      "Kirinmon"
-    ],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "reppamon"
-    ],
-    "evolvesTo": [
-      "kudamon"
-    ]
-  },
-  {
-    "id": "vajramon",
-    "displayName": "Vajramon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "bullmon"
-    ],
-    "evolvesTo": [
-      "zanbamon"
-    ],
-    "groups": [
-      "Devas"
-    ]
-  },
-  {
-    "id": "vamdemon",
-    "displayName": "Vamdemon",
-    "aliases": [
-      "Myotismon"
-    ],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "devimon"
-    ],
-    "evolvesTo": [
-      "venomvamdemon",
-      "belialvamdemon"
-    ]
-  },
-  {
-    "id": "vritramon",
-    "displayName": "Vritramon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "agnimon"
-    ],
-    "evolvesTo": [
-      "ancientgreymon"
-    ]
-  },
-  {
-    "id": "wargrowlmon",
-    "displayName": "WarGrowlmon",
-    "aliases": [
-      "MegaloGrowmon"
-    ],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "growlmon"
-    ],
-    "evolvesTo": [
-      "dukemon"
-    ]
-  },
-  {
-    "id": "weregarurumon",
-    "displayName": "WereGarurumon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "garurumon"
-    ],
-    "evolvesTo": [
-      "metalgarurumon",
-      "z-dgarurumon",
-      "cresgarurumon"
-    ]
-  },
-  {
-    "id": "whamon",
-    "displayName": "Whamon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "ebidramon"
-    ],
-    "evolvesTo": [
-      "naptunemon"
-    ]
-  },
-  {
-    "id": "wisemon",
-    "displayName": "Wisemon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "wizardmon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "yatagaramon",
-    "displayName": "Yatagaramon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "peckmon"
-    ],
-    "evolvesTo": [
-      "valdurmon",
-      "ravemon"
-    ]
-  },
-  {
-    "id": "zudomon",
-    "displayName": "Zudomon",
-    "aliases": [],
-    "stage": "Perfect",
-    "evolvesFrom": [
-      "ikkakumon"
-    ],
-    "evolvesTo": [
-      "vikemon"
-    ]
-  },
-  {
-    "id": "ancientgreymon",
-    "displayName": "AncientGreymon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "vritramon"
-    ],
-    "evolvesTo": [],
-    "groups": [
-      "Ten Warriors"
-    ]
-  },
-  {
-    "id": "ancientvolcamon",
-    "displayName": "AncientVolcamon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "meteormon"
-    ],
-    "evolvesTo": [],
-    "groups": [
-      "Ten Warriors"
-    ]
-  },
-  {
-    "id": "apollomon",
-    "displayName": "Apollomon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "flaremon"
-    ],
-    "evolvesTo": [
-      "gracenovamon"
-    ],
-    "groups": [
-      "Olympus Twelve gods"
-    ]
-  },
-  {
-    "id": "babamon",
-    "displayName": "Babamon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "bastemon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "banchouleomon",
-    "displayName": "BanchouLeomon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "grapleomon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "banchoustingmon",
-    "displayName": "BanchouStingmon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "jewelbeemon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "bancoulilimon",
-    "displayName": "BancouLilimon",
-    "aliases": [
-      "BanchouLillymon"
-    ],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "lilimon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "barbamon",
-    "displayName": "Barbamon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "skullsatamon"
-    ],
-    "evolvesTo": [],
-    "groups": [
-      "Seven Great Demon Lord"
-    ]
-  },
-  {
-    "id": "beelzemon",
-    "displayName": "Beelzemon",
-    "aliases": [
-      "Beelzebumon"
-    ],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "baalmon"
-    ],
-    "evolvesTo": [],
-    "groups": [
-      "Seven Great Demon Lord"
-    ]
-  },
-  {
-    "id": "belialvamdemon",
-    "displayName": "BelialVamdemon",
-    "aliases": [
-      "MaloMyotismon"
-    ],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "vamdemon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "belphemon-sleep-mode",
-    "displayName": "Belphemon Sleep Mode",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "astamon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "blackcherubimon",
-    "displayName": "BlackCherubimon",
-    "aliases": [
-      "Cherubimon (Vice)"
-    ],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "andiramon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "blackmetalgarurumon",
-    "displayName": "BlackMetalGarurumon",
-    "aliases": [
-      "MetalGarurumon (Black)"
-    ],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "blackweregarurumon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "blackwargreymon",
-    "displayName": "BlackWarGreymon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "blackmetalgreymon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "blitzgreymon",
-    "displayName": "BlitzGreymon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "metalgreymon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "chaosdramon",
-    "displayName": "Chaosdramon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "megadramon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "craniummon",
-    "displayName": "Craniummon",
-    "aliases": [
-      "Craniamon"
-    ],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "knightmon"
-    ],
-    "evolvesTo": [],
-    "groups": [
-      "Royal Knights"
-    ]
-  },
-  {
-    "id": "cresgarurumon",
-    "displayName": "CresGarurumon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "weregarurumon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "crossmon",
-    "displayName": "Crossmon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "parrotmon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "daipenmon",
-    "displayName": "DaiPenmon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "blizzardmon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "demon",
-    "displayName": "Demon",
-    "aliases": [
-      "Daemon"
-    ],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "skullsatamon"
-    ],
-    "evolvesTo": [],
-    "groups": [
-      "Seven Great Demon Lord"
-    ]
-  },
-  {
-    "id": "diablomon",
-    "displayName": "Diablomon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "infermon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "dianamon",
-    "displayName": "Dianamon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "crescemon"
-    ],
-    "evolvesTo": [
-      "gracenovamon"
-    ],
-    "groups": [
-      "Olympus Twelve gods"
-    ]
-  },
-  {
-    "id": "dorugoramon",
-    "displayName": "Dorugoramon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "dorugreymon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "dukemon",
-    "displayName": "Dukemon",
-    "aliases": [
-      "Gallantmon"
-    ],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "wargrowlmon"
-    ],
-    "evolvesTo": [],
-    "groups": [
-      "Royal Knights"
-    ]
-  },
-  {
-    "id": "dynasmon",
-    "displayName": "Dynasmon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "aerov-dramon"
-    ],
-    "evolvesTo": [
-      "dynasmon-x"
-    ],
-    "groups": [
-      "Royal Knights"
-    ]
-  },
-  {
-    "id": "fujinmon",
-    "displayName": "Fujinmon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "cyberdramon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "gankoomon",
-    "displayName": "Gankoomon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "skullmeramon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "grankuwagamon",
-    "displayName": "GranKuwagamon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "okuwamon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "griffomon",
-    "displayName": "Griffomon",
-    "aliases": [
-      "Gryphonmon"
-    ],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "delumon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "herculeskabuterimon",
-    "displayName": "HerculesKabuterimon",
-    "aliases": [
-      "HerakleKabuterimon"
-    ],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "atlurkabuterimon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "hiandromon",
-    "displayName": "HiAndromon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "andromon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "hououmon",
-    "displayName": "Hououmon",
-    "aliases": [
-      "Phoenixmon"
-    ],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "garudamon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "imperialdramon-dragon-mode",
-    "displayName": "Imperialdramon Dragon Mode",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "paildramon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "jesmon",
-    "displayName": "Jesmon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "saviorhuckmon"
-    ],
-    "evolvesTo": [],
-    "groups": [
-      "Royal Knights"
-    ]
-  },
-  {
-    "id": "jijimon",
-    "displayName": "Jijimon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "monzaemon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "junomon",
-    "displayName": "Junomon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "shutumon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "justimon",
-    "displayName": "Justimon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "cyberdramon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "kuzuhamon",
-    "displayName": "Kuzuhamon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "doumon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "leopardmon",
-    "displayName": "Leopardmon",
-    "aliases": [
-      "Duftmon"
-    ],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "knightmon"
-    ],
-    "evolvesTo": [],
-    "groups": [
-      "Royal Knights"
-    ]
-  },
-  {
-    "id": "leviamon",
-    "displayName": "Leviamon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "marindevimon"
-    ],
-    "evolvesTo": [],
-    "groups": [
-      "Seven Great Demon Lord"
-    ]
-  },
-  {
-    "id": "lillithmon",
-    "displayName": "Lillithmon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "ladydevimon"
-    ],
-    "evolvesTo": [
-      "lillithmon-x"
-    ],
-    "groups": [
-      "Seven Great Demon Lord"
-    ]
-  },
-  {
-    "id": "lordknightmon",
-    "displayName": "LordKnightmon",
-    "aliases": [
-      "Crusadermon"
-    ],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "knightmon"
-    ],
-    "evolvesTo": [],
-    "groups": [
-      "Royal Knights"
-    ]
-  },
-  {
-    "id": "magnakidmon",
-    "displayName": "MagnaKidmon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "astamon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "magnamon",
-    "displayName": "Magnamon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "paildramon"
-    ],
-    "evolvesTo": [
-      "magnamon-x"
-    ],
-    "groups": [
-      "Royal Knights"
-    ]
-  },
-  {
-    "id": "marinangemon",
-    "displayName": "MarinAngemon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "picklemon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "metalgarurumon",
-    "displayName": "MetalGarurumon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "weregarurumon"
-    ],
-    "evolvesTo": [
-      "omegamon"
-    ]
-  },
-  {
-    "id": "metalseadramon",
-    "displayName": "MetalSeadramon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "megaseadramon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "minervamon",
-    "displayName": "Minervamon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "lilamon"
-    ],
-    "evolvesTo": [],
-    "groups": [
-      "Olympus Twelve gods"
-    ]
-  },
-  {
-    "id": "miragegaogamon",
-    "displayName": "MirageGaogamon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "machgaogamon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "mugendramon",
-    "displayName": "Mugendramon",
-    "aliases": [
-      "Machinedramon"
-    ],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "skullgreymon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "naptunemon",
-    "displayName": "Naptunemon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "whamon"
-    ],
-    "evolvesTo": [],
-    "groups": [
-      "Olympus Twelve gods"
-    ]
-  },
-  {
-    "id": "ophanimon",
-    "displayName": "Ophanimon",
-    "aliases": [
-      "Ofanimon"
-    ],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "angewomon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "ouryumon",
-    "displayName": "Ouryumon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "hisharyumon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "parasimon",
-    "displayName": "Parasimon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "gerbemon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "piedmon",
-    "displayName": "Piedmon",
-    "aliases": [
-      "Piemon"
-    ],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "fantomon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "pinochimon",
-    "displayName": "Pinochimon",
-    "aliases": [
-      "Puppetmon"
-    ],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "jyureimon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "plesiomon",
-    "displayName": "Plesiomon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "brachimon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "raguelmon",
-    "displayName": "Raguelmon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "meicrackmon-viscious-mode"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "raijinmon",
-    "displayName": "Raijinmon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "nanomon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "ravemon",
-    "displayName": "Ravemon",
-    "aliases": [
-      "Ravmon"
-    ],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "yatagaramon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "rosemon",
-    "displayName": "Rosemon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "lilimon"
-    ],
-    "evolvesTo": [
-      "rosemon-burst-mode"
-    ]
-  },
-  {
-    "id": "saberleomon",
-    "displayName": "SaberLeomon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "panjyamon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "saintgargomon",
-    "displayName": "SaintGargomon",
-    "aliases": [
-      "SaintGalgomon"
-    ],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "rapidmon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "sakuyalon",
-    "displayName": "Sakuyalon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "taomon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "seraphimon",
-    "displayName": "Seraphimon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "holyangemon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "shinegreymon",
-    "displayName": "ShineGreymon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "rizegreymon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "skullmammothmon",
-    "displayName": "SkullMammothmon",
-    "aliases": [
-      "SkullMammon"
-    ],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "mammothmon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "slashangemon",
-    "displayName": "SlashAngemon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "shakkoumon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "titamon",
-    "displayName": "Titamon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "digitamamon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "ulforcev-dramon",
-    "displayName": "UlforceV-Dramon",
-    "aliases": [
-      "UlforceVeedramon"
-    ],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "aerov-dramon"
-    ],
-    "evolvesTo": [],
-    "groups": [
-      "Royal Knights"
-    ]
-  },
-  {
-    "id": "valdurmon",
-    "displayName": "Valdurmon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "yatagaramon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "venomvamdemon",
-    "displayName": "VenomVamdemon",
-    "aliases": [
-      "VenomMyotismon"
-    ],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "vamdemon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "venusmon",
-    "displayName": "Venusmon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "angewomon"
-    ],
-    "evolvesTo": [],
-    "groups": [
-      "Olympus Twelve gods"
-    ]
-  },
-  {
-    "id": "victorygreymon",
-    "displayName": "VictoryGreymon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "rizegreymon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "vikemon",
-    "displayName": "Vikemon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "zudomon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "vulcanusmon",
-    "displayName": "Vulcanusmon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "asuramon"
-    ],
-    "evolvesTo": [],
-    "groups": [
-      "Olympus Twelve gods"
-    ]
-  },
-  {
-    "id": "wargreymon",
-    "displayName": "WarGreymon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "metalgreymon"
-    ],
-    "evolvesTo": [
-      "wargreymon-x",
-      "omegamon"
-    ]
-  },
-  {
-    "id": "whitecherubimon",
-    "displayName": "WhiteCherubimon",
-    "aliases": [
-      "Cherubimon (Virtue)"
-    ],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "andiramon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "z-dgarurumon",
-    "displayName": "Z'dGarurumon",
-    "aliases": [
-      "ZeedGarurumon"
-    ],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "weregarurumon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "zanbamon",
-    "displayName": "Zanbamon",
-    "aliases": [],
-    "stage": "Ultimate",
-    "evolvesFrom": [
-      "vajramon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "dynasmon-x",
-    "displayName": "Dynasmon X",
-    "aliases": [],
-    "stage": "Ultimate+",
-    "evolvesFrom": [
-      "dynasmon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "gracenovamon",
-    "displayName": "Gracenovamon",
-    "aliases": [],
-    "stage": "Ultimate+",
-    "evolvesFrom": [
-      "apollomon",
-      "dianamon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "lillithmon-x",
-    "displayName": "Lillithmon X",
-    "aliases": [],
-    "stage": "Ultimate+",
-    "evolvesFrom": [
-      "lillithmon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "magnamon-x",
-    "displayName": "Magnamon X",
-    "aliases": [],
-    "stage": "Ultimate+",
-    "evolvesFrom": [
-      "magnamon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "omegamon",
-    "displayName": "Omegamon",
-    "aliases": [
-      "Omnimon"
-    ],
-    "stage": "Ultimate+",
-    "evolvesFrom": [
-      "wargreymon",
-      "metalgarurumon"
-    ],
-    "evolvesTo": [],
-    "groups": [
-      "Royal Knights"
-    ]
-  },
-  {
-    "id": "rosemon-burst-mode",
-    "displayName": "Rosemon Burst Mode",
-    "aliases": [],
-    "stage": "Ultimate+",
-    "evolvesFrom": [
-      "rosemon"
-    ],
-    "evolvesTo": []
-  },
-  {
-    "id": "wargreymon-x",
-    "displayName": "WarGreymon X",
-    "aliases": [],
-    "stage": "Ultimate+",
-    "evolvesFrom": [
-      "wargreymon"
-    ],
-    "evolvesTo": []
-  }
+{
+"id": "agumon",
+"displayName": "Agumon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"greymon",
+"geogreymon",
+"tyranomon"
+],
+"groups": []
+},
+{
+"id": "armadimon",
+"displayName": "Armadimon",
+"aliases": [
+"Armadilomon"
+],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"ankylomon"
+],
+"groups": []
+},
+{
+"id": "betamon",
+"displayName": "Betamon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"seadramon"
+],
+"groups": []
+},
+{
+"id": "blackagumon",
+"displayName": "BlackAgumon",
+"aliases": [
+"Agumon (Black)"
+],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"blackgreymon"
+],
+"groups": []},
+{
+"id": "blackgabumon",
+"displayName": "BlackGabumon",
+"aliases": [
+"Gabumon (Black)"
+],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"blackgarurumon"
+],
+"groups": []
+},
+{
+"id": "candlemon",
+"displayName": "Candlemon",
+"aliases": [
+"Candmon"
+],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"meramon",
+"bakemon"
+],
+"groups": []
+},
+{
+"id": "coronamon",
+"displayName": "Coronamon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"firamon"
+],
+"groups": []
+},
+{
+"id": "cutemon",
+"displayName": "Cutemon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"tunomon"
+],
+"groups": []
+},{
+"id": "dorumon",
+"displayName": "Dorumon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"dorugamon",
+"ginryumon"
+],
+"groups": []
+},
+{
+"id": "elecmon",
+"displayName": "Elecmon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"leomon"
+],
+"groups": []
+},
+{
+"id": "falcomon",
+"displayName": "Falcomon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"peckmon"
+],
+"groups": []
+},
+{
+"id": "flamon",
+"displayName": "Flamon",
+"aliases": [
+"Flamemon"
+],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"agnimon"
+],
+"groups": []
+},
+{
+"id": "floramon",
+"displayName": "Floramon","aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"kiwimon"
+],
+"groups": []
+},
+{
+"id": "gabumon",
+"displayName": "Gabumon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"garurumon",
+"drimogemon",
+"bullmon"
+],
+"groups": []
+},
+{
+"id": "gaomon",
+"displayName": "Gaomon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"gaogamon"
+],
+"groups": []
+},
+{
+"id": "gazimon",
+"displayName": "Gazimon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"deltamon"
+],
+"groups": []
+},
+{
+"id": "goburimon",
+"displayName": "Goburimon",
+"aliases": [
+"Goblimon"
+],
+"stage": "Child","evolvesFrom": [],
+"evolvesTo": [
+"ogremon"
+],
+"groups": []
+},
+{
+"id": "gomamon",
+"displayName": "Gomamon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"ikkakumon"
+],
+"groups": []
+},
+{
+"id": "gotsumon",
+"displayName": "Gotsumon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"icemon"
+],
+"groups": []
+},
+{
+"id": "guilmon",
+"displayName": "Guilmon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"growlmon"
+],
+"groups": []
+},
+{
+"id": "hagurumon",
+"displayName": "Hagurumon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"mechanorimon",
+"guadromon"
+],
+"groups": []},
+{
+"id": "huckmon",
+"displayName": "Huckmon",
+"aliases": [
+"Hackmon"
+],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"baohuckmon"
+],
+"groups": []
+},
+{
+"id": "impmon",
+"displayName": "Impmon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"wizardmon"
+],
+"groups": []
+},
+{
+"id": "keramon",
+"displayName": "Keramon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"chrysalimon"
+],
+"groups": []
+},
+{
+"id": "kotemon",
+"displayName": "Kotemon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"gladimon"
+],
+"groups": []
+},
+{
+"id": "kudamon",
+"displayName": "Kudamon","aliases": [
+"Sleipmon"
+],
+"stage": "Child",
+"evolvesFrom": [
+"tylinmon"
+],
+"evolvesTo": [
+"reppamon"
+],
+"groups": ["Royal Knights"]
+},
+{
+"id": "lalamon",
+"displayName": "Lalamon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"sunflowmon"
+],
+"groups": []
+},
+{
+"id": "lopmon",
+"displayName": "Lopmon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"turueimon"
+],
+"groups": []
+},
+{
+"id": "lunamon",
+"displayName": "Lunamon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"lekismon"
+],
+"groups": []
+},
+{
+"id": "monodramon",
+"displayName": "Monodramon",
+"aliases": [],
+"stage": "Child","evolvesFrom": [],
+"evolvesTo": [
+"strikedramon"
+],
+"groups": []
+},
+{
+"id": "mushmon",
+"displayName": "Mushmon",
+"aliases": [
+"Mushroomon"
+],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"woodmon"
+],
+"groups": []
+},
+{
+"id": "palmon",
+"displayName": "Palmon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"togemon"
+],
+"groups": []
+},
+{
+"id": "patamon",
+"displayName": "Patamon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"angemon",
+"centaurmon"
+],
+"groups": []
+},
+{
+"id": "penmon",
+"displayName": "Penmon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"yukidarumon","chackmon"
+],
+"groups": []
+},
+{
+"id": "phascomon",
+"displayName": "Phascomon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"porcupamon"
+],
+"groups": []
+},
+{
+"id": "picodevimon",
+"displayName": "PicoDevimon",
+"aliases": [
+"DemiDevimon"
+],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"devimon",
+"icedevimon"
+],
+"groups": []
+},
+{
+"id": "piyomon",
+"displayName": "Piyomon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"birdramon",
+"cockatorimon"
+],
+"groups": []
+},
+{
+"id": "plotmon",
+"displayName": "Plotmon",
+"aliases": [
+"Salamon"
+],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": ["tailmon",
+"meicoomon"
+],
+"groups": []
+},
+{
+"id": "renamon",
+"displayName": "Renamon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"kyubimon",
+"youkomon"
+],
+"groups": []
+},
+{
+"id": "syakomon",
+"displayName": "Syakomon",
+"aliases": [
+"Shakomon"
+],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"gesomon",
+"ebidramon",
+"shellmon"
+],
+"groups": []
+},
+{
+"id": "tentomon",
+"displayName": "Tentomon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"kabuterimon",
+"kuwagamon"
+],
+"groups": []
+},
+{
+"id": "terriermon",
+"displayName": "Terriermon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],"evolvesTo": [
+"gargomon"
+],
+"groups": []
+},
+{
+"id": "tinkermon",
+"displayName": "Tinkermon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"fairimon"
+],
+"groups": []
+},
+{
+"id": "tsukaimon",
+"displayName": "Tsukaimon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"witchmon"
+],
+"groups": []
+},
+{
+"id": "tyumon",
+"displayName": "Tyumon",
+"aliases": [
+"Chuumon"
+],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"numemon",
+"scumon",
+"nanimon"
+],
+"groups": []
+},
+{
+"id": "v-mon",
+"displayName": "V-mon",
+"aliases": [
+"Veemon"
+],
+"stage": "Child",
+"evolvesFrom": [],"evolvesTo": [
+"v-dramon",
+"exveemon"
+],
+"groups": []
+},
+{
+"id": "wormmon",
+"displayName": "Wormmon",
+"aliases": [],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"stingmon"
+],
+"groups": []
+},
+{
+"id": "yukiagumon",
+"displayName": "YukiAgumon",
+"aliases": [
+"SnowAgumon"
+],
+"stage": "Child",
+"evolvesFrom": [],
+"evolvesTo": [
+"mojyamon"
+],
+"groups": []
+},
+{
+"id": "agnimon",
+"displayName": "Agnimon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"flamon"
+],
+"evolvesTo": [
+"vritramon"
+],
+"groups": []
+},
+{
+"id": "angemon",
+"displayName": "Angemon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"patamon"],
+"evolvesTo": [
+"holyangemon"
+],
+"groups": []
+},
+{
+"id": "ankylomon",
+"displayName": "Ankylomon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"armadimon"
+],
+"evolvesTo": [
+"brachimon",
+"shakkoumon"
+],
+"groups": []
+},
+{
+"id": "bakemon",
+"displayName": "Bakemon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"candlemon"
+],
+"evolvesTo": [
+"fantomon"
+],
+"groups": []
+},
+{
+"id": "baohuckmon",
+"displayName": "BaoHuckmon",
+"aliases": [
+"BaoHackmon"
+],
+"stage": "Adult",
+"evolvesFrom": [
+"huckmon"
+],
+"evolvesTo": [
+"saviorhuckmon"
+],
+"groups": []
+},
+{
+"id": "birdramon","displayName": "Birdramon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"piyomon"
+],
+"evolvesTo": [
+"garudamon"
+],
+"groups": []
+},
+{
+"id": "blackgarurumon",
+"displayName": "BlackGarurumon",
+"aliases": [
+"Garurumon (Black)"
+],
+"stage": "Adult",
+"evolvesFrom": [
+"blackgabumon"
+],
+"evolvesTo": [
+"blackweregarurumon"
+],
+"groups": []
+},
+{
+"id": "blackgreymon",
+"displayName": "BlackGreymon",
+"aliases": [
+"Greymon (Blue)"
+],
+"stage": "Adult",
+"evolvesFrom": [
+"blackagumon"
+],
+"evolvesTo": [
+"blackmetalgreymon"
+],
+"groups": []
+},
+{
+"id": "bullmon",
+"displayName": "Bullmon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"gabumon"
+],
+"evolvesTo": ["vajramon"
+],
+"groups": []
+},
+{
+"id": "centaurmon",
+"displayName": "Centaurmon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"patamon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "chackmon",
+"displayName": "Chackmon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"penmon"
+],
+"evolvesTo": [
+"blizzardmon"
+],
+"groups": []
+},
+{
+"id": "chrysalimon",
+"displayName": "Chrysalimon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"keramon"
+],
+"evolvesTo": [
+"infermon"
+],
+"groups": []
+},
+{
+"id": "cockatorimon",
+"displayName": "Cockatorimon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"piyomon"
+],
+"evolvesTo": ["parrotmon"
+],
+"groups": []
+},
+{
+"id": "deltamon",
+"displayName": "Deltamon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"gazimon"
+],
+"evolvesTo": [
+"chimeramon"
+],
+"groups": []
+},
+{
+"id": "devimon",
+"displayName": "Devimon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"picodevimon"
+],
+"evolvesTo": [
+"vamdemon"
+],
+"groups": []
+},
+{
+"id": "dorugamon",
+"displayName": "Dorugamon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"dorumon"
+],
+"evolvesTo": [
+"dorugreymon"
+],
+"groups": []
+},
+{
+"id": "drimogemon",
+"displayName": "Drimogemon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"gabumon"],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "ebidramon",
+"displayName": "Ebidramon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"syakomon"
+],
+"evolvesTo": [
+"whamon"
+],
+"groups": []
+},
+{
+"id": "exveemon",
+"displayName": "ExVeemon",
+"aliases": [
+"XV-Mon"
+],
+"stage": "Adult",
+"evolvesFrom": [
+"v-mon"
+],
+"evolvesTo": [
+"paildramon"
+],
+"groups": []
+},
+{
+"id": "fairimon",
+"displayName": "Fairimon",
+"aliases": [
+"Kazemon"
+],
+"stage": "Adult",
+"evolvesFrom": [
+"tinkermon"
+],
+"evolvesTo": [
+"shutumon"
+],
+"groups": []
+},
+{
+"id": "firamon",
+"displayName": "Firamon","aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"coronamon"
+],
+"evolvesTo": [
+"flaremon"
+],
+"groups": []
+},
+{
+"id": "gaogamon",
+"displayName": "Gaogamon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"gaomon"
+],
+"evolvesTo": [
+"machgaogamon"
+],
+"groups": []
+},
+{
+"id": "gargomon",
+"displayName": "Gargomon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"terriermon"
+],
+"evolvesTo": [
+"rapidmon"
+],
+"groups": []
+},
+{
+"id": "garurumon",
+"displayName": "Garurumon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"gabumon"
+],
+"evolvesTo": [
+"weregarurumon"
+],
+"groups": []
+},
+{"id": "geogreymon",
+"displayName": "GeoGreymon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"agumon"
+],
+"evolvesTo": [
+"rizegreymon"
+],
+"groups": []
+},
+{
+"id": "gesomon",
+"displayName": "Gesomon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"syakomon"
+],
+"evolvesTo": [
+"marindevimon"
+],
+"groups": []
+},
+{
+"id": "ginryumon",
+"displayName": "Ginryumon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"dorumon"
+],
+"evolvesTo": [
+"hisharyumon"
+],
+"groups": []
+},
+{
+"id": "gladimon",
+"displayName": "Gladimon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"kotemon"
+],
+"evolvesTo": [
+"knightmon"
+],
+"groups": []},
+{
+"id": "greymon",
+"displayName": "Greymon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"agumon"
+],
+"evolvesTo": [
+"metalgreymon",
+"skullgreymon"
+],
+"groups": []
+},
+{
+"id": "growlmon",
+"displayName": "Growlmon",
+"aliases": [
+"Growmon"
+],
+"stage": "Adult",
+"evolvesFrom": [
+"guilmon"
+],
+"evolvesTo": [
+"wargrowlmon"
+],
+"groups": []
+},
+{
+"id": "guadromon",
+"displayName": "Guadromon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"hagurumon"
+],
+"evolvesTo": [
+"andromon"
+],
+"groups": []
+},
+{
+"id": "icedevimon",
+"displayName": "IceDevimon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"picodevimon"],
+"evolvesTo": [
+"skullsatamon"
+],
+"groups": []
+},
+{
+"id": "icemon",
+"displayName": "Icemon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"gotsumon"
+],
+"evolvesTo": [
+"meteormon"
+],
+"groups": []
+},
+{
+"id": "ikkakumon",
+"displayName": "Ikkakumon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"gomamon"
+],
+"evolvesTo": [
+"zudomon"
+],
+"groups": []
+},
+{
+"id": "kabuterimon",
+"displayName": "Kabuterimon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"tentomon"
+],
+"evolvesTo": [
+"atlurkabuterimon"
+],
+"groups": []
+},
+{
+"id": "kiwimon",
+"displayName": "Kiwimon",
+"aliases": [],
+"stage": "Adult","evolvesFrom": [
+"floramon"
+],
+"evolvesTo": [
+"delumon"
+],
+"groups": []
+},
+{
+"id": "kuwagamon",
+"displayName": "Kuwagamon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"tentomon"
+],
+"evolvesTo": [
+"okuwamon"
+],
+"groups": []
+},
+{
+"id": "kyubimon",
+"displayName": "Kyubimon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"renamon"
+],
+"evolvesTo": [
+"taomon"
+],
+"groups": []
+},
+{
+"id": "lekismon",
+"displayName": "Lekismon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"lunamon"
+],
+"evolvesTo": [
+"crescemon"
+],
+"groups": []
+},
+{
+"id": "leomon",
+"displayName": "Leomon","aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"elecmon"
+],
+"evolvesTo": [
+"panjyamon",
+"grapleomon"
+],
+"groups": []
+},
+{
+"id": "mechanorimon",
+"displayName": "Mechanorimon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"hagurumon"
+],
+"evolvesTo": [
+"nanomon"
+],
+"groups": []
+},
+{
+"id": "meicoomon",
+"displayName": "Meicoomon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"plotmon"
+],
+"evolvesTo": [
+"meicrackmon-viscious-mode"
+],
+"groups": []
+},
+{
+"id": "meramon",
+"displayName": "Meramon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"candlemon"
+],
+"evolvesTo": [
+"skullmeramon",
+"asuramon"
+],
+"groups": []},
+{
+"id": "mojyamon",
+"displayName": "Mojyamon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"yukiagumon"
+],
+"evolvesTo": [
+"mammothmon"
+],
+"groups": []
+},
+{
+"id": "nanimon",
+"displayName": "Nanimon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"tyumon"
+],
+"evolvesTo": [
+"etemon"
+],
+"groups": []
+},
+{
+"id": "numemon",
+"displayName": "Numemon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"tyumon"
+],
+"evolvesTo": [
+"monzaemon"
+],
+"groups": []
+},
+{
+"id": "ogremon",
+"displayName": "Ogremon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"goburimon"
+],
+"evolvesTo": [
+"digitamamon"],
+"groups": []
+},
+{
+"id": "peckmon",
+"displayName": "Peckmon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"falcomon"
+],
+"evolvesTo": [
+"yatagaramon"
+],
+"groups": []
+},
+{
+"id": "porcupamon",
+"displayName": "Porcupamon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"phascomon"
+],
+"evolvesTo": [
+"astamon"
+],
+"groups": []
+},
+{
+"id": "reppamon",
+"displayName": "Reppamon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"kudamon"
+],
+"evolvesTo": [
+"tylinmon"
+],
+"groups": []
+},
+{
+"id": "scumon",
+"displayName": "Scumon",
+"aliases": [
+"Sukamon"
+],
+"stage": "Adult",
+"evolvesFrom": ["tyumon"
+],
+"evolvesTo": [
+"gerbemon"
+],
+"groups": []
+},
+{
+"id": "seadramon",
+"displayName": "Seadramon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"betamon"
+],
+"evolvesTo": [
+"megaseadramon"
+],
+"groups": []
+},
+{
+"id": "shellmon",
+"displayName": "Shellmon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"syakomon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "stingmon",
+"displayName": "Stingmon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"wormmon"
+],
+"evolvesTo": [
+"jewelbeemon"
+],
+"groups": []
+},
+{
+"id": "strikedramon",
+"displayName": "Strikedramon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": ["monodramon"
+],
+"evolvesTo": [
+"cyberdramon"
+],
+"groups": []
+},
+{
+"id": "sunflowmon",
+"displayName": "Sunflowmon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"lalamon"
+],
+"evolvesTo": [
+"lilamon"
+],
+"groups": []
+},
+{
+"id": "tailmon",
+"displayName": "Tailmon",
+"aliases": [
+"Gatomon"
+],
+"stage": "Adult",
+"evolvesFrom": [
+"plotmon"
+],
+"evolvesTo": [
+"angewomon"
+],
+"groups": []
+},
+{
+"id": "togemon",
+"displayName": "Togemon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"palmon"
+],
+"evolvesTo": [
+"lilimon"
+],
+"groups": []
+},
+{
+"id": "tunomon","displayName": "Tunomon",
+"aliases": [
+"Unimon"
+],
+"stage": "Adult",
+"evolvesFrom": [
+"cutemon"
+],
+"evolvesTo": [
+"picklemon"
+],
+"groups": []
+},
+{
+"id": "turueimon",
+"displayName": "Turueimon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"lopmon"
+],
+"evolvesTo": [
+"andiramon"
+],
+"groups": []
+},
+{
+"id": "tyranomon",
+"displayName": "Tyranomon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"agumon"
+],
+"evolvesTo": [
+"megadramon"
+],
+"groups": []
+},
+{
+"id": "v-dramon",
+"displayName": "V-Dramon",
+"aliases": [
+"Veedramon"
+],
+"stage": "Adult",
+"evolvesFrom": [
+"v-mon"
+],
+"evolvesTo": ["aerov-dramon"
+],
+"groups": []
+},
+{
+"id": "witchmon",
+"displayName": "Witchmon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"tsukaimon"
+],
+"evolvesTo": [
+"ladydevimon",
+"bastemon"
+],
+"groups": []
+},
+{
+"id": "wizardmon",
+"displayName": "Wizardmon",
+"aliases": [
+"Wizarmon"
+],
+"stage": "Adult",
+"evolvesFrom": [
+"impmon"
+],
+"evolvesTo": [
+"wisemon",
+"baalmon"
+],
+"groups": []
+},
+{
+"id": "woodmon",
+"displayName": "Woodmon",
+"aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"mushmon"
+],
+"evolvesTo": [
+"jyureimon"
+],
+"groups": []
+},
+{
+"id": "youkomon",
+"displayName": "Youkomon","aliases": [],
+"stage": "Adult",
+"evolvesFrom": [
+"renamon"
+],
+"evolvesTo": [
+"doumon"
+],
+"groups": []
+},
+{
+"id": "yukidarumon",
+"displayName": "Yukidarumon",
+"aliases": [
+"Yukiimon"
+],
+"stage": "Adult",
+"evolvesFrom": [
+"penmon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "aerov-dramon",
+"displayName": "AeroV-Dramon",
+"aliases": [
+"AeroVeedramon"
+],
+"stage": "Perfect",
+"evolvesFrom": [
+"v-dramon"
+],
+"evolvesTo": [
+"ulforcev-dramon",
+"dynasmon"
+],
+"groups": []
+},
+{
+"id": "andiramon",
+"displayName": "Andiramon",
+"aliases": [
+"Antylamon"
+],
+"stage": "Perfect",
+"evolvesFrom": [
+"turueimon"
+],
+"evolvesTo": ["whitecherubimon",
+"blackcherubimon"
+],
+"groups": ["Devas"]
+},
+{
+"id": "andromon",
+"displayName": "Andromon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"guadromon"
+],
+"evolvesTo": [
+"hiandromon"
+],
+"groups": []
+},
+{
+"id": "angewomon",
+"displayName": "Angewomon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"tailmon"
+],
+"evolvesTo": [
+"ophanimon",
+"venusmon"
+],
+"groups": []
+},
+{
+"id": "astamon",
+"displayName": "Astamon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"porcupamon"
+],
+"evolvesTo": [
+"belphemon-sleep-mode",
+"magnakidmon"
+],
+"groups": []
+},
+{
+"id": "asuramon",
+"displayName": "Asuramon",
+"aliases": [],"stage": "Perfect",
+"evolvesFrom": [
+"meramon"
+],
+"evolvesTo": [
+"vulcanusmon"
+],
+"groups": []
+},
+{
+"id": "atlurkabuterimon",
+"displayName": "AtlurKabuterimon",
+"aliases": [
+"MegaKabuterimon"
+],
+"stage": "Perfect",
+"evolvesFrom": [
+"kabuterimon"
+],
+"evolvesTo": [
+"herculeskabuterimon"
+],
+"groups": []
+},
+{
+"id": "baalmon",
+"displayName": "Baalmon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"wizardmon"
+],
+"evolvesTo": [
+"beelzemon"
+],
+"groups": []
+},
+{
+"id": "bastemon",
+"displayName": "Bastemon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"witchmon"
+],
+"evolvesTo": [
+"babamon"
+],
+"groups": []
+},{
+"id": "blackmetalgreymon",
+"displayName": "BlackMetalGreymon",
+"aliases": [
+"MetalGreymon (Blue)"
+],
+"stage": "Perfect",
+"evolvesFrom": [
+"blackgreymon"
+],
+"evolvesTo": [
+"blackwargreymon"
+],
+"groups": []
+},
+{
+"id": "blackweregarurumon",
+"displayName": "BlackWereGarurumon",
+"aliases": [
+"WereGarurumon (Black)"
+],
+"stage": "Perfect",
+"evolvesFrom": [
+"blackgarurumon"
+],
+"evolvesTo": [
+"blackmetalgarurumon"
+],
+"groups": []
+},
+{
+"id": "blizzardmon",
+"displayName": "Blizzardmon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"chackmon"
+],
+"evolvesTo": [
+"daipenmon"
+],
+"groups": []
+},
+{
+"id": "brachimon",
+"displayName": "Brachimon",
+"aliases": [
+"Brachiomon"
+],
+"stage": "Perfect","evolvesFrom": [
+"ankylomon"
+],
+"evolvesTo": [
+"plesiomon"
+],
+"groups": []
+},
+{
+"id": "chimeramon",
+"displayName": "Chimeramon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"deltamon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "crescemon",
+"displayName": "Crescemon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"lekismon"
+],
+"evolvesTo": [
+"dianamon"
+],
+"groups": []
+},
+{
+"id": "cyberdramon",
+"displayName": "Cyberdramon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"strikedramon"
+],
+"evolvesTo": [
+"justimon",
+"fujinmon"
+],
+"groups": []
+},
+{
+"id": "delumon",
+"displayName": "Delumon",
+"aliases": [],"stage": "Perfect",
+"evolvesFrom": [
+"kiwimon"
+],
+"evolvesTo": [
+"griffomon"
+],
+"groups": []
+},
+{
+"id": "digitamamon",
+"displayName": "Digitamamon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"ogremon"
+],
+"evolvesTo": [
+"titamon"
+],
+"groups": []
+},
+{
+"id": "dorugreymon",
+"displayName": "DoruGreymon",
+"aliases": [
+"Doruguremon"
+],
+"stage": "Perfect",
+"evolvesFrom": [
+"dorugamon"
+],
+"evolvesTo": [
+"dorugoramon"
+],
+"groups": []
+},
+{
+"id": "doumon",
+"displayName": "Doumon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"youkomon"
+],
+"evolvesTo": [
+"kuzuhamon"
+],
+"groups": []
+},{
+"id": "etemon",
+"displayName": "Etemon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"nanimon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "fantomon",
+"displayName": "Fantomon",
+"aliases": [
+"Phantomon"
+],
+"stage": "Perfect",
+"evolvesFrom": [
+"bakemon"
+],
+"evolvesTo": [
+"piedmon"
+],
+"groups": []
+},
+{
+"id": "flaremon",
+"displayName": "Flaremon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"firamon"
+],
+"evolvesTo": [
+"apollomon"
+],
+"groups": []
+},
+{
+"id": "garudamon",
+"displayName": "Garudamon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"birdramon"
+],
+"evolvesTo": [
+"hououmon"
+],"groups": []
+},
+{
+"id": "gerbemon",
+"displayName": "Gerbemon",
+"aliases": [
+"Garbagemon"
+],
+"stage": "Perfect",
+"evolvesFrom": [
+"scumon"
+],
+"evolvesTo": [
+"parasimon"
+],
+"groups": []
+},
+{
+"id": "grapleomon",
+"displayName": "GrapLeomon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"leomon"
+],
+"evolvesTo": [
+"banchouleomon"
+],
+"groups": []
+},
+{
+"id": "hisharyumon",
+"displayName": "Hisharyumon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"ginryumon"
+],
+"evolvesTo": [
+"ouryumon"
+],
+"groups": []
+},
+{
+"id": "holyangemon",
+"displayName": "HolyAngemon",
+"aliases": [
+"MagnaAngemon"
+],
+"stage": "Perfect","evolvesFrom": [
+"angemon"
+],
+"evolvesTo": [
+"seraphimon"
+],
+"groups": []
+},
+{
+"id": "infermon",
+"displayName": "Infermon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"chrysalimon"
+],
+"evolvesTo": [
+"diablomon"
+],
+"groups": []
+},
+{
+"id": "jewelbeemon",
+"displayName": "JewelBeemon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"stingmon"
+],
+"evolvesTo": [
+"banchoustingmon"
+],
+"groups": []
+},
+{
+"id": "jyureimon",
+"displayName": "Jyureimon",
+"aliases": [
+"Cherrymon"
+],
+"stage": "Perfect",
+"evolvesFrom": [
+"woodmon"
+],
+"evolvesTo": [
+"pinochimon"
+],
+"groups": []
+},
+{"id": "knightmon",
+"displayName": "Knightmon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"gladimon"
+],
+"evolvesTo": [
+"lordknightmon",
+"craniummon",
+"leopardmon"
+],
+"groups": []
+},
+{
+"id": "ladydevimon",
+"displayName": "LadyDevimon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"witchmon"
+],
+"evolvesTo": [
+"lillithmon"
+],
+"groups": []
+},
+{
+"id": "lilamon",
+"displayName": "Lilamon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"sunflowmon"
+],
+"evolvesTo": [
+"minervamon"
+],
+"groups": []
+},
+{
+"id": "lilimon",
+"displayName": "Lilimon",
+"aliases": [
+"Lillymon"
+],
+"stage": "Perfect",
+"evolvesFrom": [
+"togemon"
+],"evolvesTo": [
+"rosemon",
+"bancoulilimon"
+],
+"groups": []
+},
+{
+"id": "machgaogamon",
+"displayName": "MachGaogamon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"gaogamon"
+],
+"evolvesTo": [
+"miragegaogamon"
+],
+"groups": []
+},
+{
+"id": "mammothmon",
+"displayName": "Mammothmon",
+"aliases": [
+"Mammon"
+],
+"stage": "Perfect",
+"evolvesFrom": [
+"mojyamon"
+],
+"evolvesTo": [
+"skullmammothmon"
+],
+"groups": []
+},
+{
+"id": "marindevimon",
+"displayName": "MarinDevimon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"gesomon"
+],
+"evolvesTo": [
+"leviamon"
+],
+"groups": []
+},
+{
+"id": "megadramon",
+"displayName": "Megadramon","aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"tyranomon"
+],
+"evolvesTo": [
+"chaosdramon"
+],
+"groups": []
+},
+{
+"id": "megaseadramon",
+"displayName": "MegaSeadramon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"seadramon"
+],
+"evolvesTo": [
+"metalseadramon"
+],
+"groups": []
+},
+{
+"id": "meicrackmon-viscious-mode",
+"displayName": "Meicrackmon Viscious Mode",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"meicoomon"
+],
+"evolvesTo": [
+"raguelmon"
+],
+"groups": []
+},
+{
+"id": "metalgreymon",
+"displayName": "MetalGreymon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"greymon"
+],
+"evolvesTo": [
+"wargreymon",
+"blitzgreymon"
+],
+"groups": []
+},{
+"id": "meteormon",
+"displayName": "Meteormon",
+"aliases": [
+"Insekimon"
+],
+"stage": "Perfect",
+"evolvesFrom": [
+"icemon"
+],
+"evolvesTo": [
+"ancientvolcamon"
+],
+"groups": []
+},
+{
+"id": "monzaemon",
+"displayName": "Monzaemon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"numemon"
+],
+"evolvesTo": [
+"jijimon"
+],
+"groups": []
+},
+{
+"id": "nanomon",
+"displayName": "Nanomon",
+"aliases": [
+"Datamon"
+],
+"stage": "Perfect",
+"evolvesFrom": [
+"mechanorimon"
+],
+"evolvesTo": [
+"raijinmon"
+],
+"groups": []
+},
+{
+"id": "okuwamon",
+"displayName": "Okuwamon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"kuwagamon"],
+"evolvesTo": [
+"grankuwagamon"
+],
+"groups": []
+},
+{
+"id": "paildramon",
+"displayName": "Paildramon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"exveemon"
+],
+"evolvesTo": [
+"imperialdramon-dragon-mode",
+"magnamon"
+],
+"groups": []
+},
+{
+"id": "panjyamon",
+"displayName": "Panjyamon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"leomon"
+],
+"evolvesTo": [
+"saberleomon"
+],
+"groups": []
+},
+{
+"id": "parrotmon",
+"displayName": "Parrotmon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"cockatorimon"
+],
+"evolvesTo": [
+"crossmon"
+],
+"groups": []
+},
+{
+"id": "picklemon",
+"displayName": "Picklemon",
+"aliases": ["Piximon"
+],
+"stage": "Perfect",
+"evolvesFrom": [
+"tunomon"
+],
+"evolvesTo": [
+"marinangemon"
+],
+"groups": []
+},
+{
+"id": "rapidmon",
+"displayName": "Rapidmon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"gargomon"
+],
+"evolvesTo": [
+"saintgargomon"
+],
+"groups": []
+},
+{
+"id": "rizegreymon",
+"displayName": "RizeGreymon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"geogreymon"
+],
+"evolvesTo": [
+"shinegreymon",
+"victorygreymon"
+],
+"groups": []
+},
+{
+"id": "saviorhuckmon",
+"displayName": "SaviorHuckmon",
+"aliases": [
+"SaviorHackmon"
+],
+"stage": "Perfect",
+"evolvesFrom": [
+"baohuckmon"
+],
+"evolvesTo": [
+"jesmon"],
+"groups": []
+},
+{
+"id": "shakkoumon",
+"displayName": "Shakkoumon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"ankylomon"
+],
+"evolvesTo": [
+"slashangemon"
+],
+"groups": []
+},
+{
+"id": "shutumon",
+"displayName": "Shutumon",
+"aliases": [
+"Zephyrmon"
+],
+"stage": "Perfect",
+"evolvesFrom": [
+"fairimon"
+],
+"evolvesTo": [
+"junomon"
+],
+"groups": []
+},
+{
+"id": "skullgreymon",
+"displayName": "SkullGreymon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"greymon"
+],
+"evolvesTo": [
+"mugendramon"
+],
+"groups": []
+},
+{
+"id": "skullmeramon",
+"displayName": "SkullMeramon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": ["meramon"
+],
+"evolvesTo": [
+"gankoomon"
+],
+"groups": []
+},
+{
+"id": "skullsatamon",
+"displayName": "SkullSatamon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"icedevimon"
+],
+"evolvesTo": [
+"demon",
+"barbamon"
+],
+"groups": []
+},
+{
+"id": "taomon",
+"displayName": "Taomon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"kyubimon"
+],
+"evolvesTo": [
+"sakuyalon"
+],
+"groups": []
+},
+{
+"id": "tylinmon",
+"displayName": "Tylinmon",
+"aliases": [
+"Kirinmon"
+],
+"stage": "Perfect",
+"evolvesFrom": [
+"reppamon"
+],
+"evolvesTo": [
+"kudamon"
+],
+"groups": []
+},
+{"id": "vajramon",
+"displayName": "Vajramon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"bullmon"
+],
+"evolvesTo": [
+"zanbamon"
+],
+"groups": ["Devas"]
+},
+{
+"id": "vamdemon",
+"displayName": "Vamdemon",
+"aliases": [
+"Myotismon"
+],
+"stage": "Perfect",
+"evolvesFrom": [
+"devimon"
+],
+"evolvesTo": [
+"venomvamdemon",
+"belialvamdemon"
+],
+"groups": []
+},
+{
+"id": "vritramon",
+"displayName": "Vritramon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"agnimon"
+],
+"evolvesTo": [
+"ancientgreymon"
+],
+"groups": []
+},
+{
+"id": "wargrowlmon",
+"displayName": "WarGrowlmon",
+"aliases": [
+"MegaloGrowmon"
+],
+"stage": "Perfect",
+"evolvesFrom": [
+"growlmon"],
+"evolvesTo": [
+"dukemon"
+],
+"groups": []
+},
+{
+"id": "weregarurumon",
+"displayName": "WereGarurumon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"garurumon"
+],
+"evolvesTo": [
+"metalgarurumon",
+"z-dgarurumon",
+"cresgarurumon"
+],
+"groups": []
+},
+{
+"id": "whamon",
+"displayName": "Whamon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"ebidramon"
+],
+"evolvesTo": [
+"naptunemon"
+],
+"groups": []
+},
+{
+"id": "wisemon",
+"displayName": "Wisemon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"wizardmon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "yatagaramon",
+"displayName": "Yatagaramon",
+"aliases": [],
+"stage": "Perfect","evolvesFrom": [
+"peckmon"
+],
+"evolvesTo": [
+"valdurmon",
+"ravemon"
+],
+"groups": []
+},
+{
+"id": "zudomon",
+"displayName": "Zudomon",
+"aliases": [],
+"stage": "Perfect",
+"evolvesFrom": [
+"ikkakumon"
+],
+"evolvesTo": [
+"vikemon"
+],
+"groups": []
+},
+{
+"id": "ancientgreymon",
+"displayName": "AncientGreymon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"vritramon"
+],
+"evolvesTo": [],
+"groups": ["Ten Warriors"]
+},
+{
+"id": "ancientvolcamon",
+"displayName": "AncientVolcamon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"meteormon"
+],
+"evolvesTo": [],
+"groups": ["Ten Warriors"]
+},
+{
+"id": "apollomon",
+"displayName": "Apollomon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": ["flaremon"
+],
+"evolvesTo": [
+"gracenovamon"
+],
+"groups": ["Olympus Twelve gods"]
+},
+{
+"id": "babamon",
+"displayName": "Babamon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"bastemon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "banchouleomon",
+"displayName": "BanchouLeomon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"grapleomon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "banchoustingmon",
+"displayName": "BanchouStingmon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"jewelbeemon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "bancoulilimon",
+"displayName": "BancouLilimon",
+"aliases": [
+"BanchouLillymon"
+],
+"stage": "Ultimate",
+"evolvesFrom": [
+"lilimon"
+],"evolvesTo": [],
+"groups": []
+},
+{
+"id": "barbamon",
+"displayName": "Barbamon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"skullsatamon"
+],
+"evolvesTo": [],
+"groups": ["Seven Great Demon Lord"]
+},
+{
+"id": "beelzemon",
+"displayName": "Beelzemon",
+"aliases": [
+"Beelzebumon"
+],
+"stage": "Ultimate",
+"evolvesFrom": [
+"baalmon"
+],
+"evolvesTo": [],
+"groups": ["Seven Great Demon Lord"]
+},
+{
+"id": "belialvamdemon",
+"displayName": "BelialVamdemon",
+"aliases": [
+"MaloMyotismon"
+],
+"stage": "Ultimate",
+"evolvesFrom": [
+"vamdemon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "belphemon-sleep-mode",
+"displayName": "Belphemon Sleep Mode",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"astamon"
+],
+"evolvesTo": [],
+"groups": []},
+{
+"id": "blackcherubimon",
+"displayName": "BlackCherubimon",
+"aliases": [
+"Cherubimon (Vice)"
+],
+"stage": "Ultimate",
+"evolvesFrom": [
+"andiramon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "blackmetalgarurumon",
+"displayName": "BlackMetalGarurumon",
+"aliases": [
+"MetalGarurumon (Black)"
+],
+"stage": "Ultimate",
+"evolvesFrom": [
+"blackweregarurumon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "blackwargreymon",
+"displayName": "BlackWarGreymon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"blackmetalgreymon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "blitzgreymon",
+"displayName": "BlitzGreymon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"metalgreymon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{"id": "chaosdramon",
+"displayName": "Chaosdramon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"megadramon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "craniummon",
+"displayName": "Craniummon",
+"aliases": [
+"Craniamon"
+],
+"stage": "Ultimate",
+"evolvesFrom": [
+"knightmon"
+],
+"evolvesTo": [],
+"groups": ["Royal Knights"]
+},
+{
+"id": "cresgarurumon",
+"displayName": "CresGarurumon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"weregarurumon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "crossmon",
+"displayName": "Crossmon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"parrotmon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "daipenmon",
+"displayName": "DaiPenmon",
+"aliases": [],
+"stage": "Ultimate","evolvesFrom": [
+"blizzardmon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "demon",
+"displayName": "Demon",
+"aliases": [
+"Daemon"
+],
+"stage": "Ultimate",
+"evolvesFrom": [
+"skullsatamon"
+],
+"evolvesTo": [],
+"groups": ["Seven Great Demon Lord"]
+},
+{
+"id": "diablomon",
+"displayName": "Diablomon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"infermon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "dianamon",
+"displayName": "Dianamon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"crescemon"
+],
+"evolvesTo": [
+"gracenovamon"
+],
+"groups": ["Olympus Twelve gods"]
+},
+{
+"id": "dorugoramon",
+"displayName": "Dorugoramon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"dorugreymon"],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "dukemon",
+"displayName": "Dukemon",
+"aliases": [
+"Gallantmon"
+],
+"stage": "Ultimate",
+"evolvesFrom": [
+"wargrowlmon"
+],
+"evolvesTo": [],
+"groups": ["Royal Knights"]
+},
+{
+"id": "dynasmon",
+"displayName": "Dynasmon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"aerov-dramon"
+],
+"evolvesTo": [
+"dynasmon-x"
+],
+"groups": ["Royal Knights"]
+},
+{
+"id": "fujinmon",
+"displayName": "Fujinmon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"cyberdramon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "gankoomon",
+"displayName": "Gankoomon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"skullmeramon"
+],
+"evolvesTo": [],"groups": []
+},
+{
+"id": "grankuwagamon",
+"displayName": "GranKuwagamon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"okuwamon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "griffomon",
+"displayName": "Griffomon",
+"aliases": [
+"Gryphonmon"
+],
+"stage": "Ultimate",
+"evolvesFrom": [
+"delumon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "herculeskabuterimon",
+"displayName": "HerculesKabuterimon",
+"aliases": [
+"HerakleKabuterimon"
+],
+"stage": "Ultimate",
+"evolvesFrom": [
+"atlurkabuterimon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "hiandromon",
+"displayName": "HiAndromon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"andromon"
+],
+"evolvesTo": [],
+"groups": []
+},{
+"id": "hououmon",
+"displayName": "Hououmon",
+"aliases": [
+"Phoenixmon"
+],
+"stage": "Ultimate",
+"evolvesFrom": [
+"garudamon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "imperialdramon-dragon-mode",
+"displayName": "Imperialdramon Dragon Mode",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"paildramon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "jesmon",
+"displayName": "Jesmon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"saviorhuckmon"
+],
+"evolvesTo": [],
+"groups": ["Royal Knights"]
+},
+{
+"id": "jijimon",
+"displayName": "Jijimon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"monzaemon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "junomon",
+"displayName": "Junomon",
+"aliases": [],"stage": "Ultimate",
+"evolvesFrom": [
+"shutumon"
+],
+"evolvesTo": [],
+"groups": ["Olympus Twelve gods"]
+},
+{
+"id": "justimon",
+"displayName": "Justimon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"cyberdramon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "kuzuhamon",
+"displayName": "Kuzuhamon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"doumon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "leopardmon",
+"displayName": "Leopardmon",
+"aliases": [
+"Duftmon"
+],
+"stage": "Ultimate",
+"evolvesFrom": [
+"knightmon"
+],
+"evolvesTo": [],
+"groups": ["Royal Knights"]
+},
+{
+"id": "leviamon",
+"displayName": "Leviamon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"marindevimon"
+],"evolvesTo": [],
+"groups": ["Seven Great Demon Lord"]
+},
+{
+"id": "lillithmon",
+"displayName": "Lillithmon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"ladydevimon"
+],
+"evolvesTo": [
+"lillithmon-x"
+],
+"groups": ["Seven Great Demon Lord"]
+},
+{
+"id": "lordknightmon",
+"displayName": "LordKnightmon",
+"aliases": [
+"Crusadermon"
+],
+"stage": "Ultimate",
+"evolvesFrom": [
+"knightmon"
+],
+"evolvesTo": [],
+"groups": ["Royal Knights"]
+},
+{
+"id": "magnakidmon",
+"displayName": "MagnaKidmon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"astamon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "magnamon",
+"displayName": "Magnamon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"paildramon"
+],
+"evolvesTo": [
+"magnamon-x"],
+"groups": ["Royal Knights"]
+},
+{
+"id": "marinangemon",
+"displayName": "MarinAngemon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"picklemon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "metalgarurumon",
+"displayName": "MetalGarurumon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"weregarurumon"
+],
+"evolvesTo": [
+"omegamon"
+],
+"groups": []
+},
+{
+"id": "metalseadramon",
+"displayName": "MetalSeadramon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"megaseadramon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "minervamon",
+"displayName": "Minervamon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"lilamon"
+],
+"evolvesTo": [],
+"groups": ["Olympus Twelve gods"]
+},
+{"id": "miragegaogamon",
+"displayName": "MirageGaogamon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"machgaogamon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "mugendramon",
+"displayName": "Mugendramon",
+"aliases": [
+"Machinedramon"
+],
+"stage": "Ultimate",
+"evolvesFrom": [
+"skullgreymon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "naptunemon",
+"displayName": "Naptunemon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"whamon"
+],
+"evolvesTo": [],
+"groups": ["Olympus Twelve gods"]
+},
+{
+"id": "ophanimon",
+"displayName": "Ophanimon",
+"aliases": [
+"Ofanimon"
+],
+"stage": "Ultimate",
+"evolvesFrom": [
+"angewomon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "ouryumon",
+"displayName": "Ouryumon","aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"hisharyumon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "parasimon",
+"displayName": "Parasimon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"gerbemon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "piedmon",
+"displayName": "Piedmon",
+"aliases": [
+"Piemon"
+],
+"stage": "Ultimate",
+"evolvesFrom": [
+"fantomon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "pinochimon",
+"displayName": "Pinochimon",
+"aliases": [
+"Puppetmon"
+],
+"stage": "Ultimate",
+"evolvesFrom": [
+"jyureimon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "plesiomon",
+"displayName": "Plesiomon",
+"aliases": [],
+"stage": "Ultimate","evolvesFrom": [
+"brachimon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "raguelmon",
+"displayName": "Raguelmon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"meicrackmon-viscious-mode"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "raijinmon",
+"displayName": "Raijinmon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"nanomon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "ravemon",
+"displayName": "Ravemon",
+"aliases": [
+"Ravmon"
+],
+"stage": "Ultimate",
+"evolvesFrom": [
+"yatagaramon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "rosemon",
+"displayName": "Rosemon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"lilimon"
+],
+"evolvesTo": ["rosemon-burst-mode"
+],
+"groups": []
+},
+{
+"id": "saberleomon",
+"displayName": "SaberLeomon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"panjyamon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "saintgargomon",
+"displayName": "SaintGargomon",
+"aliases": [
+"SaintGalgomon"
+],
+"stage": "Ultimate",
+"evolvesFrom": [
+"rapidmon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "sakuyalon",
+"displayName": "Sakuyalon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"taomon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "seraphimon",
+"displayName": "Seraphimon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"holyangemon"
+],
+"evolvesTo": [],
+"groups": []
+},{
+"id": "shinegreymon",
+"displayName": "ShineGreymon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"rizegreymon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "skullmammothmon",
+"displayName": "SkullMammothmon",
+"aliases": [
+"SkullMammon"
+],
+"stage": "Ultimate",
+"evolvesFrom": [
+"mammothmon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "slashangemon",
+"displayName": "SlashAngemon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"shakkoumon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "titamon",
+"displayName": "Titamon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"digitamamon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "ulforcev-dramon",
+"displayName": "UlforceV-Dramon",
+"aliases": ["UlforceVeedramon"
+],
+"stage": "Ultimate",
+"evolvesFrom": [
+"aerov-dramon"
+],
+"evolvesTo": [],
+"groups": ["Royal Knights"]
+},
+{
+"id": "valdurmon",
+"displayName": "Valdurmon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"yatagaramon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "venomvamdemon",
+"displayName": "VenomVamdemon",
+"aliases": [
+"VenomMyotismon"
+],
+"stage": "Ultimate",
+"evolvesFrom": [
+"vamdemon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "venusmon",
+"displayName": "Venusmon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"angewomon"
+],
+"evolvesTo": [],
+"groups": ["Olympus Twelve gods"]
+},
+{
+"id": "victorygreymon",
+"displayName": "VictoryGreymon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": ["rizegreymon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "vikemon",
+"displayName": "Vikemon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"zudomon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "vulcanusmon",
+"displayName": "Vulcanusmon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"asuramon"
+],
+"evolvesTo": [],
+"groups": ["Olympus Twelve gods"]
+},
+{
+"id": "wargreymon",
+"displayName": "WarGreymon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"metalgreymon"
+],
+"evolvesTo": [
+"wargreymon-x",
+"omegamon"
+],
+"groups": []
+},
+{
+"id": "whitecherubimon",
+"displayName": "WhiteCherubimon",
+"aliases": [
+"Cherubimon (Virtue)"
+],
+"stage": "Ultimate",
+"evolvesFrom": [
+"andiramon"],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "z-dgarurumon",
+"displayName": "Z'dGarurumon",
+"aliases": [
+"ZeedGarurumon"
+],
+"stage": "Ultimate",
+"evolvesFrom": [
+"weregarurumon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "zanbamon",
+"displayName": "Zanbamon",
+"aliases": [],
+"stage": "Ultimate",
+"evolvesFrom": [
+"vajramon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "dynasmon-x",
+"displayName": "Dynasmon X",
+"aliases": [],
+"stage": "Ultimate+",
+"evolvesFrom": [
+"dynasmon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "gracenovamon",
+"displayName": "Gracenovamon",
+"aliases": [],
+"stage": "Ultimate+",
+"evolvesFrom": [
+"apollomon",
+"dianamon"
+],
+"evolvesTo": [],
+"groups": []},
+{
+"id": "lillithmon-x",
+"displayName": "Lillithmon X",
+"aliases": [],
+"stage": "Ultimate+",
+"evolvesFrom": [
+"lillithmon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "magnamon-x",
+"displayName": "Magnamon X",
+"aliases": [],
+"stage": "Ultimate+",
+"evolvesFrom": [
+"magnamon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "omegamon",
+"displayName": "Omegamon",
+"aliases": [
+"Omnimon"
+],
+"stage": "Ultimate+",
+"evolvesFrom": [
+"wargreymon",
+"metalgarurumon"
+],
+"evolvesTo": [],
+"groups": ["Royal Knights"]
+},
+{
+"id": "rosemon-burst-mode",
+"displayName": "Rosemon Burst Mode",
+"aliases": [],
+"stage": "Ultimate+",
+"evolvesFrom": [
+"rosemon"
+],
+"evolvesTo": [],
+"groups": []
+},
+{
+"id": "wargreymon-x","displayName": "WarGreymon X",
+"aliases": [],
+"stage": "Ultimate+",
+"evolvesFrom": [
+"wargreymon"
+],
+"evolvesTo": [],
+"groups": []
+}
 ]
