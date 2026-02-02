@@ -2233,7 +2233,7 @@
 "kyubimon"
 ],
 "evolvesTo": [
-"sakuyalon"
+"sakuyamon"
 ],
 "groups": []
 },
@@ -3114,8 +3114,8 @@
 "groups": []
 },
 {
-"id": "sakuyalon",
-"displayName": "Sakuyalon",
+"id": "sakuyamon",
+"displayName": "Sakuyamon",
 "aliases": [],
 "stage": "Ultimate",
 "evolvesFrom": [
