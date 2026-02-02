@@ -1,0 +1,58 @@
+[
+  {
+    "id": "taichi_yagami",
+    "name": "Taichi Yagami",
+    "aliases": ["Yagami Taichi", "Tai Kamiya"],
+    "skillName": "Dragon's Roar",
+    "givingBuffFor": "DR"
+  },
+  {
+    "id": "yamato_ishida",
+    "name": "Yamato Ishida",
+    "aliases": ["Ishida Yamato", "Matt Ishida"],
+    "skillName": "Force of nature",
+    "givingBuffFor": "NSp"
+  },
+  {
+    "id": "sora_takenouchi",
+    "name": "Sora Takenouchi",
+    "aliases": ["Takeuchi Suna"],
+    "skillName": "Gale Swiftness",
+    "givingBuffFor": "WG"
+  },
+  {
+    "id": "koushiro_izumi",
+    "name": "Koushiro Izumi",
+    "aliases": ["Izumi Koshiro", "Izzy Izumi"],
+    "skillName": "Steel Bastion",
+    "givingBuffFor": "ME"
+  },
+  {
+    "id": "mimi_tachikawa",
+    "name": "Mimi Tachikawa",
+    "aliases": ["Tachikawa Mimi"],
+    "skillName": "Forest Ward",
+    "givingBuffFor": "JT"
+  },
+  {
+    "id": "jou_kido",
+    "name": "Jou Kido",
+    "aliases": ["Kotosuke", "Joe Kido"],
+    "skillName": "Tide Rush",
+    "givingBuffFor": "DS"
+  },
+  {
+    "id": "takeru_takaishi",
+    "name": "Takeru Takaishi",
+    "aliases": ["Takeshi Takeshi", "T.K Takaishi"],
+    "skillName": "Holy Sanctuary",
+    "givingBuffFor": "VB"
+  },
+  {
+    "id": "hikari_yagami",
+    "name": "Hikari Yagami",
+    "aliases": ["Yagami Hikari", "Kari Kamiya"],
+    "skillName": "Dark Erodes",
+    "givingBuffFor": "NSo"
+  }
+]
