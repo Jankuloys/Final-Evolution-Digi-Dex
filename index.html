@@ -247,11 +247,12 @@ const $ = (id) => document.getElementById(id);
 
   // Update title & render bar sesuai mode
   if (mode === 'group') {
-    $('alphaTitle').textContent = `(Group: ${CURRENT_GROUP || 'All'})`;
+    $('alphaTitle').textContent = `(Group: ${CURRENT_GROUP || 'Pilih group'})`;
     renderGroupBar();
     markActiveGroup();
   } else if (mode === 'stage') {
     $('alphaTitle').textContent = `(Stage: ${CURRENT_STAGE})`;
+    renderStageBar(); // 🔑 Render ulang stage bar!
     markActiveStage();
   } else {
     $('alphaTitle').textContent = `(Alphabet: ${CURRENT_LETTER})`;
@@ -418,6 +419,8 @@ function renderGroupBar(){
   ALL_GROUPS = groups;
   
   const bar = $('stageBar'); // Reuse stageBar container
+  if (!bar) return;
+  
   bar.innerHTML = groups.map(g =>
     `<a href="javascript:void(0)" data-group="${encodeURIComponent(g)}" class="${CURRENT_GROUP===g?'active':''}">${g}</a>`
   ).join('');
@@ -426,13 +429,13 @@ function renderGroupBar(){
     a.addEventListener('click', (e) => {
       e.preventDefault();
       CURRENT_GROUP = decodeURIComponent(a.dataset.group);
-      setMode('group');
+      markActiveGroup();
+      syncList();
     });
   });
 }
 
 function markActiveGroup(){
-  if (!$('stageBar')) return;
   document.querySelectorAll('#stageBar a').forEach(a=>{
     a.classList.toggle('active', decodeURIComponent(a.dataset.group) === CURRENT_GROUP);
   });
@@ -515,9 +518,37 @@ $('c-group').addEventListener('click', (e) => {
       `<p style="color:#ff9aa2; padding:16px; background:var(--panel-2); border-radius:12px">❌ Error: ${e.message}<br><small>Periksa console (F12) untuk detail error.</small></p>`);
   }
 })();
+
+    /* ====== RENDER: STAGE BAR ====== */
+function renderStageBar(){
+  const stages = ['Child', 'Adult', 'Perfect', 'Ultimate', 'Ultimate+'];
+  
+  const bar = $('stageBar');
+  if (!bar) return;
+  
+  bar.innerHTML = stages.map(s =>
+    `<a href="javascript:void(0)" data-stage="${s}" class="${CURRENT_STAGE===s?'active':''}">${s}</a>`
+  ).join('');
+  
+  bar.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      CURRENT_STAGE = a.dataset.stage;
+      markActiveStage();
+      syncList();
+    });
+  });
+}
+
+function markActiveStage(){
+  document.querySelectorAll('#stageBar a').forEach(a=>{
+    a.classList.toggle('active', a.dataset.stage === CURRENT_STAGE);
+  });
+}
   </script>
 </body>
 </html>
+
 
 
 
