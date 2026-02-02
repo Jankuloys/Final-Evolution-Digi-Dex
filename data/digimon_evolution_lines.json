@@ -1384,6 +1384,9 @@
     "evolvesTo": [
       "whitecherubimon",
       "blackcherubimon"
+    ],
+    "groups": [
+      "Devas"
     ]
   },
   {
@@ -2132,6 +2135,9 @@
     ],
     "evolvesTo": [
       "zanbamon"
+    ],
+    "groups": [
+      "Devas"
     ]
   },
   {
@@ -2244,7 +2250,10 @@
     "evolvesFrom": [
       "vritramon"
     ],
-    "evolvesTo": []
+    "evolvesTo": [],
+    "groups": [
+      "Ten Warriors"
+    ]
   },
   {
     "id": "ancientvolcamon",
@@ -2254,7 +2263,10 @@
     "evolvesFrom": [
       "meteormon"
     ],
-    "evolvesTo": []
+    "evolvesTo": [],
+    "groups": [
+      "Ten Warriors"
+    ]
   },
   {
     "id": "apollomon",
@@ -2266,6 +2278,9 @@
     ],
     "evolvesTo": [
       "gracenovamon"
+    ],
+    "groups": [
+      "Olympus Twelve gods"
     ]
   },
   {
@@ -2318,7 +2333,10 @@
     "evolvesFrom": [
       "skullsatamon"
     ],
-    "evolvesTo": []
+    "evolvesTo": [],
+    "groups": [
+      "Seven Great Demon Lord"
+    ]
   },
   {
     "id": "beelzemon",
@@ -2330,7 +2348,10 @@
     "evolvesFrom": [
       "baalmon"
     ],
-    "evolvesTo": []
+    "evolvesTo": [],
+    "groups": [
+      "Seven Great Demon Lord"
+    ]
   },
   {
     "id": "belialvamdemon",
@@ -2418,7 +2439,10 @@
     "evolvesFrom": [
       "knightmon"
     ],
-    "evolvesTo": []
+    "evolvesTo": [],
+    "groups": [
+      "Royal Knights"
+    ]
   },
   {
     "id": "cresgarurumon",
@@ -2460,7 +2484,10 @@
     "evolvesFrom": [
       "skullsatamon"
     ],
-    "evolvesTo": []
+    "evolvesTo": [],
+    "groups": [
+      "Seven Great Demon Lord"
+    ]
   },
   {
     "id": "diablomon",
@@ -2482,6 +2509,9 @@
     ],
     "evolvesTo": [
       "gracenovamon"
+    ],
+    "groups": [
+      "Olympus Twelve gods"
     ]
   },
   {
@@ -2504,7 +2534,10 @@
     "evolvesFrom": [
       "wargrowlmon"
     ],
-    "evolvesTo": []
+    "evolvesTo": [],
+    "groups": [
+      "Royal Knights"
+    ]
   },
   {
     "id": "dynasmon",
@@ -2516,6 +2549,9 @@
     ],
     "evolvesTo": [
       "dynasmon-x"
+    ],
+    "groups": [
+      "Royal Knights"
     ]
   },
   {
@@ -2612,7 +2648,10 @@
     "evolvesFrom": [
       "saviorhuckmon"
     ],
-    "evolvesTo": []
+    "evolvesTo": [],
+    "groups": [
+      "Royal Knights"
+    ]
   },
   {
     "id": "jijimon",
@@ -2664,7 +2703,10 @@
     "evolvesFrom": [
       "knightmon"
     ],
-    "evolvesTo": []
+    "evolvesTo": [],
+    "groups": [
+      "Royal Knights"
+    ]
   },
   {
     "id": "leviamon",
@@ -2674,7 +2716,10 @@
     "evolvesFrom": [
       "marindevimon"
     ],
-    "evolvesTo": []
+    "evolvesTo": [],
+    "groups": [
+      "Seven Great Demon Lord"
+    ]
   },
   {
     "id": "lillithmon",
@@ -2686,6 +2731,9 @@
     ],
     "evolvesTo": [
       "lillithmon-x"
+    ],
+    "groups": [
+      "Seven Great Demon Lord"
     ]
   },
   {
@@ -2698,7 +2746,10 @@
     "evolvesFrom": [
       "knightmon"
     ],
-    "evolvesTo": []
+    "evolvesTo": [],
+    "groups": [
+      "Royal Knights"
+    ]
   },
   {
     "id": "magnakidmon",
@@ -2720,6 +2771,9 @@
     ],
     "evolvesTo": [
       "magnamon-x"
+    ],
+    "groups": [
+      "Royal Knights"
     ]
   },
   {
@@ -2762,7 +2816,10 @@
     "evolvesFrom": [
       "lilamon"
     ],
-    "evolvesTo": []
+    "evolvesTo": [],
+    "groups": [
+      "Olympus Twelve gods"
+    ]
   },
   {
     "id": "miragegaogamon",
@@ -2794,7 +2851,10 @@
     "evolvesFrom": [
       "whamon"
     ],
-    "evolvesTo": []
+    "evolvesTo": [],
+    "groups": [
+      "Olympus Twelve gods"
+    ]
   },
   {
     "id": "ophanimon",
@@ -3000,7 +3060,10 @@
     "evolvesFrom": [
       "aerov-dramon"
     ],
-    "evolvesTo": []
+    "evolvesTo": [],
+    "groups": [
+      "Royal Knights"
+    ]
   },
   {
     "id": "valdurmon",
@@ -3032,7 +3095,10 @@
     "evolvesFrom": [
       "angewomon"
     ],
-    "evolvesTo": []
+    "evolvesTo": [],
+    "groups": [
+      "Olympus Twelve gods"
+    ]
   },
   {
     "id": "victorygreymon",
@@ -3062,7 +3128,10 @@
     "evolvesFrom": [
       "asuramon"
     ],
-    "evolvesTo": []
+    "evolvesTo": [],
+    "groups": [
+      "Olympus Twelve gods"
+    ]
   },
   {
     "id": "wargreymon",
@@ -3163,7 +3232,10 @@
       "wargreymon",
       "metalgarurumon"
     ],
-    "evolvesTo": []
+    "evolvesTo": [],
+    "groups": [
+      "Royal Knights"
+    ]
   },
   {
     "id": "rosemon-burst-mode",
