@@ -6,14 +6,15 @@
     "stage": "Child",
     "evolvesFrom": [],
     "evolvesTo": [
-      "greymon"
+      "greymon",
+      "geogreymon",
+      "tyranomon"
     ]
   },
   {
     "id": "armadimon",
     "displayName": "Armadimon",
     "aliases": [
-      "Armadimon",
       "Armadilomon"
     ],
     "stage": "Child",
@@ -36,7 +37,6 @@
     "id": "blackagumon",
     "displayName": "BlackAgumon",
     "aliases": [
-      "BlackAgumon",
       "Agumon (Black)"
     ],
     "stage": "Child",
@@ -49,7 +49,6 @@
     "id": "blackgabumon",
     "displayName": "BlackGabumon",
     "aliases": [
-      "BlackGabumon",
       "Gabumon (Black)"
     ],
     "stage": "Child",
@@ -62,13 +61,13 @@
     "id": "candlemon",
     "displayName": "Candlemon",
     "aliases": [
-      "Candlemon",
       "Candmon"
     ],
     "stage": "Child",
     "evolvesFrom": [],
     "evolvesTo": [
-      "meramon"
+      "meramon",
+      "bakemon"
     ]
   },
   {
@@ -98,7 +97,8 @@
     "stage": "Child",
     "evolvesFrom": [],
     "evolvesTo": [
-      "dorugamon"
+      "dorugamon",
+      "ginryumon"
     ]
   },
   {
@@ -125,7 +125,6 @@
     "id": "flamon",
     "displayName": "Flamon",
     "aliases": [
-      "Flamon",
       "Flamemon"
     ],
     "stage": "Child",
@@ -151,7 +150,9 @@
     "stage": "Child",
     "evolvesFrom": [],
     "evolvesTo": [
-      "garurumon"
+      "garurumon",
+      "drimogemon",
+      "bullmon"
     ]
   },
   {
@@ -178,7 +179,6 @@
     "id": "goburimon",
     "displayName": "Goburimon",
     "aliases": [
-      "Goburimon",
       "Goblimon"
     ],
     "stage": "Child",
@@ -224,14 +224,14 @@
     "stage": "Child",
     "evolvesFrom": [],
     "evolvesTo": [
-      "mechanorimon"
+      "mechanorimon",
+      "guadromon"
     ]
   },
   {
     "id": "huckmon",
     "displayName": "Huckmon",
     "aliases": [
-      "Huckmon",
       "Hackmon"
     ],
     "stage": "Child",
@@ -328,7 +328,6 @@
     "id": "mushmon",
     "displayName": "Mushmon",
     "aliases": [
-      "Mushmon",
       "Mushroomon"
     ],
     "stage": "Child",
@@ -354,7 +353,8 @@
     "stage": "Child",
     "evolvesFrom": [],
     "evolvesTo": [
-      "angemon"
+      "angemon",
+      "centaurmon"
     ]
   },
   {
@@ -364,7 +364,8 @@
     "stage": "Child",
     "evolvesFrom": [],
     "evolvesTo": [
-      "yukidarumon"
+      "yukidarumon",
+      "chackmon"
     ]
   },
   {
@@ -381,13 +382,13 @@
     "id": "picodevimon",
     "displayName": "PicoDevimon",
     "aliases": [
-      "PicoDevimon",
       "DemiDevimon"
     ],
     "stage": "Child",
     "evolvesFrom": [],
     "evolvesTo": [
-      "devimon"
+      "devimon",
+      "icedevimon"
     ]
   },
   {
@@ -397,20 +398,21 @@
     "stage": "Child",
     "evolvesFrom": [],
     "evolvesTo": [
-      "birdramon"
+      "birdramon",
+      "cockatorimon"
     ]
   },
   {
     "id": "plotmon",
     "displayName": "Plotmon",
     "aliases": [
-      "Plotmon",
       "Salamon"
     ],
     "stage": "Child",
     "evolvesFrom": [],
     "evolvesTo": [
-      "tailmon"
+      "tailmon",
+      "meicoomon"
     ]
   },
   {
@@ -420,20 +422,22 @@
     "stage": "Child",
     "evolvesFrom": [],
     "evolvesTo": [
-      "kyubimon"
+      "kyubimon",
+      "youkomon"
     ]
   },
   {
     "id": "syakomon",
     "displayName": "Syakomon",
     "aliases": [
-      "Syakomon",
       "Shakomon"
     ],
     "stage": "Child",
     "evolvesFrom": [],
     "evolvesTo": [
-      "gesomon"
+      "gesomon",
+      "ebidramon",
+      "shellmon"
     ]
   },
   {
@@ -443,7 +447,8 @@
     "stage": "Child",
     "evolvesFrom": [],
     "evolvesTo": [
-      "kabuterimon"
+      "kabuterimon",
+      "kuwagamon"
     ]
   },
   {
@@ -480,26 +485,27 @@
     "id": "tyumon",
     "displayName": "Tyumon",
     "aliases": [
-      "Tyumon",
       "Chuumon"
     ],
     "stage": "Child",
     "evolvesFrom": [],
     "evolvesTo": [
-      "numemon"
+      "numemon",
+      "scumon",
+      "nanimon"
     ]
   },
   {
     "id": "v-mon",
     "displayName": "V-mon",
     "aliases": [
-      "V-mon",
       "Veemon"
     ],
     "stage": "Child",
     "evolvesFrom": [],
     "evolvesTo": [
-      "v-dramon"
+      "v-dramon",
+      "exveemon"
     ]
   },
   {
@@ -516,7 +522,6 @@
     "id": "yukiagumon",
     "displayName": "YukiAgumon",
     "aliases": [
-      "YukiAgumon",
       "SnowAgumon"
     ],
     "stage": "Child",
@@ -558,7 +563,8 @@
       "armadimon"
     ],
     "evolvesTo": [
-      "brachimon"
+      "brachimon",
+      "shakkoumon"
     ]
   },
   {
@@ -566,7 +572,9 @@
     "displayName": "Bakemon",
     "aliases": [],
     "stage": "Adult",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "candlemon"
+    ],
     "evolvesTo": [
       "fantomon"
     ]
@@ -575,7 +583,6 @@
     "id": "baohuckmon",
     "displayName": "BaoHuckmon",
     "aliases": [
-      "BaoHuckmon",
       "BaoHackmon"
     ],
     "stage": "Adult",
@@ -602,7 +609,6 @@
     "id": "blackgarurumon",
     "displayName": "BlackGarurumon",
     "aliases": [
-      "BlackGarurumon",
       "Garurumon (Black)"
     ],
     "stage": "Adult",
@@ -617,7 +623,6 @@
     "id": "blackgreymon",
     "displayName": "BlackGreymon",
     "aliases": [
-      "BlackGreymon",
       "Greymon (Blue)"
     ],
     "stage": "Adult",
@@ -633,7 +638,9 @@
     "displayName": "Bullmon",
     "aliases": [],
     "stage": "Adult",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "gabumon"
+    ],
     "evolvesTo": [
       "vajramon"
     ]
@@ -643,7 +650,9 @@
     "displayName": "Centaurmon",
     "aliases": [],
     "stage": "Adult",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "patamon"
+    ],
     "evolvesTo": []
   },
   {
@@ -651,7 +660,9 @@
     "displayName": "Chackmon",
     "aliases": [],
     "stage": "Adult",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "penmon"
+    ],
     "evolvesTo": [
       "blizzardmon"
     ]
@@ -673,7 +684,9 @@
     "displayName": "Cockatorimon",
     "aliases": [],
     "stage": "Adult",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "piyomon"
+    ],
     "evolvesTo": [
       "parrotmon"
     ]
@@ -719,7 +732,9 @@
     "displayName": "Drimogemon",
     "aliases": [],
     "stage": "Adult",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "gabumon"
+    ],
     "evolvesTo": []
   },
   {
@@ -727,7 +742,9 @@
     "displayName": "Ebidramon",
     "aliases": [],
     "stage": "Adult",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "syakomon"
+    ],
     "evolvesTo": [
       "whamon"
     ]
@@ -736,11 +753,12 @@
     "id": "exveemon",
     "displayName": "ExVeemon",
     "aliases": [
-      "ExVeemon",
       "XV-Mon"
     ],
     "stage": "Adult",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "v-mon"
+    ],
     "evolvesTo": [
       "paildramon"
     ]
@@ -749,7 +767,6 @@
     "id": "fairimon",
     "displayName": "Fairimon",
     "aliases": [
-      "Fairimon",
       "Kazemon"
     ],
     "stage": "Adult",
@@ -813,7 +830,9 @@
     "displayName": "GeoGreymon",
     "aliases": [],
     "stage": "Adult",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "agumon"
+    ],
     "evolvesTo": [
       "rizegreymon"
     ]
@@ -835,7 +854,9 @@
     "displayName": "Ginryumon",
     "aliases": [],
     "stage": "Adult",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "dorumon"
+    ],
     "evolvesTo": [
       "hisharyumon"
     ]
@@ -861,14 +882,14 @@
       "agumon"
     ],
     "evolvesTo": [
-      "metalgreymon"
+      "metalgreymon",
+      "skullgreymon"
     ]
   },
   {
     "id": "growlmon",
     "displayName": "Growlmon",
     "aliases": [
-      "Growlmon",
       "Growmon"
     ],
     "stage": "Adult",
@@ -884,7 +905,9 @@
     "displayName": "Guadromon",
     "aliases": [],
     "stage": "Adult",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "hagurumon"
+    ],
     "evolvesTo": [
       "andromon"
     ]
@@ -894,7 +917,9 @@
     "displayName": "IceDevimon",
     "aliases": [],
     "stage": "Adult",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "picodevimon"
+    ],
     "evolvesTo": [
       "skullsatamon"
     ]
@@ -952,7 +977,9 @@
     "displayName": "Kuwagamon",
     "aliases": [],
     "stage": "Adult",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "tentomon"
+    ],
     "evolvesTo": [
       "okuwamon"
     ]
@@ -990,7 +1017,8 @@
       "elecmon"
     ],
     "evolvesTo": [
-      "panjyamon"
+      "panjyamon",
+      "grapleomon"
     ]
   },
   {
@@ -1010,7 +1038,9 @@
     "displayName": "Meicoomon",
     "aliases": [],
     "stage": "Adult",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "plotmon"
+    ],
     "evolvesTo": [
       "meicrackmon-viscious-mode"
     ]
@@ -1024,7 +1054,8 @@
       "candlemon"
     ],
     "evolvesTo": [
-      "skullmeramon"
+      "skullmeramon",
+      "asuramon"
     ]
   },
   {
@@ -1044,7 +1075,9 @@
     "displayName": "Nanimon",
     "aliases": [],
     "stage": "Adult",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "tyumon"
+    ],
     "evolvesTo": [
       "etemon"
     ]
@@ -1113,11 +1146,12 @@
     "id": "scumon",
     "displayName": "Scumon",
     "aliases": [
-      "Scumon",
       "Sukamon"
     ],
     "stage": "Adult",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "tyumon"
+    ],
     "evolvesTo": [
       "gerbemon"
     ]
@@ -1139,7 +1173,9 @@
     "displayName": "Shellmon",
     "aliases": [],
     "stage": "Adult",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "syakomon"
+    ],
     "evolvesTo": []
   },
   {
@@ -1182,7 +1218,6 @@
     "id": "tailmon",
     "displayName": "Tailmon",
     "aliases": [
-      "Tailmon",
       "Gatomon"
     ],
     "stage": "Adult",
@@ -1209,7 +1244,6 @@
     "id": "tunomon",
     "displayName": "Tunomon",
     "aliases": [
-      "Tunomon",
       "Unimon"
     ],
     "stage": "Adult",
@@ -1237,7 +1271,9 @@
     "displayName": "Tyranomon",
     "aliases": [],
     "stage": "Adult",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "agumon"
+    ],
     "evolvesTo": [
       "megadramon"
     ]
@@ -1246,7 +1282,6 @@
     "id": "v-dramon",
     "displayName": "V-Dramon",
     "aliases": [
-      "V-Dramon",
       "Veedramon"
     ],
     "stage": "Adult",
@@ -1266,14 +1301,14 @@
       "tsukaimon"
     ],
     "evolvesTo": [
-      "ladydevimon"
+      "ladydevimon",
+      "bastemon"
     ]
   },
   {
     "id": "wizardmon",
     "displayName": "Wizardmon",
     "aliases": [
-      "Wizardmon",
       "Wizarmon"
     ],
     "stage": "Adult",
@@ -1281,7 +1316,8 @@
       "impmon"
     ],
     "evolvesTo": [
-      "wisemon"
+      "wisemon",
+      "baalmon"
     ]
   },
   {
@@ -1301,7 +1337,9 @@
     "displayName": "Youkomon",
     "aliases": [],
     "stage": "Adult",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "renamon"
+    ],
     "evolvesTo": [
       "doumon"
     ]
@@ -1310,7 +1348,6 @@
     "id": "yukidarumon",
     "displayName": "Yukidarumon",
     "aliases": [
-      "Yukidarumon",
       "Yukiimon"
     ],
     "stage": "Adult",
@@ -1323,7 +1360,6 @@
     "id": "aerov-dramon",
     "displayName": "AeroV-Dramon",
     "aliases": [
-      "AeroV-Dramon",
       "AeroVeedramon"
     ],
     "stage": "Perfect",
@@ -1331,14 +1367,14 @@
       "v-dramon"
     ],
     "evolvesTo": [
-      "ulforcev-dramon"
+      "ulforcev-dramon",
+      "dynasmon"
     ]
   },
   {
     "id": "andiramon",
     "displayName": "Andiramon",
     "aliases": [
-      "Andiramon",
       "Antylamon"
     ],
     "stage": "Perfect",
@@ -1346,7 +1382,8 @@
       "turueimon"
     ],
     "evolvesTo": [
-      "whitecherubimon"
+      "whitecherubimon",
+      "blackcherubimon"
     ]
   },
   {
@@ -1370,7 +1407,8 @@
       "tailmon"
     ],
     "evolvesTo": [
-      "ophanimon"
+      "ophanimon",
+      "venusmon"
     ]
   },
   {
@@ -1382,7 +1420,8 @@
       "porcupamon"
     ],
     "evolvesTo": [
-      "belphemon-sleep-mode"
+      "belphemon-sleep-mode",
+      "magnakidmon"
     ]
   },
   {
@@ -1390,7 +1429,9 @@
     "displayName": "Asuramon",
     "aliases": [],
     "stage": "Perfect",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "meramon"
+    ],
     "evolvesTo": [
       "vulcanusmon"
     ]
@@ -1399,7 +1440,6 @@
     "id": "atlurkabuterimon",
     "displayName": "AtlurKabuterimon",
     "aliases": [
-      "AtlurKabuterimon",
       "MegaKabuterimon"
     ],
     "stage": "Perfect",
@@ -1415,7 +1455,9 @@
     "displayName": "Baalmon",
     "aliases": [],
     "stage": "Perfect",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "wizardmon"
+    ],
     "evolvesTo": [
       "beelzemon"
     ]
@@ -1425,7 +1467,9 @@
     "displayName": "Bastemon",
     "aliases": [],
     "stage": "Perfect",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "witchmon"
+    ],
     "evolvesTo": [
       "babamon"
     ]
@@ -1434,7 +1478,6 @@
     "id": "blackmetalgreymon",
     "displayName": "BlackMetalGreymon",
     "aliases": [
-      "BlackMetalGreymon",
       "MetalGreymon (Blue)"
     ],
     "stage": "Perfect",
@@ -1449,7 +1492,6 @@
     "id": "blackweregarurumon",
     "displayName": "BlackWereGarurumon",
     "aliases": [
-      "BlackWereGarurumon",
       "WereGarurumon (Black)"
     ],
     "stage": "Perfect",
@@ -1476,7 +1518,6 @@
     "id": "brachimon",
     "displayName": "Brachimon",
     "aliases": [
-      "Brachimon",
       "Brachiomon"
     ],
     "stage": "Perfect",
@@ -1518,7 +1559,8 @@
       "strikedramon"
     ],
     "evolvesTo": [
-      "justimon"
+      "justimon",
+      "fujinmon"
     ]
   },
   {
@@ -1549,7 +1591,6 @@
     "id": "dorugreymon",
     "displayName": "DoruGreymon",
     "aliases": [
-      "DoruGreymon",
       "Doruguremon"
     ],
     "stage": "Perfect",
@@ -1586,7 +1627,6 @@
     "id": "fantomon",
     "displayName": "Fantomon",
     "aliases": [
-      "Fantomon",
       "Phantomon"
     ],
     "stage": "Perfect",
@@ -1625,7 +1665,6 @@
     "id": "gerbemon",
     "displayName": "Gerbemon",
     "aliases": [
-      "Gerbemon",
       "Garbagemon"
     ],
     "stage": "Perfect",
@@ -1641,7 +1680,9 @@
     "displayName": "GrapLeomon",
     "aliases": [],
     "stage": "Perfect",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "leomon"
+    ],
     "evolvesTo": [
       "banchouleomon"
     ]
@@ -1662,7 +1703,6 @@
     "id": "holyangemon",
     "displayName": "HolyAngemon",
     "aliases": [
-      "HolyAngemon",
       "MagnaAngemon"
     ],
     "stage": "Perfect",
@@ -1701,7 +1741,6 @@
     "id": "jyureimon",
     "displayName": "Jyureimon",
     "aliases": [
-      "Jyureimon",
       "Cherrymon"
     ],
     "stage": "Perfect",
@@ -1721,7 +1760,9 @@
       "gladimon"
     ],
     "evolvesTo": [
-      "lordknightmon"
+      "lordknightmon",
+      "craniummon",
+      "leopardmon"
     ]
   },
   {
@@ -1752,7 +1793,6 @@
     "id": "lilimon",
     "displayName": "Lilimon",
     "aliases": [
-      "Lilimon",
       "Lillymon"
     ],
     "stage": "Perfect",
@@ -1760,7 +1800,8 @@
       "togemon"
     ],
     "evolvesTo": [
-      "rosemon"
+      "rosemon",
+      "bancoulilimon"
     ]
   },
   {
@@ -1779,7 +1820,6 @@
     "id": "mammothmon",
     "displayName": "Mammothmon",
     "aliases": [
-      "Mammothmon",
       "Mammon"
     ],
     "stage": "Perfect",
@@ -1847,14 +1887,14 @@
       "greymon"
     ],
     "evolvesTo": [
-      "wargreymon"
+      "wargreymon",
+      "blitzgreymon"
     ]
   },
   {
     "id": "meteormon",
     "displayName": "Meteormon",
     "aliases": [
-      "Meteormon",
       "Insekimon"
     ],
     "stage": "Perfect",
@@ -1881,7 +1921,6 @@
     "id": "nanomon",
     "displayName": "Nanomon",
     "aliases": [
-      "Nanomon",
       "Datamon"
     ],
     "stage": "Perfect",
@@ -1913,7 +1952,8 @@
       "exveemon"
     ],
     "evolvesTo": [
-      "imperialdramon-dragon-mode"
+      "imperialdramon-dragon-mode",
+      "magnamon"
     ]
   },
   {
@@ -1944,7 +1984,6 @@
     "id": "picklemon",
     "displayName": "Picklemon",
     "aliases": [
-      "Picklemon",
       "Piximon"
     ],
     "stage": "Perfect",
@@ -1976,14 +2015,14 @@
       "geogreymon"
     ],
     "evolvesTo": [
-      "shinegreymon"
+      "shinegreymon",
+      "victorygreymon"
     ]
   },
   {
     "id": "saviorhuckmon",
     "displayName": "SaviorHuckmon",
     "aliases": [
-      "SaviorHuckmon",
       "SaviorHackmon"
     ],
     "stage": "Perfect",
@@ -1999,7 +2038,9 @@
     "displayName": "Shakkoumon",
     "aliases": [],
     "stage": "Perfect",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "ankylomon"
+    ],
     "evolvesTo": [
       "slashangemon"
     ]
@@ -2008,7 +2049,6 @@
     "id": "shutumon",
     "displayName": "Shutumon",
     "aliases": [
-      "Shutumon",
       "Zephyrmon"
     ],
     "stage": "Perfect",
@@ -2024,7 +2064,9 @@
     "displayName": "SkullGreymon",
     "aliases": [],
     "stage": "Perfect",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "greymon"
+    ],
     "evolvesTo": [
       "mugendramon"
     ]
@@ -2050,7 +2092,8 @@
       "icedevimon"
     ],
     "evolvesTo": [
-      "demon"
+      "demon",
+      "barbamon"
     ]
   },
   {
@@ -2069,7 +2112,6 @@
     "id": "tylinmon",
     "displayName": "Tylinmon",
     "aliases": [
-      "Tylinmon",
       "Kirinmon"
     ],
     "stage": "Perfect",
@@ -2096,7 +2138,6 @@
     "id": "vamdemon",
     "displayName": "Vamdemon",
     "aliases": [
-      "Vamdemon",
       "Myotismon"
     ],
     "stage": "Perfect",
@@ -2104,7 +2145,8 @@
       "devimon"
     ],
     "evolvesTo": [
-      "venomvamdemon"
+      "venomvamdemon",
+      "belialvamdemon"
     ]
   },
   {
@@ -2123,7 +2165,6 @@
     "id": "wargrowlmon",
     "displayName": "WarGrowlmon",
     "aliases": [
-      "WarGrowlmon",
       "MegaloGrowmon"
     ],
     "stage": "Perfect",
@@ -2143,7 +2184,9 @@
       "garurumon"
     ],
     "evolvesTo": [
-      "metalgarurumon"
+      "metalgarurumon",
+      "z-dgarurumon",
+      "cresgarurumon"
     ]
   },
   {
@@ -2177,7 +2220,8 @@
       "peckmon"
     ],
     "evolvesTo": [
-      "valdurmon"
+      "valdurmon",
+      "ravemon"
     ]
   },
   {
@@ -2258,11 +2302,12 @@
     "id": "bancoulilimon",
     "displayName": "BancouLilimon",
     "aliases": [
-      "BancouLilimon",
       "BanchouLillymon"
     ],
     "stage": "Ultimate",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "lilimon"
+    ],
     "evolvesTo": []
   },
   {
@@ -2270,14 +2315,15 @@
     "displayName": "Barbamon",
     "aliases": [],
     "stage": "Ultimate",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "skullsatamon"
+    ],
     "evolvesTo": []
   },
   {
     "id": "beelzemon",
     "displayName": "Beelzemon",
     "aliases": [
-      "Beelzemon",
       "Beelzebumon"
     ],
     "stage": "Ultimate",
@@ -2290,11 +2336,12 @@
     "id": "belialvamdemon",
     "displayName": "BelialVamdemon",
     "aliases": [
-      "BelialVamdemon",
       "MaloMyotismon"
     ],
     "stage": "Ultimate",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "vamdemon"
+    ],
     "evolvesTo": []
   },
   {
@@ -2311,18 +2358,18 @@
     "id": "blackcherubimon",
     "displayName": "BlackCherubimon",
     "aliases": [
-      "BlackCherubimon",
       "Cherubimon (Vice)"
     ],
     "stage": "Ultimate",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "andiramon"
+    ],
     "evolvesTo": []
   },
   {
     "id": "blackmetalgarurumon",
     "displayName": "BlackMetalGarurumon",
     "aliases": [
-      "BlackMetalGarurumon",
       "MetalGarurumon (Black)"
     ],
     "stage": "Ultimate",
@@ -2346,7 +2393,9 @@
     "displayName": "BlitzGreymon",
     "aliases": [],
     "stage": "Ultimate",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "metalgreymon"
+    ],
     "evolvesTo": []
   },
   {
@@ -2363,11 +2412,12 @@
     "id": "craniummon",
     "displayName": "Craniummon",
     "aliases": [
-      "Craniummon",
       "Craniamon"
     ],
     "stage": "Ultimate",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "knightmon"
+    ],
     "evolvesTo": []
   },
   {
@@ -2375,7 +2425,9 @@
     "displayName": "CresGarurumon",
     "aliases": [],
     "stage": "Ultimate",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "weregarurumon"
+    ],
     "evolvesTo": []
   },
   {
@@ -2402,7 +2454,6 @@
     "id": "demon",
     "displayName": "Demon",
     "aliases": [
-      "Demon",
       "Daemon"
     ],
     "stage": "Ultimate",
@@ -2447,7 +2498,6 @@
     "id": "dukemon",
     "displayName": "Dukemon",
     "aliases": [
-      "Dukemon",
       "Gallantmon"
     ],
     "stage": "Ultimate",
@@ -2461,7 +2511,9 @@
     "displayName": "Dynasmon",
     "aliases": [],
     "stage": "Ultimate",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "aerov-dramon"
+    ],
     "evolvesTo": [
       "dynasmon-x"
     ]
@@ -2471,7 +2523,9 @@
     "displayName": "Fujinmon",
     "aliases": [],
     "stage": "Ultimate",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "cyberdramon"
+    ],
     "evolvesTo": []
   },
   {
@@ -2498,7 +2552,6 @@
     "id": "griffomon",
     "displayName": "Griffomon",
     "aliases": [
-      "Griffomon",
       "Gryphonmon"
     ],
     "stage": "Ultimate",
@@ -2511,7 +2564,6 @@
     "id": "herculeskabuterimon",
     "displayName": "HerculesKabuterimon",
     "aliases": [
-      "HerculesKabuterimon",
       "HerakleKabuterimon"
     ],
     "stage": "Ultimate",
@@ -2534,7 +2586,6 @@
     "id": "hououmon",
     "displayName": "Hououmon",
     "aliases": [
-      "Hououmon",
       "Phoenixmon"
     ],
     "stage": "Ultimate",
@@ -2607,11 +2658,12 @@
     "id": "leopardmon",
     "displayName": "Leopardmon",
     "aliases": [
-      "Leopardmon",
       "Duftmon"
     ],
     "stage": "Ultimate",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "knightmon"
+    ],
     "evolvesTo": []
   },
   {
@@ -2640,7 +2692,6 @@
     "id": "lordknightmon",
     "displayName": "LordKnightmon",
     "aliases": [
-      "LordKnightmon",
       "Crusadermon"
     ],
     "stage": "Ultimate",
@@ -2654,7 +2705,9 @@
     "displayName": "MagnaKidmon",
     "aliases": [],
     "stage": "Ultimate",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "astamon"
+    ],
     "evolvesTo": []
   },
   {
@@ -2662,7 +2715,9 @@
     "displayName": "Magnamon",
     "aliases": [],
     "stage": "Ultimate",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "paildramon"
+    ],
     "evolvesTo": [
       "magnamon-x"
     ]
@@ -2723,7 +2778,6 @@
     "id": "mugendramon",
     "displayName": "Mugendramon",
     "aliases": [
-      "Mugendramon",
       "Machinedramon"
     ],
     "stage": "Ultimate",
@@ -2746,7 +2800,6 @@
     "id": "ophanimon",
     "displayName": "Ophanimon",
     "aliases": [
-      "Ophanimon",
       "Ofanimon"
     ],
     "stage": "Ultimate",
@@ -2779,7 +2832,6 @@
     "id": "piedmon",
     "displayName": "Piedmon",
     "aliases": [
-      "Piedmon",
       "Piemon"
     ],
     "stage": "Ultimate",
@@ -2792,7 +2844,6 @@
     "id": "pinochimon",
     "displayName": "Pinochimon",
     "aliases": [
-      "Pinochimon",
       "Puppetmon"
     ],
     "stage": "Ultimate",
@@ -2835,11 +2886,12 @@
     "id": "ravemon",
     "displayName": "Ravemon",
     "aliases": [
-      "Ravemon",
       "Ravmon"
     ],
     "stage": "Ultimate",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "yatagaramon"
+    ],
     "evolvesTo": []
   },
   {
@@ -2868,7 +2920,6 @@
     "id": "saintgargomon",
     "displayName": "SaintGargomon",
     "aliases": [
-      "SaintGargomon",
       "SaintGalgomon"
     ],
     "stage": "Ultimate",
@@ -2911,7 +2962,6 @@
     "id": "skullmammothmon",
     "displayName": "SkullMammothmon",
     "aliases": [
-      "SkullMammothmon",
       "SkullMammon"
     ],
     "stage": "Ultimate",
@@ -2944,7 +2994,6 @@
     "id": "ulforcev-dramon",
     "displayName": "UlforceV-Dramon",
     "aliases": [
-      "UlforceV-Dramon",
       "UlforceVeedramon"
     ],
     "stage": "Ultimate",
@@ -2967,7 +3016,6 @@
     "id": "venomvamdemon",
     "displayName": "VenomVamdemon",
     "aliases": [
-      "VenomVamdemon",
       "VenomMyotismon"
     ],
     "stage": "Ultimate",
@@ -2981,7 +3029,9 @@
     "displayName": "Venusmon",
     "aliases": [],
     "stage": "Ultimate",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "angewomon"
+    ],
     "evolvesTo": []
   },
   {
@@ -2989,7 +3039,9 @@
     "displayName": "VictoryGreymon",
     "aliases": [],
     "stage": "Ultimate",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "rizegreymon"
+    ],
     "evolvesTo": []
   },
   {
@@ -3021,14 +3073,14 @@
       "metalgreymon"
     ],
     "evolvesTo": [
-      "wargreymon-x"
+      "wargreymon-x",
+      "omegamon"
     ]
   },
   {
     "id": "whitecherubimon",
     "displayName": "WhiteCherubimon",
     "aliases": [
-      "WhiteCherubimon",
       "Cherubimon (Virtue)"
     ],
     "stage": "Ultimate",
@@ -3041,11 +3093,12 @@
     "id": "z-dgarurumon",
     "displayName": "Z'dGarurumon",
     "aliases": [
-      "Z'dGarurumon",
       "ZeedGarurumon"
     ],
     "stage": "Ultimate",
-    "evolvesFrom": [],
+    "evolvesFrom": [
+      "weregarurumon"
+    ],
     "evolvesTo": []
   },
   {
@@ -3103,11 +3156,11 @@
     "id": "omegamon",
     "displayName": "Omegamon",
     "aliases": [
-      "Omegamon",
       "Omnimon"
     ],
     "stage": "Ultimate+",
     "evolvesFrom": [
+      "wargreymon",
       "metalgarurumon"
     ],
     "evolvesTo": []
