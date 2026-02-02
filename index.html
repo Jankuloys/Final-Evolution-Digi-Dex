@@ -279,38 +279,48 @@
 
   /* ====== RENDER: CARD (DETAIL) ====== */
   function renderCard(id){
-    const node = byId(id);
-    const nameEl = $('c-name'), meta = $('c-meta'), stage = $('c-stage'), aliases = $('c-aliases');
-    const prevBox = $('c-prev'), nextBox = $('c-next');
-    const thumb = document.querySelector('#card .thumb .placeholder');
+  const node = byId(id);
+  const nameEl = $('c-name'), meta = $('c-meta'), stage = $('c-stage'), aliases = $('c-aliases'), group = $('c-group');
+  const prevBox = $('c-prev'), nextBox = $('c-next');
+  const thumb = document.querySelector('#card .thumb .placeholder');
 
-    if(!node){
-      nameEl.textContent = 'Tidak ditemukan';
-      stage.textContent = '-';
-      aliases.textContent = '-';
-      prevBox.innerHTML = '';
-      nextBox.innerHTML = '';
-      if (thumb) thumb.textContent = '?';
-      return;
-    }
-
-    nameEl.textContent = node.displayName;
-    meta.innerHTML = chip(node.stage) + (node.aliases && node.aliases.length ? ' ' + chip(node.aliases[0]) : '');
-    stage.textContent = node.stage;
-    aliases.textContent = (node.aliases && node.aliases.length) ? node.aliases.join(', ') : '-';
-    if (thumb) thumb.textContent = (node.displayName || '?').charAt(0).toUpperCase();
-
-    const from = (node.evolvesFrom||[]).map(byId).filter(Boolean);
-    const to   = (node.evolvesTo||[]).map(byId).filter(Boolean);
-
-    prevBox.innerHTML = from.length
-      ? from.map(n => `<a class="name-pill" href="#${encodeURIComponent(n.id)}">${n.displayName}</a>`).join(' ')
-      : chip('(tidak ada)');
-
-    nextBox.innerHTML = to.length
-      ? to.map(n => `<a class="name-pill" href="#${encodeURIComponent(n.id)}">${n.displayName}</a>`).join(' ')
-      : chip('(tidak ada)');
+  if(!node){
+    nameEl.textContent = 'Tidak ditemukan';
+    stage.textContent = '-';
+    aliases.textContent = '-';
+    group.textContent = '-';
+    prevBox.innerHTML = '';
+    nextBox.innerHTML = '';
+    if (thumb) thumb.textContent = '?';
+    return;
   }
+
+  nameEl.textContent = node.displayName;
+  meta.innerHTML = chip(node.stage);
+  if (node.aliases && node.aliases.length) meta.innerHTML += ' ' + chip(node.aliases[0]);
+  
+  stage.textContent = node.stage;
+  aliases.textContent = (node.aliases && node.aliases.length) ? node.aliases.join(', ') : '-';
+  
+  // 🔑 FIX: baca "groups" (plural) + handle empty array
+  const groups = node.groups || [];
+  group.textContent = groups.length > 0 
+    ? groups.join(', ') 
+    : (node.group ? node.group : '-'); // fallback ke "group" singular kalau ada
+
+  if (thumb) thumb.textContent = (node.displayName || '?').charAt(0).toUpperCase();
+
+  const from = (node.evolvesFrom||[]).map(byId).filter(Boolean);
+  const to   = (node.evolvesTo||[]).map(byId).filter(Boolean);
+
+  prevBox.innerHTML = from.length
+    ? from.map(n => `<a class="name-pill" href="#${encodeURIComponent(n.id)}">${n.displayName}</a>`).join(' ')
+    : chip('(tidak ada)');
+
+  nextBox.innerHTML = to.length
+    ? to.map(n => `<a class="name-pill" href="#${encodeURIComponent(n.id)}">${n.displayName}</a>`).join(' ')
+    : chip('(tidak ada)');
+}
 
   /* ====== ROUTER (hash -> card) ====== */
   function syncRoute(){
@@ -400,5 +410,6 @@
   </script>
 </body>
 </html>
+
 
 
