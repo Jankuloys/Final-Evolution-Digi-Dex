@@ -153,31 +153,28 @@
     .card h2{ margin:0 0 12px; font-size:28px; color:#cfe0ff }
     .meta{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px }
     .chip{ 
-      background:var(--chip); color:#b9c6ff; padding:6px 12px; border-radius:999px; 
+      background:var(--chip); color:#b9c6ff; padding:6px 12px; border-radius:8px; 
       font-size:13px; font-weight:600; transition:var(--transition);
       cursor:pointer; display:inline-flex; align-items:center; gap:4px;
+      border:1px solid rgba(255,255,255,.1);
     }
     .chip:hover{
       background:linear-gradient(135deg, #2a3d86, #243570);
       transform:translateY(-1px);
       box-shadow:0 2px 8px rgba(42,61,134,.4);
+      border-color:rgba(255,255,255,.2);
     }
     .kv{ display:grid; grid-template-columns:130px 1fr; gap:8px 12px; margin:12px 0 }
     .kv b{ color:#cfe0ff; font-weight:600; font-size:15px; }
     .kv span{ color:var(--text); line-height:1.5; }
     .kv a{ color:var(--text); text-decoration:underline; transition:var(--transition); }
     .kv a:hover{ color:var(--brand); text-decoration:underline; }
-    .faction-chip{
-      display:inline-flex; align-items:center; gap:6px; padding:4px 10px;
-      border-radius:8px; margin-right:6px; margin-bottom:4px;
-      font-size:13px; font-weight:600; text-decoration:none;
-      transition:var(--transition); border:1px solid transparent;
-    }
-    .faction-chip:hover{
-      transform:translateY(-1px); box-shadow:0 2px 8px rgba(0,0,0,.3);
-      border-color:rgba(255,255,255,.2);
-    }
     .linkchips{ display:flex; flex-wrap:wrap; gap:10px }
+    .linkchips .chip{ 
+      background:var(--chip); 
+      border:1px solid var(--ring);
+      margin-bottom: 4px;
+    }
 
     /* FOOTER */
     .empty{max-width:1200px;margin:10px auto 30px;padding:0 18px;color:var(--muted)}
@@ -227,7 +224,7 @@
         <button id="btnStage" class="seg-btn" data-mode="stage" role="tab" aria-selected="false">Stage</button>
         <button id="btnGroup" class="seg-btn" data-mode="group" role="tab" aria-selected="false">Group</button>
         <button id="btnFaction" class="seg-btn" data-mode="faction" role="tab" aria-selected="false">Faction</button>
-        <button id="btnType" class="seg-btn" data-mode="type" role="tab" aria-selected="false">Type</button>
+        <button id="btnType" class="seg-btn" data-mode="type="tab" aria-selected="false">Type</button>
       </div>
 
       <!-- A-Z BAR -->
@@ -367,6 +364,7 @@
     $('emptyNames').hidden = results.length > 0;
     $('emptyNames').textContent = results.length === 0 ? 'Tidak ada Digimon yang cocok dengan pencarian.' : '';
     $('alphaTitle').textContent = `(Search: "${query}")`;
+    $('factionBar').style.display = 'none';
   }
 
   /* ====== FILTER BY STAGE ====== */
@@ -446,7 +444,7 @@
   /* ====== RENDER: A-Z BAR ====== */
   function renderAlphaBar(){
     const bar = $('alphaBar');
-    const letters = Array.from({length:26}, (_,i)=> String.fromCharCode(65+i));
+    const letters = Array.from({length:26i)=> String.fromCharCode(65+i));
     bar.innerHTML = letters.map(L =>
       `<a href="javascript:void(0)" data-letter="${L}" class="${L===CURRENT_LETTER?'active':''}">${L}</a>`
     ).join('') + ` <a href="javascript:void(0)" data-letter="#" class="${CURRENT_LETTER==='#'?'active':''}">#</a>`;
@@ -659,15 +657,23 @@
     if (node.aliases && node.aliases.length) meta.innerHTML += ' ' + chip(node.aliases[0].trim());
     
     // Stage (clickable)
-    stageEl.innerHTML = `<a href="#" data-stage="${node.stage.trim()}">${node.stage.trim()}</a>`;
+    stageEl.innerHTML = `<a href="#" class="chip" data-stage="${node.stage.trim()}">${node.stage.trim()}</a>`;
     
-    // Aliases
-    aliasesEl.textContent = (node.aliases && node.aliases.length) ? node.aliases.map(a => a.trim()).join(', ') : '-';
+    // Aliases (clickable)
+    if (node.aliases && node.aliases.length) {
+      aliasesEl.innerHTML = node.aliases.map(a => 
+        `<a href="#" class="chip">${a.trim()}</a>`
+      ).join(' ');
+    } else {
+      aliasesEl.textContent = '-';
+    }
     
-    // Type / Race (clickable)
+    // Type / Race (clickable with icon)
     if (node.types && node.types.length) {
       const typeStr = node.types[0].trim();
-      typeEl.innerHTML = `<a href="#" data-type="${typeStr}">${typeStr}</a>`;
+      const typeInfo = REF_DATA?.types?.find(tp => tp.id.trim() === typeStr);
+      const icon = typeInfo ? typeInfo.icon.trim() : '❓';
+      typeEl.innerHTML = `<a href="#" class="chip" data-type="${typeStr}">${icon} ${typeStr}</a>`;
     } else {
       typeEl.textContent = '-';
     }
@@ -679,7 +685,7 @@
         const faction = REF_DATA.factions.find(f => f.code.trim() === cleanCode);
         if (faction) {
           const aliases = faction.aliases && faction.aliases.length ? ` (${faction.aliases.map(a => a.trim()).join(', ')})` : '';
-          return `<a href="#" class="faction-chip" style="background:${faction.color}15;border:1px solid ${faction.color}40;color:${faction.color}" data-faction="${cleanCode}">${faction.icon} ${faction.name.trim()}${aliases}</a>`;
+          return `<a href="#" class="chip" style="background:${faction.color}15;border:1px solid ${faction.color}40;color:${faction.color}" data-faction="${cleanCode}">${faction.icon} ${faction.name.trim()}${aliases}</a>`;
         }
         return `<span class="chip">${cleanCode}</span>`;
       }).join('');
@@ -692,7 +698,7 @@
     const groups = node.groups || [];
     if (groups.length > 0) {
       groupEl.innerHTML = groups.map(g => 
-        `<span class="chip" data-group-click="${encodeURIComponent(g.trim())}">${g.trim()}</span>`
+        `<a href="#" class="chip" data-group-click="${encodeURIComponent(g.trim())}">${g.trim()}</a>`
       ).join(' ');
     } else {
       groupEl.textContent = '-';
@@ -704,12 +710,12 @@
     const to   = (node.evolvesTo||[]).map(id => byId(id.trim())).filter(Boolean);
 
     prevBox.innerHTML = from.length
-      ? from.map(n => `<a class="name-pill" href="#${encodeURIComponent(n.id.trim())}">${n.displayName.trim()}</a>`).join(' ')
-      : chip('(tidak ada)');
+      ? from.map(n => `<a href="#${encodeURIComponent(n.id.trim())}" class="chip">${n.displayName.trim()}</a>`).join(' ')
+      : `<span class="chip">(tidak ada)</span>`;
 
     nextBox.innerHTML = to.length
-      ? to.map(n => `<a class="name-pill" href="#${encodeURIComponent(n.id.trim())}">${n.displayName.trim()}</a>`).join(' ')
-      : chip('(tidak ada)');
+      ? to.map(n => `<a href="#${encodeURIComponent(n.id.trim())}" class="chip">${n.displayName.trim()}</a>`).join(' ')
+      : `<span class="chip">(tidak ada)</span>`;
   }
 
   /* ====== CARD CLICK HANDLER (Stage, Type, Faction) ====== */
@@ -788,8 +794,7 @@
       const typeStr = hash.replace('type:', '').trim();
       CURRENT_TYPE = typeStr;
       setMode('type');
-      return;
-    }
+      return    }
     
     // Handle digimon ID hash
     const node = byId(hash);
@@ -815,7 +820,7 @@
       ]);
       
       if(!digimonRes.ok) throw new Error('Gagal memuat data Digimon: ' + digimonRes.status);
-      if(!refRes.ok) throw new Error('Gagal memuat reference data: ' + refRes.status);
+      if(!refRes.ok) throw new Error('Gagal memuat reference  ' + refRes.status);
       
       // Clean digimon data
       const rawData = await digimonRes.json();
