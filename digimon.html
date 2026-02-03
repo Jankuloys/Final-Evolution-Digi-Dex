@@ -157,6 +157,7 @@
       font-size:13px; font-weight:600; transition:var(--transition);
       cursor:pointer; display:inline-flex; align-items:center; gap:4px;
       border:1px solid rgba(255,255,255,.1);
+      text-decoration: none !important;
     }
     .chip:hover{
       background:linear-gradient(135deg, #2a3d86, #243570);
@@ -167,14 +168,7 @@
     .kv{ display:grid; grid-template-columns:130px 1fr; gap:8px 12px; margin:12px 0 }
     .kv b{ color:#cfe0ff; font-weight:600; font-size:15px; }
     .kv span{ color:var(--text); line-height:1.5; }
-    .kv a{ color:var(--text); text-decoration:underline; transition:var(--transition); }
-    .kv a:hover{ color:var(--brand); text-decoration:underline; }
-    .linkchips{ display:flex; flex-wrap:wrap; gap:10px }
-    .linkchips .chip{ 
-      background:var(--chip); 
-      border:1px solid var(--ring);
-      margin-bottom: 4px;
-    }
+    .linkchips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:8px }
 
     /* FOOTER */
     .empty{max-width:1200px;margin:10px auto 30px;padding:0 18px;color:var(--muted)}
@@ -224,7 +218,7 @@
         <button id="btnStage" class="seg-btn" data-mode="stage" role="tab" aria-selected="false">Stage</button>
         <button id="btnGroup" class="seg-btn" data-mode="group" role="tab" aria-selected="false">Group</button>
         <button id="btnFaction" class="seg-btn" data-mode="faction" role="tab" aria-selected="false">Faction</button>
-        <button id="btnType" class="seg-btn" data-mode="type="tab" aria-selected="false">Type</button>
+        <button id="btnType" class="seg-btn" data-mode="type" role="tab" aria-selected="false">Type</button>
       </div>
 
       <!-- A-Z BAR -->
@@ -364,7 +358,6 @@
     $('emptyNames').hidden = results.length > 0;
     $('emptyNames').textContent = results.length === 0 ? 'Tidak ada Digimon yang cocok dengan pencarian.' : '';
     $('alphaTitle').textContent = `(Search: "${query}")`;
-    $('factionBar').style.display = 'none';
   }
 
   /* ====== FILTER BY STAGE ====== */
@@ -444,7 +437,7 @@
   /* ====== RENDER: A-Z BAR ====== */
   function renderAlphaBar(){
     const bar = $('alphaBar');
-    const letters = Array.from({length:26i)=> String.fromCharCode(65+i));
+    const letters = Array.from({length:26}, (_,i)=> String.fromCharCode(65+i));
     bar.innerHTML = letters.map(L =>
       `<a href="javascript:void(0)" data-letter="${L}" class="${L===CURRENT_LETTER?'active':''}">${L}</a>`
     ).join('') + ` <a href="javascript:void(0)" data-letter="#" class="${CURRENT_LETTER==='#'?'active':''}">#</a>`;
@@ -653,16 +646,16 @@
     }
 
     nameEl.textContent = node.displayName.trim();
-    meta.innerHTML = chip(node.stage.trim());
-    if (node.aliases && node.aliases.length) meta.innerHTML += ' ' + chip(node.aliases[0].trim());
+    meta.innerHTML = `<span class="chip">${node.stage.trim()}</span>`;
+    if (node.aliases && node.aliases.length) meta.innerHTML += ` <span class="chip">${node.aliases[0].trim()}</span>`;
     
     // Stage (clickable)
-    stageEl.innerHTML = `<a href="#" class="chip" data-stage="${node.stage.trim()}">${node.stage.trim()}</a>`;
+    stageEl.innerHTML = `<a href="javascript:void(0)" class="chip" data-stage="${node.stage.trim()}">${node.stage.trim()}</a>`;
     
     // Aliases (clickable)
     if (node.aliases && node.aliases.length) {
       aliasesEl.innerHTML = node.aliases.map(a => 
-        `<a href="#" class="chip">${a.trim()}</a>`
+        `<a href="javascript:void(0)" class="chip" data-alias="${encodeURIComponent(a.trim())}">${a.trim()}</a>`
       ).join(' ');
     } else {
       aliasesEl.textContent = '-';
@@ -671,9 +664,9 @@
     // Type / Race (clickable with icon)
     if (node.types && node.types.length) {
       const typeStr = node.types[0].trim();
-      const typeInfo = REF_DATA?.types?.find(tp => tp.id.trim() === typeStr);
+      const typeInfo = REF_DATA?.types?.find(tp => tp.name.trim() === typeStr);
       const icon = typeInfo ? typeInfo.icon.trim() : '❓';
-      typeEl.innerHTML = `<a href="#" class="chip" data-type="${typeStr}">${icon} ${typeStr}</a>`;
+      typeEl.innerHTML = `<a href="javascript:void(0)" class="chip" data-type="${typeStr}">${icon} ${typeStr}</a>`;
     } else {
       typeEl.textContent = '-';
     }
@@ -685,10 +678,10 @@
         const faction = REF_DATA.factions.find(f => f.code.trim() === cleanCode);
         if (faction) {
           const aliases = faction.aliases && faction.aliases.length ? ` (${faction.aliases.map(a => a.trim()).join(', ')})` : '';
-          return `<a href="#" class="chip" style="background:${faction.color}15;border:1px solid ${faction.color}40;color:${faction.color}" data-faction="${cleanCode}">${faction.icon} ${faction.name.trim()}${aliases}</a>`;
+          return `<a href="javascript:void(0)" class="chip" style="background:${faction.color}15;border:1px solid ${faction.color}40;color:${faction.color}" data-faction="${cleanCode}">${faction.icon} ${faction.name.trim()}${aliases}</a>`;
         }
         return `<span class="chip">${cleanCode}</span>`;
-      }).join('');
+      }).join(' ');
       factionEl.innerHTML = factionChips;
     } else {
       factionEl.textContent = '-';
@@ -698,7 +691,7 @@
     const groups = node.groups || [];
     if (groups.length > 0) {
       groupEl.innerHTML = groups.map(g => 
-        `<a href="#" class="chip" data-group-click="${encodeURIComponent(g.trim())}">${g.trim()}</a>`
+        `<a href="javascript:void(0)" class="chip" data-group-click="${encodeURIComponent(g.trim())}">${g.trim()}</a>`
       ).join(' ');
     } else {
       groupEl.textContent = '-';
@@ -710,51 +703,68 @@
     const to   = (node.evolvesTo||[]).map(id => byId(id.trim())).filter(Boolean);
 
     prevBox.innerHTML = from.length
-      ? from.map(n => `<a href="#${encodeURIComponent(n.id.trim())}" class="chip">${n.displayName.trim()}</a>`).join(' ')
+      ? from.map(n => `<a href="javascript:void(0)" class="chip" data-digimon="${n.id.trim()}">${n.displayName.trim()}</a>`).join(' ')
       : `<span class="chip">(tidak ada)</span>`;
 
     nextBox.innerHTML = to.length
-      ? to.map(n => `<a href="#${encodeURIComponent(n.id.trim())}" class="chip">${n.displayName.trim()}</a>`).join(' ')
+      ? to.map(n => `<a href="javascript:void(0)" class="chip" data-digimon="${n.id.trim()}">${n.displayName.trim()}</a>`).join(' ')
       : `<span class="chip">(tidak ada)</span>`;
   }
 
-  /* ====== CARD CLICK HANDLER (Stage, Type, Faction) ====== */
+  /* ====== CLICK HANDLERS ====== */
   document.addEventListener('DOMContentLoaded', () => {
+    // Card click delegation
     $('card').addEventListener('click', (e) => {
+      const target = e.target.closest('.chip');
+      if (!target) return;
       e.preventDefault();
-      const target = e.target;
       
       // Handle stage click
-      if (target.matches('[data-stage]')) {
-        const stage = target.dataset.stage.trim();
-        CURRENT_STAGE = stage;
+      if (target.dataset.stage) {
+        CURRENT_STAGE = target.dataset.stage.trim();
         setMode('stage');
         document.querySelector('.wrap')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
       
       // Handle type click
-      if (target.matches('[data-type]')) {
-        const type = target.dataset.type.trim();
-        CURRENT_TYPE = type;
+      if (target.dataset.type) {
+        CURRENT_TYPE = target.dataset.type.trim();
         setMode('type');
         document.querySelector('.wrap')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
       
       // Handle faction click
-      if (target.matches('[data-faction]')) {
-        const faction = target.dataset.faction.trim();
-        CURRENT_FACTION = faction;
+      if (target.dataset.faction) {
+        CURRENT_FACTION = target.dataset.faction.trim();
         setMode('faction');
         document.querySelector('.wrap')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
       
       // Handle group chip click
-      if (target.matches('[data-group-click]')) {
-        const group = decodeURIComponent(target.dataset.groupClick.trim());
-        CURRENT_GROUP = group;
+      if (target.dataset.groupClick) {
+        CURRENT_GROUP = decodeURIComponent(target.dataset.groupClick.trim());
         setMode('group');
         document.querySelector('.wrap')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
+      
+      // Handle digimon click in evolution lines
+      if (target.dataset.digimon) {
+        const id = target.dataset.digimon.trim();
+        history.pushState(null, null, `#${encodeURIComponent(id)}`);
+        renderCard(id);
+        $('card')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+
+    // Name pill click handler
+    $('nameList').addEventListener('click', (e) => {
+      const pill = e.target.closest('.name-pill');
+      if (!pill) return;
+      e.preventDefault();
+      const id = decodeURIComponent(pill.getAttribute('href').replace(/^#/, ''));
+      history.pushState(null, null, `#${encodeURIComponent(id)}`);
+      renderCard(id);
+      $('card')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
   });
 
@@ -794,7 +804,8 @@
       const typeStr = hash.replace('type:', '').trim();
       CURRENT_TYPE = typeStr;
       setMode('type');
-      return    }
+      return;
+    }
     
     // Handle digimon ID hash
     const node = byId(hash);
@@ -820,7 +831,7 @@
       ]);
       
       if(!digimonRes.ok) throw new Error('Gagal memuat data Digimon: ' + digimonRes.status);
-      if(!refRes.ok) throw new Error('Gagal memuat reference  ' + refRes.status);
+      if(!refRes.ok) throw new Error('Gagal memuat reference data: ' + refRes.status);
       
       // Clean digimon data
       const rawData = await digimonRes.json();
@@ -900,17 +911,6 @@
         $('searchInput').value = '';
         CURRENT_TYPE = null;
         setMode('type');
-      });
-
-      // Name pill click handler
-      $('nameList').addEventListener('click', (e) => {
-        const pill = e.target.closest('.name-pill');
-        if (!pill) return;
-        e.preventDefault();
-        const id = decodeURIComponent(pill.getAttribute('href').replace(/^#/, ''));
-        history.pushState(null, null, `#${encodeURIComponent(id)}`);
-        renderCard(id);
-        $('card')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       });
 
       // Render awal
