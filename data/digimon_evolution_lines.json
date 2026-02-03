@@ -732,7 +732,9 @@
     "factions": [
       "DS"
     ],
-    "types": [],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "gesomon",
