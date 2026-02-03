@@ -1285,15 +1285,21 @@
   {
     "id": "loweemon",
     "displayName": "Loweemon",
-    "aliases": ["Louwemon"],
+    "aliases": [
+      "Louwemon"
+    ],
     "stage": "Adult",
-    "factions": ["VB"],
-    "types": ["Virus"],
+    "factions": [
+      "VB"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "monodramon"
     ],
     "evolvesTo": [
-      "jagerloweemon",
+      "jagerloweemon"
      ],
     "groups": []
   },
@@ -2174,10 +2180,16 @@
   {
     "id": "jagerloweemon",
     "displayName": "JagerLoweemon",
-    "aliases": ["KaiserLeomon"],
+    "aliases": [
+      "KaiserLeomon"
+    ],
     "stage": "Perfect",
-    "factions": ["VB"],
-    "types": ["Virus"],
+    "factions": [
+      "VB"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "loweemon"
     ],
@@ -3538,8 +3550,12 @@
     "displayName": "Megidramon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": ["NSo"],
-    "types": ["Virus"],
+    "factions": [
+      "NSo"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [],
     "groups": []
@@ -3769,11 +3785,16 @@
   {
     "id": "rhihimon",
     "displayName": "Rhihimon",
-    "aliases": ["Raihimon"
+    "aliases": [
+      "Raihimon"
     ],
     "stage": "Ultimate",
-    "factions": ["NSp"],
-    "types": [Virus],
+    "factions": [
+      "NSp"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "jagerloweemon"
     ],
