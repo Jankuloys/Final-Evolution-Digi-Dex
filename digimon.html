@@ -311,6 +311,11 @@
       renderAlphaBar();
     }
     syncList();
+    
+    if (mode === 'faction') {
+    $('alphaTitle').textContent = `(Faction: ${CURRENT_FACTION})`;
+    renderFactionBar();
+    markActiveFaction();
   }
 
   function renderAlphaBar(){
@@ -444,9 +449,65 @@
       const hash = window.location.hash.replace(/^#/, '');
       if(hash.startsWith('stage:')){ const stage = hash.slice(6); const valid = ['Child','Adult','Perfect','Ultimate','Ultimate+']; if(valid.includes(stage)){ CURRENT_STAGE=stage; setMode('stage'); document.querySelector('.wrap')?.scrollIntoView({behavior:'smooth', block:'start'}); } }
 
+      // Handle faction hash on page load
+function handleFactionHash(){
+  const hash = window.location.hash.replace(/^#/, '');
+  if(hash.startsWith('faction:')){
+    const faction = hash.replace('faction:', '');
+    CURRENT_FACTION = faction;
+    setMode('faction');
+    syncList();
+    document.querySelector('.wrap')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+// Factions Filter
+let CURRENT_FACTION = null;
+const FACTION_FILTERS = {
+  'DR': true,
+  'NSp': true,
+  'ME': true,
+  'VB': true,
+  'JT': true,
+  'DS': true,
+  'NSo': true,
+  'WG': true
+};
+
+function applyFactionFilters(list){
+  if(CURRENT_MODE !== 'faction' || !CURRENT_FACTION) return list;
+  return list.filter(d => 
+    d.faction && d.faction === CURRENT_FACTION
+  );
+}
+
+function renderFactionBar(){
+  const factions = ['DR', 'NSp', 'ME', 'VB', 'JT', 'DS', 'NSo', 'WG'];
+  const bar =stageBar');
+  bar.innerHTML = factions.map(f => 
+    `<a href="javascript:void(0)" data-faction="${f}" class="${CURRENT_FACTION===f?'active':''}">${f}</a>`
+  ).join('');
+  
+  bar.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      CURRENT_FACTION = a.dataset.faction;
+      markActiveFaction();
+      setMode('faction');
+    });
+  });
+}
+
+function markActiveFaction(){
+  document.querySelectorAll('#stageBar a').forEach(a => {
+    a.classList.toggle('active', a.dataset.faction === CURRENT_FACTION);
+  });
+}
+// Call this at the end of init()
+handleFactionHash();
     }catch(e){ console.error(e); document.querySelector('.wrap')?.insertAdjacentHTML('beforeend', `<p style="color:#ff9aa2; padding:16px; background:var(--panel-2); border-radius:12px">❌ Error: ${e.message}<br><small>Periksa console (F12) untuk detail error.</small></p>`); }
   })();
   </script>
 </body>
 </html>
+
 
