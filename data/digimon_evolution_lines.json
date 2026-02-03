@@ -12,7 +12,9 @@
       "geogreymon",
       "tyranomon"
     ],
-    "groups": []
+    "groups": [
+"Digimon Adventure Rookie Partner"
+]
   },
   {
     "id": "armadimon",
@@ -27,7 +29,9 @@
     "evolvesTo": [
       "ankylomon"
     ],
-    "groups": []
+    "groups": [
+"Digimon Adventure 02 Rookie Partner"
+]
   },
   {
     "id": "betamon",
@@ -195,7 +199,9 @@
       "drimogemon",
       "bullmon"
     ],
-    "groups": []
+    "groups": [
+"Digimon Adventure Rookie Partner"
+]
   },
   {
     "id": "gaomon",
@@ -249,7 +255,9 @@
     "evolvesTo": [
       "ikkakumon"
     ],
-    "groups": []
+    "groups": [
+"Digimon Adventure Rookie Partner"
+]
   },
   {
     "id": "gotsumon",
@@ -275,7 +283,9 @@
     "evolvesTo": [
       "growlmon"
     ],
-    "groups": []
+    "groups": [
+"Digimon Tamers Rookie Partner"
+]
   },
   {
     "id": "hagurumon",
@@ -317,7 +327,9 @@
     "evolvesTo": [
       "wizardmon"
     ],
-    "groups": []
+    "groups": [
+"Digimon Tamers Rookie Partner"
+]
   },
   {
     "id": "keramon",
@@ -409,7 +421,9 @@
       "strikedramon",
       "loweemon"
     ],
-    "groups": []
+    "groups": [
+"Digimon Tamers Rookie Partner"
+]
   },
   {
     "id": "mushmon",
@@ -437,7 +451,9 @@
     "evolvesTo": [
       "togemon"
     ],
-    "groups": []
+    "groups": [
+"Digimon Adventure Rookie Partner"
+]
   },
   {
     "id": "patamon",
@@ -451,7 +467,10 @@
       "angemon",
       "centaurmon"
     ],
-    "groups": []
+    "groups": [
+"Digimon Adventure Rookie Partner",
+"Digimon Adventure 02 Rookie Partner"
+]
   },
   {
     "id": "penmon",
@@ -508,7 +527,9 @@
       "birdramon",
       "cockatorimon"
     ],
-    "groups": []
+    "groups": [
+"Digimon Adventure Rookie Partner"
+]
   },
   {
     "id": "plotmon",
@@ -524,7 +545,10 @@
       "tailmon",
       "meicoomon"
     ],
-    "groups": []
+    "groups": [
+"Digimon Adventure Rookie Partner",
+"Digimon Adventure 02 Rookie Partner"
+]
   },
   {
     "id": "renamon",
@@ -538,7 +562,9 @@
       "kyubimon",
       "youkomon"
     ],
-    "groups": []
+    "groups": [
+"Digimon Tamers Rookie Partner"
+]
   },
   {
     "id": "syakomon",
@@ -569,7 +595,9 @@
       "kabuterimon",
       "kuwagamon"
     ],
-    "groups": []
+    "groups": [
+"Digimon Adventure Rookie Partner"
+]
   },
   {
     "id": "terriermon",
@@ -582,7 +610,9 @@
     "evolvesTo": [
       "gargomon"
     ],
-    "groups": []
+    "groups": [
+"Digimon Tamers Rookie Partner"
+]
   },
   {
     "id": "tinkermon",
@@ -641,7 +671,9 @@
       "v-dramon",
       "exveemon"
     ],
-    "groups": []
+    "groups": [
+"Digimon Adventure 02 Rookie Partner"
+]
   },
   {
     "id": "wormmon",
@@ -654,7 +686,9 @@
     "evolvesTo": [
       "stingmon"
     ],
-    "groups": []
+    "groups": [
+"Digimon Adventure 02 Rookie Partner"
+]
   },
   {
     "id": "yukiagumon",
@@ -1331,7 +1365,9 @@
     "evolvesTo": [
       "meicrackmon-viscious-mode"
     ],
-    "groups": []
+    "groups": [
+"Digimon Adventure Rookie Partner"
+]
   },
   {
     "id": "meramon",
