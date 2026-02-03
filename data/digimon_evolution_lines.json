@@ -3492,8 +3492,12 @@
       "Kentaurosmon"
     ],
     "stage": "Perfect",
-    "factions": [],
-    "types": [],
+    "factions": [
+"DS"
+],
+    "types": [
+"Vaccine"
+],
     "evolvesFrom": [
       "tylinmon"
     ],
@@ -3559,7 +3563,7 @@
       "ebidramon"
     ],
     "evolvesTo": [
-      "naptunemon"
+      "neptunemon"
     ],
     "groups": []
   },
@@ -3624,8 +3628,12 @@
     "displayName": "AncientGreymon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DR"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "vritramon"
     ],
@@ -3639,8 +3647,12 @@
     "displayName": "AncientVolcamon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "ME"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "meteormon"
     ],
@@ -3654,8 +3666,12 @@
     "displayName": "Apollomon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSp"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "flaremon"
     ],
@@ -3671,8 +3687,12 @@
     "displayName": "Babamon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "VB"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "bastemon"
     ],
@@ -3684,8 +3704,12 @@
     "displayName": "BanchouLeomon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "JT"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "grapleomon"
     ],
@@ -3697,8 +3721,12 @@
     "displayName": "BanchouStingmon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSp"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [
       "jewelbeemon"
     ],
@@ -3712,8 +3740,12 @@
       "BanchouLillymon"
     ],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "JT"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [
       "lilimon"
     ],
@@ -3725,8 +3757,12 @@
     "displayName": "Barbamon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSo"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "skullsatamon"
     ],
@@ -3763,8 +3799,12 @@
       "Beelzebumon"
     ],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSo"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "baalmon"
     ],
@@ -3780,8 +3820,12 @@
       "MaloMyotismon"
     ],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSo"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "vamdemon"
     ],
@@ -3793,8 +3837,12 @@
     "displayName": "Belphemon Sleep Mode",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSo"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "astamon"
     ],
@@ -3808,8 +3856,12 @@
       "Cherubimon (Vice)"
     ],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSo"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "andiramon"
     ],
@@ -3823,8 +3875,12 @@
       "MetalGarurumon (Black)"
     ],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSp"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "blackweregarurumon"
     ],
@@ -3836,8 +3892,12 @@
     "displayName": "BlackWarGreymon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DR"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "blackmetalgreymon"
     ],
@@ -3849,8 +3909,12 @@
     "displayName": "BlitzGreymon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "ME"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "metalgreymon"
     ],
@@ -3862,8 +3926,12 @@
     "displayName": "Darkdramon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DR"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "megadramon"
     ],
@@ -3877,8 +3945,12 @@
       "Craniamon"
     ],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "VB"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "knightmon"
     ],
@@ -3892,8 +3964,12 @@
     "displayName": "CresGarurumon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "ME"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [
       "weregarurumon"
     ],
@@ -3905,8 +3981,12 @@
     "displayName": "Crossmon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "ME"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "parrotmon"
     ],
@@ -3918,8 +3998,12 @@
     "displayName": "DaiPenmon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DS"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [
       "blizzardmon"
     ],
@@ -3933,8 +4017,12 @@
       "Daemon"
     ],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSo"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "skullsatamon"
     ],
@@ -3948,8 +4036,12 @@
     "displayName": "Diablomon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSo"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "infermon"
     ],
@@ -3961,8 +4053,12 @@
     "displayName": "Dianamon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSp"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [
       "crescemon"
     ],
@@ -3978,8 +4074,12 @@
     "displayName": "Dorugoramon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DR"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [
       "dorugreymon"
     ],
@@ -3993,8 +4093,12 @@
       "Gallantmon"
     ],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "ME"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "wargrowlmon"
     ],
@@ -4008,8 +4112,12 @@
     "displayName": "Dynasmon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "VB"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [
       "aerov-dramon"
     ],
@@ -4025,8 +4133,12 @@
     "displayName": "Fujinmon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "WG"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "cyberdramon"
     ],
@@ -4038,8 +4150,12 @@
     "displayName": "Gankoomon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "VB"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [
       "skullmeramon"
     ],
@@ -4051,8 +4167,12 @@
     "displayName": "GranKuwagamon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "JT"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "okuwamon"
     ],
@@ -4066,8 +4186,12 @@
       "Gryphonmon"
     ],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "WG"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [
       "delumon"
     ],
@@ -4081,8 +4205,12 @@
       "HerakleKabuterimon"
     ],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "ME"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "atlurkabuterimon"
     ],
@@ -4094,8 +4222,12 @@
     "displayName": "HiAndromon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "ME"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "andromon"
     ],
@@ -4109,8 +4241,12 @@
       "Phoenixmon"
     ],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "WG"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "garudamon"
     ],
@@ -4122,8 +4258,12 @@
     "displayName": "Imperialdramon Dragon Mode",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "ME"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "paildramon"
     ],
@@ -4135,8 +4275,12 @@
     "displayName": "Jesmon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "VB"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [
       "saviorhuckmon"
     ],
@@ -4150,8 +4294,12 @@
     "displayName": "Jijimon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "VB"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "monzaemon"
     ],
@@ -4163,8 +4311,12 @@
     "displayName": "Junomon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSo"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "shutumon"
     ],
@@ -4178,8 +4330,12 @@
     "displayName": "Justimon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "VB"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "cyberdramon"
     ],
@@ -4208,8 +4364,12 @@
     "displayName": "Kuzuhamon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "JT"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [
       "doumon"
     ],
@@ -4223,8 +4383,12 @@
       "Duftmon"
     ],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSp"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [
       "knightmon"
     ],
@@ -4238,8 +4402,12 @@
     "displayName": "Leviamon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DS"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "marindevimon"
     ],
@@ -4253,8 +4421,12 @@
     "displayName": "Lillithmon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSo"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "ladydevimon"
     ],
@@ -4272,8 +4444,12 @@
       "Crusadermon"
     ],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "VB"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "knightmon"
     ],
@@ -4287,8 +4463,12 @@
     "displayName": "MagnaKidmon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSo"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "astamon"
     ],
@@ -4302,8 +4482,12 @@
     "displayName": "Magnamon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "ME"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "paildramon"
     ],
@@ -4319,8 +4503,12 @@
     "displayName": "MarinAngemon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DS"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "picklemon"
     ],
@@ -4347,8 +4535,12 @@
     "displayName": "MetalGarurumon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSp"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [
       "weregarurumon"
     ],
@@ -4362,8 +4554,12 @@
     "displayName": "MetalSeadramon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DS"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [
       "megaseadramon"
     ],
@@ -4377,8 +4573,12 @@
     "displayName": "Minervamon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "JT"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "lilamon"
     ],
@@ -4392,8 +4592,12 @@
     "displayName": "MirageGaogamon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSp"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [
       "machgaogamon"
     ],
@@ -4407,8 +4611,12 @@
       "Machinedramon"
     ],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "ME"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "skullgreymon"
     ],
@@ -4418,12 +4626,16 @@
     ]
   },
   {
-    "id": "naptunemon",
-    "displayName": "Naptunemon",
+    "id": "neptunemon",
+    "displayName": "Neptunemon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DS"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "whamon"
     ],
@@ -4439,8 +4651,12 @@
       "Ofanimon"
     ],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "VB"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "angewomon"
     ],
@@ -4454,8 +4670,12 @@
     "displayName": "Ouryumon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DR"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "hisharyumon"
     ],
@@ -4467,8 +4687,12 @@
     "displayName": "Parasimon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSo"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "gerbemon"
     ],
@@ -4482,8 +4706,12 @@
       "Piemon"
     ],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSo"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "fantomon"
     ],
@@ -4499,8 +4727,12 @@
       "Puppetmon"
     ],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "JT"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "jyureimon"
     ],
@@ -4514,8 +4746,12 @@
     "displayName": "Plesiomon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DS"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [
       "brachimon"
     ],
@@ -4527,8 +4763,12 @@
     "displayName": "Raguelmon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSo"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "meicrackmon-viscious-mode"
     ],
@@ -4540,8 +4780,12 @@
     "displayName": "Raijinmon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "WG"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "nanomon"
     ],
@@ -4555,8 +4799,12 @@
       "Ravmon"
     ],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "WG"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "yatagaramon"
     ],
@@ -4587,8 +4835,12 @@
     "displayName": "Rosemon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "JT"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [
       "lilimon"
     ],
@@ -4602,8 +4854,12 @@
     "displayName": "SaberLeomon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSp"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [
       "panjyamon"
     ],
@@ -4617,8 +4873,12 @@
       "SaintGalgomon"
     ],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "ME"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "rapidmon"
     ],
@@ -4630,8 +4890,12 @@
     "displayName": "Sakuyamon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+"WG"
+],
+    "types": [
+"Data"
+],
     "evolvesFrom": [
       "taomon"
     ],
@@ -4643,8 +4907,12 @@
     "displayName": "Seraphimon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "VB"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "holyangemon"
     ],
@@ -4658,8 +4926,12 @@
     "displayName": "ShineGreymon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DR"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "rizegreymon"
     ],
@@ -4673,8 +4945,12 @@
       "SkullMammon"
     ],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSo"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "mammothmon"
     ],
@@ -4686,8 +4962,12 @@
     "displayName": "SlashAngemon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DS"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "shakkoumon"
     ],
@@ -4699,8 +4979,12 @@
     "displayName": "Titamon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "ME"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "digitamamon"
     ],
@@ -4714,8 +4998,12 @@
       "UlforceVeedramon"
     ],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DR"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "aerov-dramon"
     ],
@@ -4729,8 +5017,12 @@
     "displayName": "Valdurmon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "WG"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "yatagaramon"
     ],
@@ -4744,8 +5036,12 @@
       "VenomMyotismon"
     ],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSo"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "vamdemon"
     ],
@@ -4757,8 +5053,12 @@
     "displayName": "Venusmon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "VB"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "angewomon"
     ],
@@ -4772,8 +5072,12 @@
     "displayName": "VictoryGreymon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DR"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "rizegreymon"
     ],
@@ -4785,8 +5089,12 @@
     "displayName": "Vikemon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DS"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "zudomon"
     ],
@@ -4798,8 +5106,12 @@
     "displayName": "Vulcanusmon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "ME"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [
       "asuramon"
     ],
@@ -4813,8 +5125,12 @@
     "displayName": "WarGreymon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DR"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "metalgreymon"
     ],
@@ -4831,8 +5147,12 @@
       "Cherubimon (Virtue)"
     ],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "VB"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "andiramon"
     ],
@@ -4848,8 +5168,12 @@
       "ZeedGarurumon"
     ],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSp"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [
       "weregarurumon"
     ],
@@ -4861,8 +5185,12 @@
     "displayName": "Zanbamon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "WG"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "vajramon"
     ],
