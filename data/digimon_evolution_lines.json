@@ -5202,10 +5202,16 @@
   {
     "id": "dynasmon-x",
     "displayName": "Dynasmon X",
-    "aliases": [],
+    "aliases": [
+      "Monarch X"
+    ],
     "stage": "Ultimate+",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSp"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [
       "dynasmon"
     ],
@@ -5217,8 +5223,12 @@
     "displayName": "Gracenovamon",
     "aliases": [],
     "stage": "Ultimate+",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DS"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "apollomon",
       "dianamon"
@@ -5229,10 +5239,16 @@
   {
     "id": "lillithmon-x",
     "displayName": "Lillithmon X",
-    "aliases": [],
+    "aliases": [
+      "LillithBeast X"
+    ],
     "stage": "Ultimate+",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "JT"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "lillithmon"
     ],
@@ -5242,10 +5258,16 @@
   {
     "id": "magnamon-x",
     "displayName": "Magnamon X",
-    "aliases": [],
+    "aliases": [
+      "GoldenAnkylosaurus X"
+    ],
     "stage": "Ultimate+",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "VB"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "magnamon"
     ],
@@ -5273,10 +5295,16 @@
   {
     "id": "rosemon-burst-mode",
     "displayName": "Rosemon Burst Mode",
-    "aliases": [],
+    "aliases": [
+      "RoseBeast BM"
+    ],
     "stage": "Ultimate+",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "JT"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [
       "rosemon"
     ],
@@ -5288,8 +5316,12 @@
     "displayName": "WarGreymon X",
     "aliases": [],
     "stage": "Ultimate+",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DR"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "wargreymon"
     ],
