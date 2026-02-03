@@ -39,8 +39,16 @@
     .tamers-grid{ max-width:1400px;margin:30px auto;padding:0 18px; display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr)); gap:24px; }
 
     /* CARD */
-    .tamer-card{ background:var(--panel);border:1px solid var(--ring);border-radius:16px; box-shadow:var(--shadow);overflow:hidden;transition:var(--transition); position:relative; }
-    .tamer-card:hover{ transform:translateY(-6px); box-shadow:0 15px 40px rgba(0,0,0,.45); border-color:#2a3d86; }
+    .tamer-card{
+  background:var(--panel);border:1px solid var(--ring);border-radius:16px;
+  box-shadow:var(--shadow);transition:var(--transition);
+  position:relative;
+}
+.tamer-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 40px rgba(0,0,0,.45);
+  border-color:#2a3d86;
+}
     .tamer-header{ padding:20px;background:linear-gradient(135deg,var(--panel),#151e40); border-bottom:2px solid var(--ring); display:flex;align-items:center;gap:16px; }
     .tamer-avatar{ width:80px;height:80px;border-radius:50%; background:linear-gradient(135deg,#59a6ff,#2441ff); display:flex;align-items:center;justify-content:center; font-weight:800;font-size:32px; box-shadow:0 4px 12px rgba(0,0,0,.3); }
     .tamer-header h2{ margin:0;font-size:28px;color:#cfe0ff; }
@@ -163,15 +171,23 @@ function renderTamerCard(t, ref){
   const icon  = fct ? (fct.icon||'⭐') : '⭐';
   const link  = `./digimon.html#faction:${encodeURIComponent(code)}`; // anchor untuk auto-filter Digi‑Dex
 
+  
   return `
-  <div class="tamer-card" data-faction="${code}">
-    <div class="tamer-header">
-      <div class="tamer-avatar" style="background:linear-gradient(135deg,${color},#2441ff)">${story.emoji}</div>
-      <div>
-        <h2>${(t.name||'').trim()}</h2>
-        <div class="tamer-alias">${(t.aliases||[]).map(a=>a.trim()).join(', ')}</div>
+    <div class="tamer-card">
+      <!-- ... kode sebelumnya ... -->
+      <div class="skill-card">
+        <div class="skill-name">⚔️ ${tamer.skillName.trim()}</div>
+        <div class="skill-desc">Special skill that enhances Digimon performance</div>
+        <div class="skill-buff">
+          <b>Buff Type:</b>
+          <!-- Ganti span dengan link -->
+          <a href="./digimon.html#faction:${tamer.givingBuffFor.trim()}" 
+             class="buff-value" 
+             style="background:${factionColor}22;color:${factionColor}">
+            ${factionIcon} ${factionName}
+          </a>
+        </div>
       </div>
-    </div>
     <div class="tamer-body">
       <div class="skill-card">
         <div class="skill-name">⚔️ ${(t.skillName||'Skill').trim()}</div>
