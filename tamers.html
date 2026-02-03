@@ -17,6 +17,7 @@
     html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,Segoe UI,Roboto,Inter,Arial}
     a{color:var(--brand);text-decoration:none}
     a:hover{text-decoration:underline}
+
     /* NAVBAR */
     .nav{position:sticky; top:0; z-index:50; background:linear-gradient(180deg,#0b1020,rgba(11,16,32,.72)); border-bottom:1px solid var(--ring); backdrop-filter: blur(10px);} 
     .nav-inner{max-width:1400px;margin:auto;padding:12px 18px;display:flex;align-items:center;gap:16px}
@@ -26,18 +27,10 @@
     .nav a.navlink{color:var(--text);text-decoration:none;opacity:.9;transition:var(--transition);padding:8px 12px;border-radius:8px}
     .nav a.navlink:hover{opacity:1;color:#cfe0ff;background:rgba(42,61,134,.2)}
     .nav a.navlink.active{background:rgba(42,61,134,.3);color:#59a6ff}
+
     /* HERO BANNER */
-    .hero-banner{
-      max-width:1400px;margin:20px auto;padding:0 18px;text-align:center;
-      background:linear-gradient(135deg, rgba(89,166,255,.1), rgba(255,209,102,.05));
-      border-radius:20px;overflow:hidden;position:relative;
-      box-shadow:var(--shadow);
-    }
-    .hero-banner::before{
-      content:"";position:absolute;top:0;left:0;width:100%;height:100%;
-      background:radial-gradient(circle at 30% 50%, rgba(89,166,255,.15), transparent 70%);
-      z-index:-1;
-    }
+    .hero-banner{ max-width:1400px;margin:20px auto;padding:0 18px;text-align:center; background:linear-gradient(135deg, rgba(89,166,255,.1), rgba(255,209,102,.05)); border-radius:20px;overflow:hidden;position:relative; box-shadow:var(--shadow); }
+    .hero-banner::before{ content:"";position:absolute;top:0;left:0;width:100%;height:100%; background:radial-gradient(circle at 30% 50%, rgba(89,166,255,.15), transparent 70%); z-index:-1; }
     .hero-content{ max-width:900px;margin:auto;padding:60px 20px; position:relative;z-index:1; }
     .hero-content h1{ margin:0 0 16px;font-size:clamp(36px,6vw,64px); background:linear-gradient(90deg,#59a6ff,#ffd166); -webkit-background-clip:text;background-clip:text;color:transparent; font-weight:800;line-height:1.2; }
     .hero-content p{ margin:0 0 24px;color:var(--muted);font-size:18px;line-height:1.6; }
@@ -45,7 +38,7 @@
     /* TAMERS GRID */
     .tamers-grid{ max-width:1400px;margin:30px auto;padding:0 18px; display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr)); gap:24px; }
 
-    /* TAMER CARD */
+    /* CARD */
     .tamer-card{ background:var(--panel);border:1px solid var(--ring);border-radius:16px; box-shadow:var(--shadow);overflow:hidden;transition:var(--transition); position:relative; }
     .tamer-card:hover{ transform:translateY(-6px); box-shadow:0 15px 40px rgba(0,0,0,.45); border-color:#2a3d86; }
     .tamer-header{ padding:20px;background:linear-gradient(135deg,var(--panel),#151e40); border-bottom:2px solid var(--ring); display:flex;align-items:center;gap:16px; }
@@ -53,34 +46,27 @@
     .tamer-header h2{ margin:0;font-size:28px;color:#cfe0ff; }
     .tamer-alias{ margin:4px 0 0;font-size:14px;color:var(--muted); }
     .tamer-body{ padding:20px; }
-    .tamer-info{ display:grid;grid-template-columns:120px 1fr;gap:8px 12px;margin-bottom:16px; }
-    .tamer-info b{ color:#cfe0ff;font-weight:600; }
 
-    .skill-card{ background:var(--panel-2);border:1px solid var(--ring);border-radius:10px; padding:16px;margin-bottom:20px; }
+    /* SKILL BLOCK */
+    .skill-card{ background:var(--panel-2);border:1px solid var(--ring);border-radius:10px; padding:16px;margin-bottom:16px; }
     .skill-name{ font-size:20px;font-weight:700;color:#59a6ff;margin:0 0 8px; display:flex;align-items:center;gap:8px; }
     .skill-desc{ font-size:14px;color:var(--muted);margin:0 0 8px; }
     .skill-buff{ display:grid;grid-template-columns:100px 1fr;gap:8px; font-size:14px;margin-top:8px; align-items:center; }
     .skill-buff b{ color:#cfe0ff;font-weight:600; }
 
-    /* Clickable buff type */
+    /* Clickable buff chip */
     .buff-link{ display:inline-flex; align-items:center; gap:8px; padding:6px 12px; border-radius:999px; font-weight:700; border:1px solid var(--ring); background:var(--panel); transition:var(--transition); }
     .buff-link:hover{ transform:translateY(-2px); box-shadow:var(--shadow-sm); text-decoration:none; }
-    .buff-icon{ font-size:16px }
 
-    /* MINI SHOWCASE */
-    .showcase{ margin:16px 0 8px; }
-    .showcase-title{ font-size:14px; color:#cfe0ff; font-weight:700; margin:0 0 10px; display:flex; align-items:center; gap:8px; }
-    .mini-grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(140px,1fr)); gap:10px; }
-    .mini-card{ background:var(--panel); border:1px solid var(--ring); border-radius:12px; overflow:hidden; transition:var(--transition); }
-    .mini-card:hover{ transform:translateY(-3px); border-color:#2a3d86; box-shadow:var(--shadow-sm); }
-    .mini-thumb{ aspect-ratio: 3 / 2; display:flex; align-items:center; justify-content:center; background:#0b132b; position:relative; }
-    .mini-thumb .letter{ font-weight:800; font-size:36px; color:#8ea3ff; }
-    .mini-body{ padding:10px 12px; }
-    .mini-name{ margin:0; font-weight:700; color:#cfe0ff; font-size:14px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-    .mini-meta{ margin-top:6px; display:flex; align-items:center; gap:6px; color:#9aa3c4; font-size:12px; }
-    .mini-stage{ padding:3px 8px; border-radius:999px; background:#1e2a54; color:#b9c6ff; font-weight:600; }
+    /* COMPACT LIST BELOW BUFF */
+    .faction-list{ margin-top:10px; }
+    .faction-list-title{ font-weight:700; color:#cfe0ff; font-size:14px; margin:0 0 8px; }
+    .mini-list{ display:flex; flex-wrap:wrap; gap:8px 10px; }
+    .mini-pill{ display:inline-block; padding:6px 10px; border-radius:999px; font-weight:600; font-size:12px; border:1px solid var(--ring); background:#0e1535; color:#b9c6ff; }
+    .mini-pill:hover{ border-color:#2a3d86; color:#e9ecf7; text-decoration:none; }
 
-    .story-section{ margin-top:20px;padding-top:16px;border-top:1px solid var(--ring); }
+    /* STORY */
+    .story-section{ margin-top:16px;padding-top:16px;border-top:1px solid var(--ring); }
     .story-title{ font-size:16px;font-weight:700;color:#cfe0ff;margin:0 0 12px; display:flex;align-items:center;gap:8px; }
     .story-content{ font-size:14px;line-height:1.8;color:var(--muted); }
     .lesson-box{ background:linear-gradient(135deg,#1e2a54,#151e40); border-left:4px solid var(--brand);padding:14px;margin-top:16px; border-radius:0 8px 8px 0; }
@@ -121,10 +107,8 @@
     </div>
   </section>
 
-  <!-- TAMERS GRID -->
-  <section class="tamers-grid" id="tamersGrid">
-    <!-- Tamer cards will be loaded here dynamically -->
-  </section>
+  <!-- GRID -->
+  <section class="tamers-grid" id="tamersGrid"></section>
 
   <!-- FOOTER -->
   <footer>
@@ -143,151 +127,108 @@
     </div>
   </footer>
 
-  <script>
-  // ====== Stories (placeholder, same as before) ======
-  const TAMER_STORIES = {
-    'taichi_yagami': { emoji: '🔥', story: 'Taichi Yagami memulai petualangannya sebagai pemimpin Digidestined yang impulsif namun berhati emas...', lesson: 'Kepemimpinan sejati...' },
-    'yamato_ishida': { emoji: '🌲', story: 'Yamato Ishida awalnya digambarkan sebagai anak yang dingin dan tertutup...', lesson: 'Memaafkan diri sendiri...' },
-    'sora_takenouchi': { emoji: '🕊️', story: 'Sora Takenouchi adalah sosok yang penuh kasih sayang dan empati...', lesson: 'Empati dan kasih sayang...' },
-    'koushiro_izumi': { emoji: '💻', story: 'Koushiro Izumi adalah otak di balik tim Digidestined...', lesson: 'Kecerdasan sejati...' },
-    'mimi_tachikawa': { emoji: '🌸', story: 'Mimi Tachikawa memulai sebagai gadis manja yang takut pada tantangan...', lesson: 'Kecantikan sejati bersinar...' },
-    'jou_kido': { emoji: '🌊', story: 'Jou Kido dikenal sebagai "si penakut" yang selalu khawatir...', lesson: 'Kehati-hatian bukanlah kelemahan...' },
-    'takeru_takaishi': { emoji: '✨', story: 'Takeru Takaishi adalah jiwa murni dari tim Digidestined...', lesson: 'Kepercayaan pada kebaikan...' },
-    'hikari_yagami': { emoji: '🌙', story: 'Hikari Yagami adalah cahaya dalam kegelapan...', lesson: 'Cahaya sejati berasal...' }
-  };
+<script>
+// === Stories (ringkas) ===
+const TAMER_STORIES = {
+  'taichi_yagami': { emoji: '🔥', story: 'Taichi Yagami memulai petualangannya...', lesson: 'Kepemimpinan sejati...' },
+  'yamato_ishida': { emoji: '🌲', story: 'Yamato Ishida awalnya dingin...', lesson: 'Memaafkan diri sendiri...' },
+  'sora_takenouchi': { emoji: '🕊️', story: 'Sora penuh empati...', lesson: 'Empati & kasih sayang...' },
+  'koushiro_izumi': { emoji: '💻', story: 'Koushiro si otak tim...', lesson: 'Logika + empati...' },
+  'mimi_tachikawa': { emoji: '🌸', story: 'Mimi belajar keberanian...', lesson: 'Kecantikan dari hati...' },
+  'jou_kido': { emoji: '🌊', story: 'Jou si hati-hati...', lesson: 'Kehati-hatian = bijak' },
+  'takeru_takaishi': { emoji: '✨', story: 'Takeru jiwa murni...', lesson: 'Percaya pada kebaikan' },
+  'hikari_yagami': { emoji: '🌙', story: 'Hikari adalah cahaya...', lesson: 'Cahaya sejati dari dalam' }
+};
 
-  // ====== Loaders ======
-  async function loadReferenceData(){
-    try{ const res = await fetch('data/digimon_reference.json', { cache:'no-store' }); if(!res.ok) throw new Error('Gagal memuat reference data'); return await res.json(); }
-    catch(e){ console.error('Error loading reference data:', e); return null; }
-  }
-  async function loadTamersData(){
-    try{ const res = await fetch('data/tamers.json', { cache:'no-store' }); if(!res.ok) throw new Error('Gagal memuat data tamers'); return await res.json(); }
-    catch(e){ console.error('Error loading tamers data:', e); return []; }
-  }
-  async function loadDigimonDB(){
-    try{ const res = await fetch('data/digimon_evolution_lines.json', { cache:'no-store' }); if(!res.ok) throw new Error('Gagal memuat Digi-DB'); return await res.json(); }
-    catch(e){ console.error('Error loading digimon DB:', e); return []; }
-  }
+// === Loaders ===
+async function loadReferenceData(){ try{ const r=await fetch('data/digimon_reference.json',{cache:'no-store'}); if(!r.ok) throw 0; return await r.json(); }catch{ return null; } }
+async function loadTamers(){ try{ const r=await fetch('data/tamers.json',{cache:'no-store'}); if(!r.ok) throw 0; return await r.json(); }catch{ return []; } }
+async function loadDigiDB(){ try{ const r=await fetch('data/digimon_evolution_lines.json',{cache:'no-store'}); if(!r.ok) throw 0; return await r.json(); }catch{ return []; } }
 
-  // ====== Helpers ======
-  function getFactionInfo(code, refData){ if(!refData||!refData.factions) return null; return refData.factions.find(f=> (f.code||'').trim() === (code||'').trim()); }
+// === Helpers ===
+function getFactionInfo(code, ref){ if(!ref||!ref.factions) return null; return ref.factions.find(f => (f.code||'').trim() === (code||'').trim()); }
+function factionFilterList(db, code){
+  const wanted = new Set(['Ultimate','Ultimate+']);
+  return db.filter(d => wanted.has(d.stage) && (d.factions||[]).includes(code));
+}
+function pill(d){ return `<a class="mini-pill" href="./digimon.html#${encodeURIComponent(d.id)}" title="Lihat ${d.displayName} di Digi‑Dex">${d.displayName}</a>`; }
 
-  function miniCard(d){
-    const href = `./digimon.html#${encodeURIComponent(d.id)}`;
-    const letter = (d.displayName||'?').charAt(0).toUpperCase();
-    return `
-    <a class="mini-card" href="${href}" title="Buka ${d.displayName} di Digi‑Dex">
-      <div class="mini-thumb">
-        <span class="letter">${letter}</span>
+// === Renderer ===
+function renderTamerCard(t, ref){
+  const story = TAMER_STORIES[t.id?.trim()] || {emoji:'⭐',story:'Story coming soon...',lesson:'Stay tuned!'};
+  const code = (t.givingBuffFor||'').trim();
+  const fct  = getFactionInfo(code, ref);
+  const color = fct ? (fct.color||'#59a6ff') : '#59a6ff';
+  const name  = fct ? (fct.name||code) : (code||'Faction');
+  const icon  = fct ? (fct.icon||'⭐') : '⭐';
+  const link  = `./digimon.html#faction:${encodeURIComponent(code)}`; // anchor untuk auto-filter Digi‑Dex
+
+  return `
+  <div class="tamer-card" data-faction="${code}">
+    <div class="tamer-header">
+      <div class="tamer-avatar" style="background:linear-gradient(135deg,${color},#2441ff)">${story.emoji}</div>
+      <div>
+        <h2>${(t.name||'').trim()}</h2>
+        <div class="tamer-alias">${(t.aliases||[]).map(a=>a.trim()).join(', ')}</div>
       </div>
-      <div class="mini-body">
-        <p class="mini-name">${d.displayName}</p>
-        <div class="mini-meta">
-          <span class="mini-stage">${d.stage}</span>
+    </div>
+    <div class="tamer-body">
+      <div class="skill-card">
+        <div class="skill-name">⚔️ ${(t.skillName||'Skill').trim()}</div>
+        <div class="skill-desc">Special skill that enhances Digimon performance</div>
+        <div class="skill-buff">
+          <b>Buff Type:</b>
+          <a class="buff-link" style="border-color:${color}55;background:${color}22;color:${color}" href="${link}" title="Tampilkan semua Digimon fraksi ini di Digi‑Dex">${icon} ${name}</a>
         </div>
-      </div>
-    </a>`;
-  }
-
-  // ====== Renderers ======
-  function renderTamerCard(tamer, refData){
-    const story = TAMER_STORIES[tamer.id?.trim()] || { emoji:'⭐', story:'Story coming soon...', lesson:'Stay tuned!' };
-    const faction = getFactionInfo(tamer.givingBuffFor?.trim(), refData);
-    const factionColor = faction ? (faction.color||'#59a6ff') : '#59a6ff';
-    const factionName  = faction ? (faction.name||tamer.givingBuffFor||'Faction') : (tamer.givingBuffFor||'Faction');
-    const factionIcon  = faction ? (faction.icon||'⭐') : '⭐';
-    const factionCode  = (tamer.givingBuffFor||'').trim();
-
-    return `
-    <div class="tamer-card" data-faction="${factionCode}">
-      <div class="tamer-header">
-        <div class="tamer-avatar" style="background:linear-gradient(135deg,${factionColor},#2441ff)">${story.emoji}</div>
-        <div>
-          <h2>${(tamer.name||'').trim()}</h2>
-          <div class="tamer-alias">${(tamer.aliases||[]).map(a=>a.trim()).join(', ')}</div>
+        <div class="faction-list" id="list-${t.id}">
+          <div class="faction-list-title">🧭 Digimon (Ultimate & Ultimate+) — ${name}</div>
+          <div class="mini-list"></div>
         </div>
       </div>
-      <div class="tamer-body">
-        <div class="skill-card">
-          <div class="skill-name">⚔️ ${(tamer.skillName||'Skill').trim()}</div>
-          <div class="skill-desc">Special skill that enhances Digimon performance</div>
-          <div class="skill-buff">
-            <b>Buff Type:</b>
-            <a class="buff-link" style="border-color:${factionColor}55;background:${factionColor}22;color:${factionColor}"
-               href="./digimon.html#faction:${encodeURIComponent(factionCode)}" title="Lihat Digi‑Dex untuk fraksi ini">
-              <span class="buff-icon">${factionIcon}</span>
-              <span>[${factionCode}] ${factionName}</span>
-            </a>
-          </div>
-        </div>
 
-        <!-- Showcase akan dirender di sini -->
-        <div class="showcase" data-faction-showcase="${factionCode}">
-          <div class="showcase-title">🧭 Pilihan Digimon (Ultimate & Ultimate+) — ${factionName}</div>
-          <div class="mini-grid" id="mini-${tamer.id}"></div>
-        </div>
-
-        <div class="story-section">
-          <div class="story-title">📖 Story & Journey</div>
-          <div class="story-content">${story.story}</div>
-          <div class="lesson-box">
-            <div class="lesson-title">💡 Life Lesson</div>
-            <div class="lesson-content">${story.lesson}</div>
-          </div>
+      <div class="story-section">
+        <div class="story-title">📖 Story & Journey</div>
+        <div class="story-content">${story.story}</div>
+        <div class="lesson-box">
+          <div class="lesson-title">💡 Life Lesson</div>
+          <div class="lesson-content">${story.lesson}</div>
         </div>
       </div>
-    </div>`;
+    </div>
+  </div>`;
+}
+
+function fillFactionList(db, t){
+  const root = document.getElementById(`list-${t.id}`);
+  if(!root) return;
+  const code = (t.givingBuffFor||'').trim();
+  const list = factionFilterList(db, code).sort((a,b)=> a.displayName.localeCompare(b.displayName));
+  const limit = 10; // bikin kecil agar Story & Lesson tetap muat
+  const view = root.querySelector('.mini-list');
+  if(list.length===0){
+    root.insertAdjacentHTML('beforeend', `<div style="color:var(--muted);font-size:13px">Belum ada Digimon tahap Ultimate untuk fraksi ini.</div>`);
+    return;
   }
+  const items = list.slice(0, limit).map(pill).join('');
+  const more  = list.length>limit ? `<a class="mini-pill" href="./digimon.html#faction:${encodeURIComponent(code)}">Lihat semua…</a>` : '';
+  view.innerHTML = items + more;
+}
 
-  // Populate mini cards after grid rendered
-  function populateFactionShowcase(digiDB, tamer){
-    const code = (tamer.givingBuffFor||'').trim();
-    const list = digiDB.filter(d => (d.stage==='Ultimate' || d.stage==='Ultimate+') && (d.factions||[]).includes(code));
-    list.sort((a,b)=> a.displayName.localeCompare(b.displayName));
-    const grid = document.querySelector(`#mini-${tamer.id}`);
-    if(!grid) return;
-    if(list.length===0){
-      grid.insertAdjacentHTML('beforebegin', `<div style="color:var(--muted);font-size:13px">Belum ada Digimon tahap Ultimate untuk fraksi ini.</div>`);
-      return;
-    }
-    grid.innerHTML = list.map(miniCard).join('');
+// === INIT ===
+(async function(){
+  const [tamers, ref, db] = await Promise.all([loadTamers(), loadReferenceData(), loadDigiDB()]);
+  const grid = document.getElementById('tamersGrid');
+  if(tamers.length===0){
+    grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)">
+      <div style="font-size:24px;margin-bottom:16px">📭 No Tamers Data Found</div>
+      <div>Pastikan data tamers.json tersedia di folder data</div></div>`;
+    return;
   }
-
-  // ====== INIT ======
-  (async function init(){
-    try{
-      const [tamers, refData, digiDB] = await Promise.all([
-        loadTamersData(),
-        loadReferenceData(),
-        loadDigimonDB()
-      ]);
-      const grid = document.getElementById('tamersGrid');
-      if(tamers.length===0){
-        grid.innerHTML = `
-          <div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)">
-            <div style="font-size:24px;margin-bottom:16px">📭 No Tamers Data Found</div>
-            <div>Please check if tamers.json exists in the data folder</div>
-          </div>`;
-        return;
-      }
-
-      const order = ['taichi_yagami','yamato_ishida','sora_takenouchi','koushiro_izumi','mimi_tachikawa','jou_kido','takeru_takaishi','hikari_yagami'];
-      tamers.sort((a,b)=> order.indexOf(a.id?.trim()) - order.indexOf(b.id?.trim()));
-      grid.innerHTML = tamers.map(t => renderTamerCard(t, refData)).join('');
-
-      // Populate showcases
-      tamers.forEach(t => populateFactionShowcase(digiDB, t));
-
-    }catch(e){
-      console.error('Error initializing tamers page:', e);
-      document.getElementById('tamersGrid').innerHTML = `
-        <div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--warn)">
-          <div style="font-size:24px;margin-bottom:16px">❌ Error Loading Tamers</div>
-          <div>${e.message}</div>
-        </div>`;
-    }
-  })();
-  </script>
+  const order = ['taichi_yagami','yamato_ishida','sora_takenouchi','koushiro_izumi','mimi_tachikawa','jou_kido','takeru_takaishi','hikari_yagami'];
+  tamers.sort((a,b)=> order.indexOf(a.id?.trim()) - order.indexOf(b.id?.trim()));
+  grid.innerHTML = tamers.map(t => renderTamerCard(t, ref)).join('');
+  tamers.forEach(t => fillFactionList(db, t));
+})();
+</script>
 </body>
 </html>
