@@ -4,8 +4,12 @@
     "displayName": "Agumon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DR"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "greymon",
@@ -13,8 +17,8 @@
       "tyranomon"
     ],
     "groups": [
-"Digimon Adventure Rookie Partner"
-]
+      "Digimon Adventure Rookie Partner"
+    ]
   },
   {
     "id": "armadimon",
@@ -23,23 +27,31 @@
       "Armadilomon"
     ],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSp"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "ankylomon"
     ],
     "groups": [
-"Digimon Adventure 02 Rookie Partner"
-]
+      "Digimon Adventure 02 Rookie Partner"
+    ]
   },
   {
     "id": "betamon",
     "displayName": "Betamon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSp"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "seadramon"
@@ -53,8 +65,12 @@
       "Agumon (Black)"
     ],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DR"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "blackgreymon"
@@ -68,8 +84,12 @@
       "Gabumon (Black)"
     ],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSo"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "blackgarurumon"
@@ -83,8 +103,12 @@
       "Candmon"
     ],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSo"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "meramon",
@@ -97,8 +121,12 @@
     "displayName": "Coronamon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DR"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "firamon"
@@ -110,8 +138,12 @@
     "displayName": "Cutemon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "VB"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "tunomon"
@@ -123,8 +155,12 @@
     "displayName": "Dorumon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DR"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "dorugamon",
@@ -137,8 +173,12 @@
     "displayName": "Elecmon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DS"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "leomon"
@@ -150,8 +190,12 @@
     "displayName": "Falcomon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "WG"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "peckmon"
@@ -165,8 +209,12 @@
       "Flamemon"
     ],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSp"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "agnimon"
@@ -178,8 +226,12 @@
     "displayName": "Floramon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "WG"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "kiwimon"
@@ -191,8 +243,12 @@
     "displayName": "Gabumon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSp"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "garurumon",
@@ -200,16 +256,20 @@
       "bullmon"
     ],
     "groups": [
-"Digimon Adventure Rookie Partner"
-]
+      "Digimon Adventure Rookie Partner"
+    ]
   },
   {
     "id": "gaomon",
     "displayName": "Gaomon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSp"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "gaogamon"
@@ -221,8 +281,12 @@
     "displayName": "Gazimon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSp"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "deltamon"
@@ -236,8 +300,12 @@
       "Goblimon"
     ],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSo"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "ogremon"
@@ -249,23 +317,31 @@
     "displayName": "Gomamon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DS"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "ikkakumon"
     ],
     "groups": [
-"Digimon Adventure Rookie Partner"
-]
+      "Digimon Adventure Rookie Partner"
+    ]
   },
   {
     "id": "gotsumon",
     "displayName": "Gotsumon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "ME"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "icemon"
@@ -277,23 +353,31 @@
     "displayName": "Guilmon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSp"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "growlmon"
     ],
     "groups": [
-"Digimon Tamers Rookie Partner"
-]
+      "Digimon Tamers Rookie Partner"
+    ]
   },
   {
     "id": "hagurumon",
     "displayName": "Hagurumon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "ME"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "mechanorimon",
@@ -308,8 +392,12 @@
       "Hackmon"
     ],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "ME"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "baohuckmon"
@@ -321,23 +409,31 @@
     "displayName": "Impmon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSo"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "wizardmon"
     ],
     "groups": [
-"Digimon Tamers Rookie Partner"
-]
+      "Digimon Tamers Rookie Partner"
+    ]
   },
   {
     "id": "keramon",
     "displayName": "Keramon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSo"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "chrysalimon"
@@ -349,8 +445,12 @@
     "displayName": "Kotemon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSp"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "gladimon"
@@ -362,8 +462,12 @@
     "displayName": "Kudamon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "WG"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "reppamon"
@@ -375,8 +479,12 @@
     "displayName": "Lalamon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "WG"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "sunflowmon"
@@ -388,8 +496,12 @@
     "displayName": "Lopmon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSp"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "turueimon"
@@ -401,8 +513,12 @@
     "displayName": "Lunamon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DS"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "lekismon"
@@ -414,16 +530,20 @@
     "displayName": "Monodramon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DR"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "strikedramon",
       "loweemon"
     ],
     "groups": [
-"Digimon Tamers Rookie Partner"
-]
+      "Digimon Tamers Rookie Partner"
+    ]
   },
   {
     "id": "mushmon",
@@ -432,8 +552,12 @@
       "Mushroomon"
     ],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "JT"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "woodmon"
@@ -445,40 +569,52 @@
     "displayName": "Palmon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "JT"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "togemon"
     ],
     "groups": [
-"Digimon Adventure Rookie Partner"
-]
+      "Digimon Adventure Rookie Partner"
+    ]
   },
   {
     "id": "patamon",
     "displayName": "Patamon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "VB"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "angemon",
       "centaurmon"
     ],
     "groups": [
-"Digimon Adventure Rookie Partner",
-"Digimon Adventure 02 Rookie Partner"
-]
+      "Digimon Adventure Rookie Partner",
+      "Digimon Adventure 02 Rookie Partner"
+    ]
   },
   {
     "id": "penmon",
     "displayName": "Penmon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DS"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "yukidarumon",
@@ -491,8 +627,12 @@
     "displayName": "Phascomon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSo"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "porcupamon"
@@ -506,8 +646,12 @@
       "DemiDevimon"
     ],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSo"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "devimon",
@@ -520,16 +664,20 @@
     "displayName": "Piyomon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "WG"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "birdramon",
       "cockatorimon"
     ],
     "groups": [
-"Digimon Adventure Rookie Partner"
-]
+      "Digimon Adventure Rookie Partner"
+    ]
   },
   {
     "id": "plotmon",
@@ -538,33 +686,41 @@
       "Salamon"
     ],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "VB"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "tailmon",
       "meicoomon"
     ],
     "groups": [
-"Digimon Adventure Rookie Partner",
-"Digimon Adventure 02 Rookie Partner"
-]
+      "Digimon Adventure Rookie Partner",
+      "Digimon Adventure 02 Rookie Partner"
+    ]
   },
   {
     "id": "renamon",
     "displayName": "Renamon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSp"
+    ],
+    "types": [
+      "Data"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "kyubimon",
       "youkomon"
     ],
     "groups": [
-"Digimon Tamers Rookie Partner"
-]
+      "Digimon Tamers Rookie Partner"
+    ]
   },
   {
     "id": "syakomon",
@@ -573,7 +729,9 @@
       "Shakomon"
     ],
     "stage": "Child",
-    "factions": [],
+    "factions": [
+      "DS"
+    ],
     "types": [],
     "evolvesFrom": [],
     "evolvesTo": [
@@ -588,39 +746,51 @@
     "displayName": "Tentomon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "ME"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "kabuterimon",
       "kuwagamon"
     ],
     "groups": [
-"Digimon Adventure Rookie Partner"
-]
+      "Digimon Adventure Rookie Partner"
+    ]
   },
   {
     "id": "terriermon",
     "displayName": "Terriermon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "ME"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "gargomon"
     ],
     "groups": [
-"Digimon Tamers Rookie Partner"
-]
+      "Digimon Tamers Rookie Partner"
+    ]
   },
   {
     "id": "tinkermon",
     "displayName": "Tinkermon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "WG"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "fairimon"
@@ -632,8 +802,12 @@
     "displayName": "Tsukaimon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSo"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "witchmon"
@@ -647,8 +821,12 @@
       "Chuumon"
     ],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "NSo"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "numemon",
@@ -664,31 +842,39 @@
       "Veemon"
     ],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DR"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "v-dramon",
       "exveemon"
     ],
     "groups": [
-"Digimon Adventure 02 Rookie Partner"
-]
+      "Digimon Adventure 02 Rookie Partner"
+    ]
   },
   {
     "id": "wormmon",
     "displayName": "Wormmon",
     "aliases": [],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "JT"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "stingmon"
     ],
     "groups": [
-"Digimon Adventure 02 Rookie Partner"
-]
+      "Digimon Adventure 02 Rookie Partner"
+    ]
   },
   {
     "id": "yukiagumon",
@@ -697,8 +883,12 @@
       "SnowAgumon"
     ],
     "stage": "Child",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "DS"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [
       "mojyamon"
@@ -1334,7 +1524,7 @@
     ],
     "evolvesTo": [
       "jagerloweemon"
-     ],
+    ],
     "groups": []
   },
   {
@@ -1366,8 +1556,8 @@
       "meicrackmon-viscious-mode"
     ],
     "groups": [
-"Digimon Adventure Rookie Partner"
-]
+      "Digimon Adventure Rookie Partner"
+    ]
   },
   {
     "id": "meramon",
@@ -3010,11 +3200,17 @@
       "Beelko"
     ],
     "stage": "Ultimate",
-    "factions": ["JT"],
-    "types": ["Virus"],
+    "factions": [
+      "JT"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [],
     "evolvesTo": [],
-    "groups": ["Three Musketeers"]
+    "groups": [
+      "Three Musketeers"
+    ]
   },
   {
     "id": "beelzemon",
@@ -3451,8 +3647,12 @@
     "displayName": "KaiserGreymon",
     "aliases": [],
     "stage": "Ultimate",
-    "factions": ["DR"],
-    "types": ["Virus"],
+    "factions": [
+      "DR"
+    ],
+    "types": [
+      "Virus"
+    ],
     "evolvesFrom": [
       "vritramon"
     ],
@@ -3549,7 +3749,9 @@
       "astamon"
     ],
     "evolvesTo": [],
-    "groups": ["Three Musketeers"]
+    "groups": [
+      "Three Musketeers"
+    ]
   },
   {
     "id": "magnamon",
@@ -3817,7 +4019,6 @@
     "evolvesTo": [],
     "groups": []
   },
-  
   {
     "id": "rhihimon",
     "displayName": "Rhihimon",
