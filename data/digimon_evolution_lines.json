@@ -3348,7 +3348,9 @@
   {
     "id": "skullmeramon",
     "displayName": "SkullMeramon",
-    "aliases": [],
+    "aliases": [
+      "DeathMeramon"
+    ],
     "stage": "Perfect",
     "factions": [
       "NSo"
@@ -3716,7 +3718,9 @@
       "grapleomon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [
+      "The Five Banchou"
+    ]
   },
   {
     "id": "banchoustingmon",
@@ -3733,7 +3737,9 @@
       "jewelbeemon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [
+      "The Five Banchou"
+    ]
   },
   {
     "id": "banchoulilimon",
@@ -3752,7 +3758,9 @@
       "lilimon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [
+      "The Five Banchou"
+    ]
   },
   {
     "id": "barbamon",
@@ -4145,7 +4153,9 @@
       "cyberdramon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [
+      "Three Gods"
+    ]
   },
   {
     "id": "gankoomon",
@@ -4792,7 +4802,9 @@
       "nanomon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [
+      "Three Gods"
+    ]
   },
   {
     "id": "ravemon",
