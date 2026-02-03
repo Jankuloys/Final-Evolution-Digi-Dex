@@ -447,23 +447,6 @@
     }catch(e){ console.error(e); document.querySelector('.wrap')?.insertAdjacentHTML('beforeend', `<p style="color:#ff9aa2; padding:16px; background:var(--panel-2); border-radius:12px">❌ Error: ${e.message}<br><small>Periksa console (F12) untuk detail error.</small></p>`); }
   })();
   </script>
-  
-<script>
-function applyFactionFromHash() {
-  const h = decodeURIComponent(location.hash || '').replace(/^#/, '');
-  if (h.startsWith('faction:')) {
-    const code = h.split(':')[1]?.trim();
-    if (code) {
-      // TODO: panggil fungsi filter di Digi‑Dex kamu,
-      // mis. setFilter({ kind: 'faction', code });
-      // lalu render ulang daftar.
-      window.setFactionFilter?.(code);
-    }
-  }
-}
-window.addEventListener('hashchange', applyFactionFromHash);
-document.addEventListener('DOMContentLoaded', applyFactionFromHash);
-</script>
-  
 </body>
 </html>
+
