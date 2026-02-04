@@ -1,8 +1,8 @@
 {
   "metadata": {
     "version": "1.0",
-    "lastUpdated": "2026-02-03",
-    "description": "Reference data for Digimon attributes including Factions/Families and Types/Races"
+    "lastUpdated": "2026-02-04",
+    "description": "Reference data for Digimon attributes including Factions/Families, Types/Races, and Traits"
   },
   "factions": [
     {
@@ -111,7 +111,6 @@
     "field": ["Virus", "Vaccine", "Data", "Free"],
     "rarity": ["Common", "Uncommon", "Rare", "Epic", "Legendary", "Mythic"]
   },
-
   "traits": [
     {
       "id": "bruiser",
@@ -121,7 +120,7 @@
     },
     {
       "id": "aoe",
-      "name": "Aoe",
+      "name": "AoE",
       "icon": "💥",
       "description": "Spesialis serangan area yang mengenai banyak target sekaligus untuk meratakan HP musuh secara kolektif."
     },
@@ -130,18 +129,6 @@
       "name": "DPS",
       "icon": "⚔️",
       "description": "Penghasil damage murni yang tinggi—sumber damage bukan dari ketahanan (HP/DEF/Shield), melainkan dari serangan langsung."
-    },
-    {
-      "id": "healer",
-      "name": "Healer",
-      "icon": "🩺",
-      "description": "Pemulih HP tim, menjaga keberlangsungan hidup tanpa fokus damage."
-    },
-    {
-      "id": "reviver",
-      "name": "Reviver",
-      "icon": "🕊️",
-      "description": "Memiliki kemampuan untuk menghidupkan kembali teman yang sudah dikalahkan."
     },
     {
       "id": "tank",
@@ -191,8 +178,18 @@
       "icon": "🧹",
       "description": "Menghapus efek baik (buff) pada musuh—konter efektif untuk tim bertahan atau tim yang mengandalkan penguatan masif."
     },
-
-    /* ==== DoT (Damage over Time) ==== */
+    {
+      "id": "healer",
+      "name": "Healer",
+      "icon": "🩺",
+      "description": "Pemulih HP tim—melalui heal langsung, heal bertahap, atau efek pemulihan lain—untuk menjaga ketahanan tim sepanjang pertempuran."
+    },
+    {
+      "id": "reviver",
+      "name": "Reviver",
+      "icon": "🕊️",
+      "description": "Menghidupkan kembali rekan tim yang gugur, bisa dengan sebagian HP, full HP, atau memberi status revive; krusial untuk membalik keadaan."
+    },
     {
       "id": "poison",
       "name": "Poison",
