@@ -3512,7 +3512,12 @@
     "soulStone": {
       "required": "Slipper Beast",
       "type": "Rare"
-    }
+    },
+    "traits": [
+      "aoe",
+      "control",
+      "dps"
+    ]
   },
   {
     "id": "wargrowlmon",
@@ -3652,7 +3657,12 @@
     "soulStone": {
       "required": "Ancient Tyrannosaurus Beast",
       "type": "Rare"
-    }
+    },
+    "traits": [
+      "aoe",
+      "burn",
+      "dps"
+    ]
   },
   {
     "id": "ancientvolcamon",
@@ -3675,7 +3685,12 @@
     "soulStone": {
       "required": "Ancient Volcanic Animal",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "aoe",
+      "control",
+      "tank"
+    ]
   },
   {
     "id": "apollomon",
@@ -3700,7 +3715,12 @@
     "soulStone": {
       "required": "Apollo Beast",
       "type": "Exclusive Guild"
-    }
+    },
+    "traits": [
+      "aoe",
+      "burn",
+      "dps"
+    ]
   },
   {
     "id": "babamon",
@@ -3721,7 +3741,14 @@
     "soulStone": {
       "required": "Mother-in-law Beast",
       "type": "Rare"
-    }
+    },
+    "traits": [
+      "buff_breaker",
+      "cleanser",
+      "debuff",
+      "healer",
+      "support"
+    ]
   },
   {
     "id": "banchouleomon",
@@ -3744,7 +3771,13 @@
     "soulStone": {
       "required": "Panax Lion",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "cleanser",
+      "dps",
+      "healer",
+      "single_target"
+    ]
   },
   {
     "id": "banchoustingmon",
@@ -3767,7 +3800,12 @@
     "soulStone": {
       "required": "Not Yet Released",
       "type": "No information"
-    }
+    },
+    "traits": [
+      "bleed",
+      "dps",
+      "single_target"
+    ]
   },
   {
     "id": "banchoulilimon",
@@ -3792,7 +3830,12 @@
     "soulStone": {
       "required": "Crocus Fairy Beast",
       "type": "Exclusive Arena"
-    }
+    },
+    "traits": [
+      "dps",
+      "poison",
+      "single_target"
+    ]
   },
   {
     "id": "barbamon",
@@ -3815,7 +3858,11 @@
     "soulStone": {
       "required": "Balba Beast",
       "type": "Rare"
-    }
+    },
+    "traits": [
+      "bruiser",
+      "support"
+    ]
   },
   {
     "id": "beelstarmon",
@@ -3840,7 +3887,12 @@
     "soulStone": {
       "required": "Not Yet Released",
       "type": "No information"
-    }
+    },
+    "traits": [
+      "burn",
+      "dps",
+      "single_target"
+    ]
   },
   {
     "id": "beelzemon",
@@ -3865,7 +3917,12 @@
     "soulStone": {
       "required": "Beelzeb Beast",
       "type": "Rare"
-    }
+    },
+    "traits": [
+      "dps",
+      "healer",
+      "single_target"
+    ]
   },
   {
     "id": "belialvamdemon",
@@ -3888,7 +3945,13 @@
     "soulStone": {
       "required": "Not Yet Released",
       "type": "No information"
-    }
+    },
+    "traits": [
+      "aoe",
+      "bruiser",
+      "buff_breaker",
+      "control"
+    ]
   },
   {
     "id": "belphemon-sleep-mode",
@@ -3909,7 +3972,12 @@
     "soulStone": {
       "required": "Belfi Beast SM",
       "type": "Exclusive 1vs1 Arena"
-    }
+    },
+    "traits": [
+      "dps",
+      "healer",
+      "single_target"
+    ]
   },
   {
     "id": "blackcherubimon",
@@ -3932,7 +4000,13 @@
     "soulStone": {
       "required": "Wisdom Angel Beast (Good)",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "debuff",
+      "dps",
+      "healer",
+      "support"
+    ]
   },
   {
     "id": "blackmetalgarurumon",
@@ -3955,7 +4029,12 @@
     "soulStone": {
       "required": "Iron Garulu Beast",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "aoe",
+      "debuff",
+      "dps"
+    ]
   },
   {
     "id": "blackwargreymon",
@@ -3976,7 +4055,12 @@
     "soulStone": {
       "required": "Black Battle Tyrannosaurus Beast",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "aoe",
+      "debuff",
+      "dps"
+    ]
   },
   {
     "id": "blitzgreymon",
@@ -3997,7 +4081,11 @@
     "soulStone": {
       "required": "Electrooptic Tyrannosaurus Beast",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "aoe",
+      "dps"
+    ]
   },
   {
     "id": "Darkdramon",
@@ -4018,7 +4106,13 @@
     "soulStone": {
       "required": "Not Yet Released",
       "type": "No information"
-    }
+    },
+    "traits": [
+      "aoe",
+      "buff",
+      "dps",
+      "healer"
+    ]
   },
   {
     "id": "craniummon",
@@ -4043,7 +4137,12 @@
     "soulStone": {
       "required": "Not Yet Released",
       "type": "No information"
-    }
+    },
+    "traits": [
+      "control",
+      "dps",
+      "single_target"
+    ]
   },
   {
     "id": "cresgarurumon",
@@ -4064,7 +4163,11 @@
     "soulStone": {
       "required": "Yanyue Galulu Beast",
       "type": "Rare"
-    }
+    },
+    "traits": [
+      "aoe",
+      "dps"
+    ]
   },
   {
     "id": "crossmon",
@@ -4085,7 +4188,11 @@
     "soulStone": {
       "required": "Cross Beast",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "debuff",
+      "dps"
+    ]
   },
   {
     "id": "daipenmon",
@@ -4106,7 +4213,12 @@
     "soulStone": {
       "required": "Large Penguin Beast",
       "type": "Exclusive Guild"
-    }
+    },
+    "traits": [
+      "control",
+      "healer",
+      "support"
+    ]
   },
   {
     "id": "demon",
@@ -4131,7 +4243,11 @@
     "soulStone": {
       "required": "Demon Beast",
       "type": "Rare"
-    }
+    },
+    "traits": [
+      "dps",
+      "single_target"
+    ]
   },
   {
     "id": "diablomon",
@@ -4152,7 +4268,12 @@
     "soulStone": {
       "required": "Diablo",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "aoe",
+      "debuff",
+      "dps"
+    ]
   },
   {
     "id": "dianamon",
@@ -4177,7 +4298,11 @@
     "soulStone": {
       "required": "Diana Beast",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "aoe",
+      "dps"
+    ]
   },
   {
     "id": "dorugoramon",
@@ -4198,7 +4323,12 @@
     "soulStone": {
       "required": "Multi Way Dragon Spirit",
       "type": "Exclusive Arena"
-    }
+    },
+    "traits": [
+      "aoe",
+      "debuff",
+      "dps"
+    ]
   },
   {
     "id": "dukemon",
@@ -4223,7 +4353,13 @@
     "soulStone": {
       "required": "Duke Beast",
       "type": "Rare"
-    }
+    },
+    "traits": [
+      "bruiser",
+      "buff_breaker",
+      "single_target",
+      "tank"
+    ]
   },
   {
     "id": "dynasmon",
@@ -4248,7 +4384,11 @@
     "soulStone": {
       "required": "Monarch Beast",
       "type": "Rare"
-    }
+    },
+    "traits": [
+      "aoe",
+      "bruiser"
+    ]
   },
   {
     "id": "fujinmon",
@@ -4271,7 +4411,11 @@
     "soulStone": {
       "required": "Not Yet Released",
       "type": "No information"
-    }
+    },
+    "traits": [
+      "dps",
+      "single_target"
+    ]
   },
   {
     "id": "gankoomon",
@@ -4292,7 +4436,11 @@
     "soulStone": {
       "required": "Stubborn Beast",
       "type": "Rare"
-    }
+    },
+    "traits": [
+      "aoe",
+      "dps"
+    ]
   },
   {
     "id": "grankuwagamon",
@@ -4313,7 +4461,12 @@
     "soulStone": {
       "required": "Giant Guija Beast",
       "type": "Rare"
-    }
+    },
+    "traits": [
+      "aoe",
+      "bleed",
+      "dps"
+    ]
   },
   {
     "id": "griffomon",
@@ -4336,7 +4489,12 @@
     "soulStone": {
       "required": "Griffon",
       "type": "Exclusive Guild"
-    }
+    },
+    "traits": [
+      "aoe",
+      "buff_breaker",
+      "debuff"
+    ]
   },
   {
     "id": "herculeskabuterimon",
@@ -4359,7 +4517,12 @@
     "soulStone": {
       "required": "Force God than More Animal",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "control",
+      "support",
+      "tank"
+    ]
   },
   {
     "id": "hiandromon",
@@ -4380,7 +4543,10 @@
     "soulStone": {
       "required": "Not Yet Released",
       "type": "No information"
-    }
+    },
+    "traits": [
+      "tank"
+    ]
   },
   {
     "id": "hououmon",
@@ -4403,7 +4569,12 @@
     "soulStone": {
       "required": "Phoenix Beast",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "buff",
+      "burn",
+      "support"
+    ]
   },
   {
     "id": "imperialdramon-dragon-mode",
@@ -4424,7 +4595,12 @@
     "soulStone": {
       "required": "Not Yet Released",
       "type": "No information"
-    }
+    },
+    "traits": [
+      "aoe",
+      "debuff",
+      "dps"
+    ]
   },
   {
     "id": "jesmon",
@@ -4447,7 +4623,12 @@
     "soulStone": {
       "required": "Jace Beast",
       "type": "Rare"
-    }
+    },
+    "traits": [
+      "aoe",
+      "dps",
+      "healer"
+    ]
   },
   {
     "id": "jijimon",
@@ -4468,7 +4649,12 @@
     "soulStone": {
       "required": "Gonggong Beast",
       "type": "Exclusive Arena"
-    }
+    },
+    "traits": [
+      "debuff",
+      "healer",
+      "support"
+    ]
   },
   {
     "id": "junomon",
@@ -4491,7 +4677,13 @@
     "soulStone": {
       "required": "Not Yet Released",
       "type": "No information"
-    }
+    },
+    "traits": [
+      "buff",
+      "debuff",
+      "healer",
+      "tank"
+    ]
   },
   {
     "id": "justimon",
@@ -4512,7 +4704,11 @@
     "soulStone": {
       "required": "The Righteous Spirit Beast",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "dps",
+      "single_target"
+    ]
   },
   {
     "id": "kaisergreymon",
@@ -4533,7 +4729,12 @@
     "soulStone": {
       "required": "Not Yet Released",
       "type": "No information"
-    }
+    },
+    "traits": [
+      "aoe",
+      "burn",
+      "dps"
+    ]
   },
   {
     "id": "kuzuhamon",
@@ -4554,7 +4755,14 @@
     "soulStone": {
       "required": "Animal",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "buff_breaker",
+      "cleanser",
+      "debuff",
+      "healer",
+      "support"
+    ]
   },
   {
     "id": "leopardmon",
@@ -4579,7 +4787,12 @@
     "soulStone": {
       "required": "Rosemon",
       "type": "Exclusive 1vs1 Arena"
-    }
+    },
+    "traits": [
+      "debuff",
+      "dps",
+      "single_target"
+    ]
   },
   {
     "id": "leviamon",
@@ -4602,7 +4815,13 @@
     "soulStone": {
       "required": "Livia Beast",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "buff",
+      "debuff",
+      "healer",
+      "support"
+    ]
   },
   {
     "id": "lillithmon",
@@ -4627,7 +4846,13 @@
     "soulStone": {
       "required": "Lillith Beast",
       "type": "Rare"
-    }
+    },
+    "traits": [
+      "control",
+      "debuff",
+      "poison",
+      "support"
+    ]
   },
   {
     "id": "lordknightmon",
@@ -4652,7 +4877,13 @@
     "soulStone": {
       "required": "Knight Lord beast",
       "type": "Rare"
-    }
+    },
+    "traits": [
+      "aoe",
+      "buff",
+      "cleanser",
+      "dps"
+    ]
   },
   {
     "id": "magnakidmon",
@@ -4675,7 +4906,12 @@
     "soulStone": {
       "required": "Not Yet Released",
       "type": "No information"
-    }
+    },
+    "traits": [
+      "aoe",
+      "burn",
+      "dps"
+    ]
   },
   {
     "id": "magnamon",
@@ -4700,7 +4936,11 @@
     "soulStone": {
       "required": "Jinankylosaurus Beast",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "aoe",
+      "bruiser"
+    ]
   },
   {
     "id": "marinangemon",
@@ -4721,7 +4961,12 @@
     "soulStone": {
       "required": "Sea Angel Beast",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "buff",
+      "healer",
+      "support"
+    ]
   },
   {
     "id": "megidramon",
@@ -4740,7 +4985,12 @@
     "soulStone": {
       "required": "Not Yet Released",
       "type": "No Information"
-    }
+    },
+    "traits": [
+      "aoe",
+      "burn",
+      "support"
+    ]
   },
   {
     "id": "metalgarurumon",
@@ -4763,7 +5013,12 @@
     "soulStone": {
       "required": "Iron Garulu Beast",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "aoe",
+      "control",
+      "dps"
+    ]
   },
   {
     "id": "metalseadramon",
@@ -4786,7 +5041,12 @@
     "soulStone": {
       "required": "Metal Sea Dragon Beast",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "aoe",
+      "buff",
+      "support"
+    ]
   },
   {
     "id": "minervamon",
@@ -4809,7 +5069,12 @@
     "soulStone": {
       "required": "Minerva Beast",
       "type": "Exclusive Arena"
-    }
+    },
+    "traits": [
+      "aoe",
+      "dps",
+      "poison"
+    ]
   },
   {
     "id": "miragegaogamon",
@@ -4830,7 +5095,11 @@
     "soulStone": {
       "required": "Phantom Plus Oga Beast",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "aoe",
+      "dps"
+    ]
   },
   {
     "id": "mugendramon",
@@ -4855,7 +5124,11 @@
     "soulStone": {
       "required": "Infinite Dragon Beast",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "aoe",
+      "dps"
+    ]
   },
   {
     "id": "neptunemon",
@@ -4878,7 +5151,12 @@
     "soulStone": {
       "required": "Neptune Beast",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "aoe",
+      "debuff",
+      "dps"
+    ]
   },
   {
     "id": "ophanimon",
@@ -4903,7 +5181,12 @@
     "soulStone": {
       "required": "Angel Beast",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "aoe",
+      "buff_breaker",
+      "dps"
+    ]
   },
   {
     "id": "ouryumon",
@@ -4924,7 +5207,12 @@
     "soulStone": {
       "required": "King Dragon Beast",
       "type": "Rare"
-    }
+    },
+    "traits": [
+      "aoe",
+      "bruiser",
+      "control"
+    ]
   },
   {
     "id": "parasimon",
@@ -4945,7 +5233,13 @@
     "soulStone": {
       "required": "Parasitic Beast",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "aoe",
+      "debuff",
+      "healer",
+      "support"
+    ]
   },
   {
     "id": "piedmon",
@@ -4970,7 +5264,11 @@
     "soulStone": {
       "required": "Clown King",
       "type": "Exclusive 1vs1 Arena"
-    }
+    },
+    "traits": [
+      "dps",
+      "single_target"
+    ]
   },
   {
     "id": "pinochimon",
@@ -4995,7 +5293,11 @@
     "soulStone": {
       "required": "Puppet Beast",
       "type": "Exclusive Arena"
-    }
+    },
+    "traits": [
+      "control",
+      "support"
+    ]
   },
   {
     "id": "plesiomon",
@@ -5016,7 +5318,12 @@
     "soulStone": {
       "required": "Plesiosaur",
       "type": "Rare"
-    }
+    },
+    "traits": [
+      "aoe",
+      "control",
+      "dps"
+    ]
   },
   {
     "id": "raguelmon",
@@ -5037,7 +5344,11 @@
     "soulStone": {
       "required": "Laguerre Beast",
       "type": "Rare"
-    }
+    },
+    "traits": [
+      "dps",
+      "single_target"
+    ]
   },
   {
     "id": "raijinmon",
@@ -5060,7 +5371,13 @@
     "soulStone": {
       "required": "Thor Beast",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "buff_breaker",
+      "control",
+      "debuff",
+      "support"
+    ]
   },
   {
     "id": "ravemon",
@@ -5083,7 +5400,11 @@
     "soulStone": {
       "required": "Raven Beast",
       "type": "Rare"
-    }
+    },
+    "traits": [
+      "dps",
+      "single_target"
+    ]
   },
   {
     "id": "rhihimon",
@@ -5106,7 +5427,12 @@
     "soulStone": {
       "required": "Emperor's Lion Spirit",
       "type": "Exclusive Guild"
-    }
+    },
+    "traits": [
+      "control",
+      "debuff",
+      "dps"
+    ]
   },
   {
     "id": "rosemon",
@@ -5129,7 +5455,11 @@
     "soulStone": {
       "required": "Rose Beast",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "control",
+      "poison"
+    ]
   },
   {
     "id": "saberleomon",
@@ -5150,7 +5480,12 @@
     "soulStone": {
       "required": "SaberLeomon",
       "type": "Exclusive 1vs1 Arena"
-    }
+    },
+    "traits": [
+      "aoe",
+      "bruiser",
+      "tank"
+    ]
   },
   {
     "id": "saintgargomon",
@@ -5173,7 +5508,11 @@
     "soulStone": {
       "required": "SAN Garuco Beast",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "aoe",
+      "dps"
+    ]
   },
   {
     "id": "sakuyamon",
@@ -5194,7 +5533,13 @@
     "soulStone": {
       "required": "Sakiya Beast",
       "type": "Rare"
-    }
+    },
+    "traits": [
+      "aoe",
+      "buff_breaker",
+      "reviver",
+      "support"
+    ]
   },
   {
     "id": "seraphimon",
@@ -5217,7 +5562,12 @@
     "soulStone": {
       "required": "Incandescent Angel Beast",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "debuff",
+      "healer",
+      "reviver"
+    ]
   },
   {
     "id": "shinegreymon",
@@ -5238,7 +5588,12 @@
     "soulStone": {
       "required": "Flash Tyrannosaurus Beast",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "aoe",
+      "burn",
+      "dps"
+    ]
   },
   {
     "id": "skullmammothmon",
@@ -5261,7 +5616,12 @@
     "soulStone": {
       "required": "Skull Mammoth Beast",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "control",
+      "healer",
+      "support"
+    ]
   },
   {
     "id": "slashangemon",
@@ -5282,7 +5642,11 @@
     "soulStone": {
       "required": "Behead Angel Beast",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "dps",
+      "single_target"
+    ]
   },
   {
     "id": "titamon",
@@ -5303,7 +5667,11 @@
     "soulStone": {
       "required": "Titan",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "dps",
+      "single_target"
+    ]
   },
   {
     "id": "ulforcev-dramon",
@@ -5328,7 +5696,11 @@
     "soulStone": {
       "required": "Ultimate V Dragon Beast",
       "type": "Rare"
-    }
+    },
+    "traits": [
+      "dps",
+      "single_target"
+    ]
   },
   {
     "id": "valdurmon",
@@ -5349,7 +5721,13 @@
     "soulStone": {
       "required": "Walder Beast",
       "type": "Exclusive Guild"
-    }
+    },
+    "traits": [
+      "cleanser",
+      "control",
+      "debuff",
+      "support"
+    ]
   },
   {
     "id": "venomvamdemon",
@@ -5372,7 +5750,13 @@
     "soulStone": {
       "required": "Whiny Vampire Warcraft",
       "type": "Exclusive Guild"
-    }
+    },
+    "traits": [
+      "aoe",
+      "bleed",
+      "debuff",
+      "dps"
+    ]
   },
   {
     "id": "venusmon",
@@ -5395,7 +5779,12 @@
     "soulStone": {
       "required": "Venus Beast",
       "type": "Rare"
-    }
+    },
+    "traits": [
+      "debuff",
+      "healer",
+      "support"
+    ]
   },
   {
     "id": "victorygreymon",
@@ -5416,7 +5805,12 @@
     "soulStone": {
       "required": "Not Yet Released",
       "type": "No information"
-    }
+    },
+    "traits": [
+      "aoe",
+      "debuff",
+      "dps"
+    ]
   },
   {
     "id": "vikemon",
@@ -5437,7 +5831,12 @@
     "soulStone": {
       "required": "Viking Beast",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "control",
+      "healer",
+      "tank"
+    ]
   },
   {
     "id": "vulcanusmon",
@@ -5460,7 +5859,13 @@
     "soulStone": {
       "required": "Not Yet Released",
       "type": "No information"
-    }
+    },
+    "traits": [
+      "buff",
+      "cleanser",
+      "debuff",
+      "support"
+    ]
   },
   {
     "id": "wargreymon",
@@ -5484,7 +5889,12 @@
     "soulStone": {
       "required": "Fighting Tyrannosaurus Beast",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "aoe",
+      "burn",
+      "dps"
+    ]
   },
   {
     "id": "whitecherubimon",
@@ -5509,7 +5919,13 @@
     "soulStone": {
       "required": "Wisdom Angel Beast (Good)",
       "type": "Common"
-    }
+    },
+    "traits": [
+      "aoe",
+      "buff",
+      "debuff",
+      "support"
+    ]
   },
   {
     "id": "z-dgarurumon",
@@ -5532,7 +5948,12 @@
     "soulStone": {
       "required": "Final Crossbow Garulu beast",
       "type": "Rare"
-    }
+    },
+    "traits": [
+      "aoe",
+      "buff",
+      "dps"
+    ]
   },
   {
     "id": "zanbamon",
@@ -5553,7 +5974,12 @@
     "soulStone": {
       "required": "Chop the Beast",
       "type": "Exclusive Arena"
-    }
+    },
+    "traits": [
+      "aoe",
+      "debuff",
+      "dps"
+    ]
   },
   {
     "id": "dynasmon-x",
