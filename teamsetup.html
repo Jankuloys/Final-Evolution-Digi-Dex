@@ -71,9 +71,11 @@
     .slot:hover{ transform:translateY(-3px); border-color:#2a3d86 }
     .slot .thumb{
       aspect-ratio:1/1; background:#0b132b; display:flex; align-items:center; justify-content:center; position:relative;
+      cursor:pointer; /* <= klik tanda tanya untuk memilih */
     }
     .slot .thumb .placeholder{
       width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:#8ea3ff; font-weight:800; font-size:42px;
+      user-select:none;
     }
     .slot .namebar{display:flex; align-items:center; justify-content:space-between; gap:8px; padding:10px 12px; border-top:1px solid var(--ring)}
     .slot .name{color:#cfe0ff; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
@@ -89,9 +91,13 @@
 
     /* MODAL SEARCH */
     .overlay{ position:fixed; inset:0; background:rgba(0,0,0,.45); display:none; align-items:center; justify-content:center; z-index:1000 }
-    .modal{ width:min(920px, 92vw); background:var(--panel); border:1px solid var(--ring); border-radius:16px; box-shadow:var(--shadow); overflow:hidden }
-    .modal .hd{ padding:14px 16px; border-bottom:1px solid var(--ring); display:flex; gap:10px; align-items:center }
-    .modal .hd input{ flex:1; padding:10px 12px; border-radius:10px; border:1px solid var(--ring); background:var(--panel-2); color:var(--text) }
+    .modal{ width:min(980px, 96vw); background:var(--panel); border:1px solid var(--ring); border-radius:16px; box-shadow:var(--shadow); overflow:hidden }
+    .modal .hd{ padding:12px 16px; border-bottom:1px solid var(--ring); display:grid; grid-template-columns: 1fr; gap:10px }
+    .modal .hd .topbar{ display:flex; gap:10px; align-items:center }
+    .modal .hd input, .modal select{
+      width:100%; padding:10px 12px; border-radius:10px; border:1px solid var(--ring); background:var(--panel-2); color:var(--text); font-size:14px;
+    }
+    .filter-row{ display:grid; grid-template-columns: repeat(3, minmax(140px,1fr)); gap:10px }
     .modal .bd{ max-height:60vh; overflow:auto; padding:16px }
     .names{ display:flex; flex-wrap:wrap; gap:10px }
     .name-pill{
@@ -101,10 +107,8 @@
       box-shadow:0 2px 8px rgba(0,0,0,.2);
     }
     .name-pill:hover{ border-color:#2a3d86; background:linear-gradient(135deg,#121d40,#0e1835); transform:translateY(-2px); color:#59a6ff }
+    .name-pill.disabled{ opacity:.45; cursor:not-allowed; pointer-events:none; }
     .empty{color:var(--muted); padding:10px 0}
-
-    /* BADGE WARNA UNTUK SOULSTONE TYPE (kalau ingin dipakai nanti) */
-    .ss-badge{ background:#20325e; border-color:#2a3d86; color:#cfe0ff }
   </style>
 </head>
 <body>
@@ -113,12 +117,11 @@
     <div class="nav-inner">
       <div class="brand">
         <div class="logo" aria-hidden="true"></div>
-        <span>Final Evolution: <span style="color:#cfe0ff">Team Setup</span></span>
+        <span>Final Evolution: Digi<span style="color:#cfe0ff">- Team Setup</span></span>
       </div>
       <div class="spacer"></div>
       <a class="navlink" href="./index.html">Home</a>
       <a class="navlink" href="./digimon.html">Digi‑Dex</a>
-      <a class="navlink active" href="./teamsetup.html">Team Setup</a>
       <a class="navlink" href="./tamers.html">Tamers</a>
       <a class="navlink" href="./about.html">About</a>
     </div>
@@ -126,7 +129,7 @@
 
   <!-- HERO -->
   <header class="hero">
-    <h1>Final Evolution: Team Setup</h1>
+    <h1>Final Evolution: Digi - Team Setup</h1>
     <p>Susun komposisi 5 Digimon, lihat bonus Type/Race & rekomendasi tamer otomatis.</p>
   </header>
 
@@ -134,10 +137,11 @@
     <!-- LEFT: Team board -->
     <div class="panel-box">
       <h3 style="margin:0 0 12px; color:#cfe0ff; font-size:20px">🧩 Susun Tim 5 Digimon</h3>
+
       <div class="team">
         <div class="row top">
           <div class="slot" data-index="0">
-            <div class="thumb"><div class="placeholder">?</div></div>
+            <div class="thumb" title="Klik untuk memilih Digimon"><div class="placeholder">?</div></div>
             <div class="namebar">
               <div class="name">Digimon Name</div>
               <div class="actions">
@@ -146,8 +150,9 @@
               </div>
             </div>
           </div>
+
           <div class="slot" data-index="1">
-            <div class="thumb"><div class="placeholder">?</div></div>
+            <div class="thumb" title="Klik untuk memilih Digimon"><div class="placeholder">?</div></div>
             <div class="namebar">
               <div class="name">Digimon Name</div>
               <div class="actions">
@@ -157,9 +162,10 @@
             </div>
           </div>
         </div>
+
         <div class="row bottom">
           <div class="slot" data-index="2">
-            <div class="thumb"><div class="placeholder">?</div></div>
+            <div class="thumb" title="Klik untuk memilih Digimon"><div class="placeholder">?</div></div>
             <div class="namebar">
               <div class="name">Digimon Name</div>
               <div class="actions">
@@ -168,8 +174,9 @@
               </div>
             </div>
           </div>
+
           <div class="slot" data-index="3">
-            <div class="thumb"><div class="placeholder">?</div></div>
+            <div class="thumb" title="Klik untuk memilih Digimon"><div class="placeholder">?</div></div>
             <div class="namebar">
               <div class="name">Digimon Name</div>
               <div class="actions">
@@ -178,8 +185,9 @@
               </div>
             </div>
           </div>
+
           <div class="slot" data-index="4">
-            <div class="thumb"><div class="placeholder">?</div></div>
+            <div class="thumb" title="Klik untuk memilih Digimon"><div class="placeholder">?</div></div>
             <div class="namebar">
               <div class="name">Digimon Name</div>
               <div class="actions">
@@ -190,7 +198,10 @@
           </div>
         </div>
       </div>
-      <p class="empty" id="hintEmpty" style="margin-top:12px">Klik <b>Pilih</b> pada slot untuk memilih Digimon.</p>
+
+      <p class="empty" id="hintEmpty" style="margin-top:12px">
+        Klik tombol <b>Pilih</b> atau <b>tanda tanya</b> di kotak slot untuk memilih Digimon.
+      </p>
     </div>
 
     <!-- RIGHT: Sidebar info -->
@@ -217,9 +228,22 @@
   <div class="overlay" id="picker" aria-hidden="true">
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="pickTitle">
       <div class="hd">
-        <div class="chip">🔎 Pilih Digimon</div>
+        <div class="topbar">
+          <div class="chip">🔎 Pilih Digimon</div>
+          <button class="btn" id="btnClose">Tutup</button>
+        </div>
         <input id="pickSearch" type="text" placeholder="Ketik nama atau alias… (Agumon, Beelko, Monarch X, dll.)" />
-        <button class="btn" id="btnClose">Tutup</button>
+        <div class="filter-row">
+          <select id="filterStage" aria-label="Filter Stage">
+            <option value="">Semua Stage</option>
+          </select>
+          <select id="filterFaction" aria-label="Filter Faction">
+            <option value="">Semua Faction</option>
+          </select>
+          <select id="filterType" aria-label="Filter Type">
+            <option value="">Semua Type</option>
+          </select>
+        </div>
       </div>
       <div class="bd">
         <div id="pickResults" class="names"></div>
@@ -239,23 +263,22 @@
 
   <script>
     /* ====== SOURCES ====== */
-    const JSON_DIGI = 'data/digimon_evolution_lines.json';  // id, displayName, aliases, factions, types, ... [2](https://gitssc-my.sharepoint.com/personal/jourdan_jonathan_app_co_id/Documents/Whiteboards/Microsoft%20Copilot%20Chat%20Files/digimon_evolution_lines.json)
-    const JSON_TAMERS = 'data/tamers.json';                 // name, aliases, skillName, givingBuffFor          [1](https://gitssc-my.sharepoint.com/personal/jourdan_jonathan_app_co_id/Documents/Whiteboards/Microsoft%20Copilot%20Chat%20Files/tamers.json)
-    const JSON_REF = 'data/digimon_reference.json';         // optional, untuk ikon faction/type                 [1](https://gitssc-my.sharepoint.com/personal/jourdan_jonathan_app_co_id/Documents/Whiteboards/Microsoft%20Copilot%20Chat%20Files/tamers.json)
+    const JSON_DIGI = 'data/digimon_evolution_lines.json';  // id, displayName, stage, factions, types, aliases
+    const JSON_TAMERS = 'data/tamers.json';                 // name, skillName, givingBuffFor
+    const JSON_REF = 'data/digimon_reference.json';         // optional (icons)
 
     /* ====== STATE ====== */
-    let DB = [];                // Digimon
-    let TAMERS = [];            // Tamers
-    let REF = null;             // Reference (opsional)
-    const TEAM = [null, null, null, null, null];  // simpan 'id' digimon per slot
+    let DB = [];               // Digimon
+    let TAMERS = [];           // Tamers
+    let REF = null;            // Reference (optional)
+    const TEAM = [null, null, null, null, null]; // id per slot
     let activeIndex = 0;
 
     const $ = (sel, root=document) => root.querySelector(sel);
     const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
-
-    /* ====== HELPERS ====== */
     const norm = s => (s||'').toLowerCase().trim();
     const byId = id => DB.find(x => norm(x.id) === norm(id));
+
     const factionIconName = code => {
       const f = REF?.factions?.find(x => x.code && x.code.trim() === (code||'').trim());
       return f ? `${f.icon||''} ${f.name||code}`.trim() : (code||'-');
@@ -265,37 +288,76 @@
       return t ? `${t.icon||''} ${t.name||name}`.trim() : (name||'-');
     };
 
+    /* ====== Filter master (dibangun dari DB agar sinkron) ====== */
+    function allStages(){
+      const ord = ['Child','Adult','Perfect','Ultimate','Ultimate+'];
+      const s = Array.from(new Set(DB.map(d => (d.stage||'').trim()))).filter(Boolean);
+      return s.sort((a,b)=> ord.indexOf(a)-ord.indexOf(b));
+    }
+    function allFactions(){
+      const set = new Set(); DB.forEach(d => (d.factions||[]).forEach(f => set.add((f||'').trim())));
+      return Array.from(set).filter(Boolean).sort();
+    }
+    function allTypes(){
+      const set = new Set(); DB.forEach(d => (d.types||[]).forEach(t => set.add((t||'').trim())));
+      return Array.from(set).filter(Boolean).sort();
+    }
+    function fillFilters(){
+      const stSel = $('#filterStage'), faSel = $('#filterFaction'), tySel = $('#filterType');
+      allStages().forEach(s => stSel.insertAdjacentHTML('beforeend', `<option value="${s}">${s}</option>`));
+      allFactions().forEach(c => faSel.insertAdjacentHTML('beforeend', `<option value="${c}">${c}</option>`));
+      allTypes().forEach(t => tySel.insertAdjacentHTML('beforeend', `<option value="${t}">${t}</option>`));
+    }
+
+    /* ====== NAME PILL (disabled jika sudah dipilih) ====== */
     function namePill(d){
+      const taken = TEAM.includes(d.id);
+      if (taken) return `<span class="name-pill disabled" title="Sudah dipilih di tim">${d.displayName}</span>`;
       return `<a href="#" class="name-pill" data-pick="${d.id}">${d.displayName}</a>`;
     }
 
+    /* ====== PICKER ====== */
     function openPicker(index){
       activeIndex = index;
       $('#picker').style.display = 'flex';
       $('#picker').setAttribute('aria-hidden','false');
       $('#pickSearch').value = '';
-      renderPickResults('');
-      setTimeout(()=> $('#pickSearch').focus(), 50);
+      renderPickResults();
+      setTimeout(()=> $('#pickSearch').focus(), 30);
     }
     function closePicker(){
       $('#picker').style.display = 'none';
       $('#picker').setAttribute('aria-hidden','true');
     }
+    function getFilterValues(){
+      return {
+        q: norm($('#pickSearch').value),
+        stage: $('#filterStage').value,
+        faction: $('#filterFaction').value,
+        type: $('#filterType').value
+      };
+    }
+    function renderPickResults(){
+      const { q, stage, faction, type } = getFilterValues();
+      let arr = DB.slice();
 
-    function renderPickResults(q){
-      q = norm(q);
-      let arr = DB;
+      if (stage)   arr = arr.filter(d => (d.stage||'').trim() === stage);
+      if (faction) arr = arr.filter(d => (d.factions||[]).some(f => (f||'').trim() === faction));
+      if (type)    arr = arr.filter(d => (d.types||[]).some(t => (t||'').trim() === type));
+
       if (q){
-        arr = DB.filter(d => {
-          if (norm(d.displayName).includes(q)) return true;
-          return (d.aliases||[]).some(a => norm(a).includes(q));
-        });
+        arr = arr.filter(d =>
+          norm(d.displayName).includes(q) ||
+          (d.aliases||[]).some(a => norm(a).includes(q))
+        );
       }
-      arr = arr.sort((a,b)=> a.displayName.localeCompare(b.displayName));
+
+      arr.sort((a,b)=> a.displayName.localeCompare(b.displayName));
       $('#pickResults').innerHTML = arr.map(namePill).join('');
       $('#pickEmpty').hidden = arr.length > 0;
     }
 
+    /* ====== TEAM BOARD ====== */
     function renderTeamBoard(){
       $$('.slot').forEach(slot => {
         const idx = Number(slot.dataset.index);
@@ -319,7 +381,7 @@
       recalcSummaries();
     }
 
-    /* ====== RACE BONUS LOGIC ====== */
+    /* ====== RACE BONUS ====== */
     function raceBonus(teamDigis){
       const types = teamDigis.map(d => (d.types||[])[0]).filter(Boolean);
       const counts = {}; types.forEach(t => counts[t] = (counts[t]||0)+1);
@@ -328,83 +390,66 @@
       if (vals[0] === 5){ atk=25; hp=25; }
       else if (vals[0] === 4){ atk=15; hp=15; }
       else if (vals[0] === 3){
-        if (vals[1] === 2) { atk=15; hp=15; } // 3+2
-        else { atk=10; hp=10; }              // 3+1+1
+        if (vals[1] === 2) { atk=15; hp=15; } else { atk=10; hp=10; }
       }
       return { atk, hp, typeCounts: counts };
     }
 
     /* ====== REKOMENDASI TAMER (berdasarkan faction) ====== */
     function mapTamersByFaction(){
-      const map = {};
+      const m = {};
       (TAMERS||[]).forEach(t => {
         const code = (t.givingBuffFor||'').trim();
         if (!code) return;
-        (map[code] ||= []).push(t);
+        (m[code] ||= []).push(t);
       });
-      return map;
+      return m;
     }
-
     function recommendTamers(teamDigis){
       const facCounts = {};
-      const facOrder = []; // untuk mempertahankan urutan kemunculan
       teamDigis.forEach(d => {
-        const code = (d.factions||[])[0]; // pakai faction pertama sebagai “utama”
+        const code = (d.factions||[])[0];
         if (!code) return;
-        if (!facCounts[code]) facOrder.push(code);
         facCounts[code] = (facCounts[code]||0)+1;
       });
 
-      const entries = Object.entries(facCounts).sort((a,b)=> b[1]-a[1]); // [code,count] desc
-      if (entries.length === 0) return { text: '—', summary: '—' };
+      const entries = Object.entries(facCounts).sort((a,b)=> b[1]-a[1]);
+      if (!entries.length) return { text: '—', summary: '—' };
 
-      // Summary chips
       const facChips = entries.map(([code,c]) => `<span class="chip">${factionIconName(code)} × ${c}</span>`).join(' ');
-
       const max = entries[0][1];
-      const factionsOut = [];
+      const out = [];
       if (max >= 3){
-        // semua faction dengan count >=3
-        entries.forEach(([code,c]) => { if (c >= 3) factionsOut.push(code); });
-        // tambahan untuk kasus 3-2: ambil satu faction dengan count 2
-        const two = entries.find(([,c]) => c === 2);
-        if (two) factionsOut.push(two[0]);
+        entries.forEach(([code,c]) => { if (c >= 3) out.push(code); });
+        const two = entries.find(([,c]) => c === 2); if (two) out.push(two[0]); // 3-2
       } else if (max === 2){
-        // 2-2-1 atau 2-1-1-1 -> ambil semua yg 2
-        entries.forEach(([code,c]) => { if (c === 2) factionsOut.push(code); });
+        entries.forEach(([code,c]) => { if (c === 2) out.push(code); });
       } else {
-        // semuanya 1
-        return { text: 'SILAHKAN PILIH TAMER YANG ANDA INGINKAN', summary: facChips };
+        return { text: 'SILAHKAN SESUAIKAN KEMBALI', summary: facChips };
       }
 
       const tMap = mapTamersByFaction();
-      const names = factionsOut.map(code => {
+      const names = out.map(code => {
         const list = tMap[code] || [];
-        if (list.length === 0) return factionIconName(code); // fallback: tampilkan nama faction
-        // jika ada lebih dari 1 tamer untuk faction yg sama, tampilkan semua
-        const joined = list.map(t => t.name).join(' & ');
-        return joined;
+        if (!list.length) return factionIconName(code);
+        return list.map(t => t.name).join(' & ');
       });
 
       return { text: names.join(' & '), summary: facChips };
     }
 
-    /* ====== RECALC & RENDER RINGKASAN ====== */
+    /* ====== RINGKASAN ====== */
     function recalcSummaries(){
       const teamDigis = TEAM.map(id => id ? byId(id) : null).filter(Boolean);
-
-      // Type summary
       const { typeCounts } = raceBonus(teamDigis);
       const typeChips = Object.entries(typeCounts)
         .sort((a,b)=> b[1]-a[1])
         .map(([t,c]) => `<span class="chip">${typeIconName(t)} × ${c}</span>`).join(' ');
       $('#typeSummary').innerHTML = typeChips || '—';
 
-      // Race bonus
       const rb = raceBonus(teamDigis);
       $('#raceBonus').textContent = `ATK +${rb.atk}%, MAX HP +${rb.hp}%`;
 
-      // Faction summary + recommended tamers
       const rt = recommendTamers(teamDigis);
       $('#recTamer').textContent = rt.text || '—';
       $('#factionSummary').innerHTML = rt.summary || '—';
@@ -413,7 +458,6 @@
     /* ====== INIT ====== */
     (async function init(){
       try{
-        // Load data (digimon + tamers + ref opsional)
         const [resD, resT, resR] = await Promise.all([
           fetch(JSON_DIGI, {cache:'no-store'}),
           fetch(JSON_TAMERS, {cache:'no-store'}),
@@ -422,20 +466,20 @@
         if(!resD.ok) throw new Error('Gagal memuat data Digimon: '+resD.status);
         if(!resT.ok) throw new Error('Gagal memuat data Tamers: '+resT.status);
 
-        const rawD = await resD.json();   // [2](https://gitssc-my.sharepoint.com/personal/jourdan_jonathan_app_co_id/Documents/Whiteboards/Microsoft%20Copilot%20Chat%20Files/digimon_evolution_lines.json)
-        const rawT = await resT.json();   // [1](https://gitssc-my.sharepoint.com/personal/jourdan_jonathan_app_co_id/Documents/Whiteboards/Microsoft%20Copilot%20Chat%20Files/tamers.json)
+        const rawD = await resD.json();   // struktur sesuai file yang kamu kirim
+        const rawT = await resT.json();
         let rawR = null;
-        if (resR && resR.ok){ rawR = await resR.json(); } // [1](https://gitssc-my.sharepoint.com/personal/jourdan_jonathan_app_co_id/Documents/Whiteboards/Microsoft%20Copilot%20Chat%20Files/tamers.json)
+        if (resR && resR.ok){ rawR = await resR.json(); }
 
-        // Normalisasi ringan (selaras dengan digimon.html)
+        // Normalisasi (selaras dengan digimon.html)
         DB = rawD.map(d => ({
           id:(d.id||'').trim(),
           displayName:(d.displayName||'').trim(),
           aliases:(d.aliases||[]).map(a=>a.trim()),
+          stage:(d.stage||'').trim(),
           types:(d.types||[]).map(t=>t.trim()),
           factions:(d.factions||[]).map(f=>f.trim())
         }));
-
         TAMERS = (rawT||[]).map(t => ({
           id:(t.id||'').trim(),
           name:(t.name||'').trim(),
@@ -443,41 +487,63 @@
           skillName:(t.skillName||'').trim(),
           givingBuffFor:(t.givingBuffFor||'').trim()
         }));
-
         REF = rawR ? {
           factions:(rawR.factions||[]).map(f=>({code:(f.code||'').trim(), name:(f.name||'').trim(), icon:(f.icon||'').trim()})),
           types:(rawR.types||[]).map(t=>({name:(t.name||'').trim(), icon:(t.icon||'').trim()}))
         } : null;
 
-        // Listener tombol slot
+        // Isi dropdown filter
+        fillFilters();
+
+        // Slot: tombol Pilih & Clear
         $$('.js-pick').forEach(btn => btn.addEventListener('click', (e)=>{
           const slot = e.target.closest('.slot'); openPicker(Number(slot.dataset.index));
         }));
         $$('.js-clear').forEach(btn => btn.addEventListener('click', (e)=>{
-          const slot = e.target.closest('.slot'); TEAM[Number(slot.dataset.index)] = null; renderTeamBoard();
+          const slot = e.target.closest('.slot');
+          TEAM[Number(slot.dataset.index)] = null;
+          renderTeamBoard();
+          renderPickResults(); // refresh disabled state
         }));
 
-        // Picker handlers
+        // NEW: klik tanda tanya/thumbnail juga buka picker
+        $$('.slot .thumb').forEach(th => th.addEventListener('click', (e)=>{
+          const slot = e.currentTarget.closest('.slot'); openPicker(Number(slot.dataset.index));
+        }));
+
+        // Picker: search & filter
         $('#btnClose').addEventListener('click', closePicker);
-        $('#pickSearch').addEventListener('input', (e)=> renderPickResults(e.target.value));
+        $('#pickSearch').addEventListener('input', renderPickResults);
+        ['filterStage','filterFaction','filterType'].forEach(id => {
+          $('#'+id).addEventListener('change', renderPickResults);
+        });
         $('#pickSearch').addEventListener('keydown', (e)=>{
           if (e.key === 'Enter'){
-            const first = $('#pickResults .name-pill');
+            const first = Array.from($('#pickResults').querySelectorAll('.name-pill'))
+                               .find(a => !a.classList.contains('disabled'));
             if (first) { first.click(); e.preventDefault(); }
           }
         });
+
+        // Pilih nama dari hasil
         $('#pickResults').addEventListener('click', (e)=>{
           const a = e.target.closest('.name-pill'); if(!a) return;
           e.preventDefault();
           const id = a.dataset.pick;
+          if (TEAM.includes(id)){
+            const idx = TEAM.indexOf(id);
+            alert(`Digimon itu sudah dipilih di slot ${idx+1}. Hapus (Clear) dulu jika ingin memindahkan.`);
+            return;
+          }
           TEAM[activeIndex] = id;
           closePicker();
           renderTeamBoard();
+          renderPickResults();
         });
 
         // Render awal
         renderTeamBoard();
-        renderPickResults('');
+        renderPickResults();
       }catch(err){
         console.error(err);
         document.body.insertAdjacentHTML('beforeend',
@@ -489,4 +555,3 @@
   </script>
 </body>
 </html>
-``
