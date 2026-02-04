@@ -261,7 +261,6 @@
             <b>Aliases</b><span id="c-aliases">-</span>
             <b>Type / Race</b><span id="c-type">-</span>
             <b>Faction / Family</b><span id="c-faction">-</span>
-          <b>Traits</b><span id="c-traits">-</span>
             <b>Group</b><span id="c-group">-</span>
             <!-- NEW: Soul Stone row -->
             <b>Soul Stone</b><span id="c-soulstone">-</span>
@@ -338,7 +337,6 @@
     if (t.includes('rare')) return '#dca0ff';
     if (t.includes('common')) return '#8fd0ff';
     if (t.includes('exclusive')) return '#ffd166';
-  if (t.includes('limited')) return '#ff6b6b';
     if (t.includes('no information')) return '#9aa3c4';
     if (t.includes('not yet released')) return '#9aa3c4';
     return '#b9c6ff';
@@ -592,7 +590,7 @@
   function renderCard(id){
     const node = byId(id);
     const nameEl = $('c-name'), meta = $('c-meta'), stageEl = $('c-stage'), aliasesEl = $('c-aliases');
-    const typeEl = $('c-type'), factionEl = $('c-faction'), traitEl = $('c-traits'), groupEl = $('c-group'), ssEl = $('c-soulstone');
+    const typeEl = $('c-type'), factionEl = $('c-faction'), groupEl = $('c-group'), ssEl = $('c-soulstone');
     const prevBox = $('c-prev'), nextBox = $('c-next');
     const thumb = document.querySelector('#card .thumb .placeholder');
 
@@ -634,23 +632,14 @@
         const faction = REF_DATA.factions.find(f => f.code.trim() === clean);
         if (faction) {
           const aliases = faction.aliases && faction.aliases.length ? ` (${faction.aliases.map(a => a.trim()).join(', ')})` : '';
-          return `<a href="javascript:void(0)" class="chip" style="background:${faction.color}15;border:1px solid ${faction.color}40;color:${faction.color}" data-faction="${clean}">${faction.icon} [${faction.code.trim()}] ${faction.name.trim()}${(faction.aliases && faction.aliases.length) ? ' - ' + faction.aliases.map(a=>a.trim()).join(', ') : ''}</a>`;
+          return `<a href="javascript:void(0)" class="chip" style="background:${faction.color}15;border:1px solid ${faction.color}40;color:${faction.color}" data-faction="${clean}">${faction.icon} ${faction.name.trim()}${aliases}</a>`;
         }
         return `<span class="chip">${clean}</span>`;
       }).join(' ');
       factionEl.innerHTML = factionChips;
     } else { factionEl.textContent = '-'; }
 
-    // Traits (icons + names)
-  if (node.traits && node.traits.length && REF_DATA?.traits) {
-    const tchips = node.traits.map(tid => {
-      const t = REF_DATA.traits.find(tr => tr.id.trim() === String(tid).trim());
-      if (t) return `<span class="chip" title="${t.description}">${t.icon} ${t.name}</span>`;
-      return `<span class="chip">${tid}</span>`;
-    }).join(' ');
-    traitEl.innerHTML = tchips;
-  } else { traitEl.textContent = '-'; }
-  // Group (clickable)
+    // Group (clickable)
     const groups = node.groups || [];
     groupEl.innerHTML = groups.length
       ? groups.map(g => `<a href="javascript:void(0)" class="chip" data-group-click="${encodeURIComponent(g.trim())}">${g.trim()}</a>`).join(' ')
@@ -824,14 +813,7 @@
         }))
       };
 
-      // Normalize traits as well
-    REF_DATA.traits = (rawRef.traits || []).map(t => ({
-      id: (t.id || '').trim(),
-      name: (t.name || '').trim(),
-      description: (t.description || '').trim(),
-      icon: (t.icon || '').trim()
-    }));
-    // Grouping
+      // Grouping
       GROUPS_ALPHA = groupByLetter(DB);
       GROUPS_STAGE = groupByStage(DB);
 
