@@ -37,22 +37,17 @@
     /* CONTROLS */
     .panel{max-width:1200px;margin:14px auto;padding:14px 18px}
     .controls{
-      background:var(--panel); border:1px solid var(--ring); border-radius:16px; 
+      background:var(--panel); border:1px solid var(--ring); border-radius:16px;
       box-shadow:var(--shadow); padding:20px; display:flex; flex-direction:column; gap:16px;
     }
 
     /* SEARCH BAR */
-    .search-box{
-      display:flex; gap:10px; align-items:center;
-    }
+    .search-box{ display:flex; gap:10px; align-items:center; }
     .search-input{
       flex:1; padding:12px 16px; border-radius:12px; border:1px solid var(--ring);
-      background:var(--panel-2); color:var(--text); font-size:15px;
-      transition:var(--transition);
+      background:var(--panel-2); color:var(--text); font-size:15px; transition:var(--transition);
     }
-    .search-input:focus{
-      outline:none; border-color:#2a3d86; box-shadow:0 0 0 2px rgba(42,61,134,.3);
-    }
+    .search-input:focus{ outline:none; border-color:#2a3d86; box-shadow:0 0 0 2px rgba(42,61,134,.3); }
     .search-input::placeholder{color:var(--muted)}
 
     /* MODE SWITCH */
@@ -63,8 +58,8 @@
       transition:var(--transition); font-size:14px;
     }
     .seg-btn:hover{ transform:translateY(-2px); box-shadow:var(--shadow-sm); }
-    .seg-btn.active{ 
-      border-color:#2a3d86; 
+    .seg-btn.active{
+      border-color:#2a3d86;
       background:linear-gradient(135deg, #1a2345, #151e3a);
       box-shadow:0 0 0 2px rgba(42,61,134,.5);
     }
@@ -78,13 +73,13 @@
       background:var(--panel-2); color:#cfe0ff; text-decoration:none; font-weight:700;
       transition:var(--transition); font-size:14px;
     }
-    .alpha a:hover, .stagebar a:hover, .factionbar a:hover{ 
-      transform:translateY(-2px); 
+    .alpha a:hover, .stagebar a:hover, .factionbar a:hover{
+      transform:translateY(-2px);
       border-color:#2a3d86;
       box-shadow:var(--shadow-sm);
     }
-    .alpha a.active, .stagebar a.active, .factionbar a.active{ 
-      border-color:#2a3d86; 
+    .alpha a.active, .stagebar a.active, .factionbar a.active{
+      border-color:#2a3d86;
       background:linear-gradient(135deg, #1a2345, #151e3a);
       box-shadow:0 0 0 2px rgba(42,61,134,.5);
     }
@@ -92,7 +87,7 @@
     /* LAYOUT: name list + card */
     .wrap{max-width:1200px;margin:0 auto 30px;padding:0 18px; display:grid; grid-template-columns: 1fr 1.2fr; gap:20px}
     .panel-box{
-      background:var(--panel); border:1px solid var(--ring); border-radius:16px; 
+      background:var(--panel); border:1px solid var(--ring); border-radius:16px;
       box-shadow:var(--shadow); padding:20px; transition:var(--transition);
     }
     .panel-box:hover{
@@ -104,15 +99,15 @@
     /* NAME LIST */
     .names{ display:flex; flex-wrap:wrap; gap:10px; }
     .name-pill{
-      display:inline-flex; padding:8px 14px; border-radius:999px; 
-      background:linear-gradient(135deg, #0c1530, #0a1228); 
+      display:inline-flex; padding:8px 14px; border-radius:999px;
+      background:linear-gradient(135deg, #0c1530, #0a1228);
       border:1px solid var(--ring);
       color:#b9c6ff; text-decoration:none; font-size:14px;
       transition:var(--transition); font-weight:600;
       box-shadow:0 2px 8px rgba(0,0,0,.2);
     }
-    .name-pill:hover{ 
-      border-color:#2a3d86; 
+    .name-pill:hover{
+      border-color:#2a3d86;
       background:linear-gradient(135deg, #121d40, #0e1835);
       transform:translateY(-2px);
       box-shadow:0 4px 12px rgba(42,61,134,.3);
@@ -121,7 +116,7 @@
 
     /* CARD */
     .card{
-      background:var(--panel); border:1px solid var(--ring); border-radius:16px; 
+      background:var(--panel); border:1px solid var(--ring); border-radius:16px;
       overflow:hidden; box-shadow:var(--shadow); transition:var(--transition);
     }
     .card:hover{
@@ -129,8 +124,8 @@
       box-shadow:0 15px 40px rgba(0,0,0,.4);
       border-color:#2a3d86;
     }
-    .card .thumb{ 
-      aspect-ratio:1/1; background:#0b132b; display:flex; align-items:center; 
+    .card .thumb{
+      aspect-ratio:1/1; background:#0b132b; display:flex; align-items:center;
       justify-content:center; position:relative; overflow:hidden;
     }
     .card .thumb::before{
@@ -138,22 +133,17 @@
       background:radial-gradient(circle at 50% 50%, rgba(89,166,255,.1), transparent 70%);
       opacity:0; transition:opacity 0.3s ease;
     }
-    .card:hover .thumb::before{
-      opacity:1;
-    }
+    .card:hover .thumb::before{ opacity:1; }
     .card .thumb .placeholder{
       width:100%;height:100%;display:flex;align-items:center;justify-content:center;
-      background:#0b132b;color:#8ea3ff;font-weight:800;font-size:64px;
-      transition:var(--transition);
+      background:#0b132b;color:#8ea3ff;font-weight:800;font-size:64px; transition:var(--transition);
     }
-    .card:hover .placeholder{
-      transform:scale(1.1);
-    }
+    .card:hover .placeholder{ transform:scale(1.1); }
     .card .body{ padding:20px }
     .card h2{ margin:0 0 12px; font-size:28px; color:#cfe0ff }
     .meta{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px }
-    .chip{ 
-      background:var(--chip); color:#b9c6ff; padding:6px 12px; border-radius:8px; 
+    .chip{
+      background:var(--chip); color:#b9c6ff; padding:6px 12px; border-radius:8px;
       font-size:13px; font-weight:600; transition:var(--transition);
       cursor:pointer; display:inline-flex; align-items:center; gap:4px;
       border:1px solid rgba(255,255,255,.1);
@@ -165,6 +155,7 @@
       box-shadow:0 2px 8px rgba(42,61,134,.4);
       border-color:rgba(255,255,255,.2);
     }
+
     .kv{ display:grid; grid-template-columns:130px 1fr; gap:8px 12px; margin:12px 0 }
     .kv b{ color:#cfe0ff; font-weight:600; font-size:15px; }
     .kv span{ color:var(--text); line-height:1.5; }
@@ -265,13 +256,14 @@
         <div class="body">
           <h2 id="c-name">Pilih nama digimon yang ada di daftar</h2>
           <div id="c-meta" class="meta"></div>
-
           <div class="kv">
             <b>Stage</b><span id="c-stage">-</span>
             <b>Aliases</b><span id="c-aliases">-</span>
             <b>Type / Race</b><span id="c-type">-</span>
             <b>Faction / Family</b><span id="c-faction">-</span>
             <b>Group</b><span id="c-group">-</span>
+            <!-- NEW: Soul Stone row -->
+            <b>Soul Stone</b><span id="c-soulstone">-</span>
           </div>
 
           <h4 style="margin:16px 0 10px; color:#cfe0ff; font-size:16px">Previous Digivolution</h4>
@@ -284,7 +276,7 @@
     </div>
   </section>
 
-   <!-- FOOTER -->
+  <!-- FOOTER -->
   <footer>
     <div style="font-size:18px;font-weight:700">Final Evolution: Digi</div>
     <div class="footer-links">
@@ -302,9 +294,9 @@
   </footer>
 
   <script>
-  /* ====== KONFIG ====== */
+  /* ====== KONFIG (HANYA SATU SUMBER) ====== */
   const JSON_URL = 'data/digimon_evolution_lines.json';
-  const REF_URL = 'data/digimon_reference.json';
+  const REF_URL  = 'data/digimon_reference.json';
 
   /* ====== STATE ====== */
   let DB = [];
@@ -331,13 +323,24 @@
     const c = name.trim().charAt(0).toUpperCase();
     return c >= 'A' && c <= 'Z' ? c : '#';
   }
-  function byId(id){ 
+  function byId(id){
     const cleanId = id.trim().toLowerCase();
-    return DB.find(x => x.id.trim().toLowerCase() === cleanId); 
+    return DB.find(x => x.id.trim().toLowerCase() === cleanId);
   }
   function chip(label){ return `<span class="chip">${label}</span>`; }
   function namePill(d){ return `<a class="name-pill" href="#${encodeURIComponent(d.id.trim())}">${d.displayName.trim()}</a>`; }
-  function decodeHash(){ return decodeURIComponent(location.hash||'').replace(/^#/,''); }
+  function decodeHash(){ return decodeURIComponent(location.hash||'').replace(/^#/, ''); }
+
+  // Warna chip untuk tipe Soul Stone
+  function ssColor(type){
+    const t = (type||'').toLowerCase();
+    if (t.includes('rare')) return '#dca0ff';
+    if (t.includes('common')) return '#8fd0ff';
+    if (t.includes('exclusive')) return '#ffd166';
+    if (t.includes('no information')) return '#9aa3c4';
+    if (t.includes('not yet released')) return '#9aa3c4';
+    return '#b9c6ff';
+  }
 
   /* ====== SEARCH FUNCTION ====== */
   function searchDigimon(query){
@@ -346,16 +349,13 @@
       syncList();
       return;
     }
-    
     SEARCH_QUERY = query.toLowerCase().trim();
-    
     // Filter berdasarkan displayName ATAU aliases
     let results = DB.filter(d => {
       if(d.displayName.toLowerCase().includes(SEARCH_QUERY)) return true;
       if(d.aliases && d.aliases.some(alias => alias.toLowerCase().includes(SEARCH_QUERY))) return true;
       return false;
     });
-    
     // Sort by relevance
     results.sort((a,b) => {
       const aMatch = a.displayName.toLowerCase().includes(SEARCH_QUERY) ? 0 : 1;
@@ -363,7 +363,6 @@
       if(aMatch !== bMatch) return aMatch - bMatch;
       return a.displayName.localeCompare(b.displayName);
     });
-    
     // Render hasil search
     $('nameList').innerHTML = results.map(namePill).join('');
     $('emptyNames').hidden = results.length > 0;
@@ -376,14 +375,10 @@
     if(CURRENT_MODE !== 'alphabet' || SEARCH_QUERY) return list;
     return list.filter(d => STAGE_FILTERS[d.stage.trim()] === true);
   }
-
   function groupByLetter(list){
-    const map = {}; for (let i=65;i<=90;i++){ map[String.fromCharCode(i)] = []; }
+    const map = {}; for (let i=65;i<=90;i++){ map[String.fromCharCode(65+i)] = []; }
     map['#'] = [];
-    list.forEach(d => {
-      const L = firstLetter(d.displayName);
-      (map[L] ||= []).push(d);
-    });
+    list.forEach(d => { const L = firstLetter(d.displayName); (map[L] ||= []).push(d); });
     Object.keys(map).forEach(k => map[k].sort((a,b)=> a.displayName.localeCompare(b.displayName)));
     return map;
   }
@@ -398,50 +393,39 @@
   /* ====== RENDER: MODE SWITCH ====== */
   function setMode(mode){
     CURRENT_MODE = mode;
-
     // tombol aktif
     const btnAlpha = $('btnAlpha'), btnStage = $('btnStage'), btnGroup = $('btnGroup'), btnFaction = $('btnFaction'), btnType = $('btnType');
-    btnAlpha.classList.toggle('active', mode==='alphabet');
-    btnAlpha.setAttribute('aria-selected', mode==='alphabet');
-    btnStage.classList.toggle('active', mode==='stage');
-    btnStage.setAttribute('aria-selected', mode==='stage');
-    btnGroup.classList.toggle('active', mode==='group');
-    btnGroup.setAttribute('aria-selected', mode==='group');
-    btnFaction.classList.toggle('active', mode==='faction');
-    btnFaction.setAttribute('aria-selected', mode==='faction');
-    btnType.classList.toggle('active', mode==='type');
-    btnType.setAttribute('aria-selected', mode==='type');
+    btnAlpha.classList.toggle('active', mode==='alphabet'); btnAlpha.setAttribute('aria-selected', mode==='alphabet');
+    btnStage.classList.toggle('active', mode==='stage');    btnStage.setAttribute('aria-selected', mode==='stage');
+    btnGroup.classList.toggle('active', mode==='group');    btnGroup.setAttribute('aria-selected', mode==='group');
+    btnFaction.classList.toggle('active', mode==='faction');btnFaction.setAttribute('aria-selected', mode==='faction');
+    btnType.classList.toggle('active', mode==='type');      btnType.setAttribute('aria-selected', mode==='type');
 
     // bar yang tampil
-    $('alphaBar').style.display = (mode==='alphabet') ? '' : 'none';
-    $('stageBar').style.display = (mode==='stage') ? '' : 'none';
-    $('groupBar').style.display = (mode==='group') ? '' : 'none';
-    $('factionBar').style.display = (mode==='faction') ? '' : 'none';
-    $('typeBar').style.display = (mode==='type') ? '' : 'none';
+    $('alphaBar').style.display  = (mode==='alphabet') ? '' : 'none';
+    $('stageBar').style.display  = (mode==='stage')    ? '' : 'none';
+    $('groupBar').style.display  = (mode==='group')    ? '' : 'none';
+    $('factionBar').style.display= (mode==='faction')  ? '' : 'none';
+    $('typeBar').style.display   = (mode==='type')     ? '' : 'none';
 
-    // Update title & render bar sesuai mode
+    // judul kecil
     if (mode === 'group') {
       $('alphaTitle').textContent = `(Group: ${CURRENT_GROUP || 'Pilih group'})`;
-      renderGroupBar();
-      markActiveGroup();
+      renderGroupBar(); markActiveGroup();
     } else if (mode === 'stage') {
       $('alphaTitle').textContent = `(Stage: ${CURRENT_STAGE})`;
-      renderStageBar();
-      markActiveStage();
+      renderStageBar(); markActiveStage();
     } else if (mode === 'faction') {
       $('alphaTitle').textContent = `(Faction: ${CURRENT_FACTION || 'Pilih faction'})`;
-      renderFactionBar();
-      markActiveFaction();
+      renderFactionBar(); markActiveFaction();
     } else if (mode === 'type') {
       $('alphaTitle').textContent = `(Type: ${CURRENT_TYPE || 'Pilih type'})`;
-      renderTypeBar();
-      markActiveType();
+      renderTypeBar(); markActiveType();
     } else {
       $('alphaTitle').textContent = `(Alphabet: ${CURRENT_LETTER})`;
       renderAlphaBar();
     }
 
-    // refresh daftar
     syncList();
   }
 
@@ -452,12 +436,10 @@
     bar.innerHTML = letters.map(L =>
       `<a href="javascript:void(0)" data-letter="${L}" class="${L===CURRENT_LETTER?'active':''}">${L}</a>`
     ).join('') + ` <a href="javascript:void(0)" data-letter="#" class="${CURRENT_LETTER==='#'?'active':''}">#</a>`;
-
     bar.querySelectorAll('a').forEach(a=>{
       a.addEventListener('click', () => {
         CURRENT_LETTER = a.dataset.letter;
-        syncList(); 
-        renderAlphaBar();
+        syncList(); renderAlphaBar();
         $('nameList')?.scrollIntoView({behavior:'smooth', block:'start'});
       });
     });
@@ -470,17 +452,14 @@
     bar.innerHTML = stages.map(s =>
       `<a href="javascript:void(0)" data-stage="${s}" class="${CURRENT_STAGE===s?'active':''}">${s}</a>`
     ).join('');
-    
     bar.querySelectorAll('a').forEach(a=>{
       a.addEventListener('click', (e) => {
         e.preventDefault();
         CURRENT_STAGE = a.dataset.stage;
-        markActiveStage();
-        syncList();
+        markActiveStage(); syncList();
       });
     });
   }
-
   function markActiveStage(){
     document.querySelectorAll('#stageBar a').forEach(a=>{
       a.classList.toggle('active', a.dataset.stage === CURRENT_STAGE);
@@ -489,31 +468,24 @@
 
   /* ====== RENDER: GROUP BAR ====== */
   function extractAllGroups(){
-    const map = new Set();
-    DB.forEach(d => {
-      const groups = d.groups || [];
-      groups.forEach(g => map.add(g.trim()));
-    });
-    return Array.from(map).sort();
+    const set = new Set();
+    DB.forEach(d => (d.groups||[]).forEach(g => set.add(g.trim())));
+    return Array.from(set).sort();
   }
-
   function renderGroupBar(){
     const groups = extractAllGroups();
     const bar = $('groupBar');
     bar.innerHTML = groups.map(g =>
       `<a href="javascript:void(0)" data-group="${encodeURIComponent(g)}" class="${CURRENT_GROUP===g?'active':''}">${g}</a>`
     ).join('');
-    
     bar.querySelectorAll('a').forEach(a=>{
       a.addEventListener('click', (e) => {
         e.preventDefault();
         CURRENT_GROUP = decodeURIComponent(a.dataset.group);
-        markActiveGroup();
-        syncList();
+        markActiveGroup(); syncList();
       });
     });
   }
-
   function markActiveGroup(){
     document.querySelectorAll('#groupBar a').forEach(a=>{
       a.classList.toggle('active', decodeURIComponent(a.dataset.group) === CURRENT_GROUP);
@@ -525,7 +497,6 @@
     if(!REF_DATA || !REF_DATA.factions) return [];
     return REF_DATA.factions.map(f => f.code.trim());
   }
-
   function renderFactionBar(){
     const factions = extractAllFactions();
     const bar = $('factionBar');
@@ -534,17 +505,14 @@
       const icon = faction ? faction.icon.trim() : '⭐';
       return `<a href="javascript:void(0)" data-faction="${f}" class="${CURRENT_FACTION===f?'active':''}">${icon} ${f}</a>`;
     }).join('');
-    
     bar.querySelectorAll('a').forEach(a=>{
       a.addEventListener('click', (e) => {
         e.preventDefault();
         CURRENT_FACTION = a.dataset.faction;
-        markActiveFaction();
-        syncList();
+        markActiveFaction(); syncList();
       });
     });
   }
-
   function markActiveFaction(){
     document.querySelectorAll('#factionBar a').forEach(a=>{
       a.classList.toggle('active', a.dataset.faction === CURRENT_FACTION);
@@ -560,17 +528,14 @@
       const icon = typeInfo ? typeInfo.icon.trim() : '❓';
       return `<a href="javascript:void(0)" data-type="${t}" class="${CURRENT_TYPE===t?'active':''}">${icon} ${t}</a>`;
     }).join('');
-    
     bar.querySelectorAll('a').forEach(a=>{
       a.addEventListener('click', (e) => {
         e.preventDefault();
         CURRENT_TYPE = a.dataset.type;
-        markActiveType();
-        syncList();
+        markActiveType(); syncList();
       });
     });
   }
-
   function markActiveType(){
     document.querySelectorAll('#typeBar a').forEach(a=>{
       a.classList.toggle('active', a.dataset.type === CURRENT_TYPE);
@@ -581,55 +546,41 @@
   let GROUPS_ALPHA = {}, GROUPS_STAGE = {};
   function syncList(){
     let arr = [];
-    
-    if(SEARCH_QUERY){
-      return; // Search handled separately
-    }
-    
+    if(SEARCH_QUERY){ return; } // search ditangani terpisah
+
     if (CURRENT_MODE === 'alphabet'){
       arr = GROUPS_ALPHA[CURRENT_LETTER] || [];
       arr = applyStageFilters(arr);
       $('alphaTitle').textContent = `(Alphabet: ${CURRENT_LETTER})`;
-      
     } else if (CURRENT_MODE === 'stage'){
       arr = GROUPS_STAGE[CURRENT_STAGE] || [];
       $('alphaTitle').textContent = `(Stage: ${CURRENT_STAGE})`;
-      
     } else if (CURRENT_MODE === 'group'){
       $('alphaTitle').textContent = `(Group: ${CURRENT_GROUP || 'All'})`;
-      if (CURRENT_GROUP) {
-        arr = DB.filter(d =>
-          d.groups && d.groups.some(g => g.trim() === CURRENT_GROUP)
-        ).sort((a,b) => a.displayName.localeCompare(b.displayName));
-      } else {
-        arr = [];
-      }
+      arr = CURRENT_GROUP
+        ? DB.filter(d => d.groups && d.groups.some(g => g.trim() === CURRENT_GROUP))
+            .sort((a,b) => a.displayName.localeCompare(b.displayName))
+        : [];
     } else if (CURRENT_MODE === 'faction'){
       $('alphaTitle').textContent = `(Faction: ${CURRENT_FACTION || 'All'})`;
-      if (CURRENT_FACTION) {
-        arr = DB.filter(d =>
-          d.factions && d.factions.some(f => f.trim() === CURRENT_FACTION)
-        ).sort((a,b) => a.displayName.localeCompare(b.displayName));
-      } else {
-        arr = [];
-      }
+      arr = CURRENT_FACTION
+        ? DB.filter(d => d.factions && d.factions.some(f => f.trim() === CURRENT_FACTION))
+            .sort((a,b) => a.displayName.localeCompare(b.displayName))
+        : [];
     } else if (CURRENT_MODE === 'type'){
       $('alphaTitle').textContent = `(Type: ${CURRENT_TYPE || 'All'})`;
-      if (CURRENT_TYPE) {
-        arr = DB.filter(d =>
-          d.types && d.types.some(t => t.trim() === CURRENT_TYPE)
-        ).sort((a,b) => a.displayName.localeCompare(b.displayName));
-      } else {
-        arr = [];
-      }
+      arr = CURRENT_TYPE
+        ? DB.filter(d => d.types && d.types.some(t => t.trim() === CURRENT_TYPE))
+            .sort((a,b) => a.displayName.localeCompare(b.displayName))
+        : [];
     }
-    
+
     $('nameList').innerHTML = arr.map(namePill).join('');
     $('emptyNames').hidden = arr.length > 0;
-    
-    if ((CURRENT_MODE === 'group' && !CURRENT_GROUP) || 
-        (CURRENT_MODE === 'faction' && !CURRENT_FACTION) || 
-        (CURRENT_MODE === 'type' && !CURRENT_TYPE)) {
+
+    if ((CURRENT_MODE === 'group' && !CURRENT_GROUP)
+     || (CURRENT_MODE === 'faction' && !CURRENT_FACTION)
+     || (CURRENT_MODE === 'type' && !CURRENT_TYPE)) {
       $('emptyNames').textContent = `Pilih ${CURRENT_MODE} di atas untuk melihat daftar Digimon`;
       $('emptyNames').hidden = false;
     }
@@ -639,19 +590,15 @@
   function renderCard(id){
     const node = byId(id);
     const nameEl = $('c-name'), meta = $('c-meta'), stageEl = $('c-stage'), aliasesEl = $('c-aliases');
-    const typeEl = $('c-type'), factionEl = $('c-faction'), groupEl = $('c-group');
+    const typeEl = $('c-type'), factionEl = $('c-faction'), groupEl = $('c-group'), ssEl = $('c-soulstone');
     const prevBox = $('c-prev'), nextBox = $('c-next');
     const thumb = document.querySelector('#card .thumb .placeholder');
 
     if(!node){
       nameEl.textContent = 'Tidak ditemukan';
-      stageEl.textContent = '-';
-      aliasesEl.textContent = '-';
-      typeEl.textContent = '-';
-      factionEl.textContent = '-';
-      groupEl.textContent = '-';
-      prevBox.innerHTML = '';
-      nextBox.innerHTML = '';
+      stageEl.textContent = '-'; aliasesEl.textContent = '-'; typeEl.textContent = '-';
+      factionEl.textContent = '-'; groupEl.textContent = '-'; ssEl.textContent = '-';
+      prevBox.innerHTML = ''; nextBox.innerHTML = '';
       if (thumb) thumb.textContent = '?';
       return;
     }
@@ -659,55 +606,61 @@
     nameEl.textContent = node.displayName.trim();
     meta.innerHTML = `<span class="chip">${node.stage.trim()}</span>`;
     if (node.aliases && node.aliases.length) meta.innerHTML += ` <span class="chip">${node.aliases[0].trim()}</span>`;
-    
+
     // Stage (clickable)
     stageEl.innerHTML = `<a href="javascript:void(0)" class="chip" data-stage="${node.stage.trim()}">${node.stage.trim()}</a>`;
-    
+
     // Aliases (clickable)
     if (node.aliases && node.aliases.length) {
-      aliasesEl.innerHTML = node.aliases.map(a => 
+      aliasesEl.innerHTML = node.aliases.map(a =>
         `<a href="javascript:void(0)" class="chip" data-alias="${encodeURIComponent(a.trim())}">${a.trim()}</a>`
       ).join(' ');
-    } else {
-      aliasesEl.textContent = '-';
-    }
-    
+    } else { aliasesEl.textContent = '-'; }
+
     // Type / Race (clickable with icon)
     if (node.types && node.types.length) {
       const typeStr = node.types[0].trim();
       const typeInfo = REF_DATA?.types?.find(tp => tp.name.trim() === typeStr);
       const icon = typeInfo ? typeInfo.icon.trim() : '❓';
       typeEl.innerHTML = `<a href="javascript:void(0)" class="chip" data-type="${typeStr}">${icon} ${typeStr}</a>`;
-    } else {
-      typeEl.textContent = '-';
-    }
-    
+    } else { typeEl.textContent = '-'; }
+
     // Faction / Family (clickable chips with full info)
     if (node.factions && node.factions.length && REF_DATA) {
       const factionChips = node.factions.map(code => {
-        const cleanCode = code.trim();
-        const faction = REF_DATA.factions.find(f => f.code.trim() === cleanCode);
+        const clean = code.trim();
+        const faction = REF_DATA.factions.find(f => f.code.trim() === clean);
         if (faction) {
           const aliases = faction.aliases && faction.aliases.length ? ` (${faction.aliases.map(a => a.trim()).join(', ')})` : '';
-          return `<a href="javascript:void(0)" class="chip" style="background:${faction.color}15;border:1px solid ${faction.color}40;color:${faction.color}" data-faction="${cleanCode}">${faction.icon} ${faction.name.trim()}${aliases}</a>`;
+          return `<a href="javascript:void(0)" class="chip" style="background:${faction.color}15;border:1px solid ${faction.color}40;color:${faction.color}" data-faction="${clean}">${faction.icon} ${faction.name.trim()}${aliases}</a>`;
         }
-        return `<span class="chip">${cleanCode}</span>`;
+        return `<span class="chip">${clean}</span>`;
       }).join(' ');
       factionEl.innerHTML = factionChips;
-    } else {
-      factionEl.textContent = '-';
-    }
-    
+    } else { factionEl.textContent = '-'; }
+
     // Group (clickable)
     const groups = node.groups || [];
-    if (groups.length > 0) {
-      groupEl.innerHTML = groups.map(g => 
-        `<a href="javascript:void(0)" class="chip" data-group-click="${encodeURIComponent(g.trim())}">${g.trim()}</a>`
-      ).join(' ');
-    } else {
-      groupEl.textContent = '-';
-    }
-    
+    groupEl.innerHTML = groups.length
+      ? groups.map(g => `<a href="javascript:void(0)" class="chip" data-group-click="${encodeURIComponent(g.trim())}">${g.trim()}</a>`).join(' ')
+      : '-';
+
+    // Soul Stone (NEW)
+    const ss = node.soulStone || null;
+    if (ss && (ss.type || ss.required !== undefined)) {
+      const chips = [];
+      if (ss.type) {
+        const c = ssColor(ss.type);
+        chips.push(`<span class="chip" style="background:${c}15;border:1px solid ${c}40;color:${c}">💎 ${ss.type}</span>`);
+      }
+      if (ss.required !== undefined && ss.required !== null && String(ss.required).trim() !== '') {
+        const isNumber = !isNaN(Number(ss.required));
+        const label = isNumber ? `📦 ${Number(ss.required)}` : `📦 ${ss.required}`;
+        chips.push(`<span class="chip">${label}</span>`);
+      }
+      ssEl.innerHTML = chips.join(' ');
+    } else { ssEl.textContent = '-'; }
+
     if (thumb) thumb.textContent = (node.displayName.trim() || '?').charAt(0).toUpperCase();
 
     const from = (node.evolvesFrom||[]).map(id => byId(id.trim())).filter(Boolean);
@@ -724,41 +677,32 @@
 
   /* ====== CLICK HANDLERS ====== */
   document.addEventListener('DOMContentLoaded', () => {
-    // Card click delegation
+    // Delegasi klik pada card
     $('card').addEventListener('click', (e) => {
       const target = e.target.closest('.chip');
       if (!target) return;
       e.preventDefault();
-      
-      // Handle stage click
+
       if (target.dataset.stage) {
         CURRENT_STAGE = target.dataset.stage.trim();
         setMode('stage');
         document.querySelector('.wrap')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-      
-      // Handle type click
       if (target.dataset.type) {
         CURRENT_TYPE = target.dataset.type.trim();
         setMode('type');
         document.querySelector('.wrap')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-      
-      // Handle faction click
       if (target.dataset.faction) {
         CURRENT_FACTION = target.dataset.faction.trim();
         setMode('faction');
         document.querySelector('.wrap')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-      
-      // Handle group chip click
       if (target.dataset.groupClick) {
         CURRENT_GROUP = decodeURIComponent(target.dataset.groupClick.trim());
         setMode('group');
         document.querySelector('.wrap')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-      
-      // Handle digimon click in evolution lines
       if (target.dataset.digimon) {
         const id = target.dataset.digimon.trim();
         history.pushState(null, null, `#${encodeURIComponent(id)}`);
@@ -767,7 +711,7 @@
       }
     });
 
-    // Name pill click handler
+    // Klik pada daftar nama
     $('nameList').addEventListener('click', (e) => {
       const pill = e.target.closest('.name-pill');
       if (!pill) return;
@@ -783,42 +727,26 @@
   function syncRoute(){
     const hash = decodeHash();
     if(!hash) return;
-    
-    // Handle stage hash: #stage:Child
+
     if(hash.startsWith('stage:')){
       const stageName = hash.replace('stage:', '').trim();
       if(['Child', 'Adult', 'Perfect', 'Ultimate', 'Ultimate+'].includes(stageName)){
-        CURRENT_STAGE = stageName;
-        setMode('stage');
-        return;
+        CURRENT_STAGE = stageName; setMode('stage'); return;
       }
     }
-    
-    // Handle group hash: #group:Royal Knights
     if(hash.startsWith('group:')){
       const groupName = decodeURIComponent(hash.replace('group:', '').trim());
-      CURRENT_GROUP = groupName;
-      setMode('group');
-      return;
+      CURRENT_GROUP = groupName; setMode('group'); return;
     }
-    
-    // Handle faction hash: #faction:DR
     if(hash.startsWith('faction:')){
       const factionCode = hash.replace('faction:', '').trim();
-      CURRENT_FACTION = factionCode;
-      setMode('faction');
-      return;
+      CURRENT_FACTION = factionCode; setMode('faction'); return;
     }
-    
-    // Handle type hash: #type:Vaccine
     if(hash.startsWith('type:')){
       const typeStr = hash.replace('type:', '').trim();
-      CURRENT_TYPE = typeStr;
-      setMode('type');
-      return;
+      CURRENT_TYPE = typeStr; setMode('type'); return;
     }
-    
-    // Handle digimon ID hash
+
     const node = byId(hash);
     if(node){
       if (CURRENT_MODE === 'alphabet'){
@@ -835,17 +763,17 @@
   /* ====== INIT ====== */
   (async function init(){
     try{
-      // Load data
       const [digimonRes, refRes] = await Promise.all([
         fetch(JSON_URL, { cache:'no-store' }),
-        fetch(REF_URL, { cache:'no-store' })
+        fetch(REF_URL,  { cache:'no-store' })
       ]);
-      
       if(!digimonRes.ok) throw new Error('Gagal memuat data Digimon: ' + digimonRes.status);
-      if(!refRes.ok) throw new Error('Gagal memuat reference data: ' + refRes.status);
-      
-      // Clean digimon data
+      if(!refRes.ok)    throw new Error('Gagal memuat reference data: ' + refRes.status);
+
       const rawData = await digimonRes.json();
+      const rawRef  = await refRes.json();
+
+      // Normalisasi data Digimon + jaga field soulStone bila ada
       DB = rawData.map(d => ({
         id: (d.id || '').trim(),
         displayName: (d.displayName || '').trim(),
@@ -855,11 +783,15 @@
         types: (d.types || []).map(t => t.trim()),
         evolvesFrom: (d.evolvesFrom || []).map(e => e.trim()),
         evolvesTo: (d.evolvesTo || []).map(e => e.trim()),
-        groups: (d.groups || []).map(g => g.trim())
+        groups: (d.groups || []).map(g => g.trim()),
+        soulStone: d.soulStone ? {
+          type: (d.soulStone.type ?? '').toString().trim(),
+          // biarkan 'required' apa adanya (angka atau string "Not Yet Released/No information")
+          required: d.soulStone.required
+        } : undefined
       }));
-      
-      // Clean reference data
-      const rawRef = await refRes.json();
+
+      // Normalisasi reference
       REF_DATA = {
         factions: (rawRef.factions || []).map(f => ({
           id: (f.id || '').trim(),
@@ -886,53 +818,18 @@
       GROUPS_STAGE = groupByStage(DB);
 
       // Search handler
-      $('searchInput').addEventListener('input', (e) => {
-        searchDigimon(e.target.value);
-      });
+      $('searchInput').addEventListener('input', (e) => searchDigimon(e.target.value));
 
-      // Mode switch buttons
-      $('btnAlpha').addEventListener('click', () => {
-        SEARCH_QUERY = '';
-        $('searchInput').value = '';
-        setMode('alphabet');
-      });
-      
-      $('btnStage').addEventListener('click', () => {
-        SEARCH_QUERY = '';
-        $('searchInput').value = '';
-        setMode('stage');
-      });
-      
-      $('btnGroup').addEventListener('click', () => {
-        SEARCH_QUERY = '';
-        $('searchInput').value = '';
-        CURRENT_GROUP = null;
-        setMode('group');
-      });
-      
-      $('btnFaction').addEventListener('click', () => {
-        SEARCH_QUERY = '';
-        $('searchInput').value = '';
-        CURRENT_FACTION = null;
-        setMode('faction');
-      });
-      
-      $('btnType').addEventListener('click', () => {
-        SEARCH_QUERY = '';
-        $('searchInput').value = '';
-        CURRENT_TYPE = null;
-        setMode('type');
-      });
+      // Mode buttons
+      $('btnAlpha').addEventListener('click', () => { SEARCH_QUERY=''; $('searchInput').value=''; setMode('alphabet'); });
+      $('btnStage').addEventListener('click', () => { SEARCH_QUERY=''; $('searchInput').value=''; setMode('stage'); });
+      $('btnGroup').addEventListener('click', () => { SEARCH_QUERY=''; $('searchInput').value=''; CURRENT_GROUP=null; setMode('group'); });
+      $('btnFaction').addEventListener('click', () => { SEARCH_QUERY=''; $('searchInput').value=''; CURRENT_FACTION=null; setMode('faction'); });
+      $('btnType').addEventListener('click', () => { SEARCH_QUERY=''; $('searchInput').value=''; CURRENT_TYPE=null; setMode('type'); });
 
       // Render awal
-      renderAlphaBar();
-      renderStageBar();
-      renderFactionBar();
-      renderTypeBar();
-      setMode('alphabet');
-      syncList();
-      syncRoute();
-
+      renderAlphaBar(); renderStageBar(); renderFactionBar(); renderTypeBar();
+      setMode('alphabet'); syncList(); syncRoute();
     }catch(e){
       console.error(e);
       document.querySelector('.wrap')?.insertAdjacentHTML('beforeend',
@@ -942,5 +839,3 @@
   </script>
 </body>
 </html>
-
-
