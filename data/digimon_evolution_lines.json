@@ -3495,20 +3495,24 @@
     "aliases": [
       "Kentaurosmon"
     ],
-    "stage": "Perfect",
+    "stage": "Ultimate",
     "factions": [
-"DS"
-],
+      "DS"
+    ],
     "types": [
-"Vaccine"
-],
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "tylinmon"
     ],
     "evolvesTo": [],
     "groups": [
       "Royal Knights"
-    ]
+    ],
+    "soulStone": {
+      "required": "Slipper Beast",
+      "type": "Rare"
+    }
   },
   {
     "id": "wargrowlmon",
@@ -3644,7 +3648,11 @@
     "evolvesTo": [],
     "groups": [
       "Ten Legendary Warriors"
-    ]
+    ],
+    "soulStone": {
+      "required": "Ancient Tyrannosaurus Beast",
+      "type": "Rare"
+    }
   },
   {
     "id": "ancientvolcamon",
@@ -3663,7 +3671,11 @@
     "evolvesTo": [],
     "groups": [
       "Ten Legendary Warriors"
-    ]
+    ],
+    "soulStone": {
+      "required": "Ancient Volcanic Animal",
+      "type": "Common"
+    }
   },
   {
     "id": "apollomon",
@@ -3684,7 +3696,11 @@
     ],
     "groups": [
       "Olympus Twelve Gods"
-    ]
+    ],
+    "soulStone": {
+      "required": "Apollo Beast",
+      "type": "Exclusive Guild"
+    }
   },
   {
     "id": "babamon",
@@ -3701,7 +3717,11 @@
       "bastemon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Mother-in-law Beast",
+      "type": "Rare"
+    }
   },
   {
     "id": "banchouleomon",
@@ -3720,7 +3740,11 @@
     "evolvesTo": [],
     "groups": [
       "The Five Banchou"
-    ]
+    ],
+    "soulStone": {
+      "required": "Panax Lion",
+      "type": "Common"
+    }
   },
   {
     "id": "banchoustingmon",
@@ -3739,7 +3763,11 @@
     "evolvesTo": [],
     "groups": [
       "The Five Banchou"
-    ]
+    ],
+    "soulStone": {
+      "required": "Not Yet Released",
+      "type": "No information"
+    }
   },
   {
     "id": "banchoulilimon",
@@ -3760,7 +3788,11 @@
     "evolvesTo": [],
     "groups": [
       "The Five Banchou"
-    ]
+    ],
+    "soulStone": {
+      "required": "Crocus Fairy Beast",
+      "type": "Exclusive Arena"
+    }
   },
   {
     "id": "barbamon",
@@ -3779,7 +3811,11 @@
     "evolvesTo": [],
     "groups": [
       "Seven Great Demon Lord"
-    ]
+    ],
+    "soulStone": {
+      "required": "Balba Beast",
+      "type": "Rare"
+    }
   },
   {
     "id": "beelstarmon",
@@ -3800,7 +3836,11 @@
     "evolvesTo": [],
     "groups": [
       "Three Musketeers"
-    ]
+    ],
+    "soulStone": {
+      "required": "Not Yet Released",
+      "type": "No information"
+    }
   },
   {
     "id": "beelzemon",
@@ -3821,7 +3861,11 @@
     "evolvesTo": [],
     "groups": [
       "Seven Great Demon Lord"
-    ]
+    ],
+    "soulStone": {
+      "required": "Beelzeb Beast",
+      "type": "Rare"
+    }
   },
   {
     "id": "belialvamdemon",
@@ -3840,7 +3884,11 @@
       "vamdemon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Not Yet Released",
+      "type": "No information"
+    }
   },
   {
     "id": "belphemon-sleep-mode",
@@ -3857,7 +3905,11 @@
       "astamon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Belfi Beast SM",
+      "type": "Exclusive 1vs1 Arena"
+    }
   },
   {
     "id": "blackcherubimon",
@@ -3876,7 +3928,11 @@
       "andiramon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Wisdom Angel Beast (Good)",
+      "type": "Common"
+    }
   },
   {
     "id": "blackmetalgarurumon",
@@ -3895,7 +3951,11 @@
       "blackweregarurumon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Iron Garulu Beast",
+      "type": "Common"
+    }
   },
   {
     "id": "blackwargreymon",
@@ -3912,7 +3972,11 @@
       "blackmetalgreymon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Black Battle Tyrannosaurus Beast",
+      "type": "Common"
+    }
   },
   {
     "id": "blitzgreymon",
@@ -3929,7 +3993,11 @@
       "metalgreymon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Electrooptic Tyrannosaurus Beast",
+      "type": "Common"
+    }
   },
   {
     "id": "Darkdramon",
@@ -3946,7 +4014,11 @@
       "megadramon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Not Yet Released",
+      "type": "No information"
+    }
   },
   {
     "id": "craniummon",
@@ -3967,7 +4039,11 @@
     "evolvesTo": [],
     "groups": [
       "Royal Knights"
-    ]
+    ],
+    "soulStone": {
+      "required": "Not Yet Released",
+      "type": "No information"
+    }
   },
   {
     "id": "cresgarurumon",
@@ -3984,7 +4060,11 @@
       "weregarurumon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Yanyue Galulu Beast",
+      "type": "Rare"
+    }
   },
   {
     "id": "crossmon",
@@ -4001,7 +4081,11 @@
       "parrotmon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Cross Beast",
+      "type": "Common"
+    }
   },
   {
     "id": "daipenmon",
@@ -4018,7 +4102,11 @@
       "blizzardmon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Large Penguin Beast",
+      "type": "Exclusive Guild"
+    }
   },
   {
     "id": "demon",
@@ -4039,7 +4127,11 @@
     "evolvesTo": [],
     "groups": [
       "Seven Great Demon Lord"
-    ]
+    ],
+    "soulStone": {
+      "required": "Demon Beast",
+      "type": "Rare"
+    }
   },
   {
     "id": "diablomon",
@@ -4056,7 +4148,11 @@
       "infermon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Diablo",
+      "type": "Common"
+    }
   },
   {
     "id": "dianamon",
@@ -4077,7 +4173,11 @@
     ],
     "groups": [
       "Olympus Twelve Gods"
-    ]
+    ],
+    "soulStone": {
+      "required": "Diana Beast",
+      "type": "Common"
+    }
   },
   {
     "id": "dorugoramon",
@@ -4094,7 +4194,11 @@
       "dorugreymon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Multi Way Dragon Spirit",
+      "type": "Exclusive Arena"
+    }
   },
   {
     "id": "dukemon",
@@ -4115,7 +4219,11 @@
     "evolvesTo": [],
     "groups": [
       "Royal Knights"
-    ]
+    ],
+    "soulStone": {
+      "required": "Duke Beast",
+      "type": "Rare"
+    }
   },
   {
     "id": "dynasmon",
@@ -4136,7 +4244,11 @@
     ],
     "groups": [
       "Royal Knights"
-    ]
+    ],
+    "soulStone": {
+      "required": "Monarch Beast",
+      "type": "Rare"
+    }
   },
   {
     "id": "fujinmon",
@@ -4155,7 +4267,11 @@
     "evolvesTo": [],
     "groups": [
       "Three Gods"
-    ]
+    ],
+    "soulStone": {
+      "required": "Not Yet Released",
+      "type": "No information"
+    }
   },
   {
     "id": "gankoomon",
@@ -4172,7 +4288,11 @@
       "skullmeramon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Stubborn Beast",
+      "type": "Rare"
+    }
   },
   {
     "id": "grankuwagamon",
@@ -4189,7 +4309,11 @@
       "okuwamon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Giant Guija Beast",
+      "type": "Rare"
+    }
   },
   {
     "id": "griffomon",
@@ -4208,7 +4332,11 @@
       "delumon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Griffon",
+      "type": "Exclusive Guild"
+    }
   },
   {
     "id": "herculeskabuterimon",
@@ -4227,7 +4355,11 @@
       "atlurkabuterimon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Force God than More Animal",
+      "type": "Common"
+    }
   },
   {
     "id": "hiandromon",
@@ -4244,7 +4376,11 @@
       "andromon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Not Yet Released",
+      "type": "No information"
+    }
   },
   {
     "id": "hououmon",
@@ -4263,7 +4399,11 @@
       "garudamon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Phoenix Beast",
+      "type": "Common"
+    }
   },
   {
     "id": "imperialdramon-dragon-mode",
@@ -4280,7 +4420,11 @@
       "paildramon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Not Yet Released",
+      "type": "No information"
+    }
   },
   {
     "id": "jesmon",
@@ -4299,7 +4443,11 @@
     "evolvesTo": [],
     "groups": [
       "Royal Knights"
-    ]
+    ],
+    "soulStone": {
+      "required": "Jace Beast",
+      "type": "Rare"
+    }
   },
   {
     "id": "jijimon",
@@ -4316,7 +4464,11 @@
       "monzaemon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Gonggong Beast",
+      "type": "Exclusive Arena"
+    }
   },
   {
     "id": "junomon",
@@ -4335,7 +4487,11 @@
     "evolvesTo": [],
     "groups": [
       "Olympus Twelve Gods"
-    ]
+    ],
+    "soulStone": {
+      "required": "Not Yet Released",
+      "type": "No information"
+    }
   },
   {
     "id": "justimon",
@@ -4352,7 +4508,11 @@
       "cyberdramon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "The Righteous Spirit Beast",
+      "type": "Common"
+    }
   },
   {
     "id": "kaisergreymon",
@@ -4369,7 +4529,11 @@
       "vritramon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Not Yet Released",
+      "type": "No information"
+    }
   },
   {
     "id": "kuzuhamon",
@@ -4386,7 +4550,11 @@
       "doumon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Animal",
+      "type": "Common"
+    }
   },
   {
     "id": "leopardmon",
@@ -4407,7 +4575,11 @@
     "evolvesTo": [],
     "groups": [
       "Royal Knights"
-    ]
+    ],
+    "soulStone": {
+      "required": "Rosemon",
+      "type": "Exclusive 1vs1 Arena"
+    }
   },
   {
     "id": "leviamon",
@@ -4426,7 +4598,11 @@
     "evolvesTo": [],
     "groups": [
       "Seven Great Demon Lord"
-    ]
+    ],
+    "soulStone": {
+      "required": "Livia Beast",
+      "type": "Common"
+    }
   },
   {
     "id": "lillithmon",
@@ -4447,7 +4623,11 @@
     ],
     "groups": [
       "Seven Great Demon Lord"
-    ]
+    ],
+    "soulStone": {
+      "required": "Lillith Beast",
+      "type": "Rare"
+    }
   },
   {
     "id": "lordknightmon",
@@ -4468,7 +4648,11 @@
     "evolvesTo": [],
     "groups": [
       "Royal Knights"
-    ]
+    ],
+    "soulStone": {
+      "required": "Knight Lord beast",
+      "type": "Rare"
+    }
   },
   {
     "id": "magnakidmon",
@@ -4487,7 +4671,11 @@
     "evolvesTo": [],
     "groups": [
       "Three Musketeers"
-    ]
+    ],
+    "soulStone": {
+      "required": "Not Yet Released",
+      "type": "No information"
+    }
   },
   {
     "id": "magnamon",
@@ -4508,7 +4696,11 @@
     ],
     "groups": [
       "Royal Knights"
-    ]
+    ],
+    "soulStone": {
+      "required": "Jinankylosaurus Beast",
+      "type": "Common"
+    }
   },
   {
     "id": "marinangemon",
@@ -4525,7 +4717,11 @@
       "picklemon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Sea Angel Beast",
+      "type": "Common"
+    }
   },
   {
     "id": "megidramon",
@@ -4578,7 +4774,11 @@
     "evolvesTo": [],
     "groups": [
       "Dark Masters"
-    ]
+    ],
+    "soulStone": {
+      "required": "Metal Sea Dragon Beast",
+      "type": "Common"
+    }
   },
   {
     "id": "minervamon",
@@ -4597,7 +4797,11 @@
     "evolvesTo": [],
     "groups": [
       "Olympus Twelve Gods"
-    ]
+    ],
+    "soulStone": {
+      "required": "Minerva Beast",
+      "type": "Exclusive Arena"
+    }
   },
   {
     "id": "miragegaogamon",
@@ -4614,7 +4818,11 @@
       "machgaogamon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Phantom Plus Oga Beast",
+      "type": "Common"
+    }
   },
   {
     "id": "mugendramon",
@@ -4635,7 +4843,11 @@
     "evolvesTo": [],
     "groups": [
       "Dark Masters"
-    ]
+    ],
+    "soulStone": {
+      "required": "Infinite Dragon Beast",
+      "type": "Common"
+    }
   },
   {
     "id": "neptunemon",
@@ -4654,7 +4866,11 @@
     "evolvesTo": [],
     "groups": [
       "Olympus Twelve Gods"
-    ]
+    ],
+    "soulStone": {
+      "required": "Neptune Beast",
+      "type": "Common"
+    }
   },
   {
     "id": "ophanimon",
@@ -4675,7 +4891,11 @@
     "evolvesTo": [],
     "groups": [
       "Three Great Angels"
-    ]
+    ],
+    "soulStone": {
+      "required": "Angel Beast",
+      "type": "Common"
+    }
   },
   {
     "id": "ouryumon",
@@ -4692,7 +4912,11 @@
       "hisharyumon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "King Dragon Beast",
+      "type": "Rare"
+    }
   },
   {
     "id": "parasimon",
@@ -4709,7 +4933,11 @@
       "gerbemon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Parasitic Beast",
+      "type": "Common"
+    }
   },
   {
     "id": "piedmon",
@@ -4730,7 +4958,11 @@
     "evolvesTo": [],
     "groups": [
       "Dark Masters"
-    ]
+    ],
+    "soulStone": {
+      "required": "Clown King",
+      "type": "Exclusive 1vs1 Arena"
+    }
   },
   {
     "id": "pinochimon",
@@ -4751,7 +4983,11 @@
     "evolvesTo": [],
     "groups": [
       "Dark Masters"
-    ]
+    ],
+    "soulStone": {
+      "required": "Puppet Beast",
+      "type": "Exclusive Arena"
+    }
   },
   {
     "id": "plesiomon",
@@ -4768,7 +5004,11 @@
       "brachimon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Plesiosaur",
+      "type": "Rare"
+    }
   },
   {
     "id": "raguelmon",
@@ -4785,7 +5025,11 @@
       "meicrackmon-viscious-mode"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Laguerre Beast",
+      "type": "Rare"
+    }
   },
   {
     "id": "raijinmon",
@@ -4804,7 +5048,11 @@
     "evolvesTo": [],
     "groups": [
       "Three Gods"
-    ]
+    ],
+    "soulStone": {
+      "required": "Thor Beast",
+      "type": "Common"
+    }
   },
   {
     "id": "ravemon",
@@ -4823,7 +5071,11 @@
       "yatagaramon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Raven Beast",
+      "type": "Rare"
+    }
   },
   {
     "id": "rhihimon",
@@ -4842,7 +5094,11 @@
       "jagerloweemon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Emperor's Lion Spirit",
+      "type": "Exclusive Guild"
+    }
   },
   {
     "id": "rosemon",
@@ -4861,7 +5117,11 @@
     "evolvesTo": [
       "rosemon-burst-mode"
     ],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Rose Beast",
+      "type": "Common"
+    }
   },
   {
     "id": "saberleomon",
@@ -4878,7 +5138,11 @@
       "panjyamon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "SaberLeomon",
+      "type": "Exclusive 1vs1 Arena"
+    }
   },
   {
     "id": "saintgargomon",
@@ -4897,7 +5161,11 @@
       "rapidmon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "SAN Garuco Beast",
+      "type": "Common"
+    }
   },
   {
     "id": "sakuyamon",
@@ -4905,16 +5173,20 @@
     "aliases": [],
     "stage": "Ultimate",
     "factions": [
-"WG"
-],
+      "WG"
+    ],
     "types": [
-"Data"
-],
+      "Data"
+    ],
     "evolvesFrom": [
       "taomon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Sakiya Beast",
+      "type": "Rare"
+    }
   },
   {
     "id": "seraphimon",
@@ -4933,7 +5205,11 @@
     "evolvesTo": [],
     "groups": [
       "Three Great Angels"
-    ]
+    ],
+    "soulStone": {
+      "required": "Incandescent Angel Beast",
+      "type": "Common"
+    }
   },
   {
     "id": "shinegreymon",
@@ -4950,7 +5226,11 @@
       "rizegreymon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Flash Tyrannosaurus Beast",
+      "type": "Common"
+    }
   },
   {
     "id": "skullmammothmon",
@@ -4969,7 +5249,11 @@
       "mammothmon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Skull Mammoth Beast",
+      "type": "Common"
+    }
   },
   {
     "id": "slashangemon",
@@ -4986,7 +5270,11 @@
       "shakkoumon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Behead Angel Beast",
+      "type": "Common"
+    }
   },
   {
     "id": "titamon",
@@ -5003,7 +5291,11 @@
       "digitamamon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Titan",
+      "type": "Common"
+    }
   },
   {
     "id": "ulforcev-dramon",
@@ -5024,7 +5316,11 @@
     "evolvesTo": [],
     "groups": [
       "Royal Knights"
-    ]
+    ],
+    "soulStone": {
+      "required": "Ultimate V Dragon Beast",
+      "type": "Rare"
+    }
   },
   {
     "id": "valdurmon",
@@ -5041,7 +5337,11 @@
       "yatagaramon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Walder Beast",
+      "type": "Exclusive Guild"
+    }
   },
   {
     "id": "venomvamdemon",
@@ -5060,7 +5360,11 @@
       "vamdemon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Whiny Vampire Warcraft",
+      "type": "Exclusive Guild"
+    }
   },
   {
     "id": "venusmon",
@@ -5079,7 +5383,11 @@
     "evolvesTo": [],
     "groups": [
       "Olympus Twelve Gods"
-    ]
+    ],
+    "soulStone": {
+      "required": "Venus Beast",
+      "type": "Rare"
+    }
   },
   {
     "id": "victorygreymon",
@@ -5096,7 +5404,11 @@
       "rizegreymon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Not Yet Released",
+      "type": "No information"
+    }
   },
   {
     "id": "vikemon",
@@ -5113,7 +5425,11 @@
       "zudomon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Viking Beast",
+      "type": "Common"
+    }
   },
   {
     "id": "vulcanusmon",
@@ -5132,7 +5448,11 @@
     "evolvesTo": [],
     "groups": [
       "Olympus Twelve Gods"
-    ]
+    ],
+    "soulStone": {
+      "required": "Not Yet Released",
+      "type": "No information"
+    }
   },
   {
     "id": "wargreymon",
@@ -5152,7 +5472,11 @@
       "wargreymon-x",
       "omegamon"
     ],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Fighting Tyrannosaurus Beast",
+      "type": "Common"
+    }
   },
   {
     "id": "whitecherubimon",
@@ -5173,7 +5497,11 @@
     "evolvesTo": [],
     "groups": [
       "Three Great Angels"
-    ]
+    ],
+    "soulStone": {
+      "required": "Wisdom Angel Beast (Good)",
+      "type": "Common"
+    }
   },
   {
     "id": "z-dgarurumon",
@@ -5192,7 +5520,11 @@
       "weregarurumon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Final Crossbow Garulu beast",
+      "type": "Rare"
+    }
   },
   {
     "id": "zanbamon",
@@ -5209,7 +5541,11 @@
       "vajramon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Chop the Beast",
+      "type": "Exclusive Arena"
+    }
   },
   {
     "id": "dynasmon-x",
