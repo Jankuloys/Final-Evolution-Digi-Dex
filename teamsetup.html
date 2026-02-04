@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Final Evolution: Team Setup</title>
+  <meta name="color-scheme" content="dark light" />
+  <style>
+    /* === THEME & BASE — sama dengan digimon.html agar konsisten === */
+    :root{
+      --bg:#0b1020; --panel:#101735; --panel-2:#0d1330; --text:#e9ecf7; --muted:#9aa3c4;
+      --brand:#59a6ff; --accent:#ffd166; --chip:#1e2a54; --ring:#1b2547; --ok:#31d0aa; --warn:#ff7a7a;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --shadow-sm: 0 4px 12px rgba(0,0,0,.25);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,Segoe UI,Roboto,Inter,Arial}
+    a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+
+    /* NAVBAR */
+    .nav{position:sticky; top:0; z-index:50; background:linear-gradient(180deg,#0b1020,rgba(11,16,32,.72)); border-bottom:1px solid var(--ring); backdrop-filter: blur(10px);}
+    .nav-inner{max-width:1200px;margin:auto;padding:12px 18px;display:flex;align-items:center;gap:16px}
+    .brand{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.3px}
+    .brand .logo{width:28px;height:28px;border-radius:7px;background:
+      radial-gradient(120% 120% at 20% 20%, #5ac8ff 0%, #2441ff 38%, #0b1020 80%); box-shadow: 0 0 0 1px #2b3772 inset, 0 4px 16px rgba(36,65,255,.35);}
+    .nav a.navlink{color:var(--text);opacity:.9;transition:var(--transition);padding:8px 12px;border-radius:8px;text-decoration:none}
+    .nav a.navlink:hover{opacity:1;color:#cfe0ff;background:rgba(42,61,134,.2)}
+    .nav a.navlink.active{background:rgba(42,61,134,.3);color:#59a6ff}
+    .spacer{flex:1}
+
+    /* HERO */
+    .hero{max-width:1200px;margin:20px auto 8px;padding:0 18px;text-align:center}
+    .hero h1{margin:6px 0 6px;font-size:clamp(28px,5vw,48px);background:linear-gradient(90deg,#59a6ff,#ffd166);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
+    .hero p{margin:0;color:var(--muted);font-size:18px}
+
+    /* PANELS */
+    .panel{max-width:1200px;margin:14px auto;padding:14px 18px}
+    .panel-box{
+      background:var(--panel); border:1px solid var(--ring); border-radius:16px;
+      box-shadow:var(--shadow); padding:20px; transition:var(--transition);
+    }
+    .panel-box:hover{ transform:translateY(-4px); box-shadow:0 15px 40px rgba(0,0,0,.4); border-color:#2a3d86; }
+
+    /* CHIPS */
+    .chip{
+      background:var(--chip); color:#b9c6ff; padding:6px 12px; border-radius:8px;
+      font-size:13px; font-weight:600; transition:var(--transition);
+      display:inline-flex; align-items:center; gap:6px; border:1px solid rgba(255,255,255,.1);
+      text-decoration:none !important; cursor:default;
+    }
+    .chip.click{ cursor:pointer; }
+    .chip:hover{ background:linear-gradient(135deg,#2a3d86,#243570); transform:translateY(-1px); box-shadow:0 2px 8px rgba(42,61,134,.4); border-color:rgba(255,255,255,.2) }
+
+    /* GRID LAYOUT (Team & Sidebar) */
+    .wrap{max-width:1200px;margin:0 auto 30px;padding:0 18px; display:grid; grid-template-columns: 1.4fr .8fr; gap:20px}
+    @media (max-width:1000px){ .wrap{ grid-template-columns: 1fr; } }
+
+    /* TEAM SLOTS */
+    .team{display:grid; gap:16px}
+    .row{display:grid; gap:16px}
+    .row.top{ grid-template-columns: repeat(2, 1fr); }
+    .row.bottom{ grid-template-columns: repeat(3, 1fr); }
+    @media (max-width:680px){ .row.top{grid-template-columns: 1fr} .row.bottom{grid-template-columns: 1fr} }
+
+    .slot{
+      background:var(--panel-2); border:1px solid var(--ring); border-radius:14px; overflow:hidden;
+      min-height:140px; display:flex; flex-direction:column; justify-content:space-between;
+      box-shadow:var(--shadow-sm); transition:var(--transition);
+    }
+    .slot:hover{ transform:translateY(-3px); border-color:#2a3d86 }
+    .slot .thumb{
+      aspect-ratio:1/1; background:#0b132b; display:flex; align-items:center; justify-content:center; position:relative;
+    }
+    .slot .thumb .placeholder{
+      width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:#8ea3ff; font-weight:800; font-size:42px;
+    }
+    .slot .namebar{display:flex; align-items:center; justify-content:space-between; gap:8px; padding:10px 12px; border-top:1px solid var(--ring)}
+    .slot .name{color:#cfe0ff; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+    .slot .actions{display:flex; gap:8px}
+    .btn{ background:var(--panel); border:1px solid var(--ring); color:#cfe0ff; padding:6px 10px; border-radius:8px; cursor:pointer; font-weight:700; font-size:12px; }
+    .btn:hover{ border-color:#2a3d86; background:#13214e }
+
+    /* SIDEBAR INFO */
+    .kv{ display:grid; grid-template-columns:140px 1fr; gap:8px 12px; }
+    .kv b{ color:#cfe0ff; font-weight:600; font-size:15px; }
+    .meta{ display:flex; flex-wrap:wrap; gap:8px }
+    .subtitle{margin:0 0 10px; color:#cfe0ff; font-size:16px}
+
+    /* MODAL SEARCH */
+    .overlay{ position:fixed; inset:0; background:rgba(0,0,0,.45); display:none; align-items:center; justify-content:center; z-index:1000 }
+    .modal{ width:min(920px, 92vw); background:var(--panel); border:1px solid var(--ring); border-radius:16px; box-shadow:var(--shadow); overflow:hidden }
+    .modal .hd{ padding:14px 16px; border-bottom:1px solid var(--ring); display:flex; gap:10px; align-items:center }
+    .modal .hd input{ flex:1; padding:10px 12px; border-radius:10px; border:1px solid var(--ring); background:var(--panel-2); color:var(--text) }
+    .modal .bd{ max-height:60vh; overflow:auto; padding:16px }
+    .names{ display:flex; flex-wrap:wrap; gap:10px }
+    .name-pill{
+      display:inline-flex; padding:8px 14px; border-radius:999px;
+      background:linear-gradient(135deg, #0c1530, #0a1228); border:1px solid var(--ring);
+      color:#b9c6ff; text-decoration:none; font-size:14px; transition:var(--transition); font-weight:600;
+      box-shadow:0 2px 8px rgba(0,0,0,.2);
+    }
+    .name-pill:hover{ border-color:#2a3d86; background:linear-gradient(135deg,#121d40,#0e1835); transform:translateY(-2px); color:#59a6ff }
+    .empty{color:var(--muted); padding:10px 0}
+
+    /* BADGE WARNA UNTUK SOULSTONE TYPE (kalau ingin dipakai nanti) */
+    .ss-badge{ background:#20325e; border-color:#2a3d86; color:#cfe0ff }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <span>Final Evolution: <span style="color:#cfe0ff">Team Setup</span></span>
+      </div>
+      <div class="spacer"></div>
+      <a class="navlink" href="./index.html">Home</a>
+      <a class="navlink" href="./digimon.html">Digi‑Dex</a>
+      <a class="navlink active" href="./teamsetup.html">Team Setup</a>
+      <a class="navlink" href="./tamers.html">Tamers</a>
+      <a class="navlink" href="./about.html">About</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1>Final Evolution: Team Setup</h1>
+    <p>Susun komposisi 5 Digimon, lihat bonus Type/Race & rekomendasi tamer otomatis.</p>
+  </header>
+
+  <section class="wrap">
+    <!-- LEFT: Team board -->
+    <div class="panel-box">
+      <h3 style="margin:0 0 12px; color:#cfe0ff; font-size:20px">🧩 Susun Tim 5 Digimon</h3>
+      <div class="team">
+        <div class="row top">
+          <div class="slot" data-index="0">
+            <div class="thumb"><div class="placeholder">?</div></div>
+            <div class="namebar">
+              <div class="name">Digimon Name</div>
+              <div class="actions">
+                <button class="btn js-pick">Pilih</button>
+                <button class="btn js-clear">Clear</button>
+              </div>
+            </div>
+          </div>
+          <div class="slot" data-index="1">
+            <div class="thumb"><div class="placeholder">?</div></div>
+            <div class="namebar">
+              <div class="name">Digimon Name</div>
+              <div class="actions">
+                <button class="btn js-pick">Pilih</button>
+                <button class="btn js-clear">Clear</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row bottom">
+          <div class="slot" data-index="2">
+            <div class="thumb"><div class="placeholder">?</div></div>
+            <div class="namebar">
+              <div class="name">Digimon Name</div>
+              <div class="actions">
+                <button class="btn js-pick">Pilih</button>
+                <button class="btn js-clear">Clear</button>
+              </div>
+            </div>
+          </div>
+          <div class="slot" data-index="3">
+            <div class="thumb"><div class="placeholder">?</div></div>
+            <div class="namebar">
+              <div class="name">Digimon Name</div>
+              <div class="actions">
+                <button class="btn js-pick">Pilih</button>
+                <button class="btn js-clear">Clear</button>
+              </div>
+            </div>
+          </div>
+          <div class="slot" data-index="4">
+            <div class="thumb"><div class="placeholder">?</div></div>
+            <div class="namebar">
+              <div class="name">Digimon Name</div>
+              <div class="actions">
+                <button class="btn js-pick">Pilih</button>
+                <button class="btn js-clear">Clear</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="empty" id="hintEmpty" style="margin-top:12px">Klik <b>Pilih</b> pada slot untuk memilih Digimon.</p>
+    </div>
+
+    <!-- RIGHT: Sidebar info -->
+    <aside class="panel-box">
+      <h3 style="margin:0 0 12px; color:#cfe0ff; font-size:20px">📊 Ringkasan Tim</h3>
+      <div class="kv" style="margin-bottom:12px">
+        <b>Type / Race Bonus</b>
+        <span id="raceBonus">ATK +0%, MAX HP +0%</span>
+
+        <b>Recommended Tamer</b>
+        <span id="recTamer">—</span>
+
+        <b>Faction Summary</b>
+        <span id="factionSummary">—</span>
+
+        <b>Type Summary</b>
+        <span id="typeSummary">—</span>
+      </div>
+      <div class="meta" id="teamListChips"></div>
+    </aside>
+  </section>
+
+  <!-- MODAL PICKER -->
+  <div class="overlay" id="picker" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="pickTitle">
+      <div class="hd">
+        <div class="chip">🔎 Pilih Digimon</div>
+        <input id="pickSearch" type="text" placeholder="Ketik nama atau alias… (Agumon, Beelko, Monarch X, dll.)" />
+        <button class="btn" id="btnClose">Tutup</button>
+      </div>
+      <div class="bd">
+        <div id="pickResults" class="names"></div>
+        <p id="pickEmpty" class="empty" hidden>Tidak ada hasil.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer style="border-top:1px solid var(--ring);color:var(--muted);text-align:center;padding:20px 18px;margin-top:20px">
+    <div style="font-size:18px;font-weight:700">Final Evolution: Digi</div>
+    <div class="disclaimer" style="margin-top:6px">
+      Digimon and all related characters are trademarks of Bandai Namco Holdings Inc.<br/>
+      This is a non‑commercial fan project created by the Digimon World Indonesia community.<br/>
+      © 2026 Final Evolution: Digi • On Progress by Joe • Supported by Digimon World Indonesia
+    </div>
+  </footer>
+
+  <script>
+    /* ====== SOURCES ====== */
+    const JSON_DIGI = 'data/digimon_evolution_lines.json';  // id, displayName, aliases, factions, types, ... [2](https://gitssc-my.sharepoint.com/personal/jourdan_jonathan_app_co_id/Documents/Whiteboards/Microsoft%20Copilot%20Chat%20Files/digimon_evolution_lines.json)
+    const JSON_TAMERS = 'data/tamers.json';                 // name, aliases, skillName, givingBuffFor          [1](https://gitssc-my.sharepoint.com/personal/jourdan_jonathan_app_co_id/Documents/Whiteboards/Microsoft%20Copilot%20Chat%20Files/tamers.json)
+    const JSON_REF = 'data/digimon_reference.json';         // optional, untuk ikon faction/type                 [1](https://gitssc-my.sharepoint.com/personal/jourdan_jonathan_app_co_id/Documents/Whiteboards/Microsoft%20Copilot%20Chat%20Files/tamers.json)
+
+    /* ====== STATE ====== */
+    let DB = [];                // Digimon
+    let TAMERS = [];            // Tamers
+    let REF = null;             // Reference (opsional)
+    const TEAM = [null, null, null, null, null];  // simpan 'id' digimon per slot
+    let activeIndex = 0;
+
+    const $ = (sel, root=document) => root.querySelector(sel);
+    const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+
+    /* ====== HELPERS ====== */
+    const norm = s => (s||'').toLowerCase().trim();
+    const byId = id => DB.find(x => norm(x.id) === norm(id));
+    const factionIconName = code => {
+      const f = REF?.factions?.find(x => x.code && x.code.trim() === (code||'').trim());
+      return f ? `${f.icon||''} ${f.name||code}`.trim() : (code||'-');
+    };
+    const typeIconName = name => {
+      const t = REF?.types?.find(x => x.name && x.name.trim() === (name||'').trim());
+      return t ? `${t.icon||''} ${t.name||name}`.trim() : (name||'-');
+    };
+
+    function namePill(d){
+      return `<a href="#" class="name-pill" data-pick="${d.id}">${d.displayName}</a>`;
+    }
+
+    function openPicker(index){
+      activeIndex = index;
+      $('#picker').style.display = 'flex';
+      $('#picker').setAttribute('aria-hidden','false');
+      $('#pickSearch').value = '';
+      renderPickResults('');
+      setTimeout(()=> $('#pickSearch').focus(), 50);
+    }
+    function closePicker(){
+      $('#picker').style.display = 'none';
+      $('#picker').setAttribute('aria-hidden','true');
+    }
+
+    function renderPickResults(q){
+      q = norm(q);
+      let arr = DB;
+      if (q){
+        arr = DB.filter(d => {
+          if (norm(d.displayName).includes(q)) return true;
+          return (d.aliases||[]).some(a => norm(a).includes(q));
+        });
+      }
+      arr = arr.sort((a,b)=> a.displayName.localeCompare(b.displayName));
+      $('#pickResults').innerHTML = arr.map(namePill).join('');
+      $('#pickEmpty').hidden = arr.length > 0;
+    }
+
+    function renderTeamBoard(){
+      $$('.slot').forEach(slot => {
+        const idx = Number(slot.dataset.index);
+        const id = TEAM[idx];
+        const nameEl = $('.name', slot);
+        const ph = $('.placeholder', slot);
+        if (!id){
+          nameEl.textContent = 'Digimon Name';
+          ph.textContent = '?';
+          return;
+        }
+        const d = byId(id);
+        nameEl.textContent = d?.displayName || id;
+        ph.textContent = (d?.displayName || id).charAt(0).toUpperCase();
+      });
+
+      const chipBox = $('#teamListChips');
+      const chips = TEAM.map(id => id ? byId(id) : null).filter(Boolean).map(d => `<span class="chip">${d.displayName}</span>`);
+      chipBox.innerHTML = chips.length ? chips.join(' ') : '<span class="chip">Belum ada anggota</span>';
+
+      recalcSummaries();
+    }
+
+    /* ====== RACE BONUS LOGIC ====== */
+    function raceBonus(teamDigis){
+      const types = teamDigis.map(d => (d.types||[])[0]).filter(Boolean);
+      const counts = {}; types.forEach(t => counts[t] = (counts[t]||0)+1);
+      const vals = Object.values(counts).sort((a,b)=>b-a);
+      let atk=0, hp=0;
+      if (vals[0] === 5){ atk=25; hp=25; }
+      else if (vals[0] === 4){ atk=15; hp=15; }
+      else if (vals[0] === 3){
+        if (vals[1] === 2) { atk=15; hp=15; } // 3+2
+        else { atk=10; hp=10; }              // 3+1+1
+      }
+      return { atk, hp, typeCounts: counts };
+    }
+
+    /* ====== REKOMENDASI TAMER (berdasarkan faction) ====== */
+    function mapTamersByFaction(){
+      const map = {};
+      (TAMERS||[]).forEach(t => {
+        const code = (t.givingBuffFor||'').trim();
+        if (!code) return;
+        (map[code] ||= []).push(t);
+      });
+      return map;
+    }
+
+    function recommendTamers(teamDigis){
+      const facCounts = {};
+      const facOrder = []; // untuk mempertahankan urutan kemunculan
+      teamDigis.forEach(d => {
+        const code = (d.factions||[])[0]; // pakai faction pertama sebagai “utama”
+        if (!code) return;
+        if (!facCounts[code]) facOrder.push(code);
+        facCounts[code] = (facCounts[code]||0)+1;
+      });
+
+      const entries = Object.entries(facCounts).sort((a,b)=> b[1]-a[1]); // [code,count] desc
+      if (entries.length === 0) return { text: '—', summary: '—' };
+
+      // Summary chips
+      const facChips = entries.map(([code,c]) => `<span class="chip">${factionIconName(code)} × ${c}</span>`).join(' ');
+
+      const max = entries[0][1];
+      const factionsOut = [];
+      if (max >= 3){
+        // semua faction dengan count >=3
+        entries.forEach(([code,c]) => { if (c >= 3) factionsOut.push(code); });
+        // tambahan untuk kasus 3-2: ambil satu faction dengan count 2
+        const two = entries.find(([,c]) => c === 2);
+        if (two) factionsOut.push(two[0]);
+      } else if (max === 2){
+        // 2-2-1 atau 2-1-1-1 -> ambil semua yg 2
+        entries.forEach(([code,c]) => { if (c === 2) factionsOut.push(code); });
+      } else {
+        // semuanya 1
+        return { text: 'SILAHKAN PILIH TAMER YANG ANDA INGINKAN', summary: facChips };
+      }
+
+      const tMap = mapTamersByFaction();
+      const names = factionsOut.map(code => {
+        const list = tMap[code] || [];
+        if (list.length === 0) return factionIconName(code); // fallback: tampilkan nama faction
+        // jika ada lebih dari 1 tamer untuk faction yg sama, tampilkan semua
+        const joined = list.map(t => t.name).join(' & ');
+        return joined;
+      });
+
+      return { text: names.join(' & '), summary: facChips };
+    }
+
+    /* ====== RECALC & RENDER RINGKASAN ====== */
+    function recalcSummaries(){
+      const teamDigis = TEAM.map(id => id ? byId(id) : null).filter(Boolean);
+
+      // Type summary
+      const { typeCounts } = raceBonus(teamDigis);
+      const typeChips = Object.entries(typeCounts)
+        .sort((a,b)=> b[1]-a[1])
+        .map(([t,c]) => `<span class="chip">${typeIconName(t)} × ${c}</span>`).join(' ');
+      $('#typeSummary').innerHTML = typeChips || '—';
+
+      // Race bonus
+      const rb = raceBonus(teamDigis);
+      $('#raceBonus').textContent = `ATK +${rb.atk}%, MAX HP +${rb.hp}%`;
+
+      // Faction summary + recommended tamers
+      const rt = recommendTamers(teamDigis);
+      $('#recTamer').textContent = rt.text || '—';
+      $('#factionSummary').innerHTML = rt.summary || '—';
+    }
+
+    /* ====== INIT ====== */
+    (async function init(){
+      try{
+        // Load data (digimon + tamers + ref opsional)
+        const [resD, resT, resR] = await Promise.all([
+          fetch(JSON_DIGI, {cache:'no-store'}),
+          fetch(JSON_TAMERS, {cache:'no-store'}),
+          fetch(JSON_REF,  {cache:'no-store'}).catch(()=>null)
+        ]);
+        if(!resD.ok) throw new Error('Gagal memuat data Digimon: '+resD.status);
+        if(!resT.ok) throw new Error('Gagal memuat data Tamers: '+resT.status);
+
+        const rawD = await resD.json();   // [2](https://gitssc-my.sharepoint.com/personal/jourdan_jonathan_app_co_id/Documents/Whiteboards/Microsoft%20Copilot%20Chat%20Files/digimon_evolution_lines.json)
+        const rawT = await resT.json();   // [1](https://gitssc-my.sharepoint.com/personal/jourdan_jonathan_app_co_id/Documents/Whiteboards/Microsoft%20Copilot%20Chat%20Files/tamers.json)
+        let rawR = null;
+        if (resR && resR.ok){ rawR = await resR.json(); } // [1](https://gitssc-my.sharepoint.com/personal/jourdan_jonathan_app_co_id/Documents/Whiteboards/Microsoft%20Copilot%20Chat%20Files/tamers.json)
+
+        // Normalisasi ringan (selaras dengan digimon.html)
+        DB = rawD.map(d => ({
+          id:(d.id||'').trim(),
+          displayName:(d.displayName||'').trim(),
+          aliases:(d.aliases||[]).map(a=>a.trim()),
+          types:(d.types||[]).map(t=>t.trim()),
+          factions:(d.factions||[]).map(f=>f.trim())
+        }));
+
+        TAMERS = (rawT||[]).map(t => ({
+          id:(t.id||'').trim(),
+          name:(t.name||'').trim(),
+          aliases:(t.aliases||[]).map(a=>a.trim()),
+          skillName:(t.skillName||'').trim(),
+          givingBuffFor:(t.givingBuffFor||'').trim()
+        }));
+
+        REF = rawR ? {
+          factions:(rawR.factions||[]).map(f=>({code:(f.code||'').trim(), name:(f.name||'').trim(), icon:(f.icon||'').trim()})),
+          types:(rawR.types||[]).map(t=>({name:(t.name||'').trim(), icon:(t.icon||'').trim()}))
+        } : null;
+
+        // Listener tombol slot
+        $$('.js-pick').forEach(btn => btn.addEventListener('click', (e)=>{
+          const slot = e.target.closest('.slot'); openPicker(Number(slot.dataset.index));
+        }));
+        $$('.js-clear').forEach(btn => btn.addEventListener('click', (e)=>{
+          const slot = e.target.closest('.slot'); TEAM[Number(slot.dataset.index)] = null; renderTeamBoard();
+        }));
+
+        // Picker handlers
+        $('#btnClose').addEventListener('click', closePicker);
+        $('#pickSearch').addEventListener('input', (e)=> renderPickResults(e.target.value));
+        $('#pickSearch').addEventListener('keydown', (e)=>{
+          if (e.key === 'Enter'){
+            const first = $('#pickResults .name-pill');
+            if (first) { first.click(); e.preventDefault(); }
+          }
+        });
+        $('#pickResults').addEventListener('click', (e)=>{
+          const a = e.target.closest('.name-pill'); if(!a) return;
+          e.preventDefault();
+          const id = a.dataset.pick;
+          TEAM[activeIndex] = id;
+          closePicker();
+          renderTeamBoard();
+        });
+
+        // Render awal
+        renderTeamBoard();
+        renderPickResults('');
+      }catch(err){
+        console.error(err);
+        document.body.insertAdjacentHTML('beforeend',
+          `<p style="color:#ff9aa2; padding:16px; background:var(--panel-2); border-radius:12px; max-width:1200px; margin:10px auto;">
+            ❌ Error: ${err.message}<br/><small>Periksa console (F12) untuk detail error.</small>
+          </p>`);
+      }
+    })();
+  </script>
+</body>
+</html>
+``
