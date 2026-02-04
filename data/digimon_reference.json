@@ -4,7 +4,6 @@
     "lastUpdated": "2026-02-03",
     "description": "Reference data for Digimon attributes including Factions/Families and Types/Races"
   },
-  
   "factions": [
     {
       "id": "nsp",
@@ -79,7 +78,6 @@
       "icon": "🌪️"
     }
   ],
-  
   "types": [
     {
       "id": "virus",
@@ -109,21 +107,97 @@
       "strongAgainst": ["vaccine"]
     }
   ],
-  
   "attributes": {
-    "field": [
-      "Virus",
-      "Vaccine",
-      "Data",
-      "Free"
-    ],
-    "rarity": [
-      "Common",
-      "Uncommon",
-      "Rare",
-      "Epic",
-      "Legendary",
-      "Mythic"
-    ]
-  }
+    "field": ["Virus", "Vaccine", "Data", "Free"],
+    "rarity": ["Common", "Uncommon", "Rare", "Epic", "Legendary", "Mythic"]
+  },
+
+  "traits": [
+    {
+      "id": "bruiser",
+      "name": "Bruiser",
+      "icon": "💪",
+      "description": "Tangguh dan tetap memukul keras—menggabungkan ketahanan tinggi (HP/DEF/Shield) dengan output damage yang signifikan."
+    },
+    {
+      "id": "aoe",
+      "name": "Aoe",
+      "icon": "💥",
+      "description": "Spesialis serangan area yang mengenai banyak target sekaligus untuk meratakan HP musuh secara kolektif."
+    },
+    {
+      "id": "dps",
+      "name": "DPS",
+      "icon": "⚔️",
+      "description": "Penghasil damage murni yang tinggi—sumber damage bukan dari ketahanan (HP/DEF/Shield), melainkan dari serangan langsung."
+    },
+    {
+      "id": "tank",
+      "name": "Tank",
+      "icon": "🧱",
+      "description": "Penyerap serangan utama dengan HP besar, DEF tinggi, Shield kuat, atau kombinasinya. Fokus bertahan, bukan membalas."
+    },
+    {
+      "id": "support",
+      "name": "Support",
+      "icon": "✨",
+      "description": "Tidak fokus damage atau ketahanan; tugasnya membantu tim—healing, menaikkan speed, memberi buff, dan/atau memasang debuff utilitas."
+    },
+    {
+      "id": "single_target",
+      "name": "Single Target",
+      "icon": "🎯",
+      "description": "Eksekutor satu sasaran—skill berfokus pada 1 target untuk menghabisi unit prioritas."
+    },
+    {
+      "id": "control",
+      "name": "Control",
+      "icon": "🧊",
+      "description": "Pemberi crowd control seperti stun, freeze, charm, petrify, slow, dan bentuk kontrol lain untuk membatasi aksi lawan."
+    },
+    {
+      "id": "buff",
+      "name": "Buff",
+      "icon": "🪄",
+      "description": "Memberikan penguatan pada tim: ATK/DEF/Speed/Crit/Shield atau efek positif lain untuk menaikkan performa."
+    },
+    {
+      "id": "debuff",
+      "name": "Debuff",
+      "icon": "🧷",
+      "description": "Melemahkan musuh melalui efek negatif seperti reduce DEF/ATK/Speed, weaken, dan debuff kontrol lainnya."
+    },
+    {
+      "id": "cleanser",
+      "name": "Cleanser",
+      "icon": "🚑",
+      "description": "Menghapus efek buruk (debuff/CC) dari tim sendiri agar komposisi tetap aktif dan stabil."
+    },
+    {
+      "id": "buff_breaker",
+      "name": "Buff Breaker",
+      "icon": "🧹",
+      "description": "Menghapus efek baik (buff) pada musuh—konter efektif untuk tim bertahan atau tim yang mengandalkan penguatan masif."
+    },
+
+    /* ==== DoT (Damage over Time) ==== */
+    {
+      "id": "poison",
+      "name": "Poison",
+      "icon": "☠️",
+      "description": "Damage berkelanjutan sebesar 5% Max HP target per turn (dibatasi hingga 200% Attack Power pemberi efek)."
+    },
+    {
+      "id": "burn",
+      "name": "Burn",
+      "icon": "🔥",
+      "description": "Damage berkelanjutan sebesar 10% ATK milik pemberi efek Burn—skala dengan serangan caster."
+    },
+    {
+      "id": "bleed",
+      "name": "Bleed",
+      "icon": "🩸",
+      "description": "Damage berkelanjutan sebesar 8% setiap turn berdasarkan Current HP target (semakin tinggi HP saat ini, semakin besar damage)."
+    }
+  ]
 }
