@@ -138,6 +138,12 @@
       "description": "Pemulih HP tim, menjaga keberlangsungan hidup tanpa fokus damage."
     },
     {
+      "id": "reviver",
+      "name": "Reviver",
+      "icon": "🕊️",
+      "description": "Memiliki kemampuan untuk menghidupkan kembali teman yang sudah dikalahkan."
+    },
+    {
       "id": "tank",
       "name": "Tank",
       "icon": "🧱",
