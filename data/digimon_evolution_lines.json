@@ -4736,7 +4736,11 @@
     ],
     "evolvesFrom": [],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Not Yet Released",
+      "type": "No Information"
+    }
   },
   {
     "id": "metalgarurumon",
@@ -4755,7 +4759,11 @@
     "evolvesTo": [
       "omegamon"
     ],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Iron Garulu Beast",
+      "type": "Common"
+    }
   },
   {
     "id": "metalseadramon",
@@ -5564,7 +5572,11 @@
       "dynasmon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Monarch Beast X",
+      "type": "Limited"
+    }
   },
   {
     "id": "gracenovamon",
@@ -5582,7 +5594,11 @@
       "dianamon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "GraceNovamon",
+      "type": "Limited"
+    }
   },
   {
     "id": "lillithmon-x",
@@ -5601,7 +5617,11 @@
       "lillithmon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Lilith Beast X",
+      "type": "Limited"
+    }
   },
   {
     "id": "magnamon-x",
@@ -5620,7 +5640,11 @@
       "magnamon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Golden Dragon Beast X",
+      "type": "Limited"
+    }
   },
   {
     "id": "omegamon",
@@ -5629,8 +5653,12 @@
       "Omnimon"
     ],
     "stage": "Ultimate+",
-    "factions": [],
-    "types": [],
+    "factions": [
+      "VB"
+    ],
+    "types": [
+      "Vaccine"
+    ],
     "evolvesFrom": [
       "wargreymon",
       "metalgarurumon"
@@ -5638,7 +5666,11 @@
     "evolvesTo": [],
     "groups": [
       "Royal Knights"
-    ]
+    ],
+    "soulStone": {
+      "required": "Omegamon",
+      "type": "Limited"
+    }
   },
   {
     "id": "rosemon-burst-mode",
@@ -5657,7 +5689,11 @@
       "rosemon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "Rose Beast BM",
+      "type": "Limited"
+    }
   },
   {
     "id": "wargreymon-x",
@@ -5674,6 +5710,10 @@
       "wargreymon"
     ],
     "evolvesTo": [],
-    "groups": []
+    "groups": [],
+    "soulStone": {
+      "required": "WarGreymon X",
+      "type": "Limited"
+    }
   }
 ]
