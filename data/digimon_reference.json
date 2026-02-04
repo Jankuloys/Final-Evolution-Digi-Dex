@@ -132,6 +132,12 @@
       "description": "Penghasil damage murni yang tinggi—sumber damage bukan dari ketahanan (HP/DEF/Shield), melainkan dari serangan langsung."
     },
     {
+      "id": "healer",
+      "name": "Healer",
+      "icon": "🩺",
+      "description": "Pemulih HP tim, menjaga keberlangsungan hidup tanpa fokus damage."
+    },
+    {
       "id": "tank",
       "name": "Tank",
       "icon": "🧱",
