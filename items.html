@@ -1,0 +1,450 @@
+
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Final Evolution: Digi - Items & Materials</title>
+  <meta name="color-scheme" content="dark light">
+  <style>
+  :root{
+    --bg:#0b1020; --panel:#101735; --panel-2:#0d1330; --text:#e9ecf7; --muted:#9aa3c4;
+    --brand:#59a6ff; --accent:#ffd166; --chip:#1e2a54; --ring:#1b2547; --ok:#31d0aa; --warn:#ff7a7a;
+    --shadow: 0 10px 30px rgba(0,0,0,.35);
+    --shadow-sm: 0 4px 12px rgba(0,0,0,.25);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,Segoe UI,Roboto,Inter,Arial}
+  a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+
+  /* NAVBAR (match index.html) */
+  .nav{position:sticky; top:0; z-index:50; background:linear-gradient(180deg,#0b1020,rgba(11,16,32,.72)); border-bottom:1px solid var(--ring); backdrop-filter: blur(10px);} 
+  .nav-inner{max-width:1400px;margin:auto;padding:12px 18px;display:flex;align-items:center;gap:16px}
+  .brand{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.3px}
+  .brand .logo{width:28px;height:28px;border-radius:7px;background:
+    radial-gradient(120% 120% at 20% 20%, #5ac8ff 0%, #2441ff 38%, #0b1020 80%); box-shadow: 0 0 0 1px #2b3772 inset, 0 4px 16px rgba(36,65,255,.35);} 
+  .nav a.navlink{color:var(--text);text-decoration:none;opacity:.9;transition:var(--transition);padding:8px 12px;border-radius:8px}
+  .nav a.navlink:hover{opacity:1;color:#cfe0ff;background:rgba(42,61,134,.2)}
+  .nav a.navlink.active{background:rgba(42,61,134,.3);color:#59a6ff}
+  .spacer{flex:1}
+
+  /* HERO */
+  .hero{max-width:1400px;margin:20px auto 8px;padding:0 18px;text-align:center}
+  .hero h1{margin:6px 0 10px;font-size:clamp(28px,5vw,48px);background:linear-gradient(90deg,#59a6ff,#ffd166);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
+  .hero p{margin:0;color:var(--muted);font-size:18px}
+
+  /* CONTROLS */
+  .panel{max-width:1400px;margin:14px auto;padding:0 18px}
+  .controls{
+    background:var(--panel); border:1px solid var(--ring); border-radius:16px; box-shadow:var(--shadow);
+    padding:16px; display:grid; grid-template-columns: 1fr; gap:12px;
+  }
+  .control-grid{display:grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap:10px}
+  .search{display:flex; gap:10px}
+  .search input{flex:1; padding:12px 14px; border-radius:10px; border:1px solid var(--ring); background:var(--panel-2); color:var(--text)}
+  select{padding:10px 12px; border-radius:10px; border:1px solid var(--ring); background:var(--panel-2); color:var(--text)}
+
+  /* GRID */
+  .wrap{max-width:1400px;margin:0 auto 40px;padding:0 18px; display:grid; grid-template-columns: 1fr; gap:20px}
+  .section-card{background:var(--panel);border:1px solid var(--ring);border-radius:16px;box-shadow:var(--shadow);overflow:hidden;transition:var(--transition)}
+  .section-card:hover{transform:translateY(-4px); box-shadow:0 15px 40px rgba(0,0,0,.45); border-color:#2a3d86}
+  .section-header{padding:18px 20px;background:linear-gradient(135deg,var(--panel),#151e40); border-bottom:1px solid var(--ring); display:flex; align-items:center; justify-content:space-between; gap:12px}
+  .section-title{margin:0;font-size:22px;color:#cfe0ff;display:flex;align-items:center;gap:10px}
+  .section-body{padding:16px 20px}
+  .muted{color:var(--muted)}
+  .grid{display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:12px}
+  .mini-card{background:var(--panel-2); border:1px solid var(--ring); border-radius:12px; padding:12px; transition:var(--transition)}
+  .mini-card:hover{border-color:#2a3d86; transform:translateY(-2px)}
+  .mini-title{margin:0 0 6px; font-weight:800; color:#cfe0ff}
+  .mini-desc{margin:0; color:var(--muted); font-size:13px; line-height:1.5}
+  .pill{display:inline-flex;align-items:center;gap:6px;background:var(--chip);color:#b9c6ff;border:1px solid rgba(255,255,255,.1); padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700}
+  .chip{display:inline-flex;align-items:center;gap:6px;background:var(--chip);color:#b9c6ff;border:1px solid rgba(255,255,255,.1); padding:6px 10px;border-radius:8px;font-size:13px;font-weight:700}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+
+  /* TABLE (Soul Stone listing) */
+  .table{width:100%; border-collapse:collapse; overflow:auto}
+  .table th, .table td{border-bottom:1px solid var(--ring); padding:10px 8px; text-align:left}
+  .table th{color:#cfe0ff; font-weight:700; position:sticky; top:0; background:linear-gradient(180deg,#0f1636,#0c1330)}
+  .table tr:hover{background:rgba(42,61,134,.08)}
+  .nowrap{white-space:nowrap}
+
+  .right{justify-content:flex-end}
+  .sub{font-size:12px; color:var(--muted)}
+
+  /* badge colors for soul stone */
+  .ss{background:#1b2547; color:#b9c6ff}
+
+  /* footer */
+  footer{border-top:1px solid var(--ring);color:var(--muted);text-align:center;padding:30px 18px;margin-top:20px}
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <span>Final Evolution: <span style="color:#cfe0ff">Digi</span></span>
+      </div>
+      <div class="spacer"></div>
+      <a class="navlink" href="./index.html">Home</a>
+      <a class="navlink" href="./digimon.html">Digi‑Dex</a>
+      <a class="navlink" href="./tamers.html">Tamers</a>
+      <a class="navlink active" href="./item.html">Items</a>
+      <a class="navlink" href="./about.html">About</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1>Items & Materials</h1>
+    <p>Semua item dari referensi + daftar Soul Stone yang muncul di Digi‑Dex.</p>
+  </header>
+
+  <!-- FILTERS FOR SOUL STONE LISTING -->
+  <section class="panel">
+    <div class="controls">
+      <div class="search">
+        <input id="q" placeholder="🔍 Cari Digimon atau Soul Stone… (mis. WarGreymon, Rare, Limited)" />
+      </div>
+      <div class="control-grid">
+        <select id="fltStage" aria-label="Filter Stage">
+          <option value="">Semua Stage</option>
+        </select>
+        <select id="fltSS" aria-label="Filter Soul Stone Type">
+          <option value="">Semua Soul Stone</option>
+        </select>
+        <select id="fltFaction" aria-label="Filter Faction">
+          <option value="">Semua Faction</option>
+        </select>
+        <select id="fltType" aria-label="Filter Type">
+          <option value="">Semua Type</option>
+        </select>
+      </div>
+      <div class="sub">Catatan: data diambil langsung dari <code>./data/digimon_reference.json</code> & <code>./data/digimon_evolution_lines.json</code>.</div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <!-- SUMMON TICKETS -->
+    <article class="section-card" id="sec-summon">
+      <div class="section-header">
+        <h2 class="section-title">🎟️ Summon Tickets</h2>
+        <div id="count-summon" class="sub"></div>
+      </div>
+      <div class="section-body">
+        <div id="summonGrid" class="grid"></div>
+      </div>
+    </article>
+
+    <!-- EVOLUTION MATERIALS -->
+    <article class="section-card" id="sec-evo">
+      <div class="section-header">
+        <h2 class="section-title">🧬 Evolution Items</h2>
+      </div>
+      <div class="section-body">
+        <div class="mini-card">
+          <h4 class="mini-title">Soul Stone Tiers</h4>
+          <div id="evo-soulstone-tiers" class="chips"></div>
+        </div>
+        <div class="grid" style="margin-top:12px">
+          <div class="mini-card">
+            <h4 class="mini-title">Soul Stone Fragments</h4>
+            <p id="evo-ss-frag-rule" class="mini-desc"></p>
+            <div id="evo-ss-frag" class="chips" style="margin-top:8px"></div>
+          </div>
+          <div class="mini-card">
+            <h4 class="mini-title">Data Core</h4>
+            <div id="evo-data-core" class="chips"></div>
+          </div>
+          <div class="mini-card">
+            <h4 class="mini-title">Vaccine Serum</h4>
+            <div id="evo-vaccine" class="chips"></div>
+          </div>
+          <div class="mini-card">
+            <h4 class="mini-title">Virus Control</h4>
+            <div id="evo-virus" class="chips"></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- SOUL STONES FROM DIGI-DEX -->
+    <article class="section-card" id="sec-ssdex">
+      <div class="section-header">
+        <h2 class="section-title">💎 Soul Stones Terdeteksi pada Digimon</h2>
+        <div id="count-ss" class="sub"></div>
+      </div>
+      <div class="section-body">
+        <div style="overflow:auto">
+          <table class="table" id="tbl-ss">
+            <thead>
+              <tr>
+                <th>Digimon</th>
+                <th>Stage</th>
+                <th>Faction</th>
+                <th>Type</th>
+                <th>Soul Stone</th>
+                <th>Required</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </article>
+
+    <!-- CORE CODE -->
+    <article class="section-card" id="sec-corecode">
+      <div class="section-header">
+        <h2 class="section-title">🧩 Core Code</h2>
+      </div>
+      <div class="section-body">
+        <p id="corecode-rule" class="mini-desc"></p>
+        <div id="corecode-grid" class="grid" style="margin-top:12px"></div>
+      </div>
+    </article>
+
+    <!-- WEAPONS / ARMAMENTS & CORES -->
+    <article class="section-card" id="sec-weapons">
+      <div class="section-header">
+        <h2 class="section-title">⚔️ Weapons & Armaments</h2>
+      </div>
+      <div class="section-body">
+        <h4 class="mini-title" style="margin-top:0">4‑Piece Sets</h4>
+        <div id="arm4-grid" class="grid"></div>
+        <h4 class="mini-title" style="margin-top:16px">2‑Piece Sets</h4>
+        <div id="arm2-grid" class="grid"></div>
+        <div class="grid" style="margin-top:16px">
+          <div class="mini-card">
+            <h4 class="mini-title">Core Fragments</h4>
+            <p id="corefrag-rule" class="mini-desc"></p>
+            <div id="corefrag-tiers" class="chips" style="margin-top:8px"></div>
+          </div>
+          <div class="mini-card">
+            <h4 class="mini-title">Unique Cores</h4>
+            <div id="unique-cores" class="grid"></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- CONSUMABLES / OFF-LIMITS / PROGRESSION -->
+    <article class="section-card" id="sec-others">
+      <div class="section-header">
+        <h2 class="section-title">🧪 Consumables & Progression</h2>
+      </div>
+      <div class="section-body">
+        <div class="grid">
+          <div class="mini-card">
+            <h4 class="mini-title">Concentrate Potion</h4>
+            <p id="cons-concentrate" class="mini-desc"></p>
+          </div>
+          <div class="mini-card">
+            <h4 class="mini-title">Off‑Limits Potions</h4>
+            <div id="off-pot" class="chips"></div>
+          </div>
+          <div class="mini-card">
+            <h4 class="mini-title">Source Code Mark</h4>
+            <p id="scm-desc" class="mini-desc"></p>
+          </div>
+          <div class="mini-card">
+            <h4 class="mini-title">Wondrous Crystal</h4>
+            <p id="wond-desc" class="mini-desc"></p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <footer>
+    <div style="font-size:18px;font-weight:700">Final Evolution: Digi</div>
+    <div class="disclaimer">
+      Digimon and all related characters are trademarks of Bandai Namco Holdings Inc.<br/>
+      This is a non‑commercial fan project created by the Digimon World Indonesia community.<br/>
+      © 2026 Final Evolution: Digi • On Progress by Joe • Supported by Digimon World Indonesia
+    </div>
+  </footer>
+
+  <script>
+  const REF_URL = 'data/digimon_reference.json';
+  const EVO_URL = 'data/digimon_evolution_lines.json';
+  const $ = (sel,root=document)=>root.querySelector(sel);
+  const $$ = (sel,root=document)=>Array.from(root.querySelectorAll(sel));
+  const norm = s => (s||'').toString().trim();
+
+  function chip(html, color){
+    const span = document.createElement('span');
+    span.className='pill';
+    if(color){ span.style.background = color+'22'; span.style.border = '1px solid '+color+'55'; span.style.color = color; }
+    span.innerHTML = html; return span;
+  }
+
+  function ssColor(type){
+    const t = (type||'').toLowerCase();
+    if(t.includes('rare')) return '#dca0ff';
+    if(t.includes('common')) return '#8fd0ff';
+    if(t.includes('exclusive 1vs1')) return '#ff7a7a';
+    if(t.includes('exclusive guild')) return '#25d366';
+    if(t.includes('exclusive arena')) return '#ffd166';
+    if(t.includes('limited')) return '#ff6b6b';
+    if(t.includes('no information')) return '#9aa3c4';
+    return '#b9c6ff';
+  }
+
+  function render(){ /* placeholder to avoid eslint */ }
+
+  (async function init(){
+    try{
+      const [rRes, eRes] = await Promise.all([
+        fetch(REF_URL, {cache:'no-store'}),
+        fetch(EVO_URL, {cache:'no-store'})
+      ]);
+      if(!rRes.ok) throw new Error('Gagal memuat digimon_reference.json');
+      if(!eRes.ok) throw new Error('Gagal memuat digimon_evolution_lines.json');
+      const REF = await rRes.json();
+      const EVO = await eRes.json();
+
+      const items = REF.items || {};
+
+      /* === Fill simple dropdowns === */
+      const stages = ['Child','Adult','Perfect','Ultimate','Ultimate+'];
+      stages.forEach(s=> $('#fltStage').insertAdjacentHTML('beforeend', `<option value="${s}">${s}</option>`));
+      // Soul stone type options from reference tiers + from EVO scanning
+      const ssSet = new Set((items.evolution?.soulStones?.tiers||[]).map(norm));
+      EVO.forEach(d=>{ const t = norm(d?.soulStone?.type); if(t) ssSet.add(t); });
+      Array.from(ssSet).forEach(t=> $('#fltSS').insertAdjacentHTML('beforeend', `<option value="${t}">${t}</option>`));
+      // Faction codes from reference
+      (REF.factions||[]).forEach(f=> $('#fltFaction').insertAdjacentHTML('beforeend', `<option value="${norm(f.code)}">${norm(f.code)}</option>`));
+      // Types
+      (REF.types||[]).forEach(t=> $('#fltType').insertAdjacentHTML('beforeend', `<option value="${norm(t.name)}">${norm(t.name)}</option>`));
+
+      /* === Summon Tickets === */
+      const sGrid = $('#summonGrid');
+      const tickets = (items.summon?.tickets)||[];
+      tickets.forEach(tk=>{
+        const card = document.createElement('div'); card.className='mini-card';
+        card.innerHTML = `<h4 class="mini-title">${tk.name}</h4><p class="mini-desc">${tk.description}</p>`;
+        const box = document.createElement('div'); box.className='chips';
+        (tk.obtainableStages||[]).forEach(st=> box.append(chip(st)));
+        (tk.obtainableSoulStoneTiers||[]).forEach(tt=> box.append(chip('SS: '+tt, ssColor(tt))));
+        card.append(box);
+        sGrid.append(card);
+      });
+      $('#count-summon').textContent = `${tickets.length} kategori`;
+
+      /* === Evolution Items === */
+      (items.evolution?.soulStones?.tiers||[]).forEach(t=> $('#evo-soulstone-tiers').append(chip(t, ssColor(t))));
+      $('#evo-ss-frag-rule').textContent = items.evolution?.soulStoneFragments?.craftRule || '';
+      (items.evolution?.soulStoneFragments?.tiers||[]).forEach(t=> $('#evo-ss-frag').append(chip(t, ssColor(t))));
+      (items.evolution?.additional?.dataCore?.tiers||[]).forEach(t=> $('#evo-data-core').append(chip(t)));
+      (items.evolution?.additional?.vaccineSerum?.tiers||[]).forEach(t=> $('#evo-vaccine').append(chip(t)));
+      (items.evolution?.additional?.virusControl?.tiers||[]).forEach(t=> $('#evo-virus').append(chip(t)));
+
+      /* === Soul Stones listing from Digimon DB === */
+      const tbody = $('#tbl-ss tbody');
+      const facMap = new Map((REF.factions||[]).map(f=>[norm(f.code), f]));
+      const typeColors = new Map((REF.types||[]).map(t=>[norm(t.name), t.color||'']))
+      function row(d){
+        const fac = (d.factions||[])[0]||''; const facMeta = facMap.get(norm(fac));
+        const typ = (d.types||[])[0]||''; const tcol = typeColors.get(norm(typ))||'';
+        const ss = d.soulStone||{}; const tt = norm(ss.type); const rq = norm(ss.required);
+        const tr = document.createElement('tr');
+        const link = `<a href="./digimon.html#${encodeURIComponent(d.id)}">${d.displayName}</a>`;
+        tr.innerHTML = `
+          <td class="nowrap">${link}</td>
+          <td>${d.stage||''}</td>
+          <td class="nowrap">${facMeta? `${facMeta.icon||''} ${facMeta.code}` : (fac||'')}</td>
+          <td class="nowrap">${typ}</td>
+          <td class="nowrap"><span class="pill" style="background:${ssColor(tt)}22;border:1px solid ${ssColor(tt)}55;color:${ssColor(tt)}">${tt||'-'}</span></td>
+          <td>${rq||'-'}</td>`;
+        return tr;
+      }
+      const ssList = EVO.filter(d=> d.soulStone && (d.soulStone.type || d.soulStone.required));
+      ssList.forEach(d=> tbody.append(row(d)));
+      $('#count-ss').textContent = `${ssList.length} entri terdeteksi`;
+
+      /* === Core Code === */
+      $('#corecode-rule').textContent = items.coreCode?.craftRule || '';
+      const ccg = $('#corecode-grid');
+      (items.coreCode?.items||[]).forEach(it=>{
+        const card = document.createElement('div'); card.className='mini-card';
+        card.innerHTML = `<h4 class="mini-title">${it.name}</h4><div class="chips"></div>`;
+        card.querySelector('.chips').append(chip('Stage: '+it.stage));
+        ccg.append(card);
+      });
+
+      /* === Weapons / Armaments === */
+      const arm4 = items.weapons?.armaments?.sets4||[];
+      const arm2 = items.weapons?.armaments?.sets2||[];
+      const arm4Grid = $('#arm4-grid');
+      arm4.forEach(s=>{
+        const card = document.createElement('div'); card.className='mini-card';
+        card.innerHTML = `<h4 class="mini-title">${s.name}</h4><p class="mini-desc">${s.effect}</p>`;
+        const box = document.createElement('div'); box.className='chips';
+        box.append(chip(`${s.pieces} pcs`));
+        (s.altNames||[]).forEach(n=> box.append(chip(n)));
+        card.append(box); arm4Grid.append(card);
+      });
+      const arm2Grid = $('#arm2-grid');
+      arm2.forEach(s=>{
+        const card = document.createElement('div'); card.className='mini-card';
+        card.innerHTML = `<h4 class="mini-title">${s.name}</h4><div class="chips"></div>`;
+        card.querySelector('.chips').append(chip(`${s.pieces} pcs`));
+        const p = document.createElement('p'); p.className='mini-desc'; p.textContent = s.effect; card.append(p);
+        arm2Grid.append(card);
+      });
+
+      // cores
+      $('#corefrag-rule').textContent = items.weapons?.cores?.coreFragments?.craftRule || '';
+      (items.weapons?.cores?.coreFragments?.tiers||[]).forEach(t=>{
+        const html = `${t.name} → <b>${t.result}</b>`; $('#corefrag-tiers').append(chip(html));
+      });
+      const uc = items.weapons?.cores?.uniqueCores||[];
+      const ucGrid = $('#unique-cores');
+      uc.forEach(c=>{
+        const div = document.createElement('div'); div.className='mini-card';
+        div.innerHTML = `<h4 class="mini-title">${c.name}</h4><p class="mini-desc">${c.effect}</p>`;
+        ucGrid.append(div);
+      });
+
+      /* === Others === */
+      $('#cons-concentrate').textContent = items.consumables?.concentratePotion?.description || '';
+      (items.offLimits?.potions||[]).forEach(p=> $('#off-pot').append(chip(`${p.name} → ${p.affects}`)));
+      $('#scm-desc').textContent = items.progression?.sourceCodeMark?.description || '';
+      $('#wond-desc').textContent = items.progression?.wondrousCrystal?.description || '';
+
+      /* === Filters for Soul Stones table === */
+      function applySSFilter(){
+        const q = ($('#q').value||'').toLowerCase().trim();
+        const st = $('#fltStage').value; const ss = $('#fltSS').value; const fa = $('#fltFaction').value; const ty = $('#fltType').value;
+        const rows = Array.from($('#tbl-ss tbody').rows);
+        let shown = 0;
+        rows.forEach(r=>{
+          const name = r.cells[0].innerText.toLowerCase();
+          const stage = r.cells[1].innerText.trim();
+          const fac = (r.cells[2].innerText||'').split(' ').pop().trim();
+          const type = r.cells[3].innerText.trim();
+          const sstype = r.cells[4].innerText.trim();
+          const match = (!q || r.innerText.toLowerCase().includes(q)) &&
+                        (!st || stage===st) &&
+                        (!ss || sstype===ss) &&
+                        (!fa || fac===fa) &&
+                        (!ty || type===ty);
+          r.style.display = match?'' : 'none';
+          if(match) shown++;
+        });
+        $('#count-ss').textContent = `${shown} entri terdeteksi`;
+      }
+      ['q','fltStage','fltSS','fltFaction','fltType'].forEach(id=> $('#'+id).addEventListener('input', applySSFilter));
+      ['fltStage','fltSS','fltFaction','fltType'].forEach(id=> $('#'+id).addEventListener('change', applySSFilter));
+
+    }catch(err){
+      console.error(err);
+      document.body.insertAdjacentHTML('beforeend', `<p style="color:#ff9aa2; padding:16px; background:var(--panel-2); border-radius:12px; max-width:1400px; margin:10px auto;">❌ Error: ${err.message}</p>`);
+    }
+  })();
+  </script>
+</body>
+</html>
