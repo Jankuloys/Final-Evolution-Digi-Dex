@@ -91,7 +91,6 @@
       <a class="navlink" href="./index.html">Home</a>
       <a class="navlink" href="./digimon.html">Digi‑Dex</a>
       <a class="navlink" href="./tamers.html">Tamers</a>
-      <a class="navlink active" href="./item.html">Items</a>
       <a class="navlink" href="./about.html">About</a>
     </div>
   </nav>
@@ -101,30 +100,6 @@
     <h1>Items & Materials</h1>
     <p>Semua item dari referensi + daftar Soul Stone yang muncul di Digi‑Dex.</p>
   </header>
-
-  <!-- FILTERS FOR SOUL STONE LISTING -->
-  <section class="panel">
-    <div class="controls">
-      <div class="search">
-        <input id="q" placeholder="🔍 Cari Digimon atau Soul Stone… (mis. WarGreymon, Rare, Limited)" />
-      </div>
-      <div class="control-grid">
-        <select id="fltStage" aria-label="Filter Stage">
-          <option value="">Semua Stage</option>
-        </select>
-        <select id="fltSS" aria-label="Filter Soul Stone Type">
-          <option value="">Semua Soul Stone</option>
-        </select>
-        <select id="fltFaction" aria-label="Filter Faction">
-          <option value="">Semua Faction</option>
-        </select>
-        <select id="fltType" aria-label="Filter Type">
-          <option value="">Semua Type</option>
-        </select>
-      </div>
-      <div class="sub">Catatan: data diambil langsung dari <code>./data/digimon_reference.json</code> & <code>./data/digimon_evolution_lines.json</code>.</div>
-    </div>
-  </section>
 
   <section class="wrap">
     <!-- SUMMON TICKETS -->
@@ -169,6 +144,30 @@
         </div>
       </div>
     </article>
+
+    <!-- FILTERS FOR SOUL STONE LISTING -->
+  <section class="panel">
+    <div class="controls">
+      <div class="search">
+        <input id="q" placeholder="🔍 Cari Digimon atau Soul Stone… (mis. WarGreymon, Rare, Limited)" />
+      </div>
+      <div class="control-grid">
+        <select id="fltStage" aria-label="Filter Stage">
+          <option value="">Semua Stage</option>
+        </select>
+        <select id="fltSS" aria-label="Filter Soul Stone Type">
+          <option value="">Semua Soul Stone</option>
+        </select>
+        <select id="fltFaction" aria-label="Filter Faction">
+          <option value="">Semua Faction</option>
+        </select>
+        <select id="fltType" aria-label="Filter Type">
+          <option value="">Semua Type</option>
+        </select>
+      </div>
+      <div class="sub">Catatan: data diambil langsung dari <code>./data/digimon_reference.json</code> & <code>./data/digimon_evolution_lines.json</code>.</div>
+    </div>
+  </section>
 
     <!-- SOUL STONES FROM DIGI-DEX -->
     <article class="section-card" id="sec-ssdex">
