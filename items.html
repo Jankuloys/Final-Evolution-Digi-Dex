@@ -93,6 +93,14 @@
 #sec-filters .search input{width:100%;font-size:16px;padding:16px 18px}
 #sec-filters .control-grid{margin-top:10px}
 
+/* ==== FORCE FULL-WIDTH FOR FILTER CARD (deep patch) ==== */
+.wrap { align-items: stretch; justify-items: stretch; }
+.filters-card, .filters-card .section-body, .filters-card .controls, .filters-card .search { width: 100%; }
+.filters-card .controls, .filters-card .search, .filters-card .control-grid { min-width: 0; }
+.filters-card .search input, .filters-card select { width: 100%; box-sizing: border-box; }
+/* Uncomment if needed to force full row */
+/* .filters-card { grid-column: 1 / -1; } */
+
 </style>
 </head>
 <body>
