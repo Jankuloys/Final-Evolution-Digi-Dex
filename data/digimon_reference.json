@@ -2,14 +2,17 @@
   "metadata": {
     "version": "1.0",
     "lastUpdated": "2026-02-04",
-    "description": "Reference data for Digimon attributes including Factions/Families, Types/Races, and Traits"
+    "description": "Reference data for Digimon attributes including Factions/Families, Types/Races, and Traits",
+    "itemsVersion": "1.0"
   },
   "factions": [
     {
       "id": "nsp",
       "code": "NSp",
       "name": "Nature Spirits",
-      "aliases": ["Spirits of Nature"],
+      "aliases": [
+        "Spirits of Nature"
+      ],
       "description": "Digimon that embody the forces of nature and natural elements.",
       "color": "#4CAF50",
       "icon": "🌿"
@@ -18,7 +21,9 @@
       "id": "dr",
       "code": "DR",
       "name": "Dragon Roar",
-      "aliases": ["Roar of Dragons"],
+      "aliases": [
+        "Roar of Dragons"
+      ],
       "description": "Digimon with dragon lineage and powerful draconic abilities.",
       "color": "#FF9800",
       "icon": "🐉"
@@ -27,7 +32,9 @@
       "id": "me",
       "code": "ME",
       "name": "Metal Empire",
-      "aliases": ["Empire of Precious Metals"],
+      "aliases": [
+        "Empire of Precious Metals"
+      ],
       "description": "Mechanical and metallic Digimon with advanced technology.",
       "color": "#9E9E9E",
       "icon": "⚙️"
@@ -36,7 +43,9 @@
       "id": "vb",
       "code": "VB",
       "name": "Virus Busters",
-      "aliases": ["Virus Hunters"],
+      "aliases": [
+        "Virus Hunters"
+      ],
       "description": "Digimon dedicated to fighting against viral threats and corruption.",
       "color": "#2196F3",
       "icon": "🛡️"
@@ -45,7 +54,9 @@
       "id": "jt",
       "code": "JT",
       "name": "Jungle Trooper",
-      "aliases": ["Jungle Warriors"],
+      "aliases": [
+        "Jungle Warriors"
+      ],
       "description": "Digimon that thrive in wild environments and possess primal strength.",
       "color": "#8BC34A",
       "icon": "🌴"
@@ -54,7 +65,9 @@
       "id": "ds",
       "code": "DS",
       "name": "Deep Savers",
-      "aliases": ["Savers of the Deep Blue"],
+      "aliases": [
+        "Savers of the Deep Blue"
+      ],
       "description": "Aquatic Digimon that protect the oceans and water realms.",
       "color": "#2196F3",
       "icon": "🌊"
@@ -63,7 +76,9 @@
       "id": "nso",
       "code": "NSo",
       "name": "Nightmare Soldiers",
-      "aliases": ["Soldiers of Nightmare"],
+      "aliases": [
+        "Soldiers of Nightmare"
+      ],
       "description": "Dark Digimon that wield the power of nightmares and shadows.",
       "color": "#9C27B0",
       "icon": "🌑"
@@ -72,7 +87,9 @@
       "id": "wg",
       "code": "WG",
       "name": "Wind Guardians",
-      "aliases": ["Guardian of the Wind"],
+      "aliases": [
+        "Guardian of the Wind"
+      ],
       "description": "Aerial Digimon that control wind and sky domains.",
       "color": "#03A9F4",
       "icon": "🌪️"
@@ -85,8 +102,12 @@
       "description": "Malicious Digimon that spread corruption and seek to destroy.",
       "color": "#F44336",
       "icon": "🦠",
-      "weakAgainst": ["vaccine"],
-      "strongAgainst": ["data"]
+      "weakAgainst": [
+        "vaccine"
+      ],
+      "strongAgainst": [
+        "data"
+      ]
     },
     {
       "id": "vaccine",
@@ -94,8 +115,12 @@
       "description": "Benevolent Digimon that protect the Digital World and fight viruses.",
       "color": "#4CAF50",
       "icon": "💉",
-      "weakAgainst": ["data"],
-      "strongAgainst": ["virus"]
+      "weakAgainst": [
+        "data"
+      ],
+      "strongAgainst": [
+        "virus"
+      ]
     },
     {
       "id": "data",
@@ -103,13 +128,29 @@
       "description": "Neutral Digimon that don't align with virus or vaccine factions.",
       "color": "#FFC107",
       "icon": "💾",
-      "weakAgainst": ["virus"],
-      "strongAgainst": ["vaccine"]
+      "weakAgainst": [
+        "virus"
+      ],
+      "strongAgainst": [
+        "vaccine"
+      ]
     }
   ],
   "attributes": {
-    "field": ["Virus", "Vaccine", "Data", "Free"],
-    "rarity": ["Common", "Uncommon", "Rare", "Epic", "Legendary", "Mythic"]
+    "field": [
+      "Virus",
+      "Vaccine",
+      "Data",
+      "Free"
+    ],
+    "rarity": [
+      "Common",
+      "Uncommon",
+      "Rare",
+      "Epic",
+      "Legendary",
+      "Mythic"
+    ]
   },
   "traits": [
     {
@@ -208,5 +249,328 @@
       "icon": "🩸",
       "description": "Damage berkelanjutan sebesar 8% setiap turn berdasarkan Current HP target (semakin tinggi HP saat ini, semakin besar damage)."
     }
-  ]
+  ],
+  "items": {
+    "summon": {
+      "tickets": [
+        {
+          "id": "summon_ticket",
+          "name": "Summon Ticket",
+          "description": "To obtain up to Perfect stage Digimon and Common Soul Stone.",
+          "obtainableStages": [
+            "Child",
+            "Adult",
+            "Perfect"
+          ],
+          "obtainableSoulStoneTiers": [
+            "Common"
+          ]
+        },
+        {
+          "id": "event_ticket",
+          "name": "Event Ticket",
+          "description": "To obtain up to Perfect stage Digimon and Rare Soul Stone.",
+          "obtainableStages": [
+            "Child",
+            "Adult",
+            "Perfect"
+          ],
+          "obtainableSoulStoneTiers": [
+            "Rare"
+          ]
+        }
+      ]
+    },
+    "evolution": {
+      "soulStones": {
+        "tiers": [
+          "Common",
+          "Exclusive Arena",
+          "Exclusive 1vs1 Arena",
+          "Rare",
+          "Limited"
+        ]
+      },
+      "soulStoneFragments": {
+        "craftRule": "Collect 60 same Fragments to craft 1 Soul Stone.",
+        "tiers": [
+          "Common",
+          "Exclusive Arena",
+          "Exclusive 1vs1 Arena",
+          "Rare"
+        ]
+      },
+      "additional": {
+        "dataCore": {
+          "name": "Data Core",
+          "tiers": [
+            "Basic Data Core",
+            "Intermediate Data Core",
+            "Superior Data Core"
+          ]
+        },
+        "vaccineSerum": {
+          "name": "Vaccine Serum",
+          "tiers": [
+            "Basic Vaccine Serum",
+            "Intermediate Vaccine Serum",
+            "Superior Vaccine Serum"
+          ]
+        },
+        "virusControl": {
+          "name": "Virus Control",
+          "tiers": [
+            "Basic Virus Control",
+            "Intermediate Virus Control",
+            "Superior Virus Control"
+          ]
+        }
+      }
+    },
+    "coreCode": {
+      "craftRule": "Collect 30 same stage Core Code to summon 1 Digimon within that stage.",
+      "items": [
+        {
+          "id": "rookie_core_code",
+          "name": "Rookie Core Code",
+          "stage": "Child"
+        },
+        {
+          "id": "champion_core_code",
+          "name": "Champion Core Code",
+          "stage": "Adult"
+        },
+        {
+          "id": "perfect_core_code",
+          "name": "Perfect Core Code",
+          "stage": "Perfect"
+        }
+      ]
+    },
+    "weapons": {
+      "armaments": {
+        "sets4": [
+          {
+            "id": "ancient_protection_set",
+            "name": "Ancient Protection Set",
+            "altNames": [
+              "Ancient"
+            ],
+            "pieces": 4,
+            "effect": "After entering battle, maximum HP increases by 15%."
+          },
+          {
+            "id": "divine_corrosion_protection_set",
+            "name": "Divine Corrosion Protection Set",
+            "altNames": [
+              "God Erosion Set"
+            ],
+            "pieces": 4,
+            "effect": "At the start of each turn, gain 1 stack of [Aozhan] (damage increase 3%). Max 10 stacks."
+          },
+          {
+            "id": "time_space_protection_set",
+            "name": "Time-Space Protection Set",
+            "altNames": [
+              "Time Space"
+            ],
+            "pieces": 4,
+            "effect": "10% chance to inflict Petrify on the target for 1 turn with each active attack."
+          },
+          {
+            "id": "martial_protection_set",
+            "name": "Martial Protection Set",
+            "altNames": [
+              "Martial"
+            ],
+            "pieces": 4,
+            "effect": "For every 100 Speed points, gain 0.4% Damage Increase (capped at 20%)."
+          },
+          {
+            "id": "izumi_protection_set",
+            "name": "Izumi Protection Set",
+            "altNames": [
+              "Izumi"
+            ],
+            "pieces": 4,
+            "effect": "For every 100 Speed points, gain 0.4% Damage Reduction (capped at 20%)."
+          },
+          {
+            "id": "destiny_protection_set",
+            "name": "Destiny Protection Set",
+            "altNames": [
+              "Destiny"
+            ],
+            "pieces": 4,
+            "effect": "After taking the first attack, gain a shield equal to 25% of maximum HP, lasting for 2 turns."
+          },
+          {
+            "id": "crescent_protection_set",
+            "name": "Crescent Protection Set",
+            "altNames": [
+              "New Moon"
+            ],
+            "pieces": 4,
+            "effect": "10% chance to inflict Freeze on the target for 1 turn when taking direct damage."
+          }
+        ],
+        "sets2": [
+          {
+            "id": "dryad_set",
+            "name": "Dryad Set",
+            "pieces": 2,
+            "effect": "HP +12%"
+          },
+          {
+            "id": "goblin_set",
+            "name": "Goblin Set",
+            "pieces": 2,
+            "effect": "ATK +12%"
+          },
+          {
+            "id": "guardian_set",
+            "name": "Guardian Set",
+            "pieces": 2,
+            "effect": "DEF +12%"
+          },
+          {
+            "id": "sea_spirit_set",
+            "name": "Sea Spirit Set",
+            "pieces": 2,
+            "effect": "DODGE / EVA +5%"
+          },
+          {
+            "id": "labi_set",
+            "name": "Labi Set",
+            "pieces": 2,
+            "effect": "CRITICAL HIT RATE +5%"
+          },
+          {
+            "id": "black_lion_set",
+            "name": "Black Lion Set",
+            "pieces": 2,
+            "effect": "CRITICAL RESISTANCE +5%"
+          },
+          {
+            "id": "tinker_set",
+            "name": "Tinker Set",
+            "pieces": 2,
+            "effect": "CRITICAL DAMAGE +10%"
+          },
+          {
+            "id": "garuga_set",
+            "name": "Garuga Set",
+            "pieces": 2,
+            "effect": "EFFECT HIT RATE +7%"
+          },
+          {
+            "id": "ankylosaurus_set",
+            "name": "Ankylosaurus Set",
+            "pieces": 2,
+            "effect": "EFFECT RESISTANCE +7%"
+          },
+          {
+            "id": "rainbow_set",
+            "name": "Rainbow Set",
+            "pieces": 2,
+            "effect": "DAMAGE INCREASE / DAMAGE UP +7%"
+          },
+          {
+            "id": "helios_set",
+            "name": "Helios Set",
+            "pieces": 2,
+            "effect": "DAMAGE IMMUNITY +7%"
+          }
+        ]
+      },
+      "cores": {
+        "coreFragments": {
+          "craftRule": "Collect 100 fragments to craft 1 Core.",
+          "tiers": [
+            {
+              "id": "green_core_fragments",
+              "name": "Green Core Fragments",
+              "result": "Green tier Core"
+            },
+            {
+              "id": "purple_core_fragments",
+              "name": "Purple Core Fragments",
+              "result": "Purple tier Core"
+            },
+            {
+              "id": "orange_core_fragments",
+              "name": "Orange Core Fragments",
+              "result": "Purple tier Core"
+            }
+          ]
+        },
+        "uniqueCores": [
+          {
+            "id": "overclocking_core",
+            "name": "Overclocking Core",
+            "effect": "After dealing damage, own ATK increases by 2%; stacks up to 8 layers."
+          },
+          {
+            "id": "combat_readiness_core",
+            "name": "Combat Readiness Core",
+            "effect": "On self turns, Effect Hit +15%, Effect Resistance +15%."
+          },
+          {
+            "id": "resistance_core",
+            "name": "Resistance Core",
+            "effect": "When ally removes a debuff, they gain 25% Status Effect Resistance for 2 turns."
+          },
+          {
+            "id": "breaking_shield_core",
+            "name": "Breaking Shield Core",
+            "effect": "When attacking a target with a Shield status, damage is increased by 12%."
+          }
+        ]
+      }
+    },
+    "consumables": {
+      "concentratePotion": {
+        "id": "concentrate_potion",
+        "name": "Concentrate Potion",
+        "description": "Potion to skip the battle in the Digital World."
+      }
+    },
+    "offLimits": {
+      "description": "Items to off-limit potential (increase potential caps).",
+      "potions": [
+        {
+          "id": "power_potion",
+          "name": "Power Potion",
+          "affects": "ATK"
+        },
+        {
+          "id": "constitution_potion",
+          "name": "Constitution Potion",
+          "affects": "HP"
+        },
+        {
+          "id": "toughness_potion",
+          "name": "Toughness Potion",
+          "affects": "DEF"
+        },
+        {
+          "id": "agility_potion",
+          "name": "Agility Potion",
+          "affects": "SPD"
+        }
+      ]
+    },
+    "progression": {
+      "sourceCodeMark": {
+        "id": "source_code_mark",
+        "name": "Source Code Mark",
+        "description": "To upgrade the mark of the Digimon."
+      },
+      "wondrousCrystal": {
+        "id": "wondrous_crystal",
+        "name": "Wondrous Crystal",
+        "description": "Maximize Individual Value (IV) with a maximum value of 31 points; also strengthens ATK, HP, DEF, and SPD."
+      }
+    }
+  }
 }
