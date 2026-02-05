@@ -83,7 +83,17 @@
 
   /* footer */
   footer{border-top:1px solid var(--ring);color:var(--muted);text-align:center;padding:30px 18px;margin-top:20px}
-  </style>
+  
+/* Normalize legacy 'panel-wrap' width in case it's used elsewhere */
+.panel-wrap{max-width:1400px;margin:0 auto 40px;padding:0 18px}
+.panel-wrap > .controls{width:100%;display:block}
+
+/* Make filters panel follow the same width rhythm as other section cards */
+#sec-filters .controls{background:transparent;border:0;box-shadow:none;padding:0}
+#sec-filters .search input{width:100%;font-size:16px;padding:16px 18px}
+#sec-filters .control-grid{margin-top:10px}
+
+</style>
 </head>
 <body>
   <!-- NAV -->
@@ -150,26 +160,31 @@
         </div>
       </div>
     </article>
-
-    <!-- FILTERS FOR SOUL STONE LISTING -->
-  <section class="wrap panel-wrap">
-    <div class="controls">
-      <div class="search">
-        <input id="q" placeholder="🔍 Cari Digimon atau Soul Stone… (mis. WarGreymon, Rare, Limited)" />
-      </div>
-      <div class="control-grid">
-        <select id="fltSS" aria-label="Filter Soul Stone Type">
-          <option value="">Semua Soul Stone</option>
-        </select>
-        <select id="fltFaction" aria-label="Filter Faction">
-          <option value="">Semua Faction</option>
-        </select>
-        <select id="fltType" aria-label="Filter Type">
-          <option value="">Semua Type</option>
-        </select>
+  <!-- FILTERS FOR SOUL STONE LISTING -->
+  <article class="section-card filters-card" id="sec-filters">
+    <div class="section-header">
+      <h2 class="section-title">🔎 Pencarian & Filter Soul Stones</h2>
+    </div>
+    <div class="section-body">
+      <div class="controls">
+        <div class="search">
+          <input id="q" placeholder="🔍 Cari Digimon atau Soul Stone… (mis. WarGreymon, Rare, Limited)" />
+        </div>
+        <div class="control-grid">
+          <select id="fltSS" aria-label="Filter Soul Stone Type">
+            <option value="">Semua Soul Stone</option>
+          </select>
+          <select id="fltFaction" aria-label="Filter Faction">
+            <option value="">Semua Faction</option>
+          </select>
+          <select id="fltType" aria-label="Filter Type">
+            <option value="">Semua Type</option>
+          </select>
+        </div>
       </div>
     </div>
-  </section>
+  </article>
+
 
     <!-- SOUL STONES FROM DIGI-DEX -->
     <article class="section-card" id="sec-ssdex">
