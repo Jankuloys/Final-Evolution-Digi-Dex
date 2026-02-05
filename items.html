@@ -77,6 +77,11 @@
 
   /* footer */
   footer{border-top:1px solid var(--ring);color:var(--muted);text-align:center;padding:30px 18px;margin-top:20px}
+  
+  /* make filter box same width & look as other articles */
+  .panel-wrap .controls{max-width:100%;}
+  .panel-wrap{margin-top:0;}
+
   </style>
 </head>
 <body>
@@ -146,15 +151,12 @@
     </article>
 
     <!-- FILTERS FOR SOUL STONE LISTING -->
-  <section class="panel">
+  <section class="wrap panel-wrap">
     <div class="controls">
       <div class="search">
         <input id="q" placeholder="🔍 Cari Digimon atau Soul Stone… (mis. WarGreymon, Rare, Limited)" />
       </div>
       <div class="control-grid">
-        <select id="fltStage" aria-label="Filter Stage">
-          <option value="">Semua Stage</option>
-        </select>
         <select id="fltSS" aria-label="Filter Soul Stone Type">
           <option value="">Semua Soul Stone</option>
         </select>
@@ -283,7 +285,7 @@
     const t = (type||'').toLowerCase();
     if(t.includes('rare')) return '#dca0ff';
     if(t.includes('common')) return '#8fd0ff';
-    if(t.includes('exclusive 1vs1')) return '#ff7a7a';
+    if(t.includes('exclusive 1vs1')) return '#ffd166';
     if(t.includes('exclusive guild')) return '#25d366';
     if(t.includes('exclusive arena')) return '#ffd166';
     if(t.includes('limited')) return '#ff6b6b';
@@ -307,8 +309,6 @@
       const items = REF.items || {};
 
       /* === Fill simple dropdowns === */
-      const stages = ['Child','Adult','Perfect','Ultimate','Ultimate+'];
-      stages.forEach(s=> $('#fltStage').insertAdjacentHTML('beforeend', `<option value="${s}">${s}</option>`));
       // Soul stone type options from reference tiers + from EVO scanning
       const ssSet = new Set((items.evolution?.soulStones?.tiers||[]).map(norm));
       EVO.forEach(d=>{ const t = norm(d?.soulStone?.type); if(t) ssSet.add(t); });
@@ -416,17 +416,15 @@
       /* === Filters for Soul Stones table === */
       function applySSFilter(){
         const q = ($('#q').value||'').toLowerCase().trim();
-        const st = $('#fltStage').value; const ss = $('#fltSS').value; const fa = $('#fltFaction').value; const ty = $('#fltType').value;
+        const ss = $('#fltSS').value; const fa = $('#fltFaction').value; const ty = $('#fltType').value;
         const rows = Array.from($('#tbl-ss tbody').rows);
         let shown = 0;
         rows.forEach(r=>{
           const name = r.cells[0].innerText.toLowerCase();
-          const stage = r.cells[1].innerText.trim();
           const fac = (r.cells[2].innerText||'').split(' ').pop().trim();
           const type = r.cells[3].innerText.trim();
           const sstype = r.cells[4].innerText.trim();
           const match = (!q || r.innerText.toLowerCase().includes(q)) &&
-                        (!st || stage===st) &&
                         (!ss || sstype===ss) &&
                         (!fa || fac===fa) &&
                         (!ty || type===ty);
@@ -435,8 +433,8 @@
         });
         $('#count-ss').textContent = `${shown} entri terdeteksi`;
       }
-      ['q','fltStage','fltSS','fltFaction','fltType'].forEach(id=> $('#'+id).addEventListener('input', applySSFilter));
-      ['fltStage','fltSS','fltFaction','fltType'].forEach(id=> $('#'+id).addEventListener('change', applySSFilter));
+      ['q','fltSS','fltFaction','fltType'].forEach(id=> $('#'+id).addEventListener('input', applySSFilter));
+      ['fltSS','fltFaction','fltType'].forEach(id=> $('#'+id).addEventListener('change', applySSFilter));
 
     }catch(err){
       console.error(err);
