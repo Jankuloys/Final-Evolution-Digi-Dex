@@ -285,6 +285,7 @@
       "soulStones": {
         "tiers": [
           "Common",
+          "Exclusive Guild",
           "Exclusive Arena",
           "Exclusive 1vs1 Arena",
           "Rare",
@@ -295,6 +296,7 @@
         "craftRule": "Collect 60 same Fragments to craft 1 Soul Stone.",
         "tiers": [
           "Common",
+          "Exclusive Guild",
           "Exclusive Arena",
           "Exclusive 1vs1 Arena",
           "Rare"
