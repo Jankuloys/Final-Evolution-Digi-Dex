@@ -384,7 +384,8 @@
         return tr;
       }
       const ssList = EVO.filter(d=> d.soulStone && (d.soulStone.type || d.soulStone.required));
-      ssList.forEach(d=> tbody.append(row(d)));
+      ssList.sort((a,b)=> (a.displayName||'').localeCompare(b.displayName||'', 'id', {sensitivity:'base'}));
+    ssList.forEach(d=> tbody.append(row(d)));
       $('#count-ss').textContent = `${ssList.length} entri terdeteksi`;
 
       /* === Core Code === */
