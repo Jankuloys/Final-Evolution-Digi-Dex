@@ -238,8 +238,8 @@
       <div class="section-body">
         
     <div class="mini-card">
-      <h4 class="mini-title" style="margin-top:0">Armament Types</h4>
-      <p class="mini-desc" id="arm-types-usage">Armament dibagi menjadi beberapa tipe (warna) dengan efek dasar. Tipe ini menempel pada nama equipment, contoh: <b>Martial Protection Loop</b> → Set: <i>Martial</i>, Tipe: <i>Protection</i>.</p>
+      <h4 class="mini-title" style="margin-top:0">Armament Types (4‑Piece)</h4>
+      <p class="mini-desc" id="arm-types-usage">Tipe armament hanya berlaku untuk 4‑Piece Sets dan menempel pada nama equipment. Contoh: <b>Martial Protection Loop</b> → Set: <i>Martial</i> (efek set), Tipe: <i>Protection</i> (efek tipe).</p>
       <div id="arm-types-chips" class="chips" style="margin-top:8px"></div>
     </div>
 
@@ -409,6 +409,30 @@
       const arm4 = items.weapons?.armaments?.sets4||[];
       const arm2 = items.weapons?.armaments?.sets2||[];
       const arm4Grid = $('#arm4-grid');
+
+  // Render Armament Types legend (4-piece only)
+  const typesLegend = (items.weapons?.armaments?.typesLegend && items.weapons.armaments.typesLegend.length)
+    ? items.weapons.armaments.typesLegend
+    : [
+        {name:'Protection', baseEffect:'Effect Resistance +12%', color:'#FFD54F'},
+        {name:'Determination', baseEffect:'Effect Hit Rate +12%', color:'#66BB6A'},
+        {name:'Assault', baseEffect:'Critical Damage +15%', color:'#AB47BC'},
+        {name:'Resolution', baseEffect:'Critical Rate +5%', color:'#8D6E63'},
+        {name:'Amulet', baseEffect:'DEF +15%', color:'#42A5F5'},
+        {name:'Judgment', baseEffect:'ATK +15%', color:'#FFA726'},
+        {name:'Blessing', baseEffect:'HP +15%', color:'#EC407A'}
+      ];
+  (function renderArmTypes(){
+    const box = document.getElementById('arm-types-chips');
+    if (!box) return; // only under 4-piece area
+    box.innerHTML = '';
+    typesLegend.forEach(t => {
+      const htmlChip = `${t.name} — <b>${t.baseEffect}</b>`;
+      box.append(chip(htmlChip, t.color || '#b9c6ff'));
+    });
+  })();
+
+
       arm4.forEach(s=>{
         const card = document.createElement('div'); card.className='mini-card';
         card.innerHTML = `<h4 class="mini-title">${s.name}</h4><p class="mini-desc">${s.effect}</p>`;
