@@ -269,7 +269,7 @@
         {
           "id": "event_ticket",
           "name": "Event Ticket",
-          "description": "To obtain up to Perfect stage Digimon and Rare Soul Stone.",
+          "description": "To obtain up to Perfect stage Digimon, Rare and Limited Soul Stone.",
           "obtainableStages": [
             "Child",
             "Adult",
