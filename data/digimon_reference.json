@@ -354,8 +354,8 @@
       "armaments": {
         "sets4": [
           {
-            "id": "ancient_protection_set",
-            "name": "Ancient Protection Set",
+            "id": "ancient_set",
+            "name": "Ancient Set",
             "altNames": [
               "Ancient"
             ],
@@ -363,8 +363,8 @@
             "effect": "After entering battle, maximum HP increases by 15%."
           },
           {
-            "id": "divine_corrosion_protection_set",
-            "name": "Divine Corrosion Protection Set",
+            "id": "divine_corrosion_set",
+            "name": "Divine Corrosion Set",
             "altNames": [
               "God Erosion Set"
             ],
@@ -372,8 +372,8 @@
             "effect": "At the start of each turn, gain 1 stack of [Aozhan] (damage increase 3%). Max 10 stacks."
           },
           {
-            "id": "time_space_protection_set",
-            "name": "Time-Space Protection Set",
+            "id": "time_space_set",
+            "name": "Time-Space Set",
             "altNames": [
               "Time Space"
             ],
@@ -381,8 +381,8 @@
             "effect": "10% chance to inflict Petrify on the target for 1 turn with each active attack."
           },
           {
-            "id": "martial_protection_set",
-            "name": "Martial Protection Set",
+            "id": "martial_set",
+            "name": "Martial Set",
             "altNames": [
               "Martial"
             ],
@@ -390,8 +390,8 @@
             "effect": "For every 100 Speed points, gain 0.4% Damage Increase (capped at 20%)."
           },
           {
-            "id": "izumi_protection_set",
-            "name": "Izumi Protection Set",
+            "id": "izumi_set",
+            "name": "Izumi Set",
             "altNames": [
               "Izumi"
             ],
@@ -399,8 +399,8 @@
             "effect": "For every 100 Speed points, gain 0.4% Damage Reduction (capped at 20%)."
           },
           {
-            "id": "destiny_protection_set",
-            "name": "Destiny Protection Set",
+            "id": "destiny_set",
+            "name": "Destiny Set",
             "altNames": [
               "Destiny"
             ],
@@ -408,8 +408,8 @@
             "effect": "After taking the first attack, gain a shield equal to 25% of maximum HP, lasting for 2 turns."
           },
           {
-            "id": "crescent_protection_set",
-            "name": "Crescent Protection Set",
+            "id": "crescent_set",
+            "name": "Crescent Set",
             "altNames": [
               "New Moon"
             ],
