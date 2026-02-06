@@ -360,7 +360,9 @@
               "Ancient"
             ],
             "pieces": 4,
-            "effect": "After entering battle, maximum HP increases by 15%."
+            "effect": "After entering battle, maximum HP increases by 15%.",
+            "type": null,
+            "set": "Ancient Set"
           },
           {
             "id": "divine_corrosion_set",
@@ -369,7 +371,9 @@
               "God Erosion Set"
             ],
             "pieces": 4,
-            "effect": "At the start of each turn, gain 1 stack of [Aozhan] (damage increase 3%). Max 10 stacks."
+            "effect": "At the start of each turn, gain 1 stack of [Aozhan] (damage increase 3%). Max 10 stacks.",
+            "type": null,
+            "set": "Divine Corrosion Set"
           },
           {
             "id": "time_space_set",
@@ -378,7 +382,9 @@
               "Time Space"
             ],
             "pieces": 4,
-            "effect": "10% chance to inflict Petrify on the target for 1 turn with each active attack."
+            "effect": "10% chance to inflict Petrify on the target for 1 turn with each active attack.",
+            "type": null,
+            "set": "Time-Space Set"
           },
           {
             "id": "martial_set",
@@ -387,7 +393,9 @@
               "Martial"
             ],
             "pieces": 4,
-            "effect": "For every 100 Speed points, gain 0.4% Damage Increase (capped at 20%)."
+            "effect": "For every 100 Speed points, gain 0.4% Damage Increase (capped at 20%).",
+            "type": null,
+            "set": "Martial Set"
           },
           {
             "id": "izumi_set",
@@ -396,7 +404,9 @@
               "Izumi"
             ],
             "pieces": 4,
-            "effect": "For every 100 Speed points, gain 0.4% Damage Reduction (capped at 20%)."
+            "effect": "For every 100 Speed points, gain 0.4% Damage Reduction (capped at 20%).",
+            "type": null,
+            "set": "Izumi Set"
           },
           {
             "id": "destiny_set",
@@ -405,7 +415,9 @@
               "Destiny"
             ],
             "pieces": 4,
-            "effect": "After taking the first attack, gain a shield equal to 25% of maximum HP, lasting for 2 turns."
+            "effect": "After taking the first attack, gain a shield equal to 25% of maximum HP, lasting for 2 turns.",
+            "type": null,
+            "set": "Destiny Set"
           },
           {
             "id": "crescent_set",
@@ -414,7 +426,9 @@
               "New Moon"
             ],
             "pieces": 4,
-            "effect": "10% chance to inflict Freeze on the target for 1 turn when taking direct damage."
+            "effect": "10% chance to inflict Freeze on the target for 1 turn when taking direct damage.",
+            "type": null,
+            "set": "Crescent Set"
           }
         ],
         "sets2": [
@@ -422,67 +436,168 @@
             "id": "dryad_set",
             "name": "Dryad Set",
             "pieces": 2,
-            "effect": "HP +12%"
+            "effect": "HP +12%",
+            "type": null,
+            "set": "Dryad Set"
           },
           {
             "id": "goblin_set",
             "name": "Goblin Set",
             "pieces": 2,
-            "effect": "ATK +12%"
+            "effect": "ATK +12%",
+            "type": null,
+            "set": "Goblin Set"
           },
           {
             "id": "guardian_set",
             "name": "Guardian Set",
             "pieces": 2,
-            "effect": "DEF +12%"
+            "effect": "DEF +12%",
+            "type": null,
+            "set": "Guardian Set"
           },
           {
             "id": "sea_spirit_set",
             "name": "Sea Spirit Set",
             "pieces": 2,
-            "effect": "DODGE / EVA +5%"
+            "effect": "DODGE / EVA +5%",
+            "type": null,
+            "set": "Sea Spirit Set"
           },
           {
             "id": "labi_set",
             "name": "Labi Set",
             "pieces": 2,
-            "effect": "CRITICAL HIT RATE +5%"
+            "effect": "CRITICAL HIT RATE +5%",
+            "type": null,
+            "set": "Labi Set"
           },
           {
             "id": "black_lion_set",
             "name": "Black Lion Set",
             "pieces": 2,
-            "effect": "CRITICAL RESISTANCE +5%"
+            "effect": "CRITICAL RESISTANCE +5%",
+            "type": null,
+            "set": "Black Lion Set"
           },
           {
             "id": "tinker_set",
             "name": "Tinker Set",
             "pieces": 2,
-            "effect": "CRITICAL DAMAGE +10%"
+            "effect": "CRITICAL DAMAGE +10%",
+            "type": null,
+            "set": "Tinker Set"
           },
           {
             "id": "garuga_set",
             "name": "Garuga Set",
             "pieces": 2,
-            "effect": "EFFECT HIT RATE +7%"
+            "effect": "EFFECT HIT RATE +7%",
+            "type": null,
+            "set": "Garuga Set"
           },
           {
             "id": "ankylosaurus_set",
             "name": "Ankylosaurus Set",
             "pieces": 2,
-            "effect": "EFFECT RESISTANCE +7%"
+            "effect": "EFFECT RESISTANCE +7%",
+            "type": null,
+            "set": "Ankylosaurus Set"
           },
           {
             "id": "rainbow_set",
             "name": "Rainbow Set",
             "pieces": 2,
-            "effect": "DAMAGE INCREASE / DAMAGE UP +7%"
+            "effect": "DAMAGE INCREASE / DAMAGE UP +7%",
+            "type": null,
+            "set": "Rainbow Set"
           },
           {
             "id": "helios_set",
             "name": "Helios Set",
             "pieces": 2,
-            "effect": "DAMAGE IMMUNITY +7%"
+            "effect": "DAMAGE IMMUNITY +7%",
+            "type": null,
+            "set": "Helios Set"
+          }
+        ],
+        "typesLegend": [
+          {
+            "id": "protection",
+            "color": "#FFD54F",
+            "chipColor": "#806A00",
+            "name": "Protection",
+            "baseEffect": "Effect Resistance +12%",
+            "keywords": [
+              "Protection"
+            ],
+            "description": "Tipe kuning yang menaikkan Status Effect Resistance sebesar 12%."
+          },
+          {
+            "id": "determination",
+            "color": "#66BB6A",
+            "chipColor": "#1B5E20",
+            "name": "Determination",
+            "baseEffect": "Effect Hit Rate +12%",
+            "keywords": [
+              "Determination"
+            ],
+            "description": "Tipe hijau yang menaikkan Effect Hit Rate sebesar 12%."
+          },
+          {
+            "id": "assault",
+            "color": "#AB47BC",
+            "chipColor": "#4A148C",
+            "name": "Assault",
+            "baseEffect": "Critical Damage +15%",
+            "keywords": [
+              "Assault"
+            ],
+            "description": "Tipe ungu yang menaikkan Critical Damage sebesar 15%."
+          },
+          {
+            "id": "resolution",
+            "color": "#8D6E63",
+            "chipColor": "#4E342E",
+            "name": "Resolution",
+            "baseEffect": "Critical Rate +5%",
+            "keywords": [
+              "Resolution"
+            ],
+            "description": "Tipe cokelat yang menaikkan Critical Hit Rate sebesar 5%."
+          },
+          {
+            "id": "amulet",
+            "color": "#42A5F5",
+            "chipColor": "#0D47A1",
+            "name": "Amulet",
+            "baseEffect": "DEF +15%",
+            "keywords": [
+              "Amulet"
+            ],
+            "description": "Tipe biru yang menaikkan DEF sebesar 15%."
+          },
+          {
+            "id": "judgment",
+            "color": "#FFA726",
+            "chipColor": "#E65100",
+            "name": "Judgment",
+            "baseEffect": "ATK +15%",
+            "keywords": [
+              "Judgment"
+            ],
+            "description": "Tipe oranye yang menaikkan ATK sebesar 15%."
+          },
+          {
+            "id": "blessing",
+            "color": "#EC407A",
+            "chipColor": "#AD1457",
+            "name": "Blessing",
+            "baseEffect": "HP +15%",
+            "keywords": [
+              "Blessing"
+            ],
+            "description": "Tipe pink yang menaikkan HP sebesar 15%."
           }
         ]
       },
