@@ -4,56 +4,84 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Final Evolution: Digi - Home</title>
-  <meta name="color-scheme" content="dark light">
+  <meta name="color-scheme" content="dark light" />
   <style>
+    /* ====== THEME TOKENS (fixed) ====== */
     :root{
-      .hero-image {
-  width: 100%;
-  max-width: 1400px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 20px; 
-  border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-}
-      --bg:#0b1020; --panel:#101735; --panel-2:#0d1330; --text:#e9ecf7; --muted:#9aa3c4;
-      --brand:#59a6ff; --accent:#ffd166; --chip:#1e2a54; --ring:#1b2547; --ok:#31d0aa; --warn:#ff7a7a;
+      --bg:#0b1020;
+      --panel:#101735;
+      --panel-2:#0d1330;
+      --text:#e9ecf7;
+      --muted:#9aa3c4;
+
+      --brand:#59a6ff;
+      --accent:#ffd166;
+      --chip:#1e2a54;
+      --ring:#1b2547;
+      --ok:#31d0aa;
+      --warn:#ff7a7a;
+
       --shadow: 0 10px 30px rgba(0,0,0,.35);
       --shadow-sm: 0 4px 12px rgba(0,0,0,.25);
       --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
+
     *{box-sizing:border-box}
-    html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,Segoe UI,Roboto,Inter,Arial}
+    html,body{
+      margin:0;height:100%;
+      background:var(--bg);color:var(--text);
+      font:16px/1.55 system-ui,Segoe UI,Roboto,Inter,Arial
+    }
     a{color:var(--brand);text-decoration:none}
     a:hover{text-decoration:underline}
 
-    /* NAVBAR */
-    .nav{position:sticky; top:0; z-index:50; background:linear-gradient(180deg,#0b1020,rgba(11,16,32,.72)); border-bottom:1px solid var(--ring); backdrop-filter: blur(10px);}
+    /* ====== NAVBAR ====== */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      background:linear-gradient(180deg,#0b1020,rgba(11,16,32,.72));
+      border-bottom:1px solid var(--ring);
+      backdrop-filter: blur(10px);
+    }
     .nav-inner{max-width:1400px;margin:auto;padding:12px 18px;display:flex;align-items:center;gap:16px}
     .brand{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.3px}
-    .brand .logo{width:28px;height:28px;border-radius:7px;background:
-      radial-gradient(120% 120% at 20% 20%, #5ac8ff 0%, #2441ff 38%, #0b1020 80%); box-shadow: 0 0 0 1px #2b3772 inset, 0 4px 16px rgba(36,65,255,.35);}
+    .brand .logo{
+      width:28px;height:28px;border-radius:7px;background:
+      radial-gradient(120% 120% at 20% 20%, #5ac8ff 0%, #2441ff 38%, #0b1020 80%);
+      box-shadow: 0 0 0 1px #2b3772 inset, 0 4px 16px rgba(36,65,255,.35);
+    }
     .nav a.navlink{color:var(--text);text-decoration:none;opacity:.9;transition:var(--transition);padding:8px 12px;border-radius:8px}
     .nav a.navlink:hover{opacity:1;color:#cfe0ff;background:rgba(42,61,134,.2)}
     .nav a.navlink.active{background:rgba(42,61,134,.3);color:#59a6ff}
 
-    /* HERO BANNER */
+    /* ====== HERO IMAGE (moved out of :root; valid) ====== */
+    .hero-image {
+      width: 100%;
+      max-width: 1400px;
+      height: auto;
+      display: block;
+      margin: 0 auto 20px;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    /* ====== HERO BANNER (patched: bg seragam, overlay dihapus) ====== */
     .hero-banner{
       max-width:1400px;margin:20px auto;padding:0 18px;text-align:center;
-      background:linear-gradient(135deg, rgba(89,166,255,.1), rgba(255,209,102,.05));
+      background:transparent;           /* mengikuti --bg sama seperti section lain */
       border-radius:20px;overflow:hidden;position:relative;
-      box-shadow:var(--shadow);
+      box-shadow:none;                   /* hindari seam/shadow edge */
     }
-    .hero-banner::before{
-      content:"";position:absolute;top:0;left:0;width:100%;height:100%;
-      background:radial-gradient(circle at 30% 50%, rgba(89,166,255,.15), transparent 70%);
-      z-index:-1;
-    }
+    /* overlay radial dihapus (penyebab banding pada beberapa GPU/browser) */
+    .hero-banner::before{ content:none; display:none; }
+
     .hero-content{
       max-width:900px;margin:auto;padding:60px 20px;
       position:relative;z-index:1;
+      /* Sentuhan lembut tanpa mengubah warna dasar halaman */
+      background: linear-gradient(180deg, rgba(16,23,53,0.00) 0%, rgba(16,23,53,0.12) 100%);
+      border-radius:16px;
     }
+
     .hero-content h1{
       margin:0 0 16px;font-size:clamp(36px,6vw,64px);
       background:linear-gradient(90deg,#59a6ff,#ffd166);
@@ -75,7 +103,7 @@
     }
     .hero-btn::before{content:"🎮 ";}
 
-    /* QUICK STATS */
+    /* ====== QUICK STATS ====== */
     .quick-stats{
       max-width:1400px;margin:30px auto;padding:0 18px;
       display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -89,21 +117,17 @@
       transform:translateY(-4px);border-color:#2a3d86;
       box-shadow:0 8px 20px rgba(0,0,0,.3);
     }
-    .stat-number{
-      font-size:32px;font-weight:800;color:#59a6ff;margin:0 0 8px;
-    }
-    .stat-label{
-      font-size:14px;color:var(--muted);margin:0;
-    }
+    .stat-number{font-size:32px;font-weight:800;color:#59a6ff;margin:0 0 8px;}
+    .stat-label{font-size:14px;color:var(--muted);margin:0;}
 
-    /* MAIN CONTENT GRID */
+    /* ====== MAIN CONTENT GRID ====== */
     .main-grid{
       max-width:1400px;margin:30px auto;padding:0 18px;
       display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
       gap:24px;
     }
 
-    /* SECTION CARD */
+    /* ====== SECTION CARD ====== */
     .section-card{
       background:var(--panel);border:1px solid var(--ring);border-radius:16px;
       box-shadow:var(--shadow);overflow:hidden;transition:var(--transition);
@@ -126,57 +150,37 @@
       display:flex;align-items:center;justify-content:center;
       font-weight:800;font-size:18px;
     }
-    .section-body{
-      padding:20px;
-    }
-    .section-description{
-      margin:0 0 20px;color:var(--muted);line-height:1.6;
-    }
-    .section-grid{
-      display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));
-      gap:12px;margin-top:16px;
-    }
+    .section-body{padding:20px;}
+    .section-description{margin:0 0 20px;color:var(--muted);line-height:1.6;}
+    .section-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;margin-top:16px;}
     .mini-card{
       background:var(--panel-2);border:1px solid var(--ring);border-radius:10px;
       padding:12px;text-align:center;transition:var(--transition);
       font-size:13px;
     }
-    .mini-card:hover{
-      border-color:#2a3d86;background:rgba(42,61,134,.2);
-      transform:translateY(-2px);
-    }
-    .mini-card-icon{
-      font-size:24px;margin-bottom:6px;display:block;
-    }
+    .mini-card:hover{border-color:#2a3d86;background:rgba(42,61,134,.2);transform:translateY(-2px);}
+    .mini-card-icon{font-size:24px;margin-bottom:6px;display:block;}
     .action-btn{
       display:inline-block;background:var(--brand);color:white;
       padding:10px 16px;border-radius:8px;font-weight:600;
       text-decoration:none;font-size:14px;transition:var(--transition);
       margin-top:12px;
     }
-    .action-btn:hover{
-      background:#4a96ff;transform:translateY(-2px);
-    }
+    .action-btn:hover{background:#4a96ff;transform:translateY(-2px);}
 
-    /* FOOTER */
+    /* ====== FOOTER ====== */
     footer{
       border-top:1px solid var(--ring);color:var(--muted);
       text-align:center;padding:30px 18px;margin-top:40px;
     }
-    .footer-links{
-      display:flex;justify-content:center;gap:24px;margin:16px 0;
-    }
+    .footer-links{display:flex;justify-content:center;gap:24px;margin:16px 0;}
     .footer-links a{
       color:var(--muted);text-decoration:none;
       transition:var(--transition);padding:6px 12px;
       border-radius:6px;
     }
-    .footer-links a:hover{
-      color:var(--brand);background:rgba(42,61,134,.2);
-    }
-    .disclaimer{
-      font-size:12px;color:#8e96b5;margin-top:12px;
-    }
+    .footer-links a:hover{color:var(--brand);background:rgba(42,61,134,.2);}
+    .disclaimer{font-size:12px;color:#8e96b5;margin-top:12px;}
 
     @media (max-width:768px){
       .main-grid{grid-template-columns:1fr;}
@@ -241,7 +245,6 @@
       </div>
       <div class="section-body">
         <p class="section-description">Essential game data to help you understand the core mechanics and characters.</p>
-        
         <div class="section-grid">
           <a href="#equipment" class="mini-card">
             <span class="mini-card-icon">🛡️</span>
@@ -260,7 +263,6 @@
             <strong>Adventure</strong>
           </a>
         </div>
-        
         <a href="#basic-info" class="action-btn">View All</a>
       </div>
     </div>
@@ -272,7 +274,6 @@
       </div>
       <div class="section-body">
         <p class="section-description">Optimize your team and create the perfect Digimon builds for any challenge.</p>
-        
         <div class="section-grid">
           <a href="./teamsetup.html" class="mini-card" style="text-decoration:none">
             <span class="mini-card-icon">👥</span>
@@ -291,7 +292,6 @@
             <strong>Stats Guide</strong>
           </a>
         </div>
-        
         <a href="#build-info" class="action-btn">View All</a>
       </div>
     </div>
@@ -303,13 +303,11 @@
       </div>
       <div class="section-body">
         <p class="section-description">Complete database of all Digimon with evolution lines, groups, and detailed information.</p>
-        
         <div style="display:grid;gap:12px;margin-top:20px">
           <div style="background:var(--panel-2);border:1px solid var(--ring);border-radius:10px;padding:16px">
             <div style="font-size:28px;font-weight:800;color:#59a6ff" id="digimon-count">Loading...</div>
             <div style="color:var(--muted);font-size:14px">Total Digimon</div>
           </div>
-          
           <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">
             <div class="stage-card" data-stage="Child" style="background:var(--chip);padding:10px;border-radius:8px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
               <div style="font-weight:700;font-size:18px" id="child-count">-</div>
@@ -333,7 +331,6 @@
             </div>
           </div>
         </div>
-        
         <a href="./digimon.html" class="action-btn" style="background:#ffd166;color:#0b1020;margin-top:20px;display:block;text-align:center">
           Open Digi‑Dex
         </a>
@@ -347,13 +344,11 @@
       </div>
       <div class="section-body">
         <p class="section-description">Meet the chosen children who partner with Digimon to protect both worlds.</p>
-        
         <div style="display:grid;gap:12px;margin-top:20px">
           <div style="background:var(--panel-2);border:1px solid var(--ring);border-radius:10px;padding:16px">
             <div style="font-size:28px;font-weight:800;color:#59a6ff" id="tamer-count">Loading...</div>
             <div style="color:var(--muted);font-size:14px">Total Tamers</div>
           </div>
-          
           <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">
             <a href="./tamers.html#taichi_yagami" class="mini-card" style="background:linear-gradient(135deg,#FF9800,#2441ff);text-decoration:none">
               <span class="mini-card-icon">🔥</span>
@@ -389,7 +384,6 @@
             </a>
           </div>
         </div>
-        
         <a href="./tamers.html" class="action-btn" style="background:#ffd166;color:#0b1020;margin-top:20px;display:block;text-align:center">
           View All Tamers
         </a>
@@ -403,14 +397,12 @@
       </div>
       <div class="section-body">
         <p class="section-description">Join our active community of Digimon enthusiasts and share your experiences.</p>
-        
         <div style="display:grid;gap:16px;margin-top:20px">
           <div style="background:var(--panel-2);border:1px solid var(--ring);border-radius:10px;padding:16px;text-align:center">
             <div style="font-size:24px;font-weight:700;color:#25d366">WhatsApp</div>
             <div style="color:var(--muted);font-size:14px;margin:8px 0">Join our group chat</div>
             <a href="https://chat.whatsapp.com/Fa28jqgueSs7aZCHh4332y" target="_blank" style="display:inline-block;background:#25d366;color:white;padding:10px 20px;border-radius:8px;font-weight:600;text-decoration:none;margin-top:8px">Join Group</a>
           </div>
-          
           <div style="background:linear-gradient(135deg,#59a6ff,#2441ff);border-radius:10px;padding:20px;text-align:center">
             <div style="font-size:20px;font-weight:700;margin-bottom:12px">Coming Soon</div>
             <div style="font-size:14px">Discord • Reddit • Social Media</div>
@@ -437,73 +429,58 @@
     </div>
   </footer>
 
-
   <script>
-  // Load Digimon & Tamers data to show stats
-  const DIGIMON_URL = 'data/digimon_evolution_lines.json';
-  const TAMERS_URL = 'data/tamers.json';
+    // Load Digimon & Tamers data to show stats
+    const DIGIMON_URL = 'data/digimon_evolution_lines.json';
+    const TAMERS_URL  = 'data/tamers.json';
 
-  async function loadStats(){
-    try{
-      const [digimonRes, tamerRes] = await Promise.all([
-        fetch(DIGIMON_URL, { cache:'no-store' }),
-        fetch(TAMERS_URL, { cache:'no-store' })
-      ]);
-      
-      if(!digimonRes.ok) throw new Error('Gagal memuat data Digimon');
-      if(!tamerRes.ok) throw new Error('Gagal memuat data Tamers');
-      
-      const digimonData = await digimonRes.json();
-      const tamerData = await tamerRes.json();
-      
-      // Count total digimon
-      document.getElementById('digimon-count').textContent = digimonData.length;
-      document.getElementById('stat-digimon').textContent = digimonData.length;
-      
-      // Count by stage
-      const stageCounts = {
-        'Child': 0,
-        'Adult': 0,
-        'Perfect': 0,
-        'Ultimate': 0,
-        'Ultimate+': 0
-      };
-      
-      digimonData.forEach(d => {
-        if(stageCounts[d.stage] !== undefined){
-          stageCounts[d.stage]++;
-        }
-      });
-      
-      document.getElementById('child-count').textContent = stageCounts.Child;
-      document.getElementById('adult-count').textContent = stageCounts.Adult;
-      document.getElementById('perfect-count').textContent = stageCounts.Perfect;
-      document.getElementById('ultimate-count').textContent = stageCounts.Ultimate;
-      document.getElementById('ultimate-plus-count').textContent = stageCounts['Ultimate+'];
-      
-      // Count total tamers
-      document.getElementById('tamer-count').textContent = tamerData.length;
-      document.getElementById('stat-tamers').textContent = tamerData.length;
-      
-      // Placeholder stats for other categories
-      document.getElementById('stat-items').textContent = '87';
-      document.getElementById('stat-materials').textContent = '45';
-      
-      // Add click handlers for stage cards
-      document.querySelectorAll('.stage-card').forEach(card => {
-        card.addEventListener('click', () => {
-          const stage = card.dataset.stage;
-          window.location.href = `./digimon.html#stage:${stage}`;
+    async function loadStats(){
+      try{
+        const [digimonRes, tamerRes] = await Promise.all([
+          fetch(DIGIMON_URL, { cache:'no-store' }),
+          fetch(TAMERS_URL,  { cache:'no-store' })
+        ]);
+        if(!digimonRes.ok) throw new Error('Gagal memuat data Digimon');
+        if(!tamerRes.ok)   throw new Error('Gagal memuat data Tamers');
+
+        const digimonData = await digimonRes.json();
+        const tamerData   = await tamerRes.json();
+
+        // Count total digimon
+        document.getElementById('digimon-count').textContent = digimonData.length;
+        document.getElementById('stat-digimon').textContent  = digimonData.length;
+
+        // Count by stage
+        const stageCounts = { 'Child':0, 'Adult':0, 'Perfect':0, 'Ultimate':0, 'Ultimate+':0 };
+        digimonData.forEach(d => { if(stageCounts[d.stage] !== undefined){ stageCounts[d.stage]++; } });
+
+        document.getElementById('child-count').textContent         = stageCounts.Child;
+        document.getElementById('adult-count').textContent         = stageCounts.Adult;
+        document.getElementById('perfect-count').textContent       = stageCounts.Perfect;
+        document.getElementById('ultimate-count').textContent      = stageCounts.Ultimate;
+        document.getElementById('ultimate-plus-count').textContent = stageCounts['Ultimate+'];
+
+        // Count total tamers
+        document.getElementById('tamer-count').textContent = tamerData.length;
+        document.getElementById('stat-tamers').textContent = tamerData.length;
+
+        // Placeholder stats for other categories
+        document.getElementById('stat-items').textContent     = '87';
+        document.getElementById('stat-materials').textContent = '45';
+
+        // Add click handlers for stage cards
+        document.querySelectorAll('.stage-card').forEach(card => {
+          card.addEventListener('click', () => {
+            const stage = card.dataset.stage;
+            window.location.href = `./digimon.html#stage:${stage}`;
+          });
         });
-      });
-      
-    }catch(e){
-      console.error('Error loading stats:', e);
+      }catch(e){
+        console.error('Error loading stats:', e);
+      }
     }
-  }
-
-  // Initialize
-  document.addEventListener('DOMContentLoaded', loadStats);
+    // Initialize
+    document.addEventListener('DOMContentLoaded', loadStats);
   </script>
 </body>
 </html>
