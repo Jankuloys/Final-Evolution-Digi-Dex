@@ -237,6 +237,14 @@
         <span id="traitsSummary">—</span>
       </div>
       <div class="meta" id="teamListChips"></div>
+<hr style="border-color:var(--ring);opacity:.6;margin:16px 0">
+
+<h3 style="margin:0 0 12px; color:#cfe0ff; font-size:20px">🔥 Rekomendasi Tim</h3>
+<div id="recTeamList" style="display:flex;flex-wrap:wrap;gap:8px 10px"></div>
+<div id="recSubsBox" style="margin-top:12px;color:#cfe0ff"></div>
+<div id="recTamerNote" style="margin-top:8px;color:#9aa3c4;font-size:13px" hidden>(Tamer dikunci sesuai rekomendasi)</div>
+<button class="btn" id="btnUnlockTamer" style="margin-top:10px" hidden>Lepas Kunci Tamer</button>
+
     </aside>
   </section>
   <!-- MODAL PICKER -->
@@ -299,7 +307,8 @@
     const JSON_TAMERS = 'data/tamers.json'; // name, skillName, givingBuffFor 
     const JSON_REF = 'data/digimon_reference.json'; // factions (code,color,icon), types (name,icon), traits (id,name,icon,...) 
     /* ====== STATE ====== */ 
-    let DB = []; let TAMERS = []; let REF = null; const TEAM = [null, null, null, null, null]; let activeIndex = 0; 
+    let DB = []; let TAMERS = []; let REF = null; const TEAM = [null, null, null, null, null]; let activeIndex = 0;
+ let LOCKED_TAMER = null; 
     const $ = (sel, root=document) => root.querySelector(sel); const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel)); 
     const norm = s => (s ?? '').toLowerCase().trim(); const byId = id => DB.find(x => norm(x.id) === norm(id)); 
     const factionIconName = code => { const f = REF?.factions?.find(x => x.code && x.code.trim() === (code ?? '').trim()); return f ? `${(f.icon ?? '')} ${(f.name ?? code)}`.trim() : (code ?? '-'); }; 
@@ -321,10 +330,106 @@
     function raceBonus(teamDigis){ const types = teamDigis.map(d => (d.types ?? [])[0]).filter(Boolean); const counts = {}; types.forEach(t => counts[t] = (counts[t] ?? 0)+1); const vals = Object.values(counts).sort((a,b)=>b-a); let atk=0, hp=0; if (vals[0] === 5){ atk=25; hp=25; } else if (vals[0] === 4){ atk=15; hp=15; } else if (vals[0] === 3){ if (vals[1] === 2) { atk=15; hp=15; } else { atk=10; hp=10; } } return { atk, hp, typeCounts: counts }; } 
     function mapTamersByFaction(){ const m = {}; (TAMERS ?? []).forEach(t => { const code = (t.givingBuffFor ?? '').trim(); if (!code) return; (m[code] = m[code] ?? []).push(t); }); return m; } 
     function recommendTamers(teamDigis){ const facCounts = {}; teamDigis.forEach(d => { const code = (d.factions ?? [])[0]; if (!code) return; facCounts[code] = (facCounts[code] ?? 0)+1; }); const entries = Object.entries(facCounts).sort((a,b)=> b[1]-a[1]); if (!entries.length) return { text: '—', summary: '—' }; const facChips = entries.map(([code,c]) => `<span class="chip">${factionIconName(code)} × ${c}</span>`).join(' '); const max = entries[0][1]; const out = []; if (max >= 3){ entries.forEach(([code,c]) => { if (c >= 3) out.push(code); }); const two = entries.find(([,c]) => c === 2); if (two) out.push(two[0]); } else if (max === 2){ entries.forEach(([code,c]) => { if (c === 2) out.push(code); }); } else { return { text: 'SILAHKAN SESUAIKAN KEMBALI', summary: facChips }; } const tMap = mapTamersByFaction(); const names = out.map(code => { const list = tMap[code] ?? []; if (!list.length) return factionIconName(code); return list.map(t => t.name).join(' & '); }); return { text: names.join(' & '), summary: facChips }; } 
-    function recalcSummaries(){ const teamDigis = TEAM.map(id => id ? byId(id) : null).filter(Boolean); const { typeCounts } = raceBonus(teamDigis); const typeChips = Object.entries(typeCounts).sort((a,b)=> b[1]-a[1]).map(([t,c]) => `<span class="chip">${typeIconName(t)} × ${c}</span>`).join(' '); $('#typeSummary').innerHTML = typeChips || '—'; const rb = raceBonus(teamDigis); $('#raceBonus').textContent = `ATK +${rb.atk}%, MAX HP +${rb.hp}%`; const rt = recommendTamers(teamDigis); $('#recTamer').textContent = rt.text || '—'; $('#factionSummary').innerHTML = rt.summary || '—'; const tCount = {}; teamDigis.forEach(d => (d.traits ?? []).forEach(t => tCount[t] = (tCount[t] ?? 0)+1)); const tChips = Object.entries(tCount).sort((a,b)=> b[1]-a[1]).map(([tid,c]) => { const tr = REF?.traits?.find(x => x.id.trim() === tid); return `<span class="chip" title="${tr?.description ?? ''}">${tr?.icon ?? '•'} ${tr?.name ?? tid} × ${c}</span>`; }).join(' '); $('#traitsSummary').innerHTML = tChips || '—'; } 
+    function recalcSummaries(){ const teamDigis = TEAM.map(id => id ? byId(id) : null).filter(Boolean); const { typeCounts } = raceBonus(teamDigis); const typeChips = Object.entries(typeCounts).sort((a,b)=> b[1]-a[1]).map(([t,c]) => `<span class="chip">${typeIconName(t)} × ${c}</span>`).join(' '); $('#typeSummary').innerHTML = typeChips || '—'; const rb = raceBonus(teamDigis); $('#raceBonus').textContent = `ATK +${rb.atk}%, MAX HP +${rb.hp}%`; if (LOCKED_TAMER) { const t = (TAMERS || []).find(x => x.id === LOCKED_TAMER); $('#recTamer').textContent = t?.name || LOCKED_TAMER; } else { const rt = recommendTamers(teamDigis); $('#recTamer').textContent = rt.text || '—'; $('#factionSummary').innerHTML = rt.summary || '—'; } const tCount = {}; teamDigis.forEach(d => (d.traits ?? []).forEach(t => tCount[t] = (tCount[t] ?? 0)+1)); const tChips = Object.entries(tCount).sort((a,b)=> b[1]-a[1]).map(([tid,c]) => { const tr = REF?.traits?.find(x => x.id.trim() === tid); return `<span class="chip" title="${tr?.description ?? ''}">${tr?.icon ?? '•'} ${tr?.name ?? tid} × ${c}</span>`; }).join(' '); $('#traitsSummary').innerHTML = tChips || '—'; } 
     (async function init(){ try{ const [resD, resT, resR] = await Promise.all([ fetch(JSON_DIGI, {cache:'no-store'}), fetch(JSON_TAMERS, {cache:'no-store'}), fetch(JSON_REF, {cache:'no-store'}).catch(()=>null) ]); if(!resD.ok) throw new Error('Gagal memuat data Digimon: ' + resD.status); if(!resT.ok) throw new Error('Gagal memuat data Tamers: ' + resT.status); const rawD = await resD.json(); const rawT = await resT.json(); let rawR = null; if (resR && resR.ok){ rawR = await resR.json(); } DB = rawD.map(d => ({ id:(d.id ?? '').trim(), displayName:(d.displayName ?? '').trim(), aliases:(d.aliases ?? []).map(a=>a.trim()), stage:(d.stage ?? '').trim(), types:(d.types ?? []).map(t=>t.trim()), factions:(d.factions ?? []).map(f=>f.trim()), traits:(d.traits ?? []).map(t=>t.trim()) })); TAMERS = (rawT ?? []).map(t => ({ id:(t.id ?? '').trim(), name:(t.name ?? '').trim(), aliases:(t.aliases ?? []).map(a=>a.trim()), skillName:(t.skillName ?? '').trim(), givingBuffFor:(t.givingBuffFor ?? '').trim() })); REF = rawR ? { factions:(rawR.factions ?? []).map(f=>({code:(f.code ?? '').trim(), name:(f.name ?? '').trim(), icon:(f.icon ?? '').trim(), color:(f.color ?? '').trim()})), types:(rawR.types ?? []).map(t=>({name:(t.name ?? '').trim(), icon:(t.icon ?? '').trim()})), traits:(rawR.traits ?? []).map(t=>({id:(t.id ?? '').trim(), name:(t.name ?? '').trim(), icon:(t.icon ?? '').trim(), description:(t.description ?? '').trim()})) } : null; fillFilters(); $$('.js-pick').forEach(btn => btn.addEventListener('click', (e)=>{ const slot = e.target.closest('.slot'); openPicker(Number(slot.dataset.index)); })); $$('.js-clear').forEach(btn => btn.addEventListener('click', (e)=>{ const slot = e.target.closest('.slot'); TEAM[Number(slot.dataset.index)] = null; renderTeamBoard(); renderPickResults(); })); $$('.slot .thumb').forEach(th => th.addEventListener('click', (e)=>{ const slot = e.currentTarget.closest('.slot'); openPicker(Number(slot.dataset.index)); })); $('#btnClose').addEventListener('click', closePicker); $('#pickSearch').addEventListener('input', renderPickResults); ['filterStage','filterFaction','filterType','filterTrait'].forEach(id => { $('#'+id).addEventListener('change', renderPickResults); }); $('#pickSearch').addEventListener('keydown', (e)=>{ if (e.key === 'Enter'){ const first = Array.from($('#pickResults').querySelectorAll('.name-pill')).find(a => !a.classList.contains('disabled')); if (first) { first.click(); e.preventDefault(); } } }); $('#pickResults').addEventListener('click', (e)=>{ const a = e.target.closest('.name-pill'); if(!a) return; e.preventDefault(); const id = a.dataset.pick; if (TEAM.includes(id)){ const idx = TEAM.indexOf(id); alert(`Digimon itu sudah dipilih di slot ${idx+1}. Hapus (Clear) dulu jika ingin memindahkan.`); return; } TEAM[activeIndex] = id; closePicker(); renderTeamBoard(); renderPickResults(); }); renderTeamBoard(); renderPickResults(); }catch(err){ console.error(err); document.body.insertAdjacentHTML('beforeend', `<p style="color:#ff9aa2; padding:16px; background:var(--panel-2); border-radius:12px; max-width:1200px; margin:10px auto;"> ❌ Error: ${err.message}<br/><small>Periksa console (F12) untuk detail error.</small> </p>`); } })();
     // Optional adjustment when keyboard opens on mobile
     (function enhanceMobileKeyboard(){ const pickSearch = document.getElementById('pickSearch'); const modal = document.querySelector('.modal'); if (!pickSearch || !modal) return; function adjust(){ modal.style.maxHeight = '82vh'; } function restore(){ modal.style.maxHeight = ''; } pickSearch.addEventListener('focus', adjust); pickSearch.addEventListener('blur', restore); })();
-  </script>
+  
+// ====== Rekomendasi Tim (Auto-pick + Force Tamer) ======
+const TEAM_RECS = [
+  {
+    name: "Tim Burn",
+    main: ["metalgreymon","shinegreymon","barbamon","marinangemon","parasimon"],
+    subs: ["kuzuhamon","blackmetalgarurumon"],
+    tamer: "taichi_yagami"
+  },
+  {
+    name: "Tim Virus Buster",
+    main: ["jesmon","ophanimon","seraphimon","magnamon","whitecherubimon"],
+    subs: ["venusmon","dynasmon"],
+    tamer: "takeru_takaishi"
+  },
+  {
+    name: "Tim Poison",
+    main: ["rosemon","lillithmon","parasimon","barbamon","babamon"],
+    subs: ["kuzuhamon","blackmetalgarurumon"],
+    tamer: "mimi_tachikawa"
+  },
+  {
+    name: "Tim Nightmare Soldier",
+    main: ["beelzemon","diablomon","marinangemon","blackcherubimon","raijinmon"],
+    subs: ["kuzuhamon","demon","sakuyamon"],
+    tamer: "hikari_yagami"
+  },
+  {
+    name: "Tim Deep Savers",
+    main: ["metalseadramon","plesiomon","leviamon","marinangemon","vikemon"],
+    subs: ["metalgarurumon","neptunemon"],
+    tamer: "jou_kido"
+  },
+  {
+    name: "Tim Metal Empire",
+    main: ["dukemon","blitzgreymon","herculeskabuterimon","magnamon","marinangemon"],
+    subs: ["raijinmon","mugendramon","kuzuhamon"],
+    tamer: "koushiro_izumi"
+  },
+  {
+    name: "Tim Counter Attack",
+    main: ["zanbamon","titamon","raijinmon","venusmon","dukemon"],
+    subs: ["saintgargomon","dynasmon","marinangemon"],
+    tamer: "koushiro_izumi"
+  }
+];
+
+function renderTeamRecs(){
+  const box = document.getElementById('recTeamList');
+  if (!box) return;
+  box.innerHTML = TEAM_RECS.map((rec,i)=>`<button class="chip click" data-recid="${i}" title="Klik untuk auto-isi tim">${rec.name}</button>`).join('');
+}
+
+function renderSubs(subIds){
+  const holder = document.getElementById('recSubsBox');
+  if (!holder) return;
+  if (!subIds || !subIds.length){ holder.innerHTML = ''; return; }
+  const chips = subIds.map(id => {
+    const d = DB.find(x=>x.id===id);
+    const label = d?.displayName || id;
+    return `<a class="chip" href="./digimon.html#${encodeURIComponent(id)}" title="Buka di Digi‑Dex">${label}</a>`;
+  }).join(' ');
+  holder.innerHTML = `<div style="display:flex;gap:8px;align-items:center"><b>Substitusi:</b> ${chips}</div>`;
+}
+
+function applyTeamRec(rec){
+  for (let i=0; i<5; ++i) TEAM[i] = rec.main[i] || null;
+  LOCKED_TAMER = rec.tamer; // force pick tamer rekomendasi
+  const note = document.getElementById('recTamerNote');
+  const btn = document.getElementById('btnUnlockTamer');
+  if (note) note.hidden = false;
+  if (btn) btn.hidden = false;
+  renderTeamBoard();
+  renderPickResults();
+  renderSubs(rec.subs);
+}
+
+document.getElementById('recTeamList')?.addEventListener('click', (e)=>{
+  const btn = e.target.closest('[data-recid]');
+  if (!btn) return;
+  const rec = TEAM_RECS[Number(btn.dataset.recid)];
+  if (rec) applyTeamRec(rec);
+});
+
+document.getElementById('btnUnlockTamer')?.addEventListener('click', ()=>{
+  LOCKED_TAMER = null;
+  const note = document.getElementById('recTamerNote');
+  const btn = document.getElementById('btnUnlockTamer');
+  if (note) note.hidden = true;
+  if (btn) btn.hidden = true;
+  renderTeamBoard(); // kembali ke rekomendasi tamer otomatis
+});
+
+// Render daftar rekomendasi saat halaman siap
+renderTeamRecs();
+
+</script>
 </body>
 </html>
