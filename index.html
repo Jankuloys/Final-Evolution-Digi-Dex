@@ -6,7 +6,7 @@
   <title>Final Evolution: Digi - Home</title>
   <meta name="color-scheme" content="dark light" />
   <style>
-    /* ====== THEME TOKENS (fixed) ====== */
+    /* ====== THEME TOKENS ====== */
     :root{
       --bg:#0b1020;
       --panel:#101735;
@@ -35,62 +35,78 @@
     a{color:var(--brand);text-decoration:none}
     a:hover{text-decoration:underline}
 
-    /* ====== NAVBAR ====== */
+    /* ====== NAVBAR (patched for mobile) ====== */
     .nav{
       position:sticky; top:0; z-index:50;
       background:linear-gradient(180deg,#0b1020,rgba(11,16,32,.72));
       border-bottom:1px solid var(--ring);
       backdrop-filter: blur(10px);
     }
-    .nav-inner{max-width:1400px;margin:auto;padding:12px 18px;display:flex;align-items:center;gap:16px}
+    .nav-inner{
+      max-width:1400px;margin:auto;padding:12px 18px;
+      display:flex;align-items:center;gap:16px;
+    }
     .brand{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.3px}
     .brand .logo{
       width:28px;height:28px;border-radius:7px;background:
       radial-gradient(120% 120% at 20% 20%, #5ac8ff 0%, #2441ff 38%, #0b1020 80%);
       box-shadow: 0 0 0 1px #2b3772 inset, 0 4px 16px rgba(36,65,255,.35);
     }
-    .nav a.navlink{color:var(--text);text-decoration:none;opacity:.9;transition:var(--transition);padding:8px 12px;border-radius:8px}
+
+    .spacer{flex:1;} /* NEW: dorong menu ke kanan & jaga fleksibilitas */
+
+    /* NEW: tombol hamburger */
+    .nav-toggle{
+      display:none; /* tampilkan hanya di mobile */
+      border:1px solid var(--ring);
+      background:var(--panel);
+      color:var(--text);
+      padding:8px 12px;
+      border-radius:8px;
+      cursor:pointer;
+    }
+
+    /* NEW: menu dibungkus agar bisa di-toggle */
+    .nav-menu{
+      display:flex;align-items:center;gap:8px;
+      list-style:none;margin:0;padding:0;
+    }
+    .nav-menu li{display:inline-flex}
+    .nav a.navlink{
+      color:var(--text);text-decoration:none;opacity:.9;
+      transition:var(--transition);padding:8px 12px;border-radius:8px;
+    }
     .nav a.navlink:hover{opacity:1;color:#cfe0ff;background:rgba(42,61,134,.2)}
     .nav a.navlink.active{background:rgba(42,61,134,.3);color:#59a6ff}
 
-    /* ====== HERO IMAGE (moved out of :root; valid) ====== */
-    .hero-image {
-      width: 100%;
-      max-width: 1400px;
-      height: auto;
-      display: block;
-      margin: 0 auto 20px;
-      border-radius: 8px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    /* ====== HERO IMAGE ====== */
+    .hero-image{
+      width:100%;max-width:1400px;height:auto;display:block;
+      margin:0 auto 20px;border-radius:8px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.25);
     }
 
-    /* ====== HERO BANNER (patched: bg seragam, overlay dihapus) ====== */
+    /* ====== HERO BANNER (banding fix) ====== */
     .hero-banner{
       max-width:1400px;margin:20px auto;padding:0 18px;text-align:center;
-      background:transparent;           /* mengikuti --bg sama seperti section lain */
+      background:transparent; /* seragam dgn section lain */
       border-radius:20px;overflow:hidden;position:relative;
-      box-shadow:none;                   /* hindari seam/shadow edge */
+      box-shadow:none;
     }
-    /* overlay radial dihapus (penyebab banding pada beberapa GPU/browser) */
-    .hero-banner::before{ content:none; display:none; }
-
+    .hero-banner::before{content:none;display:none;}
     .hero-content{
       max-width:900px;margin:auto;padding:60px 20px;
       position:relative;z-index:1;
-      /* Sentuhan lembut tanpa mengubah warna dasar halaman */
       background: linear-gradient(180deg, rgba(16,23,53,0.00) 0%, rgba(16,23,53,0.12) 100%);
       border-radius:16px;
     }
-
     .hero-content h1{
       margin:0 0 16px;font-size:clamp(36px,6vw,64px);
       background:linear-gradient(90deg,#59a6ff,#ffd166);
       -webkit-background-clip:text;background-clip:text;color:transparent;
       font-weight:800;line-height:1.2;
     }
-    .hero-content p{
-      margin:0 0 24px;color:var(--muted);font-size:18px;line-height:1.6;
-    }
+    .hero-content p{margin:0 0 24px;color:var(--muted);font-size:18px;line-height:1.6}
     .hero-btn{
       display:inline-flex;align-items:center;gap:10px;
       background:linear-gradient(135deg,#59a6ff,#2441ff);
@@ -98,9 +114,7 @@
       font-weight:700;font-size:16px;text-decoration:none;
       transition:var(--transition);box-shadow:0 6px 20px rgba(89,166,255,.4);
     }
-    .hero-btn:hover{
-      transform:translateY(-3px);box-shadow:0 8px 25px rgba(89,166,255,.55);
-    }
+    .hero-btn:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(89,166,255,.55)}
     .hero-btn::before{content:"🎮 ";}
 
     /* ====== QUICK STATS ====== */
@@ -113,12 +127,9 @@
       background:var(--panel);border:1px solid var(--ring);border-radius:12px;
       padding:20px;text-align:center;transition:var(--transition);
     }
-    .stat-card:hover{
-      transform:translateY(-4px);border-color:#2a3d86;
-      box-shadow:0 8px 20px rgba(0,0,0,.3);
-    }
-    .stat-number{font-size:32px;font-weight:800;color:#59a6ff;margin:0 0 8px;}
-    .stat-label{font-size:14px;color:var(--muted);margin:0;}
+    .stat-card:hover{transform:translateY(-4px);border-color:#2a3d86;box-shadow:0 8px 20px rgba(0,0,0,.3)}
+    .stat-number{font-size:32px;font-weight:800;color:#59a6ff;margin:0 0 8px}
+    .stat-label{font-size:14px;color:var(--muted);margin:0}
 
     /* ====== MAIN CONTENT GRID ====== */
     .main-grid{
@@ -132,57 +143,60 @@
       background:var(--panel);border:1px solid var(--ring);border-radius:16px;
       box-shadow:var(--shadow);overflow:hidden;transition:var(--transition);
     }
-    .section-card:hover{
-      transform:translateY(-6px);
-      box-shadow:0 15px 40px rgba(0,0,0,.45);
-      border-color:#2a3d86;
-    }
-    .section-header{
-      padding:20px;background:linear-gradient(135deg,var(--panel),#151e40);
-      border-bottom:2px solid var(--ring);
-    }
-    .section-header h2{
-      margin:0;font-size:24px;color:#cfe0ff;display:flex;align-items:center;gap:10px;
-    }
+    .section-card:hover{transform:translateY(-6px);box-shadow:0 15px 40px rgba(0,0,0,.45);border-color:#2a3d86}
+    .section-header{padding:20px;background:linear-gradient(135deg,var(--panel),#151e40);border-bottom:2px solid var(--ring)}
+    .section-header h2{margin:0;font-size:24px;color:#cfe0ff;display:flex;align-items:center;gap:10px}
     .section-icon{
       width:36px;height:36px;border-radius:8px;
       background:linear-gradient(135deg,#59a6ff,#2441ff);
-      display:flex;align-items:center;justify-content:center;
-      font-weight:800;font-size:18px;
+      display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;
     }
-    .section-body{padding:20px;}
-    .section-description{margin:0 0 20px;color:var(--muted);line-height:1.6;}
-    .section-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;margin-top:16px;}
+    .section-body{padding:20px}
+    .section-description{margin:0 0 20px;color:var(--muted);line-height:1.6}
+    .section-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;margin-top:16px}
     .mini-card{
       background:var(--panel-2);border:1px solid var(--ring);border-radius:10px;
-      padding:12px;text-align:center;transition:var(--transition);
-      font-size:13px;
+      padding:12px;text-align:center;transition:var(--transition);font-size:13px;
     }
-    .mini-card:hover{border-color:#2a3d86;background:rgba(42,61,134,.2);transform:translateY(-2px);}
-    .mini-card-icon{font-size:24px;margin-bottom:6px;display:block;}
+    .mini-card:hover{border-color:#2a3d86;background:rgba(42,61,134,.2);transform:translateY(-2px)}
+    .mini-card-icon{font-size:24px;margin-bottom:6px;display:block}
     .action-btn{
       display:inline-block;background:var(--brand);color:white;
-      padding:10px 16px;border-radius:8px;font-weight:600;
-      text-decoration:none;font-size:14px;transition:var(--transition);
-      margin-top:12px;
+      padding:10px 16px;border-radius:8px;font-weight:600;text-decoration:none;
+      font-size:14px;transition:var(--transition);margin-top:12px;
     }
-    .action-btn:hover{background:#4a96ff;transform:translateY(-2px);}
+    .action-btn:hover{background:#4a96ff;transform:translateY(-2px)}
 
     /* ====== FOOTER ====== */
-    footer{
-      border-top:1px solid var(--ring);color:var(--muted);
-      text-align:center;padding:30px 18px;margin-top:40px;
-    }
-    .footer-links{display:flex;justify-content:center;gap:24px;margin:16px 0;}
-    .footer-links a{
-      color:var(--muted);text-decoration:none;
-      transition:var(--transition);padding:6px 12px;
-      border-radius:6px;
-    }
-    .footer-links a:hover{color:var(--brand);background:rgba(42,61,134,.2);}
-    .disclaimer{font-size:12px;color:#8e96b5;margin-top:12px;}
+    footer{border-top:1px solid var(--ring);color:var(--muted);text-align:center;padding:30px 18px;margin-top:40px}
+    .footer-links{display:flex;justify-content:center;gap:24px;margin:16px 0}
+    .footer-links a{color:var(--muted);text-decoration:none;transition:var(--transition);padding:6px 12px;border-radius:6px}
+    .footer-links a:hover{color:var(--brand);background:rgba(42,61,134,.2)}
+    .disclaimer{font-size:12px;color:#8e96b5;margin-top:12px}
 
+    /* ====== RESPONSIVE ====== */
     @media (max-width:768px){
+      .nav-inner{gap:10px}
+      .nav-toggle{display:inline-flex;align-items:center;justify-content:center}
+      /* Menu collapsed by default on mobile */
+      .nav-menu{
+        display:none;
+        position:absolute;
+        left:0; right:0; top:100%;
+        margin:0; padding:8px 12px;
+        background:rgba(11,16,32,.96);
+        backdrop-filter: blur(10px);
+        border-bottom:1px solid var(--ring);
+        box-shadow: 0 10px 20px rgba(0,0,0,.45);
+        flex-direction:column; align-items:stretch; gap:6px;
+        max-height:70vh; overflow:auto;
+      }
+      .nav-menu[aria-expanded="true"],
+      .nav-menu.open{ /* JS akan menambahkan salah satu dari dua ini */
+        display:flex;
+      }
+      .nav-menu li{display:block}
+      .nav a.navlink{display:block;padding:10px 12px}
       .main-grid{grid-template-columns:1fr;}
       .quick-stats{grid-template-columns:repeat(2,1fr);}
       .hero-content h1{font-size:40px;}
@@ -197,22 +211,30 @@
         <div class="logo" aria-hidden="true"></div>
         <span>Final Evolution: <span style="color:#cfe0ff">Digi</span></span>
       </div>
+
       <div class="spacer"></div>
-      <a class="navlink active" href="./index.html">Home</a>
-      <a class="navlink" href="./digimon.html">Digi‑Dex</a>
-      <a class="navlink" href="./tamers.html">Tamers</a>
-      <a class="navlink" href="./about.html">About</a>
+
+      <!-- NEW: tombol hamburger untuk mobile -->
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="menu" aria-label="Buka menu">☰</button>
+
+      <!-- NEW: nav menu collapsible -->
+      <ul class="nav-menu" id="menu" aria-expanded="false">
+        <li>./index.htmlHome</a></li>
+        <li>./digimon.htmlDigi‑Dex</a></li>
+        <li>./tamers.htmlTamers</a></li>
+        <li>./about.htmlAbout</a></li>
+      </ul>
     </div>
   </nav>
 
   <!-- HERO BANNER -->
   <section class="hero-banner">
     <div class="hero-content">
-      <img src="images/header.jpg" alt="Final Evolution: Digi" class="hero-image">
+      images/header.jpg
       <h1>Welcome to Final Evolution: Digi</h1>
       <h1>Dex and Guide</h1>
       <p>The ultimate companion page for Digimon World Indonesia players. Track your Digimon, optimize your builds, and master every aspect of the game.</p>
-      <a href="./digimon.html" class="hero-btn">Explore Digi‑Dex</a>
+      ./digimon.htmlExplore Digi‑Dex</a>
     </div>
   </section>
 
@@ -246,24 +268,24 @@
       <div class="section-body">
         <p class="section-description">Essential game data to help you understand the core mechanics and characters.</p>
         <div class="section-grid">
-          <a href="#equipment" class="mini-card">
+          #equipment
             <span class="mini-card-icon">🛡️</span>
             <strong>Equipment</strong>
           </a>
-          <a href="#materials" class="mini-card">
+          #materials
             <span class="mini-card-icon">💎</span>
             <strong>Materials</strong>
           </a>
-          <a href="./items.html" class="mini-card" style="text-decoration:none">
+          ./items.html
             <span class="mini-card-icon">📦</span>
             <strong>Items</strong>
           </a>
-          <a href="#adventure" class="mini-card">
+          #adventure
             <span class="mini-card-icon">🗺️</span>
             <strong>Adventure</strong>
           </a>
         </div>
-        <a href="#basic-info" class="action-btn">View All</a>
+        #basic-infoView All</a>
       </div>
     </div>
 
@@ -275,24 +297,24 @@
       <div class="section-body">
         <p class="section-description">Optimize your team and create the perfect Digimon builds for any challenge.</p>
         <div class="section-grid">
-          <a href="./teamsetup.html" class="mini-card" style="text-decoration:none">
+          ./teamsetup.html
             <span class="mini-card-icon">👥</span>
             <strong>Team Setup</strong>
           </a>
-          <a href="#digimon-build" class="mini-card">
+          #digimon-build
             <span class="mini-card-icon">📈</span>
             <strong>Digimon Build</strong>
           </a>
-          <a href="#skills" class="mini-card">
+          #skills
             <span class="mini-card-icon">✨</span>
             <strong>Skills</strong>
           </a>
-          <a href="#stats" class="mini-card">
+          #stats
             <span class="mini-card-icon">📊</span>
             <strong>Stats Guide</strong>
           </a>
         </div>
-        <a href="#build-info" class="action-btn">View All</a>
+        #build-infoView All</a>
       </div>
     </div>
 
@@ -331,7 +353,7 @@
             </div>
           </div>
         </div>
-        <a href="./digimon.html" class="action-btn" style="background:#ffd166;color:#0b1020;margin-top:20px;display:block;text-align:center">
+        ./digimon.html
           Open Digi‑Dex
         </a>
       </div>
@@ -350,41 +372,41 @@
             <div style="color:var(--muted);font-size:14px">Total Tamers</div>
           </div>
           <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">
-            <a href="./tamers.html#taichi_yagami" class="mini-card" style="background:linear-gradient(135deg,#FF9800,#2441ff);text-decoration:none">
+            ./tamers.html#taichi_yagami
               <span class="mini-card-icon">🔥</span>
               <strong>Taichi</strong>
             </a>
-            <a href="./tamers.html#yamato_ishida" class="mini-card" style="background:linear-gradient(135deg,#4CAF50,#2441ff);text-decoration:none">
+            ./tamers.html#yamato_ishida
               <span class="mini-card-icon">🌲</span>
               <strong>Yamato</strong>
             </a>
-            <a href="./tamers.html#sora_takenouchi" class="mini-card" style="background:linear-gradient(135deg,#03A9F4,#2441ff);text-decoration:none">
+            ./tamers.html#sora_takenouchi
               <span class="mini-card-icon">🕊️</span>
               <strong>Sora</strong>
             </a>
-            <a href="./tamers.html#koushiro_izumi" class="mini-card" style="background:linear-gradient(135deg,#9E9E9E,#2441ff);text-decoration:none">
+            ./tamers.html#koushiro_izumi
               <span class="mini-card-icon">💻</span>
               <strong>Koushiro</strong>
             </a>
-            <a href="./tamers.html#mimi_tachikawa" class="mini-card" style="background:linear-gradient(135deg,#8BC34A,#2441ff);text-decoration:none">
+            ./tamers.html#mimi_tachikawa
               <span class="mini-card-icon">🌸</span>
               <strong>Mimi</strong>
             </a>
-            <a href="./tamers.html#jou_kido" class="mini-card" style="background:linear-gradient(135deg,#2196F3,#2441ff);text-decoration:none">
+            ./tamers.html#jou_kido
               <span class="mini-card-icon">🌊</span>
               <strong>Jou</strong>
             </a>
-            <a href="./tamers.html#takeru_takaishi" class="mini-card" style="background:linear-gradient(135deg,#FFC107,#2441ff);text-decoration:none">
+            ./tamers.html#takeru_takaishi
               <span class="mini-card-icon">✨</span>
               <strong>Takeru</strong>
             </a>
-            <a href="./tamers.html#hikari_yagami" class="mini-card" style="background:linear-gradient(135deg,#9C27B0,#2441ff);text-decoration:none">
+            ./tamers.html#hikari_yagami
               <span class="mini-card-icon">🌙</span>
               <strong>Hikari</strong>
             </a>
           </div>
         </div>
-        <a href="./tamers.html" class="action-btn" style="background:#ffd166;color:#0b1020;margin-top:20px;display:block;text-align:center">
+        ./tamers.html
           View All Tamers
         </a>
       </div>
@@ -401,7 +423,7 @@
           <div style="background:var(--panel-2);border:1px solid var(--ring);border-radius:10px;padding:16px;text-align:center">
             <div style="font-size:24px;font-weight:700;color:#25d366">WhatsApp</div>
             <div style="color:var(--muted);font-size:14px;margin:8px 0">Join our group chat</div>
-            <a href="https://chat.whatsapp.com/Fa28jqgueSs7aZCHh4332y" target="_blank" style="display:inline-block;background:#25d366;color:white;padding:10px 20px;border-radius:8px;font-weight:600;text-decoration:none;margin-top:8px">Join Group</a>
+            https://chat.whatsapp.com/Fa28jqgueSs7aZCHh4332yJoin Group</a>
           </div>
           <div style="background:linear-gradient(135deg,#59a6ff,#2441ff);border-radius:10px;padding:20px;text-align:center">
             <div style="font-size:20px;font-weight:700;margin-bottom:12px">Coming Soon</div>
@@ -416,11 +438,11 @@
   <footer>
     <div style="font-size:18px;font-weight:700">Final Evolution: Digi</div>
     <div class="footer-links">
-      <a href="./index.html">Home</a>
-      <a href="./digimon.html">Digi‑Dex</a>
-      <a href="./tamers.html">Tamers</a>
-      <a href="./about.html">About</a>
-      <a href="https://chat.whatsapp.com/Fa28jqgueSs7aZCHh4332y" target="_blank">WhatsApp</a>
+      ./index.htmlHome</a>
+      ./digimon.htmlDigi‑Dex</a>
+      ./tamers.htmlTamers</a>
+      ./about.htmlAbout</a>
+      https://chat.whatsapp.com/Fa28jqgueSs7aZCHh4332yWhatsApp</a>
     </div>
     <div class="disclaimer">
       Digimon and all related characters are trademarks of Bandai Namco Holdings Inc.<br>
@@ -430,7 +452,17 @@
   </footer>
 
   <script>
-    // Load Digimon & Tamers data to show stats
+    /* ====== NAV MENU TOGGLE (mobile) ====== */
+    const toggleBtn = document.getElementById('navToggle');
+    const menu = document.getElementById('menu');
+    toggleBtn?.addEventListener('click', () => {
+      const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+      toggleBtn.setAttribute('aria-expanded', (!expanded).toString());
+      menu.setAttribute('aria-expanded', (!expanded).toString());
+      menu.classList.toggle('open', !expanded);
+    });
+
+    // ====== Stats loader (dari file kamu) ======
     const DIGIMON_URL = 'data/digimon_evolution_lines.json';
     const TAMERS_URL  = 'data/tamers.json';
 
@@ -446,11 +478,9 @@
         const digimonData = await digimonRes.json();
         const tamerData   = await tamerRes.json();
 
-        // Count total digimon
         document.getElementById('digimon-count').textContent = digimonData.length;
         document.getElementById('stat-digimon').textContent  = digimonData.length;
 
-        // Count by stage
         const stageCounts = { 'Child':0, 'Adult':0, 'Perfect':0, 'Ultimate':0, 'Ultimate+':0 };
         digimonData.forEach(d => { if(stageCounts[d.stage] !== undefined){ stageCounts[d.stage]++; } });
 
@@ -460,15 +490,12 @@
         document.getElementById('ultimate-count').textContent      = stageCounts.Ultimate;
         document.getElementById('ultimate-plus-count').textContent = stageCounts['Ultimate+'];
 
-        // Count total tamers
         document.getElementById('tamer-count').textContent = tamerData.length;
         document.getElementById('stat-tamers').textContent = tamerData.length;
 
-        // Placeholder stats for other categories
         document.getElementById('stat-items').textContent     = '87';
         document.getElementById('stat-materials').textContent = '45';
 
-        // Add click handlers for stage cards
         document.querySelectorAll('.stage-card').forEach(card => {
           card.addEventListener('click', () => {
             const stage = card.dataset.stage;
@@ -479,7 +506,6 @@
         console.error('Error loading stats:', e);
       }
     }
-    // Initialize
     document.addEventListener('DOMContentLoaded', loadStats);
   </script>
 </body>
