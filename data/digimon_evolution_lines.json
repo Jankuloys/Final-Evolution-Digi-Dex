@@ -6002,7 +6002,11 @@
     "soulStone": {
       "required": "Monarch Beast X",
       "type": "Limited"
-    }
+    },
+    "traits": [
+      "aoe",
+      "bruiser"
+    ]
   },
   {
     "id": "gracenovamon",
@@ -6024,7 +6028,11 @@
     "soulStone": {
       "required": "GraceNovamon",
       "type": "Limited"
-    }
+    },
+    "traits": [
+      "aoe",
+      "dps"
+    ]
   },
   {
     "id": "lillithmon-x",
@@ -6047,7 +6055,14 @@
     "soulStone": {
       "required": "Lilith Beast X",
       "type": "Limited"
-    }
+    },
+    "traits": [
+      "buff",
+      "buff_breaker",
+      "control",
+      "poison",
+      "support"
+    ]
   },
   {
     "id": "magnamon-x",
@@ -6070,7 +6085,13 @@
     "soulStone": {
       "required": "Golden Dragon Beast X",
       "type": "Limited"
-    }
+    },
+    "traits": [
+      "buff",
+      "buff_breaker",
+      "single_target",
+      "tank"
+    ]
   },
   {
     "id": "omegamon",
@@ -6096,7 +6117,12 @@
     "soulStone": {
       "required": "Omegamon",
       "type": "Limited"
-    }
+    },
+    "traits": [
+      "aoe",
+      "control",
+      "dps"
+    ]
   },
   {
     "id": "rosemon-burst-mode",
@@ -6119,7 +6145,14 @@
     "soulStone": {
       "required": "Rose Beast BM",
       "type": "Limited"
-    }
+    },
+    "traits": [
+      "buff_breaker",
+      "control",
+      "debuff",
+      "poison",
+      "support"
+    ]
   },
   {
     "id": "wargreymon-x",
@@ -6140,6 +6173,11 @@
     "soulStone": {
       "required": "WarGreymon X",
       "type": "Limited"
-    }
+    },
+    "traits": [
+      "aoe",
+      "burn",
+      "dps"
+    ]
   }
 ]
