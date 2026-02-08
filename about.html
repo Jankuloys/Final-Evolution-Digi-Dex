@@ -3,102 +3,85 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About • Final Evolution: Digi‑Dex</title>
+  <title>About • Final Evolution: Digi</title>
   <meta name="color-scheme" content="dark light">
   <style>
     :root{
       --bg:#0b1020; --panel:#101735; --panel-2:#0d1330; --text:#e9ecf7; --muted:#9aa3c4;
       --brand:#59a6ff; --accent:#ffd166; --chip:#1e2a54; --ring:#1b2547; --ok:#31d0aa; --warn:#ff7a7a;
       --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --transition: all .3s cubic-bezier(.4,0,.2,1);
     }
     *{box-sizing:border-box}
     html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,Segoe UI,Roboto,Inter,Arial}
     a{color:var(--brand);text-decoration:none}
     a:hover{text-decoration:underline}
 
-    /* NAVBAR */
-    .nav{position:sticky; top:0; z-index:50; background:linear-gradient(180deg,#0b1020,rgba(11,16,32,.72)); border-bottom:1px solid var(--ring); backdrop-filter: blur(10px);}
-    .nav-inner{max-width:1200px;margin:auto;padding:12px 18px;display:flex;align-items:center;gap:16px}
+    /* ===== NAVBAR (burger + blur) ===== */
+    .nav{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,#0b1020,rgba(11,16,32,.72));border-bottom:1px solid var(--ring);backdrop-filter:blur(10px)}
+    .nav-inner{max-width:1200px;margin:auto;padding:12px 18px;display:flex;align-items:center;gap:16px;position:relative}
     .brand{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.3px}
-    .brand .logo{width:28px;height:28px;border-radius:7px;background:
-      radial-gradient(120% 120% at 20% 20%, #5ac8ff 0%, #2441ff 38%, #0b1020 80%); box-shadow: 0 0 0 1px #2b3772 inset, 0 4px 16px rgba(36,65,255,.35);}
-    .nav a.navlink{color:var(--text);text-decoration:none;opacity:.9}
-    .nav a.navlink:hover{opacity:1;color:#cfe0ff}
+    .brand .logo{width:28px;height:28px;border-radius:7px;background:radial-gradient(120% 120% at 20% 20%, #5ac8ff 0%, #2441ff 38%, #0b1020 80%);box-shadow:0 0 0 1px #2b3772 inset, 0 4px 16px rgba(36,65,255,.35)}
     .spacer{flex:1}
 
-    /* HERO */
+    .nav-toggle{display:none;border:1px solid var(--ring);background:var(--panel);color:var(--text);padding:8px 12px;border-radius:8px;cursor:pointer}
+    .nav-menu{display:flex;align-items:center;gap:8px;list-style:none;margin:0;padding:0}
+    .nav-menu li{display:inline-flex}
+    .nav a.navlink{color:var(--text);opacity:.9;transition:var(--transition);padding:8px 12px;border-radius:8px;text-decoration:none}
+    .nav a.navlink:hover{opacity:1;color:#cfe0ff;background:rgba(42,61,134,.2)}
+    .nav a.navlink.active{background:rgba(42,61,134,.3);color:#59a6ff}
+
+    /* ===== HERO ===== */
     .hero{max-width:1200px;margin:20px auto 8px;padding:0 18px;text-align:center}
     .hero h1{margin:6px 0 6px;font-size:clamp(28px,5vw,48px);background:linear-gradient(90deg,#59a6ff,#ffd166);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
     .hero p{margin:0;color:var(--muted);font-size:18px}
 
-    /* MAIN CONTENT */
+    /* ===== MAIN ===== */
     .main{max-width:1200px;margin:30px auto;padding:0 18px}
     .about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-bottom:40px}
-    .about-card{
-      background:var(--panel);border:1px solid var(--ring);border-radius:16px;box-shadow:var(--shadow);
-      padding:24px;transition:transform .3s ease,border-color .3s
-    }
+    .about-card{background:var(--panel);border:1px solid var(--ring);border-radius:16px;box-shadow:var(--shadow);padding:24px;transition:transform .3s ease,border-color .3s}
     .about-card:hover{transform:translateY(-4px);border-color:#2a3d86}
-
-    .about-card h3{
-      margin:0 0 12px;font-size:22px;color:#cfe0ff;display:flex;align-items:center;gap:8px
-    }
-    .about-card h3::before{
-      content:"";width:4px;height:24px;background:var(--brand);border-radius:2px
-    }
+    .about-card h3{margin:0 0 12px;font-size:22px;color:#cfe0ff;display:flex;align-items:center;gap:8px}
+    .about-card h3::before{content:"";width:4px;height:24px;background:var(--brand);border-radius:2px}
     .about-card p{margin:0 0 12px;line-height:1.6}
     .about-card ul{margin:12px 0 0;padding-left:20px}
     .about-card li{margin:6px 0;color:var(--muted)}
 
-    /* WHATSAPP SECTION */
-    .whatsapp-section{
-      background:linear-gradient(135deg,var(--panel),#151e40);border:1px solid var(--ring);
-      border-radius:16px;box-shadow:var(--shadow);padding:32px;text-align:center;
-      max-width:800px;margin:40px auto
-    }
-    .whatsapp-section h2{
-      margin:0 0 16px;font-size:28px;color:#cfe0ff;display:flex;align-items:center;justify-content:center;gap:12px
-    }
-    .whatsapp-icon{
-      width:40px;height:40px;background:#25d366;border-radius:50%;display:flex;align-items:center;
-      justify-content:center;font-weight:800;font-size:20px
-    }
+    /* ===== WHATSAPP SECTION ===== */
+    .whatsapp-section{background:linear-gradient(135deg,var(--panel),#151e40);border:1px solid var(--ring);border-radius:16px;box-shadow:var(--shadow);padding:28px;text-align:center;max-width:800px;margin:40px auto}
+    .whatsapp-section h2{margin:0 0 16px;font-size:28px;color:#cfe0ff;display:flex;align-items:center;justify-content:center;gap:12px}
+    .whatsapp-icon{width:40px;height:40px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px}
     .whatsapp-section p{margin:0 0 20px;color:var(--muted);font-size:16px}
-    .whatsapp-btn{
-      display:inline-block;background:#25d366;color:white;padding:14px 32px;
-      border-radius:12px;font-weight:700;font-size:16px;text-decoration:none;
-      transition:all .3s ease;box-shadow:0 4px 16px rgba(37,211,102,.3)
-    }
-    .whatsapp-btn:hover{
-      transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,211,102,.45);background:#128c7e
-    }
+    .whatsapp-btn{display:inline-block;background:#25d366;color:white;padding:14px 32px;border-radius:12px;font-weight:700;font-size:16px;text-decoration:none;transition:all .3s ease;box-shadow:0 4px 16px rgba(37,211,102,.3)}
+    .whatsapp-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,211,102,.45);background:#128c7e}
     .whatsapp-btn::before{content:"💬 ";margin-right:8px}
 
-    /* TEAM SECTION */
+    /* ===== TEAM ===== */
     .team-section{max-width:1200px;margin:40px auto;padding:0 18px}
     .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
-    .team-member{
-      background:var(--panel-2);border:1px solid var(--ring);border-radius:16px;
-      padding:24px;text-align:center
-    }
-    .team-avatar{
-      width:100px;height:100px;margin:0 auto 16px;border-radius:50%;
-      background:linear-gradient(135deg,#59a6ff,#2441ff);display:flex;align-items:center;
-      justify-content:center;font-size:42px;font-weight:800;color:white
-    }
+    .team-member{background:var(--panel-2);border:1px solid var(--ring);border-radius:16px;padding:24px;text-align:center}
+    .team-avatar{width:100px;height:100px;margin:0 auto 16px;border-radius:50%;background:linear-gradient(135deg,#59a6ff,#2441ff);display:flex;align-items:center;justify-content:center;font-size:42px;font-weight:800;color:white}
     .team-member h3{margin:0 0 6px;font-size:20px;color:#cfe0ff}
     .team-member p{margin:0;color:var(--muted);font-size:14px}
 
-    /* FOOTER */
-    footer{border-top:1px solid var(--ring);color:var(--muted);text-align:center;padding:24px 18px;margin-top:40px}
-    .footer-links{display:flex;justify-content:center;gap:24px;margin:12px 0}
-    .footer-links a{color:var(--muted);text-decoration:none;transition:color .3s}
-    .footer-links a:hover{color:var(--brand)}
+    /* ===== FOOTER ===== */
+    footer{border-top:1px solid var(--ring);color:var(--muted);text-align:center;padding:30px 18px;margin-top:40px}
+    .footer-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px 18px;margin:16px 0 8px}
+    .footer-links a{color:var(--muted);text-decoration:none;transition:var(--transition);padding:8px 14px;border-radius:8px}
+    .footer-links a:hover{color:var(--brand);background:rgba(42,61,134,.2)}
     .disclaimer{font-size:12px;color:#8e96b5;margin-top:12px}
 
+    /* ===== RESPONSIVE ===== */
     @media (max-width:768px){
+      .nav-toggle{display:inline-flex;align-items:center;justify-content:center}
+      .nav-menu{display:none;position:absolute;left:0;right:0;top:100%;margin:0;padding:8px 12px 12px;background:rgba(11,16,32,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--ring);box-shadow:0 10px 20px rgba(0,0,0,.45);flex-direction:column;align-items:stretch;gap:6px;max-height:70vh;overflow:auto}
+      .nav-menu.open{display:flex}
+      .nav-menu li{display:block}
+      .nav a.navlink{display:block;padding:12px 12px}
+
       .about-grid,.team-grid{grid-template-columns:1fr}
       .hero h1{font-size:32px}
+      .whatsapp-btn{display:block;max-width:320px;margin:0 auto}
     }
   </style>
 </head>
@@ -108,18 +91,23 @@
     <div class="nav-inner">
       <div class="brand">
         <div class="logo" aria-hidden="true"></div>
-        <span>Final Evolution: <span style="color:#cfe0ff">Digi‑Dex</span></span>
+        <span>Final Evolution: <span style="color:#cfe0ff">Digi</span></span>
       </div>
       <div class="spacer"></div>
-      <a class="navlink" href="./index.html">Home</a>
-      <a class="navlink" href="./digimon.html">Digi‑Dex</a>
-      <a class="navlink" href="./about.html">About</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="menu" aria-label="Buka menu">☰</button>
+      <ul class="nav-menu" id="menu" aria-expanded="false">
+        <li><a class="navlink" href="./index.html">Home</a></li>
+        <li><a class="navlink" href="./digimon.html">Digi‑Dex</a></li>
+        <li><a class="navlink" href="./items.html">Items</a></li>
+        <li><a class="navlink" href="./tamers.html">Tamers</a></li>
+        <li><a class="navlink active" href="./about.html">About</a></li>
+      </ul>
     </div>
   </nav>
 
   <!-- HERO -->
   <header class="hero">
-    <h1>About Final Evolution: Digi‑Dex</h1>
+    <h1>About Final Evolution: Digi</h1>
     <p>The Ultimate Final Evolution: Digi Database for Indonesian Fans</p>
   </header>
 
@@ -132,7 +120,6 @@
         <p><strong>Final Evolution: Digi‑Dex</strong> adalah database evolusi Digimon di game Final Evolution: Digi yang komprehensif dan user-friendly, dirancang khusus untuk komunitas Digimon Indonesia.</p>
         <p>Kami bertujuan untuk menjadi sumber referensi utama bagi para Tamer dalam memahami jalur evolusi, stage, dan build.</p>
       </div>
-
       <div class="about-card">
         <h3>Features</h3>
         <ul>
@@ -143,7 +130,6 @@
           <li>⚡ Fast & lightweight (pure HTML/CSS/JS)</li>
         </ul>
       </div>
-
       <div class="about-card">
         <h3>Tech Stack</h3>
         <ul>
@@ -158,12 +144,9 @@
 
     <!-- WhatsApp Community -->
     <section class="whatsapp-section">
-      <h2>
-        <span class="whatsapp-icon">📱</span>
-        Join Our Community
-      </h2>
+      <h2><span class="whatsapp-icon">📱</span>Join Our Community</h2>
       <p>Bergabunglah dengan komunitas Digimon World Indonesia kami di WhatsApp! Diskusi, sharing info, dan dapatkan update terbaru tentang Final Evolution: Digi.</p>
-      <a href="https://chat.whatsapp.com/Fa28jqgueSs7aZCHh4332y" class="whatsapp-btn" target="_blank">Join WhatsApp Group</a>
+      <a href="https://chat.whatsapp.com/Fa28jqgueSs7aZCHh4332y" class="whatsapp-btn" target="_blank" rel="noopener">Join WhatsApp Group</a>
       <p style="margin-top:12px;font-size:13px;color:var(--muted)">Grup aktif • No spam • Friendly community</p>
     </section>
 
@@ -185,7 +168,7 @@
       <div class="about-card">
         <h3>Roadmap</h3>
         <ul>
-          <li>✅ Basic Dex with evolution lines</li>
+          <li>✅ Basic Dex dengan evolution lines</li>
           <li>✅ Group filtering system</li>
           <li>⏳ Image gallery integration</li>
           <li>⏳ Advanced search & filters</li>
@@ -193,7 +176,6 @@
           <li>⏳ User contributions & submissions</li>
         </ul>
       </div>
-
       <div class="about-card">
         <h3>Contribute</h3>
         <p>Kami terbuka untuk kontribusi dari komunitas! Jika kamu ingin membantu:</p>
@@ -204,7 +186,6 @@
           <li>💬 Berpartisipasi di grup WhatsApp</li>
         </ul>
       </div>
-
       <div class="about-card">
         <h3>Contact</h3>
         <p><strong>Project:</strong> Final Evolution: Digi‑Dex</p>
@@ -215,15 +196,15 @@
     </div>
   </main>
 
-   <!-- FOOTER -->
+  <!-- FOOTER -->
   <footer>
     <div style="font-size:18px;font-weight:700">Final Evolution: Digi</div>
     <div class="footer-links">
       <a href="./index.html">Home</a>
       <a href="./digimon.html">Digi‑Dex</a>
+      <a href="./items.html">Items</a>
       <a href="./tamers.html">Tamers</a>
       <a href="./about.html">About</a>
-      <a href="https://chat.whatsapp.com/Fa28jqgueSs7aZCHh4332y" target="_blank">WhatsApp</a>
     </div>
     <div class="disclaimer">
       Digimon and all related characters are trademarks of Bandai Namco Holdings Inc.<br>
@@ -231,5 +212,18 @@
       © 2026 Final Evolution: Digi • On Progress by Joe • Supported by Digimon World Indonesia
     </div>
   </footer>
+
+  <script>
+    // Burger nav toggle + auto-close
+    const toggleBtn = document.getElementById('navToggle');
+    const menu = document.getElementById('menu');
+    function isOpen(){return menu?.classList.contains('open');}
+    function openMenu(){menu?.classList.add('open');toggleBtn?.setAttribute('aria-expanded','true');}
+    function closeMenu(){menu?.classList.remove('open');toggleBtn?.setAttribute('aria-expanded','false');}
+    toggleBtn?.addEventListener('click',e=>{e.stopPropagation(); isOpen()?closeMenu():openMenu();});
+    document.addEventListener('pointerdown',e=>{ if(isOpen() && !menu.contains(e.target) && !toggleBtn.contains(e.target)) closeMenu(); });
+    document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&isOpen()) closeMenu(); });
+    matchMedia('(min-width:769px)').addEventListener('change',ev=>{ if(ev.matches) closeMenu(); });
+  </script>
 </body>
 </html>
