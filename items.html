@@ -18,28 +18,19 @@
     a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
 
     /* ===== NAVBAR (patched: burger + mobile panel) ===== */
-    .nav{position:sticky; top:0; z-index:50; background:linear-gradient(180deg,#0b1020,rgba(11,16,32,.72)); border-bottom:1px solid var(--ring); backdrop-filter: blur(10px);}
-    .nav-inner{max-width:1400px;margin:auto;padding:12px 18px;display:flex;align-items:center;gap:16px; position:relative;}
-    .brand{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.3px}
-    .brand .logo{width:28px;height:28px;border-radius:7px;background:
-      radial-gradient(120% 120% at 20% 20%, #5ac8ff 0%, #2441ff 38%, #0b1020 80%); box-shadow: 0 0 0 1px #2b3772 inset, 0 4px 16px rgba(36,65,255,.35);}
+    .nav{position:sticky; top:0; z-index:50; background:linear-gradient(180deg,#0b1020,rgba(11,16,32,.72)); border-bottom:1px solid var(--ring); backdrop-filter: blur(10px);} 
+    .nav-inner{max-width:1400px;margin:auto;padding:12px 18px;display:flex;align-items:center;gap:16px; position:relative;} 
+    .brand{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.3px} 
+    .brand .logo{width:28px;height:28px;border-radius:7px;background: radial-gradient(120% 120% at 20% 20%, #5ac8ff 0%, #2441ff 38%, #0b1020 80%); box-shadow: 0 0 0 1px #2b3772 inset, 0 4px 16px rgba(36,65,255,.35);} 
     .spacer{flex:1}
-
     /* NEW: tombol burger & menu list */
-    .nav-toggle{
-      display:none; /* tampilkan di mobile */
-      border:1px solid var(--ring);
-      background:var(--panel);
-      color:var(--text);
-      padding:8px 12px;border-radius:8px;cursor:pointer;
-    }
-    .nav-menu{
-      display:flex;align-items:center;gap:8px;list-style:none;margin:0;padding:0;
-    }
+    .nav-toggle{display:none; border:1px solid var(--ring); background:var(--panel); color:var(--text); padding:8px 12px;border-radius:8px;cursor:pointer}
+    .nav-menu{display:flex;align-items:center;gap:8px;list-style:none;margin:0;padding:0}
     .nav-menu li{display:inline-flex}
     .nav a.navlink{color:var(--text);text-decoration:none;opacity:.9;transition:var(--transition);padding:8px 12px;border-radius:8px}
     .nav a.navlink:hover{opacity:1;color:#cfe0ff;background:rgba(42,61,134,.2)}
     .nav a.navlink.active{background:rgba(42,61,134,.3);color:#59a6ff}
+    .lang-toggle{border:1px solid var(--ring);background:var(--panel);color:var(--text);padding:8px 12px;border-radius:8px;cursor:pointer}
 
     /* ===== HERO ===== */
     .hero{max-width:1400px;margin:20px auto 8px;padding:0 18px;text-align:center}
@@ -48,10 +39,7 @@
 
     /* ===== CONTROLS ===== */
     .panel{max-width:1400px;margin:14px auto;padding:0 18px}
-    .controls{
-      background:var(--panel); border:1px solid var(--ring); border-radius:16px; box-shadow:var(--shadow);
-      padding:16px; display:grid; grid-template-columns: 1fr; gap:12px;
-    }
+    .controls{background:var(--panel); border:1px solid var(--ring); border-radius:16px; box-shadow:var(--shadow); padding:16px; display:grid; grid-template-columns: 1fr; gap:12px}
     .control-grid{display:grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap:10px}
     .search{display:flex; gap:10px}
     .search input{flex:1; padding:12px 14px; border-radius:10px; border:1px solid var(--ring); background:var(--panel-2); color:var(--text)}
@@ -89,7 +77,7 @@
     .filters-card .search input{width:100%;font-size:16px;padding:16px 18px}
     .filters-card .control-grid{margin-top:10px}
 
-    /* legacy panel-wrap normalize (keep from original) */
+    /* legacy panel-wrap normalize */
     .panel-wrap{max-width:1400px;margin:0 auto 40px;padding:0 18px}
     .panel-wrap > .controls{width:100%;display:block}
     #sec-filters .controls{background:transparent;border:0;box-shadow:none;padding:0}
@@ -111,21 +99,10 @@
     @media (max-width:768px){
       .nav-toggle{display:inline-flex;align-items:center;justify-content:center}
       /* menu collapsed by default */
-      .nav-menu{
-        display:none;
-        position:absolute; left:0; right:0; top:100%;
-        margin:0; padding:8px 12px 12px;
-        background:rgba(11,16,32,.96);
-        backdrop-filter: blur(10px);
-        border-bottom:1px solid var(--ring);
-        box-shadow: 0 10px 20px rgba(0,0,0,.45);
-        flex-direction:column; align-items:stretch; gap:6px;
-        max-height:70vh; overflow:auto;
-      }
+      .nav-menu{display:none; position:absolute; left:0; right:0; top:100%; margin:0; padding:8px 12px 12px; background:rgba(11,16,32,.96); backdrop-filter: blur(10px); border-bottom:1px solid var(--ring); box-shadow: 0 10px 20px rgba(0,0,0,.45); flex-direction:column; align-items:stretch; gap:6px; max-height:70vh; overflow:auto}
       .nav-menu[aria-expanded="true"], .nav-menu.open{ display:flex; }
       .nav-menu li{display:block}
       .nav a.navlink{display:block;padding:12px 12px}
-
       .footer-links{flex-direction:column;gap:8px}
       .footer-links a{width:100%;max-width:320px;}
     }
@@ -141,30 +118,32 @@
       </div>
       <div class="spacer"></div>
 
+      <!-- Language toggle -->
+      <button id="btnLang" class="lang-toggle" data-i18n="btn_lang">Bahasa: Indonesia</button>
+
       <!-- tombol hamburger -->
       <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="menu" aria-label="Buka menu">☰</button>
-
       <!-- menu collapsible -->
       <ul class="nav-menu" id="menu" aria-expanded="false">
-        <li><a class="navlink" href="./index.html">Home</a></li>
-        <li><a class="navlink" href="./digimon.html">Digi‑Dex</a></li>
-        <li><a class="navlink" href="./tamers.html">Tamers</a></li>
-        <li><a class="navlink" href="./about.html">About</a></li>
+        <li><a class="navlink" href="./index.html" data-i18n="nav_home">Home</a></li>
+        <li><a class="navlink" href="./digimon.html" data-i18n="nav_dex">Digi‑Dex</a></li>
+        <li><a class="navlink" href="./tamers.html" data-i18n="nav_tamers">Tamers</a></li>
+        <li><a class="navlink" href="./about.html" data-i18n="nav_about">About</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- HERO -->
   <header class="hero">
-    <h1>Items & Materials</h1>
-    <p>Item dan Material yang kalian jumpai in-game.</p>
+    <h1 data-i18n="title_items">Items & Materials</h1>
+    <p data-i18n="subtitle_items">Item dan Material yang kalian jumpai in-game.</p>
   </header>
 
   <section class="wrap">
     <!-- SUMMON TICKETS -->
     <article class="section-card" id="sec-summon">
       <div class="section-header">
-        <h2 class="section-title">🎟️ Summon Tickets</h2>
+        <h2 class="section-title" data-i18n="sec_summon">🎟️ Summon Tickets</h2>
         <div id="count-summon" class="sub"></div>
       </div>
       <div class="section-body">
@@ -175,31 +154,27 @@
     <!-- EVOLUTION MATERIALS -->
     <article class="section-card" id="sec-evo">
       <div class="section-header">
-        <h2 class="section-title">🧬 Evolution Items</h2>
+        <h2 class="section-title" data-i18n="sec_evo">🧬 Evolution Items</h2>
       </div>
       <div class="section-body">
         <div class="mini-card">
-          <h4 class="mini-title">Soul Stone Tiers</h4>
+          <h4 class="mini-title" data-i18n="evo_ss_tiers">Soul Stone Tiers</h4>
           <div id="evo-soulstone-tiers" class="chips"></div>
         </div>
-
         <div class="grid" style="margin-top:12px">
           <div class="mini-card">
-            <h4 class="mini-title">Soul Stone Fragments</h4>
+            <h4 class="mini-title" data-i18n="evo_ss_frag">Soul Stone Fragments</h4>
             <p id="evo-ss-frag-rule" class="mini-desc"></p>
             <div id="evo-ss-frag" class="chips" style="margin-top:8px"></div>
           </div>
-
           <div class="mini-card">
             <h4 class="mini-title">Data Core</h4>
             <div id="evo-data-core" class="chips"></div>
           </div>
-
           <div class="mini-card">
             <h4 class="mini-title">Vaccine Serum</h4>
             <div id="evo-vaccine" class="chips"></div>
           </div>
-
           <div class="mini-card">
             <h4 class="mini-title">Virus Control</h4>
             <div id="evo-virus" class="chips"></div>
@@ -211,22 +186,22 @@
     <!-- FILTERS FOR SOUL STONE LISTING -->
     <article class="section-card filters-card" id="sec-filters">
       <div class="section-header">
-        <h2 class="section-title">🔎 Pencarian & Filter Soul Stones</h2>
+        <h2 class="section-title" data-i18n="sec_filters">🔎 Pencarian & Filter Soul Stones</h2>
       </div>
       <div class="section-body">
         <div class="controls">
           <div class="search">
-            <input id="q" placeholder="🔍 Cari Digimon atau Soul Stone… (mis. WarGreymon, Rare, Limited)" />
+            <input id="q" data-i18n-placeholder="ph_search" placeholder="🔍 Cari Digimon atau Soul Stone… (mis. WarGreymon, Rare, Limited)" />
           </div>
           <div class="control-grid">
             <select id="fltSS" aria-label="Filter Soul Stone Type">
-              <option value="">Semua Soul Stone</option>
+              <option value="" data-i18n="opt_all_ss">Semua Soul Stone</option>
             </select>
             <select id="fltFaction" aria-label="Filter Faction">
-              <option value="">Semua Faction</option>
+              <option value="" data-i18n="opt_all_faction">Semua Faction</option>
             </select>
             <select id="fltType" aria-label="Filter Type">
-              <option value="">Semua Type</option>
+              <option value="" data-i18n="opt_all_type">Semua Type</option>
             </select>
           </div>
         </div>
@@ -236,7 +211,7 @@
     <!-- SOUL STONES FROM DIGI-DEX -->
     <article class="section-card" id="sec-ssdex">
       <div class="section-header">
-        <h2 class="section-title">💎 Soul Stones Terdeteksi pada Digimon</h2>
+        <h2 class="section-title" data-i18n="sec_ssdex">💎 Soul Stones Terdeteksi pada Digimon</h2>
         <div id="count-ss" class="sub"></div>
       </div>
       <div class="section-body">
@@ -244,12 +219,12 @@
           <table class="table" id="tbl-ss">
             <thead>
               <tr>
-                <th>Digimon</th>
-                <th>Stage</th>
+                <th data-i18n="tbl_digimon">Digimon</th>
+                <th data-i18n="tbl_stage">Stage</th>
                 <th>Faction</th>
                 <th>Type</th>
-                <th>Rarity</th>
-                <th>Soul Stone Name</th>
+                <th data-i18n="tbl_rarity">Rarity</th>
+                <th data-i18n="tbl_ssname">Soul Stone Name</th>
               </tr>
             </thead>
             <tbody></tbody>
@@ -261,7 +236,7 @@
     <!-- CORE CODE -->
     <article class="section-card" id="sec-corecode">
       <div class="section-header">
-        <h2 class="section-title">🧩 Core Code</h2>
+        <h2 class="section-title" data-i18n="sec_corecode">🧩 Core Code</h2>
       </div>
       <div class="section-body">
         <p id="corecode-rule" class="mini-desc"></p>
@@ -272,29 +247,26 @@
     <!-- WEAPONS / ARMAMENTS & CORES -->
     <article class="section-card" id="sec-weapons">
       <div class="section-header">
-        <h2 class="section-title">⚔️ Weapons & Armaments</h2>
+        <h2 class="section-title" data-i18n="sec_weapons">⚔️ Weapons & Armaments</h2>
       </div>
       <div class="section-body">
         <div class="mini-card">
-          <h4 class="mini-title" style="margin-top:0">Armament Types (4‑Piece)</h4>
-          <p class="mini-desc" id="arm-types-usage">Tipe armament hanya berlaku untuk 4‑Piece Sets dan menempel pada nama equipment. Contoh: <b>Martial Protection Loop</b> → Set: <i>Martial</i> (efek set), Tipe: <i>Protection</i> (efek tipe).</p>
+          <h4 class="mini-title" style="margin-top:0" data-i18n="arm_types_title">Armament Types (4‑Piece)</h4>
+          <p class="mini-desc" id="arm-types-usage"></p>
           <div id="arm-types-chips" class="chips" style="margin-top:8px"></div>
         </div>
-
-        <h4 class="mini-title" style="margin-top:0">4‑Piece Sets</h4>
+        <h4 class="mini-title" style="margin-top:0" data-i18n="arm4_title">4‑Piece Sets</h4>
         <div id="arm4-grid" class="grid"></div>
-
-        <h4 class="mini-title" style="margin-top:16px">2‑Piece Sets</h4>
+        <h4 class="mini-title" style="margin-top:16px" data-i18n="arm2_title">2‑Piece Sets</h4>
         <div id="arm2-grid" class="grid"></div>
-
         <div class="grid" style="margin-top:16px">
           <div class="mini-card">
-            <h4 class="mini-title">Core Fragments</h4>
+            <h4 class="mini-title" data-i18n="corefrag_title">Core Fragments</h4>
             <p id="corefrag-rule" class="mini-desc"></p>
             <div id="corefrag-tiers" class="chips" style="margin-top:8px"></div>
           </div>
           <div class="mini-card">
-            <h4 class="mini-title">Unique Cores</h4>
+            <h4 class="mini-title" data-i18n="unique_cores_title">Unique Cores</h4>
             <div id="unique-cores" class="grid"></div>
           </div>
         </div>
@@ -304,7 +276,7 @@
     <!-- CONSUMABLES / OFF-LIMITS / PROGRESSION -->
     <article class="section-card" id="sec-others">
       <div class="section-header">
-        <h2 class="section-title">🧪 Consumables & Progression</h2>
+        <h2 class="section-title" data-i18n="sec_others">🧪 Consumables & Progression</h2>
       </div>
       <div class="section-body">
         <div class="grid">
@@ -313,7 +285,7 @@
             <p id="cons-concentrate" class="mini-desc"></p>
           </div>
           <div class="mini-card">
-            <h4 class="mini-title">Off‑Limits Potions</h4>
+            <h4 class="mini-title" data-i18n="off_limits_title">Off‑Limits Potions</h4>
             <div id="off-pot" class="chips"></div>
           </div>
           <div class="mini-card">
@@ -333,10 +305,10 @@
   <footer>
     <div style="font-size:18px;font-weight:700">Final Evolution: Digi</div>
     <div class="footer-links">
-      <a href="./index.html">Home</a>
-      <a href="./digimon.html">Digi‑Dex</a>
-      <a href="./tamers.html">Tamers</a>
-      <a href="./about.html">About</a>
+      <a href="./index.html" data-i18n="nav_home">Home</a>
+      <a href="./digimon.html" data-i18n="nav_dex">Digi‑Dex</a>
+      <a href="./tamers.html" data-i18n="nav_tamers">Tamers</a>
+      <a href="./about.html" data-i18n="nav_about">About</a>
       <a href="https://chat.whatsapp.com/Fa28jqgueSs7aZCHh4332y" target="_blank" rel="noopener">WhatsApp</a>
     </div>
     <div class="disclaimer">
@@ -347,61 +319,100 @@
   </footer>
 
   <script>
+    /* ===== SIMPLE I18N (UI ONLY) ===== */
+    const I18N = {
+      id: {
+        btn_lang: 'Bahasa: Indonesia',
+        nav_home: 'Home', nav_dex: 'Digi‑Dex', nav_tamers: 'Tamers', nav_about: 'About',
+        title_items: 'Items & Materials',
+        subtitle_items: 'Item dan Material yang kalian jumpai in-game.',
+        sec_summon: '🎟️ Summon Tickets',
+        sec_evo: '🧬 Evolution Items',
+        evo_ss_tiers: 'Soul Stone Tiers',
+        evo_ss_frag: 'Soul Stone Fragments',
+        sec_filters: '🔎 Pencarian & Filter Soul Stones',
+        ph_search: '🔍 Cari Digimon atau Soul Stone… (mis. WarGreymon, Rare, Limited)',
+        opt_all_ss: 'Semua Soul Stone',
+        opt_all_faction: 'Semua Faction',
+        opt_all_type: 'Semua Type',
+        sec_ssdex: '💎 Soul Stones Terdeteksi pada Digimon',
+        tbl_digimon: 'Digimon', tbl_stage: 'Stage', tbl_rarity: 'Rarity', tbl_ssname: 'Soul Stone Name',
+        sec_corecode: '🧩 Core Code',
+        sec_weapons: '⚔️ Weapons & Armaments',
+        arm_types_title: 'Armament Types (4‑Piece)',
+        arm_types_usage: 'Tipe armament hanya berlaku untuk 4‑Piece Sets dan menempel pada nama equipment. Contoh: \u003cb\u003eMartial Protection Loop\u003c/b\u003e → Set: \u003ci\u003eMartial\u003c/i\u003e (efek set), Tipe: \u003ci\u003eProtection\u003c/i\u003e (efek tipe).',
+        arm4_title: '4‑Piece Sets', arm2_title: '2‑Piece Sets',
+        corefrag_title: 'Core Fragments', unique_cores_title: 'Unique Cores',
+        sec_others: '🧪 Consumables & Progression', off_limits_title: 'Off‑Limits Potions',
+        unit_categories: 'kategori', unit_entries: 'entri terdeteksi',
+        label_stage: 'Stage'
+      },
+      en: {
+        btn_lang: 'Language: English',
+        nav_home: 'Home', nav_dex: 'Digi‑Dex', nav_tamers: 'Tamers', nav_about: 'About',
+        title_items: 'Items & Materials',
+        subtitle_items: 'Items and Materials you will find in-game.',
+        sec_summon: '🎟️ Summon Tickets',
+        sec_evo: '🧬 Evolution Items',
+        evo_ss_tiers: 'Soul Stone Tiers',
+        evo_ss_frag: 'Soul Stone Fragments',
+        sec_filters: '🔎 Search & Filter Soul Stones',
+        ph_search: '🔍 Search Digimon or Soul Stone… (e.g., WarGreymon, Rare, Limited)',
+        opt_all_ss: 'All Soul Stones',
+        opt_all_faction: 'All Factions',
+        opt_all_type: 'All Types',
+        sec_ssdex: '💎 Detected Soul Stones on Digimon',
+        tbl_digimon: 'Digimon', tbl_stage: 'Stage', tbl_rarity: 'Rarity', tbl_ssname: 'Soul Stone Name',
+        sec_corecode: '🧩 Core Code',
+        sec_weapons: '⚔️ Weapons & Armaments',
+        arm_types_title: 'Armament Types (4‑Piece)',
+        arm_types_usage: 'Armament type only applies to **4‑Piece Sets** and is attached to the equipment name. Example: **Martial Protection Loop** → Set: *Martial* (set effect), Type: *Protection* (type effect).',
+        arm4_title: '4‑Piece Sets', arm2_title: '2‑Piece Sets',
+        corefrag_title: 'Core Fragments', unique_cores_title: 'Unique Cores',
+        sec_others: '🧪 Consumables & Progression', off_limits_title: 'Off‑Limits Potions',
+        unit_categories: 'categories', unit_entries: 'entries detected',
+        label_stage: 'Stage'
+      }
+    };
+    const state = { lang: localStorage.getItem('fe_lang') || 'id' };
+    function t(key){ const d = I18N[state.lang]||I18N.id; return d[key]||I18N.en[key]||I18N.id[key]||key; }
+    function applyI18n(){
+      const dict = I18N[state.lang] || I18N.id;
+      document.querySelectorAll('[data-i18n]').forEach(el=>{ const k=el.getAttribute('data-i18n'); if(dict[k]) el.textContent = dict[k]; });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{ const k=el.getAttribute('data-i18n-placeholder'); if(dict[k]) el.setAttribute('placeholder', dict[k]); });
+      document.getElementById('arm-types-usage')?.insertAdjacentHTML('afterbegin','');
+      const usage = document.getElementById('arm-types-usage'); if(usage){ usage.innerHTML = state.lang==='en' ? I18N.en.arm_types_usage : I18N.id.arm_types_usage; }
+      document.documentElement.setAttribute('lang', state.lang==='en'?'en':'id');
+      document.getElementById('btnLang')?.setAttribute('aria-label', state.lang==='en'?'Switch language':'Ganti bahasa');
+    }
+    function toggleLang(){ state.lang = state.lang==='id'?'en':'id'; localStorage.setItem('fe_lang', state.lang); applyI18n(); updateCounts && updateCounts(); }
+    document.getElementById('btnLang')?.addEventListener('click', toggleLang);
+
     /* ===== NAV MENU TOGGLE + AUTO-CLOSE (burger) ===== */
     const toggleBtn = document.getElementById('navToggle');
     const menu = document.getElementById('menu');
-
     function isMenuOpen(){ return toggleBtn?.getAttribute('aria-expanded') === 'true'; }
-    function openMenu(){
-      toggleBtn?.setAttribute('aria-expanded','true');
-      menu?.setAttribute('aria-expanded','true');
-      menu?.classList.add('open');
-    }
-    function closeMenu(){
-      toggleBtn?.setAttribute('aria-expanded','false');
-      menu?.setAttribute('aria-expanded','false');
-      menu?.classList.remove('open');
-    }
-    toggleBtn?.addEventListener('click', (e)=>{
-      e.stopPropagation();
-      isMenuOpen() ? closeMenu() : openMenu();
-    });
+    function openMenu(){ toggleBtn?.setAttribute('aria-expanded','true'); menu?.setAttribute('aria-expanded','true'); menu?.classList.add('open'); }
+    function closeMenu(){ toggleBtn?.setAttribute('aria-expanded','false'); menu?.setAttribute('aria-expanded','false'); menu?.classList.remove('open'); }
+    toggleBtn?.addEventListener('click', (e)=>{ e.stopPropagation(); isMenuOpen() ? closeMenu() : openMenu(); });
     document.querySelectorAll('#menu a').forEach(a => a.addEventListener('click', closeMenu));
-    document.addEventListener('pointerdown', (e)=>{
-      if (!isMenuOpen()) return;
-      const target = e.target;
-      if (!menu?.contains(target) && !toggleBtn?.contains(target)) closeMenu();
-    });
+    document.addEventListener('pointerdown', (e)=>{ if (!isMenuOpen()) return; const target = e.target; if (!menu?.contains(target) && !toggleBtn?.contains(target)) closeMenu(); });
     document.addEventListener('keydown', (e)=>{ if (e.key === 'Escape' && isMenuOpen()) closeMenu(); });
-    const mqDesktop = window.matchMedia('(min-width: 769px)');
-    mqDesktop.addEventListener('change', (ev)=>{ if (ev.matches) closeMenu(); });
+    const mqDesktop = window.matchMedia('(min-width: 769px)'); mqDesktop.addEventListener('change', (ev)=>{ if (ev.matches) closeMenu(); });
 
-    /* ====== PAGE DATA (tetap dari file kamu) ====== */
+    /* ====== PAGE DATA (from your original) ====== */
     const REF_URL = 'data/digimon_reference.json';
     const EVO_URL = 'data/digimon_evolution_lines.json';
     const $ = (sel,root=document)=>root.querySelector(sel);
     const $$ = (sel,root=document)=>Array.from(root.querySelectorAll(sel));
     const norm = s => (s||'').toString().trim();
-    function chip(html, color){
-      const span = document.createElement('span');
-      span.className='pill';
-      if(color){ span.style.background = color+'22'; span.style.border = '1px solid '+color+'55'; span.style.color = color; }
-      span.innerHTML = html; return span;
-    }
-    function ssColor(type){
-      const t = (type||'').toLowerCase();
-      if(t.includes('rare')) return '#dca0ff';
-      if(t.includes('common')) return '#8fd0ff';
-      if(t.includes('exclusive 1vs1')) return '#ffd166';
-      if(t.includes('exclusive guild')) return '#25d366';
-      if(t.includes('exclusive arena')) return '#ffd166';
-      if(t.includes('limited')) return '#ff6b6b';
-      if(t.includes('no information')) return '#9aa3c4';
-      return '#b9c6ff';
-    }
-    function render(){ /* placeholder to avoid eslint */ }
+    function chip(html, color){ const span = document.createElement('span'); span.className='pill'; if(color){ span.style.background = color+'22'; span.style.border = '1px solid '+color+'55'; span.style.color = color; } span.innerHTML = html; return span; }
+    function ssColor(type){ const t=(type||'').toLowerCase(); if(t.includes('rare')) return '#dca0ff'; if(t.includes('common')) return '#8fd0ff'; if(t.includes('exclusive 1vs1')) return '#ffd166'; if(t.includes('exclusive guild')) return '#25d366'; if(t.includes('exclusive arena')) return '#ffd166'; if(t.includes('limited')) return '#ff6b6b'; if(t.includes('no information')) return '#9aa3c4'; return '#b9c6ff'; }
+
+    let updateCounts = null; // will be set after init
 
     (async function init(){
+      applyI18n();
       try{
         const [rRes, eRes] = await Promise.all([
           fetch(REF_URL, {cache:'no-store'}),
@@ -409,12 +420,11 @@
         ]);
         if(!rRes.ok) throw new Error('Gagal memuat digimon_reference.json');
         if(!eRes.ok) throw new Error('Gagal memuat digimon_evolution_lines.json');
-
         const REF = await rRes.json();
         const EVO = await eRes.json();
         const items = REF.items || {};
 
-        /* === Fill dropdowns === */
+        /* === Fill dropdowns (static labels i18n; dynamic options keep English) === */
         const ssSet = new Set((items.evolution?.soulStones?.tiers || []).map(norm));
         EVO.forEach(d=>{ const t = norm(d?.soulStone?.type); if(t) ssSet.add(t); });
         Array.from(ssSet).forEach(t=> $('#fltSS').insertAdjacentHTML('beforeend', `<option value="${t}">${t}</option>`));
@@ -426,14 +436,18 @@
         const tickets = (items.summon?.tickets) || [];
         tickets.forEach(tk=>{
           const card = document.createElement('div'); card.className='mini-card';
-          card.innerHTML = `<h4 class="mini-title">${tk.name}</h4><p class="mini-desc">${tk.description}</p>`;
+          card.innerHTML = `<h4 class="mini-title">${tk.name}</h4><p class="mini-desc">${tk.description||''}</p>`;
           const box = document.createElement('div'); box.className='chips';
           (tk.obtainableStages || []).forEach(st=> box.append(chip(st)));
           (tk.obtainableSoulStoneTiers || []).forEach(tt=> box.append(chip('SS: '+tt, ssColor(tt))));
-          card.append(box);
-          sGrid.append(card);
+          card.append(box); sGrid.append(card);
         });
-        $('#count-summon').textContent = `${tickets.length} kategori`;
+
+        /* Count helper uses i18n */
+        updateCounts = function(){
+          $('#count-summon').textContent = `${tickets.length} ${t('unit_categories')}`;
+        };
+        updateCounts();
 
         /* === Evolution Items === */
         (items.evolution?.soulStones?.tiers || []).forEach(t=> $('#evo-soulstone-tiers').append(chip(t, ssColor(t))));
@@ -446,11 +460,10 @@
         /* === Soul Stones listing from Digimon DB === */
         const tbody = $('#tbl-ss tbody');
         const facMap = new Map((REF.factions || []).map(f=>[norm(f.code), f]));
-        const typeColors = new Map((REF.types || []).map(t=>[norm(t.name), t.color || '']));
+        const typeColors = new Map((REF.types || []).map(t=>[norm(t.name), t.color||'']))
         function row(d){
           const fac = ((d.factions||[])[0]||''); const facMeta = facMap.get(norm(fac));
-          const typ = ((d.types||[])[0]||''); const tcol = typeColors.get(norm(typ))||'';
-          const ss = d.soulStone||{}; const tt = norm(ss.type); const rq = norm(ss.required);
+          const typ = ((d.types||[])[0]||''); const ss = d.soulStone||{}; const tt = norm(ss.type); const rq = norm(ss.required);
           const tr = document.createElement('tr');
           const link = `<a href="./digimon.html#${encodeURIComponent(d.id)}">${d.displayName}</a>`;
           tr.innerHTML = `
@@ -465,7 +478,8 @@
         const ssList = EVO.filter(d=> d.soulStone && (d.soulStone.type || d.soulStone.required));
         ssList.sort((a,b)=> (a.displayName||'').localeCompare(b.displayName||'', 'id', {sensitivity:'base'}));
         ssList.forEach(d=> tbody.append(row(d)));
-        $('#count-ss').textContent = `${ssList.length} entri terdeteksi`;
+        const updateSSCount = ()=>{ $('#count-ss').textContent = `${ssList.length} ${t('unit_entries')}`; };
+        updateSSCount();
 
         /* === Core Code === */
         $('#corecode-rule').textContent = items.coreCode?.craftRule || '';
@@ -473,7 +487,7 @@
         (items.coreCode?.items || []).forEach(it=>{
           const card = document.createElement('div'); card.className='mini-card';
           card.innerHTML = `<h4 class="mini-title">${it.name}</h4><div class="chips"></div>`;
-          card.querySelector('.chips').append(chip('Stage: '+it.stage));
+          card.querySelector('.chips').append(chip(`${t('label_stage')}: ${it.stage}`));
           ccg.append(card);
         });
 
@@ -493,13 +507,8 @@
               {name:'Blessing', baseEffect:'HP +15%', color:'#EC407A'}
             ];
         (function renderArmTypes(){
-          const box = document.getElementById('arm-types-chips');
-          if (!box) return;
-          box.innerHTML = '';
-          typesLegend.forEach(t => {
-            const htmlChip = `${t.name} — <b>${t.baseEffect}</b>`;
-            box.append(chip(htmlChip, t.color || '#b9c6ff'));
-          });
+          const box = document.getElementById('arm-types-chips'); if (!box) return; box.innerHTML = '';
+          typesLegend.forEach(ti => { const htmlChip = `${ti.name} — <b>${ti.baseEffect}</b>`; box.append(chip(htmlChip, ti.color || '#b9c6ff')); });
         })();
 
         arm4.forEach(s=>{
@@ -521,16 +530,10 @@
 
         /* cores */
         $('#corefrag-rule').textContent = items.weapons?.cores?.coreFragments?.craftRule || '';
-        (items.weapons?.cores?.coreFragments?.tiers || []).forEach(t=>{
-          const html = `${t.name} → <b>${t.result}</b>`; $('#corefrag-tiers').append(chip(html));
-        });
+        (items.weapons?.cores?.coreFragments?.tiers || []).forEach(t=>{ const html = `${t.name} → <b>${t.result}</b>`; $('#corefrag-tiers').append(chip(html)); });
         const uc = items.weapons?.cores?.uniqueCores || [];
         const ucGrid = $('#unique-cores');
-        uc.forEach(c=>{
-          const div = document.createElement('div'); div.className='mini-card';
-          div.innerHTML = `<h4 class="mini-title">${c.name}</h4><p class="mini-desc">${c.effect}</p>`;
-          ucGrid.append(div);
-        });
+        uc.forEach(c=>{ const div = document.createElement('div'); div.className='mini-card'; div.innerHTML = `<h4 class="mini-title">${c.name}</h4><p class="mini-desc">${c.effect}</p>`; ucGrid.append(div); });
 
         /* === Others === */
         $('#cons-concentrate').textContent = items.consumables?.concentratePotion?.description || '';
@@ -545,18 +548,14 @@
           const rows = Array.from($('#tbl-ss tbody').rows);
           let shown = 0;
           rows.forEach(r=>{
-            const name = r.cells[0].innerText.toLowerCase();
             const fac = (r.cells[2].innerText||'').split(' ').pop().trim();
             const type = r.cells[3].innerText.trim();
             const sstype = r.cells[4].innerText.trim();
-            const match = (!q || r.innerText.toLowerCase().includes(q)) &&
-                          (!ss || sstype===ss) &&
-                          (!fa || fac===fa) &&
-                          (!ty || type===ty);
+            const match = (!q || r.innerText.toLowerCase().includes(q)) && (!ss || sstype===ss) && (!fa || fac===fa) && (!ty || type===ty);
             r.style.display = match?'' : 'none';
             if(match) shown++;
           });
-          $('#count-ss').textContent = `${shown} entri terdeteksi`;
+          $('#count-ss').textContent = `${shown} ${t('unit_entries')}`;
         }
         ['q','fltSS','fltFaction','fltType'].forEach(id=> $('#'+id).addEventListener('input', applySSFilter));
         ['fltSS','fltFaction','fltType'].forEach(id=> $('#'+id).addEventListener('change', applySSFilter));
