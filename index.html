@@ -24,6 +24,10 @@
       --shadow: 0 10px 30px rgba(0,0,0,.35);
       --shadow-sm: 0 4px 12px rgba(0,0,0,.25);
       --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+      /* NEW: satuan padding horizontal global */
+      --pad-x: 18px;
+      --content-max: 1400px;
     }
 
     *{box-sizing:border-box}
@@ -35,6 +39,17 @@
     a{color:var(--brand);text-decoration:none}
     a:hover{text-decoration:underline}
 
+    /* ====== LAYOUT UTILITY (NEW) ====== */
+    .container{
+      max-width: var(--content-max);
+      margin-inline: auto;
+      padding-inline: var(--pad-x);
+      width: 100%;
+    }
+    .section{ /* jarak vertikal konsisten antar section */
+      margin-block: 20px;
+    }
+
     /* ====== NAVBAR (mobile-ready) ====== */
     .nav{
       position:sticky; top:0; z-index:50;
@@ -43,8 +58,8 @@
       backdrop-filter: blur(10px);
     }
     .nav-inner{
-      max-width:1400px;margin:auto;padding:12px 18px;
       display:flex;align-items:center;gap:16px;position:relative;
+      height: auto; /* biar menu absolute pos top:100% akurat */
     }
     .brand{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.3px}
     .brand .logo{
@@ -59,9 +74,7 @@
       border:1px solid var(--ring);
       background:var(--panel);
       color:var(--text);
-      padding:8px 12px;
-      border-radius:8px;
-      cursor:pointer;
+      padding:8px 12px;border-radius:8px;cursor:pointer;
     }
 
     .nav-menu{
@@ -77,23 +90,17 @@
     .nav a.navlink:hover{opacity:1;color:#cfe0ff;background:rgba(42,61,134,.2)}
     .nav a.navlink.active{background:rgba(42,61,134,.3);color:#59a6ff}
 
-    /* ====== HERO IMAGE ====== */
-    .hero-image{
-      width:100%;max-width:1400px;height:auto;display:block;
-      margin:0 auto 20px;border-radius:8px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.25);
-    }
-
-    /* ====== HERO BANNER (banding fix) ====== */
+    /* ====== HERO ====== */
     .hero-banner{
-      max-width:1400px;margin:20px auto;padding:0 18px;text-align:center;
-      background:transparent; /* seragam dengan section lain */
-      border-radius:20px;overflow:hidden;position:relative; box-shadow:none;
+      text-align:center;background:transparent;border-radius:20px;overflow:hidden;position:relative; box-shadow:none;
     }
     .hero-banner::before{content:none;display:none;}
+    .hero-image{
+      width:100%;max-width:1400px;height:auto;display:block;
+      margin:0 auto 20px;border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,0.25);
+    }
     .hero-content{
-      max-width:900px;margin:auto;padding:60px 20px;
-      position:relative;z-index:1;
+      max-width:900px;margin:auto;padding:60px 20px;position:relative;z-index:1;
       background: linear-gradient(180deg, rgba(16,23,53,0.00) 0%, rgba(16,23,53,0.12) 100%);
       border-radius:16px;
     }
@@ -116,7 +123,6 @@
 
     /* ====== QUICK STATS ====== */
     .quick-stats{
-      max-width:1400px;margin:30px auto;padding:0 18px;
       display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
       gap:16px;
     }
@@ -130,7 +136,7 @@
 
     /* ====== MAIN CONTENT GRID ====== */
     .main-grid{
-      max-width:1400px;margin:30px auto;padding:0 18px;
+      /* PENTING: grid saja, tanpa padding inline. Padding dikelola .container */
       display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
       gap:24px;
     }
@@ -167,7 +173,7 @@
     /* ====== FOOTER (mobile-friendly) ====== */
     footer{
       border-top:1px solid var(--ring);color:var(--muted);
-      text-align:center;padding:30px 18px;margin-top:40px;
+      text-align:center;padding:30px 0;margin-top:40px;
     }
     .footer-links{
       display:flex;justify-content:center;align-items:center;
@@ -175,7 +181,7 @@
     }
     .footer-links a{
       color:var(--muted);text-decoration:none;
-      transition:var(--transition);padding:8px 14px; /* lebih nyaman di jari */
+      transition:var(--transition);padding:8px 14px; /* nyaman di jari */
       border-radius:8px; line-height:1.2;
     }
     .footer-links a:hover{color:var(--brand);background:rgba(42,61,134,.2)}
@@ -198,17 +204,16 @@
         flex-direction:column; align-items:stretch; gap:6px;
         max-height:70vh; overflow:auto;
       }
-      .nav-menu[aria-expanded="true"],
-      .nav-menu.open{ display:flex; }
+      .nav-menu[aria-expanded="true"], .nav-menu.open{ display:flex; }
 
       .nav-menu li{display:block}
       .nav a.navlink{display:block;padding:12px 12px}
 
+      /* Grid 1 kolom di mobile */
+      .main-grid{grid-template-columns:1fr;}
+
       /* Footer stack vertikal agar rapi di HP */
-      .footer-links{
-        flex-direction:column;
-        gap:8px;
-      }
+      .footer-links{flex-direction:column; gap:8px}
       .footer-links a{width:100%; max-width:320px;}
     }
   </style>
@@ -216,7 +221,7 @@
 <body>
   <!-- NAV -->
   <nav class="nav">
-    <div class="nav-inner">
+    <div class="container nav-inner">
       <div class="brand">
         <div class="logo" aria-hidden="true"></div>
         <span>Final Evolution: <span style="color:#cfe0ff">Digi</span></span>
@@ -229,235 +234,244 @@
 
       <!-- nav menu collapsible -->
       <ul class="nav-menu" id="menu" aria-expanded="false">
-        <li><a class="navlink active" href="./index.html">Home</a></li>
-        <li><a class="navlink" href="./digimon.html">Digi‑Dex</a></li>
-        <li><a class="navlink" href="./tamers.html">Tamers</a></li>
-        <li><a class="navlink" href="./about.html">About</a></li>
+        <li>./index.htmlHome</a></li>
+        <li>./digimon.htmlDigi‑Dex</a></li>
+        <li>./tamers.htmlTamers</a></li>
+        <li>./about.htmlAbout</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- HERO BANNER -->
-  <section class="hero-banner">
-    <div class="hero-content">
-      <img src="images/header.jpg" alt="Final Evolution: Digi" class="hero-image">
-      <h1>Welcome to Final Evolution: Digi</h1>
-      <h1>Dex and Guide</h1>
-      <p>The ultimate companion page for Digimon World Indonesia players. Track your Digimon, optimize your builds, and master every aspect of the game.</p>
-      <a href="./digimon.html" class="hero-btn">Explore Digi‑Dex</a>
+  <!-- HERO -->
+  <section class="section">
+    <div class="container hero-banner">
+      <div class="hero-content">
+        images/header.jpg
+        <h1>Welcome to Final Evolution: Digi</h1>
+        <h1>Dex and Guide</h1>
+        <p>The ultimate companion page for Digimon World Indonesia players. Track your Digimon, optimize your builds, and master every aspect of the game.</p>
+        ./digimon.htmlExplore Digi‑Dex</a>
+      </div>
     </div>
   </section>
 
   <!-- QUICK STATS -->
-  <section class="quick-stats">
-    <div class="stat-card">
-      <div class="stat-number" id="stat-digimon">0</div>
-      <p class="stat-label">Digimon</p>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number" id="stat-tamers">0</div>
-      <p class="stat-label">Tamers</p>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number" id="stat-items">0</div>
-      <p class="stat-label">Items</p>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number" id="stat-materials">0</div>
-      <p class="stat-label">Materials</p>
+  <section class="section">
+    <div class="container quick-stats">
+      <div class="stat-card">
+        <div class="stat-number" id="stat-digimon">0</div>
+        <p class="stat-label">Digimon</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="stat-tamers">0</div>
+        <p class="stat-label">Tamers</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="stat-items">0</div>
+        <p class="stat-label">Items</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="stat-materials">0</div>
+        <p class="stat-label">Materials</p>
+      </div>
     </div>
   </section>
 
-  <!-- MAIN CONTENT -->
-  <section class="main-grid">
-    <!-- BASIC INFORMATION SECTION -->
-    <div class="section-card">
-      <div class="section-header">
-        <h2><span class="section-icon">👤</span> Basic Information</h2>
-      </div>
-      <div class="section-body">
-        <p class="section-description">Essential game data to help you understand the core mechanics and characters.</p>
-        <div class="section-grid">
-          <a href="#equipment" class="mini-card">
-            <span class="mini-card-icon">🛡️</span>
-            <strong>Equipment</strong>
-          </a>
-          <a href="#materials" class="mini-card">
-            <span class="mini-card-icon">💎</span>
-            <strong>Materials</strong>
-          </a>
-          <a href="./items.html" class="mini-card" style="text-decoration:none">
-            <span class="mini-card-icon">📦</span>
-            <strong>Items</strong>
-          </a>
-          <a href="#adventure" class="mini-card">
-            <span class="mini-card-icon">🗺️</span>
-            <strong>Adventure</strong>
-          </a>
+  <!-- MAIN CONTENT (Basic Information, Build, Digimon, Tamers, Community) -->
+  <section class="section">
+    <div class="container main-grid">
+      <!-- BASIC INFORMATION -->
+      <div class="section-card">
+        <div class="section-header">
+          <h2><span class="section-icon">👤</span> Basic Information</h2>
         </div>
-        <a href="#basic-info" class="action-btn">View All</a>
-      </div>
-    </div>
-
-    <!-- BUILD INFORMATION SECTION -->
-    <div class="section-card">
-      <div class="section-header">
-        <h2><span class="section-icon">🔧</span> Build Information</h2>
-      </div>
-      <div class="section-body">
-        <p class="section-description">Optimize your team and create the perfect Digimon builds for any challenge.</p>
-        <div class="section-grid">
-          <a href="./teamsetup.html" class="mini-card" style="text-decoration:none">
-            <span class="mini-card-icon">👥</span>
-            <strong>Team Setup</strong>
-          </a>
-          <a href="#digimon-build" class="mini-card">
-            <span class="mini-card-icon">📈</span>
-            <strong>Digimon Build</strong>
-          </a>
-          <a href="#skills" class="mini-card">
-            <span class="mini-card-icon">✨</span>
-            <strong>Skills</strong>
-          </a>
-          <a href="#stats" class="mini-card">
-            <span class="mini-card-icon">📊</span>
-            <strong>Stats Guide</strong>
-          </a>
+        <div class="section-body">
+          <p class="section-description">Essential game data to help you understand the core mechanics and characters.</p>
+          <div class="section-grid">
+            #equipment
+              <span class="mini-card-icon">🛡️</span>
+              <strong>Equipment</strong>
+            </a>
+            #materials
+              <span class="mini-card-icon">💎</span>
+              <strong>Materials</strong>
+            </a>
+            ./items.html
+              <span class="mini-card-icon">📦</span>
+              <strong>Items</strong>
+            </a>
+            #adventure
+              <span class="mini-card-icon">🗺️</span>
+              <strong>Adventure</strong>
+            </a>
+          </div>
+          #basic-infoView All</a>
         </div>
-        <a href="#build-info" class="action-btn">View All</a>
       </div>
-    </div>
 
-    <!-- DIGIMON SECTION -->
-    <div class="section-card">
-      <div class="section-header">
-        <h2><span class="section-icon">🦕</span> Digimon Database</h2>
-      </div>
-      <div class="section-body">
-        <p class="section-description">Complete database of all Digimon with evolution lines, groups, and detailed information.</p>
-        <div style="display:grid;gap:12px;margin-top:20px">
-          <div style="background:var(--panel-2);border:1px solid var(--ring);border-radius:10px;padding:16px">
-            <div style="font-size:28px;font-weight:800;color:#59a6ff" id="digimon-count">Loading...</div>
-            <div style="color:var(--muted);font-size:14px">Total Digimon</div>
-          </div>
-          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">
-            <div class="stage-card" data-stage="Child" style="background:var(--chip);padding:10px;border-radius:8px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-              <div style="font-weight:700;font-size:18px" id="child-count">-</div>
-              <div style="font-size:12px;color:#b9c6ff">Child</div>
-            </div>
-            <div class="stage-card" data-stage="Adult" style="background:var(--chip);padding:10px;border-radius:8px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-              <div style="font-weight:700;font-size:18px" id="adult-count">-</div>
-              <div style="font-size:12px;color:#b9c6ff">Adult</div>
-            </div>
-            <div class="stage-card" data-stage="Perfect" style="background:var(--chip);padding:10px;border-radius:8px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-              <div style="font-weight:700;font-size:18px" id="perfect-count">-</div>
-              <div style="font-size:12px;color:#b9c6ff">Perfect</div>
-            </div>
-            <div class="stage-card" data-stage="Ultimate" style="background:var(--chip);padding:10px;border-radius:8px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-              <div style="font-weight:700;font-size:18px" id="ultimate-count">-</div>
-              <div style="font-size:12px;color:#b9c6ff">Ultimate</div>
-            </div>
-            <div class="stage-card" data-stage="Ultimate+" style="background:var(--chip);padding:10px;border-radius:8px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-              <div style="font-weight:700;font-size:18px" id="ultimate-plus-count">-</div>
-              <div style="font-size:12px;color:#b9c6ff">Ultimate+</div>
-            </div>
-          </div>
+      <!-- BUILD INFORMATION -->
+      <div class="section-card">
+        <div class="section-header">
+          <h2><span class="section-icon">🔧</span> Build Information</h2>
         </div>
-        <a href="./digimon.html" class="action-btn" style="background:#ffd166;color:#0b1020;margin-top:20px;display:block;text-align:center">
-          Open Digi‑Dex
-        </a>
-      </div>
-    </div>
-
-    <!-- TAMERS SECTION -->
-    <div class="section-card">
-      <div class="section-header">
-        <h2><span class="section-icon">👥</span> Hero / Tamer Database</h2>
-      </div>
-      <div class="section-body">
-        <p class="section-description">Meet the chosen children who partner with Digimon to protect both worlds.</p>
-        <div style="display:grid;gap:12px;margin-top:20px">
-          <div style="background:var(--panel-2);border:1px solid var(--ring);border-radius:10px;padding:16px">
-            <div style="font-size:28px;font-weight:800;color:#59a6ff" id="tamer-count">Loading...</div>
-            <div style="color:var(--muted);font-size:14px">Total Tamers</div>
-          </div>
-          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">
-            <a href="./tamers.html#taichi_yagami" class="mini-card" style="background:linear-gradient(135deg,#FF9800,#2441ff);text-decoration:none">
-              <span class="mini-card-icon">🔥</span>
-              <strong>Taichi</strong>
+        <div class="section-body">
+          <p class="section-description">Optimize your team and create the perfect Digimon builds for any challenge.</p>
+          <div class="section-grid">
+            ./teamsetup.html
+              <span class="mini-card-icon">👥</span>
+              <strong>Team Setup</strong>
             </a>
-            <a href="./tamers.html#yamato_ishida" class="mini-card" style="background:linear-gradient(135deg,#4CAF50,#2441ff);text-decoration:none">
-              <span class="mini-card-icon">🌲</span>
-              <strong>Yamato</strong>
+            #digimon-build
+              <span class="mini-card-icon">📈</span>
+              <strong>Digimon Build</strong>
             </a>
-            <a href="./tamers.html#sora_takenouchi" class="mini-card" style="background:linear-gradient(135deg,#03A9F4,#2441ff);text-decoration:none">
-              <span class="mini-card-icon">🕊️</span>
-              <strong>Sora</strong>
-            </a>
-            <a href="./tamers.html#koushiro_izumi" class="mini-card" style="background:linear-gradient(135deg,#9E9E9E,#2441ff);text-decoration:none">
-              <span class="mini-card-icon">💻</span>
-              <strong>Koushiro</strong>
-            </a>
-            <a href="./tamers.html#mimi_tachikawa" class="mini-card" style="background:linear-gradient(135deg,#8BC34A,#2441ff);text-decoration:none">
-              <span class="mini-card-icon">🌸</span>
-              <strong>Mimi</strong>
-            </a>
-            <a href="./tamers.html#jou_kido" class="mini-card" style="background:linear-gradient(135deg,#2196F3,#2441ff);text-decoration:none">
-              <span class="mini-card-icon">🌊</span>
-              <strong>Jou</strong>
-            </a>
-            <a href="./tamers.html#takeru_takaishi" class="mini-card" style="background:linear-gradient(135deg,#FFC107,#2441ff);text-decoration:none">
+            #skills
               <span class="mini-card-icon">✨</span>
-              <strong>Takeru</strong>
+              <strong>Skills</strong>
             </a>
-            <a href="./tamers.html#hikari_yagami" class="mini-card" style="background:linear-gradient(135deg,#9C27B0,#2441ff);text-decoration:none">
-              <span class="mini-card-icon">🌙</span>
-              <strong>Hikari</strong>
+            #stats
+              <span class="mini-card-icon">📊</span>
+              <strong>Stats Guide</strong>
             </a>
           </div>
+          #build-infoView All</a>
         </div>
-        <a href="./tamers.html" class="action-btn" style="background:#ffd166;color:#0b1020;margin-top:20px;display:block;text-align:center">
-          View All Tamers
-        </a>
       </div>
-    </div>
 
-    <!-- COMMUNITY SECTION -->
-    <div class="section-card">
-      <div class="section-header">
-        <h2><span class="section-icon">💬</span> Community</h2>
-      </div>
-      <div class="section-body">
-        <p class="section-description">Join our active community of Digimon enthusiasts and share your experiences.</p>
-        <div style="display:grid;gap:16px;margin-top:20px">
-          <div style="background:var(--panel-2);border:1px solid var(--ring);border-radius:10px;padding:16px;text-align:center">
-            <div style="font-size:24px;font-weight:700;color:#25d366">WhatsApp</div>
-            <div style="color:var(--muted);font-size:14px;margin:8px 0">Join our group chat</div>
-            <a href="https://chat.whatsapp.com/Fa28jqgueSs7aZCHh4332y" target="_blank" style="display:inline-block;background:#25d366;color:white;padding:10px 20px;border-radius:8px;font-weight:600;text-decoration:none;margin-top:8px">Join Group</a>
+      <!-- DIGIMON SECTION -->
+      <div class="section-card">
+        <div class="section-header">
+          <h2><span class="section-icon">🦕</span> Digimon Database</h2>
+        </div>
+        <div class="section-body">
+          <p class="section-description">Complete database of all Digimon with evolution lines, groups, and detailed information.</p>
+          <div style="display:grid;gap:12px;margin-top:20px">
+            <div style="background:var(--panel-2);border:1px solid var(--ring);border-radius:10px;padding:16px">
+              <div style="font-size:28px;font-weight:800;color:#59a6ff" id="digimon-count">Loading...</div>
+              <div style="color:var(--muted);font-size:14px">Total Digimon</div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">
+              <div class="stage-card" data-stage="Child" style="background:var(--chip);padding:10px;border-radius:8px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <div style="font-weight:700;font-size:18px" id="child-count">-</div>
+                <div style="font-size:12px;color:#b9c6ff">Child</div>
+              </div>
+              <div class="stage-card" data-stage="Adult" style="background:var(--chip);padding:10px;border-radius:8px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <div style="font-weight:700;font-size:18px" id="adult-count">-</div>
+                <div style="font-size:12px;color:#b9c6ff">Adult</div>
+              </div>
+              <div class="stage-card" data-stage="Perfect" style="background:var(--chip);padding:10px;border-radius:8px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <div style="font-weight:700;font-size:18px" id="perfect-count">-</div>
+                <div style="font-size:12px;color:#b9c6ff">Perfect</div>
+              </div>
+              <div class="stage-card" data-stage="Ultimate" style="background:var(--chip);padding:10px;border-radius:8px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <div style="font-weight:700;font-size:18px" id="ultimate-count">-</div>
+                <div style="font-size:12px;color:#b9c6ff">Ultimate</div>
+              </div>
+              <div class="stage-card" data-stage="Ultimate+" style="background:var(--chip);padding:10px;border-radius:8px;text-align:center;cursor:pointer;transition:all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <div style="font-weight:700;font-size:18px" id="ultimate-plus-count">-</div>
+                <div style="font-size:12px;color:#b9c6ff">Ultimate+</div>
+              </div>
+            </div>
           </div>
-          <div style="background:linear-gradient(135deg,#59a6ff,#2441ff);border-radius:10px;padding:20px;text-align:center">
-            <div style="font-size:20px;font-weight:700;margin-bottom:12px">Coming Soon</div>
-            <div style="font-size:14px">Discord • Reddit • Social Media</div>
+          ./digimon.html
+            Open Digi‑Dex
+          </a>
+        </div>
+      </div>
+
+      <!-- TAMERS SECTION -->
+      <div class="section-card">
+        <div class="section-header">
+          <h2><span class="section-icon">👥</span> Hero / Tamer Database</h2>
+        </div>
+        <div class="section-body">
+          <p class="section-description">Meet the chosen children who partner with Digimon to protect both worlds.</p>
+          <div style="display:grid;gap:12px;margin-top:20px">
+            <div style="background:var(--panel-2);border:1px solid var(--ring);border-radius:10px;padding:16px">
+              <div style="font-size:28px;font-weight:800;color:#59a6ff" id="tamer-count">Loading...</div>
+              <div style="color:var(--muted);font-size:14px">Total Tamers</div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">
+              ./tamers.html#taichi_yagami
+                <span class="mini-card-icon">🔥</span>
+                <strong>Taichi</strong>
+              </a>
+              ./tamers.html#yamato_ishida
+                <span class="mini-card-icon">🌲</span>
+                <strong>Yamato</strong>
+              </a>
+              ./tamers.html#sora_takenouchi
+                <span class="mini-card-icon">🕊️</span>
+                <strong>Sora</strong>
+              </a>
+              ./tamers.html#koushiro_izumi
+                <span class="mini-card-icon">💻</span>
+                <strong>Koushiro</strong>
+              </a>
+              ./tamers.html#mimi_tachikawa
+                <span class="mini-card-icon">🌸</span>
+                <strong>Mimi</strong>
+              </a>
+              ./tamers.html#jou_kido
+                <span class="mini-card-icon">🌊</span>
+                <strong>Jou</strong>
+              </a>
+              ./tamers.html#takeru_takaishi
+                <span class="mini-card-icon">✨</span>
+                <strong>Takeru</strong>
+              </a>
+              ./tamers.html#hikari_yagami
+                <span class="mini-card-icon">🌙</span>
+                <strong>Hikari</strong>
+              </a>
+            </div>
+          </div>
+          ./tamers.html
+            View All Tamers
+          </a>
+        </div>
+      </div>
+
+      <!-- COMMUNITY SECTION -->
+      <div class="section-card">
+        <div class="section-header">
+          <h2><span class="section-icon">💬</span> Community</h2>
+        </div>
+        <div class="section-body">
+          <p class="section-description">Join our active community of Digimon enthusiasts and share your experiences.</p>
+          <div style="display:grid;gap:16px;margin-top:20px">
+            <div style="background:var(--panel-2);border:1px solid var(--ring);border-radius:10px;padding:16px;text-align:center">
+              <div style="font-size:24px;font-weight:700;color:#25d366">WhatsApp</div>
+              <div style="color:var(--muted);font-size:14px;margin:8px 0">Join our group chat</div>
+              https://chat.whatsapp.com/Fa28jqgueSs7aZCHh4332yJoin Group</a>
+            </div>
+            <div style="background:linear-gradient(135deg,#59a6ff,#2441ff);border-radius:10px;padding:20px;text-align:center">
+              <div style="font-size:20px;font-weight:700;margin-bottom:12px">Coming Soon</div>
+              <div style="font-size:14px">Discord • Reddit • Social Media</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+
+    </div><!-- /.container main-grid -->
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <div style="font-size:18px;font-weight:700">Final Evolution: Digi</div>
-    <div class="footer-links">
-      <a href="./index.html">Home</a>
-      <a href="./digimon.html">Digi‑Dex</a>
-      <a href="./tamers.html">Tamers</a>
-      <a href="./about.html">About</a>
-      <a href="https://chat.whatsapp.com/Fa28jqgueSs7aZCHh4332y" target="_blank">WhatsApp</a>
-    </div>
-    <div class="disclaimer">
-      Digimon and all related characters are trademarks of Bandai Namco Holdings Inc.<br>
-      This is a non-commercial fan project created by the Digimon World Indonesia community.<br>
-      © 2026 Final Evolution: Digi • On Progress by Joe • Supported by Digimon World Indonesia
+  <footer class="section">
+    <div class="container">
+      <div style="font-size:18px;font-weight:700">Final Evolution: Digi</div>
+      <div class="footer-links">
+        ./index.htmlHome</a>
+        ./digimon.htmlDigi‑Dex</a>
+        ./tamers.htmlTamers</a>
+        ./about.htmlAbout</a>
+        https://chat.whatsapp.com/Fa28jqgueSs7aZCHh4332yWhatsApp</a>
+      </div>
+      <div class="disclaimer">
+        Digimon and all related characters are trademarks of Bandai Namco Holdings Inc.<br>
+        This is a non-commercial fan project created by the Digimon World Indonesia community.<br>
+        © 2026 Final Evolution: Digi • On Progress by Joe • Supported by Digimon World Indonesia
+      </div>
     </div>
   </footer>
 
@@ -480,7 +494,7 @@
 
     // Toggle saat klik tombol
     toggleBtn?.addEventListener('click', (e)=>{
-      e.stopPropagation(); // supaya tidak dianggap klik "luar menu"
+      e.stopPropagation();
       isMenuOpen() ? closeMenu() : openMenu();
     });
 
@@ -489,7 +503,7 @@
       a.addEventListener('click', closeMenu);
     });
 
-    // Tutup saat klik di mana pun di luar tombol & menu (termasuk ruang kosong)
+    // Tutup saat klik di luar menu/tombol (termasuk ruang kosong)
     document.addEventListener('pointerdown', (e)=>{
       if (!isMenuOpen()) return;
       const target = e.target;
