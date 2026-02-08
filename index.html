@@ -25,7 +25,7 @@
       --shadow-sm: 0 4px 12px rgba(0,0,0,.25);
       --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-      /* NEW: satuan padding horizontal global */
+      /* layout */
       --pad-x: 18px;
       --content-max: 1400px;
     }
@@ -39,18 +39,16 @@
     a{color:var(--brand);text-decoration:none}
     a:hover{text-decoration:underline}
 
-    /* ====== LAYOUT UTILITY (NEW) ====== */
+    /* ====== LAYOUT UTILS ====== */
     .container{
       max-width: var(--content-max);
       margin-inline: auto;
       padding-inline: var(--pad-x);
       width: 100%;
     }
-    .section{ /* jarak vertikal konsisten antar section */
-      margin-block: 20px;
-    }
+    .section{ margin-block: 20px; }
 
-    /* ====== NAVBAR (mobile-ready) ====== */
+    /* ====== NAVBAR ====== */
     .nav{
       position:sticky; top:0; z-index:50;
       background:linear-gradient(180deg,#0b1020,rgba(11,16,32,.72));
@@ -59,7 +57,6 @@
     }
     .nav-inner{
       display:flex;align-items:center;gap:16px;position:relative;
-      height: auto; /* biar menu absolute pos top:100% akurat */
     }
     .brand{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.3px}
     .brand .logo{
@@ -70,7 +67,7 @@
     .spacer{flex:1;}
 
     .nav-toggle{
-      display:none; /* tampil di mobile */
+      display:none;
       border:1px solid var(--ring);
       background:var(--panel);
       color:var(--text);
@@ -91,9 +88,7 @@
     .nav a.navlink.active{background:rgba(42,61,134,.3);color:#59a6ff}
 
     /* ====== HERO ====== */
-    .hero-banner{
-      text-align:center;background:transparent;border-radius:20px;overflow:hidden;position:relative; box-shadow:none;
-    }
+    .hero-banner{ text-align:center;background:transparent;border-radius:20px;overflow:hidden;position:relative; box-shadow:none; }
     .hero-banner::before{content:none;display:none;}
     .hero-image{
       width:100%;max-width:1400px;height:auto;display:block;
@@ -136,7 +131,6 @@
 
     /* ====== MAIN CONTENT GRID ====== */
     .main-grid{
-      /* PENTING: grid saja, tanpa padding inline. Padding dikelola .container */
       display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
       gap:24px;
     }
@@ -170,7 +164,7 @@
     }
     .action-btn:hover{background:#4a96ff;transform:translateY(-2px)}
 
-    /* ====== FOOTER (mobile-friendly) ====== */
+    /* ====== FOOTER ====== */
     footer{
       border-top:1px solid var(--ring);color:var(--muted);
       text-align:center;padding:30px 0;margin-top:40px;
@@ -181,7 +175,7 @@
     }
     .footer-links a{
       color:var(--muted);text-decoration:none;
-      transition:var(--transition);padding:8px 14px; /* nyaman di jari */
+      transition:var(--transition);padding:8px 14px;
       border-radius:8px; line-height:1.2;
     }
     .footer-links a:hover{color:var(--brand);background:rgba(42,61,134,.2)}
@@ -192,7 +186,6 @@
       .nav-inner{gap:10px}
       .nav-toggle{display:inline-flex;align-items:center;justify-content:center}
 
-      /* Menu collapsed by default on mobile */
       .nav-menu{
         display:none;
         position:absolute; left:0; right:0; top:100%;
@@ -209,10 +202,8 @@
       .nav-menu li{display:block}
       .nav a.navlink{display:block;padding:12px 12px}
 
-      /* Grid 1 kolom di mobile */
       .main-grid{grid-template-columns:1fr;}
 
-      /* Footer stack vertikal agar rapi di HP */
       .footer-links{flex-direction:column; gap:8px}
       .footer-links a{width:100%; max-width:320px;}
     }
@@ -229,10 +220,10 @@
 
       <div class="spacer"></div>
 
-      <!-- tombol hamburger untuk mobile -->
+      <!-- tombol hamburger -->
       <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="menu" aria-label="Buka menu">☰</button>
 
-      <!-- nav menu collapsible -->
+      <!-- nav menu -->
       <ul class="nav-menu" id="menu" aria-expanded="false">
         <li>./index.htmlHome</a></li>
         <li>./digimon.htmlDigi‑Dex</a></li>
@@ -277,7 +268,7 @@
     </div>
   </section>
 
-  <!-- MAIN CONTENT (Basic Information, Build, Digimon, Tamers, Community) -->
+  <!-- MAIN CONTENT -->
   <section class="section">
     <div class="container main-grid">
       <!-- BASIC INFORMATION -->
@@ -338,7 +329,7 @@
         </div>
       </div>
 
-      <!-- DIGIMON SECTION -->
+      <!-- DIGIMON -->
       <div class="section-card">
         <div class="section-header">
           <h2><span class="section-icon">🦕</span> Digimon Database</h2>
@@ -373,13 +364,13 @@
               </div>
             </div>
           </div>
-          ./digimon.html
+          <a href="./digimon.html" class="action-btn" style="background:#ffd166;color:#0b1020;margin-top:20px;display:block;text-align:center">
             Open Digi‑Dex
           </a>
         </div>
       </div>
 
-      <!-- TAMERS SECTION -->
+      <!-- TAMERS -->
       <div class="section-card">
         <div class="section-header">
           <h2><span class="section-icon">👥</span> Hero / Tamer Database</h2>
@@ -426,13 +417,13 @@
               </a>
             </div>
           </div>
-          ./tamers.html
+          <a href="./tamers.html" class="action-btn" style="background:#ffd166;color:#0b1020;margin-top:20px;display:block;text-align:center">
             View All Tamers
           </a>
         </div>
       </div>
 
-      <!-- COMMUNITY SECTION -->
+      <!-- COMMUNITY -->
       <div class="section-card">
         <div class="section-header">
           <h2><span class="section-icon">💬</span> Community</h2>
@@ -443,7 +434,7 @@
             <div style="background:var(--panel-2);border:1px solid var(--ring);border-radius:10px;padding:16px;text-align:center">
               <div style="font-size:24px;font-weight:700;color:#25d366">WhatsApp</div>
               <div style="color:var(--muted);font-size:14px;margin:8px 0">Join our group chat</div>
-              https://chat.whatsapp.com/Fa28jqgueSs7aZCHh4332yJoin Group</a>
+              <a href="https://chat.whatsapp.com/Fa28jqgueSs7aZCHh4332y" target="_blank" style="display:inline-block;background:#25d366;color:white;padding:10px 20px;border-radius:8px;font-weight:600;text-decoration:none;margin-top:8px">Join Group</a>
             </div>
             <div style="background:linear-gradient(135deg,#59a6ff,#2441ff);border-radius:10px;padding:20px;text-align:center">
               <div style="font-size:20px;font-weight:700;margin-bottom:12px">Coming Soon</div>
@@ -492,18 +483,15 @@
       menu?.classList.remove('open');
     }
 
-    // Toggle saat klik tombol
     toggleBtn?.addEventListener('click', (e)=>{
       e.stopPropagation();
       isMenuOpen() ? closeMenu() : openMenu();
     });
 
-    // Tutup saat klik link di menu
     document.querySelectorAll('#menu a').forEach(a => {
       a.addEventListener('click', closeMenu);
     });
 
-    // Tutup saat klik di luar menu/tombol (termasuk ruang kosong)
     document.addEventListener('pointerdown', (e)=>{
       if (!isMenuOpen()) return;
       const target = e.target;
@@ -512,16 +500,14 @@
       if (!insideMenu && !onToggle) closeMenu();
     });
 
-    // Tutup saat tekan Escape
     document.addEventListener('keydown', (e)=>{
       if (e.key === 'Escape' && isMenuOpen()) closeMenu();
     });
 
-    // Reset state saat resize ke desktop
     const mqDesktop = window.matchMedia('(min-width: 769px)');
     mqDesktop.addEventListener('change', (ev)=>{ if (ev.matches) closeMenu(); });
 
-    /* ====== Stats loader (dari file kamu) ====== */
+    /* ====== Stats loader (tetap) ====== */
     const DIGIMON_URL = 'data/digimon_evolution_lines.json';
     const TAMERS_URL  = 'data/tamers.json';
 
