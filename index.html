@@ -13,23 +13,19 @@
       --panel-2:#0d1330;
       --text:#e9ecf7;
       --muted:#9aa3c4;
-
       --brand:#59a6ff;
       --accent:#ffd166;
       --chip:#1e2a54;
       --ring:#1b2547;
       --ok:#31d0aa;
       --warn:#ff7a7a;
-
       --shadow: 0 10px 30px rgba(0,0,0,.35);
       --shadow-sm: 0 4px 12px rgba(0,0,0,.25);
       --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
       /* layout */
       --pad-x: 18px;
       --content-max: 1400px;
     }
-
     *{box-sizing:border-box}
     html,body{
       margin:0;height:100%;
@@ -65,7 +61,6 @@
       box-shadow: 0 0 0 1px #2b3772 inset, 0 4px 16px rgba(36,65,255,.35);
     }
     .spacer{flex:1;}
-
     .nav-toggle{
       display:none;
       border:1px solid var(--ring);
@@ -73,7 +68,6 @@
       color:var(--text);
       padding:8px 12px;border-radius:8px;cursor:pointer;
     }
-
     .nav-menu{
       display:flex;align-items:center;gap:8px;
       list-style:none;margin:0;padding:0;
@@ -164,6 +158,12 @@
     }
     .action-btn:hover{background:#4a96ff;transform:translateY(-2px)}
 
+    /* --- Aksesibilitas tambahan untuk keyboard --- */
+    .mini-card:focus-visible{
+      outline:2px solid #59a6ff;
+      outline-offset:2px;
+    }
+
     /* ====== FOOTER ====== */
     footer{
       border-top:1px solid var(--ring);color:var(--muted);
@@ -185,7 +185,6 @@
     @media (max-width:768px){
       .nav-inner{gap:10px}
       .nav-toggle{display:inline-flex;align-items:center;justify-content:center}
-
       .nav-menu{
         display:none;
         position:absolute; left:0; right:0; top:100%;
@@ -198,12 +197,9 @@
         max-height:70vh; overflow:auto;
       }
       .nav-menu[aria-expanded="true"], .nav-menu.open{ display:flex; }
-
       .nav-menu li{display:block}
       .nav a.navlink{display:block;padding:12px 12px}
-
       .main-grid{grid-template-columns:1fr;}
-
       .footer-links{flex-direction:column; gap:8px}
       .footer-links a{width:100%; max-width:320px;}
     }
@@ -217,12 +213,9 @@
         <div class="logo" aria-hidden="true"></div>
         <span>Final Evolution: <span style="color:#cfe0ff">Digi</span></span>
       </div>
-
       <div class="spacer"></div>
-
       <!-- tombol hamburger -->
       <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="menu" aria-label="Buka menu">☰</button>
-
       <!-- nav menu -->
       <ul class="nav-menu" id="menu" aria-expanded="false">
         <li><a class="navlink active" href="./index.html">Home</a></li>
@@ -271,61 +264,44 @@
   <!-- MAIN CONTENT -->
   <section class="section">
     <div class="container main-grid">
-      <!-- BASIC INFORMATION -->
-      <div class="section-card">
+
+      <!-- DIGICORE HUB (merged from Basic + Build) -->
+      <div class="section-card" id="digicore">
         <div class="section-header">
-          <h2><span class="section-icon">👤</span> Basic Information</h2>
+          <h2><span class="section-icon">🔮</span> DigiCore Hub</h2>
         </div>
         <div class="section-body">
-          <p class="section-description">Essential game data to help you understand the core mechanics and characters.</p>
+          <p class="section-description">
+            Essentials & builds in one place. Explore items and adventures, plan your team, and master the right stats.
+          </p>
           <div class="section-grid">
-            <a href="#equipment" class="mini-card">
-              <span class="mini-card-icon">🛡️</span>
-              <strong>Equipment</strong>
-            </a>
-            <a href="#materials" class="mini-card">
-              <span class="mini-card-icon">💎</span>
-              <strong>Materials</strong>
-            </a>
-            <a href="./items.html" class="mini-card" style="text-decoration:none">
+            <!-- Items (kept) -->
+            <a href="./items.html" class="mini-card" title="Browse all Items" aria-label="Open Items">
               <span class="mini-card-icon">📦</span>
               <strong>Items</strong>
             </a>
-            <a href="#adventure" class="mini-card">
+            <!-- Adventure (kept) -->
+            <a href="#adventure" class="mini-card" title="Adventure basics and tips" aria-label="Open Adventure">
               <span class="mini-card-icon">🗺️</span>
               <strong>Adventure</strong>
             </a>
-          </div>
-          <a href="#basic-info" class="action-btn">View All</a>
-        </div>
-      </div>
-
-      <!-- BUILD INFORMATION -->
-      <div class="section-card">
-        <div class="section-header">
-          <h2><span class="section-icon">🔧</span> Build Information</h2>
-        </div>
-        <div class="section-body">
-          <p class="section-description">Optimize your team and create the perfect Digimon builds for any challenge.</p>
-          <div class="section-grid">
-            <a href="./teamsetup.html" class="mini-card" style="text-decoration:none">
+            <!-- Team Setup (kept) -->
+            <a href="./teamsetup.html" class="mini-card" title="Team composition & roles" aria-label="Open Team Setup">
               <span class="mini-card-icon">👥</span>
               <strong>Team Setup</strong>
             </a>
-            <a href="#digimon-build" class="mini-card">
+            <!-- Digimon Build (kept) -->
+            <a href="#digimon-build" class="mini-card" title="Build paths & gear recommendations" aria-label="Open Digimon Build">
               <span class="mini-card-icon">📈</span>
               <strong>Digimon Build</strong>
             </a>
-            <a href="#skills" class="mini-card">
-              <span class="mini-card-icon">✨</span>
-              <strong>Skills</strong>
-            </a>
-            <a href="#stats" class="mini-card">
+            <!-- Stats Guide (kept) -->
+            <a href="#stats" class="mini-card" title="Understand and optimize your stats" aria-label="Open Stats Guide">
               <span class="mini-card-icon">📊</span>
               <strong>Stats Guide</strong>
             </a>
           </div>
-          <a href="#build-info" class="action-btn">View All</a>
+          <a href="#guides" class="action-btn">Open Guides</a>
         </div>
       </div>
 
@@ -470,7 +446,6 @@
     /* ====== NAV MENU TOGGLE + AUTO-CLOSE ====== */
     const toggleBtn = document.getElementById('navToggle');
     const menu = document.getElementById('menu');
-
     function isMenuOpen(){ return toggleBtn?.getAttribute('aria-expanded') === 'true'; }
     function openMenu(){
       toggleBtn?.setAttribute('aria-expanded','true');
@@ -482,63 +457,55 @@
       menu?.setAttribute('aria-expanded','false');
       menu?.classList.remove('open');
     }
-
     toggleBtn?.addEventListener('click', (e)=>{
       e.stopPropagation();
       isMenuOpen() ? closeMenu() : openMenu();
     });
-
     document.querySelectorAll('#menu a').forEach(a => {
       a.addEventListener('click', closeMenu);
     });
-
     document.addEventListener('pointerdown', (e)=>{
       if (!isMenuOpen()) return;
       const target = e.target;
       const insideMenu = menu?.contains(target);
-      const onToggle  = toggleBtn?.contains(target);
+      const onToggle = toggleBtn?.contains(target);
       if (!insideMenu && !onToggle) closeMenu();
     });
-
     document.addEventListener('keydown', (e)=>{
       if (e.key === 'Escape' && isMenuOpen()) closeMenu();
     });
-
     const mqDesktop = window.matchMedia('(min-width: 769px)');
     mqDesktop.addEventListener('change', (ev)=>{ if (ev.matches) closeMenu(); });
 
     /* ====== Stats loader ====== */
     const DIGIMON_URL = 'data/digimon_evolution_lines.json';
-    const TAMERS_URL  = 'data/tamers.json';
-
+    const TAMERS_URL = 'data/tamers.json';
     async function loadStats(){
       try{
         const [digimonRes, tamerRes] = await Promise.all([
           fetch(DIGIMON_URL, { cache:'no-store' }),
-          fetch(TAMERS_URL,  { cache:'no-store' })
+          fetch(TAMERS_URL, { cache:'no-store' })
         ]);
         if(!digimonRes.ok) throw new Error('Gagal memuat data Digimon');
-        if(!tamerRes.ok)   throw new Error('Gagal memuat data Tamers');
-
+        if(!tamerRes.ok) throw new Error('Gagal memuat data Tamers');
         const digimonData = await digimonRes.json();
-        const tamerData   = await tamerRes.json();
+        const tamerData = await tamerRes.json();
 
         document.getElementById('digimon-count').textContent = digimonData.length;
-        document.getElementById('stat-digimon').textContent  = digimonData.length;
+        document.getElementById('stat-digimon').textContent = digimonData.length;
 
         const stageCounts = { 'Child':0, 'Adult':0, 'Perfect':0, 'Ultimate':0, 'Ultimate+':0 };
         digimonData.forEach(d => { if(stageCounts[d.stage] !== undefined){ stageCounts[d.stage]++; } });
-
-        document.getElementById('child-count').textContent         = stageCounts.Child;
-        document.getElementById('adult-count').textContent         = stageCounts.Adult;
-        document.getElementById('perfect-count').textContent       = stageCounts.Perfect;
-        document.getElementById('ultimate-count').textContent      = stageCounts.Ultimate;
+        document.getElementById('child-count').textContent = stageCounts.Child;
+        document.getElementById('adult-count').textContent = stageCounts.Adult;
+        document.getElementById('perfect-count').textContent = stageCounts.Perfect;
+        document.getElementById('ultimate-count').textContent = stageCounts.Ultimate;
         document.getElementById('ultimate-plus-count').textContent = stageCounts['Ultimate+'];
 
         document.getElementById('tamer-count').textContent = tamerData.length;
         document.getElementById('stat-tamers').textContent = tamerData.length;
 
-        document.getElementById('stat-items').textContent     = '87';
+        document.getElementById('stat-items').textContent = '87';
         document.getElementById('stat-materials').textContent = '45';
 
         document.querySelectorAll('.stage-card').forEach(card => {
@@ -555,3 +522,4 @@
   </script>
 </body>
 </html>
+``
