@@ -55,7 +55,7 @@
     .slot:hover{ transform:translateY(-3px); border-color:#2a3d86 } 
     .slot .thumb{ aspect-ratio:1/1; background:#0b132b; display:flex; align-items:center; justify-content:center; position:relative; cursor:pointer;} 
     .slot .thumb .placeholder{ width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:#8ea3ff; font-weight:800; font-size:42px; user-select:none;} 
-    /* ===== PATCH: TAMPILKAN GAMBAR SPRITE SAAT DIPILIH ===== */
+    /* ===== PATCH: TAMPILKAN GAMBAR SPRITE SAAT DIPILIH + FALLBACK ===== */
     .slot .thumb img.digimon-sprite{ max-width:100%; max-height:100%; display:block; margin:auto; object-fit:contain; }
     /* ======================================================= */
     .slot .namebar{display:flex; align-items:center; justify-content:space-between; gap:8px; padding:10px 12px; border-top:1px solid var(--ring)} 
@@ -339,18 +339,18 @@
         const idx = Number(slot.dataset.index); 
         const id = TEAM[idx]; 
         const nameEl = $('.name', slot); 
-        const thumb = $('.thumb', slot); // Ambil container thumb
+        const thumb = $('.thumb', slot); 
         if (!id){ 
           nameEl.textContent = 'Digimon Name'; 
-          thumb.innerHTML = '<div class="placeholder">?</div>'; // Reset ke placeholder
+          thumb.innerHTML = '<div class="placeholder">?</div>'; 
           renderSlotMeta(slot, null); 
           return; 
         } 
         const d = byId(id); 
         nameEl.textContent = d?.displayName ?? id; 
-        // TAMPILKAN GAMBAR SPRITE SESUAI ID
+        // TAMPILKAN GAMBAR SPRITE + FALLBACK KE UNKNOWN JIKA GAGAL LOAD
         if (d) {
-          thumb.innerHTML = `<img src="./images/sprites/sprite_${id}.png" alt="${d.displayName}" class="digimon-sprite">`;
+          thumb.innerHTML = `<img src="./images/sprites/sprites_${id}.png" alt="${d.displayName}" class="digimon-sprite" onerror="this.onerror=null;this.src='./images/sprites/sprites_unknown.png'">`;
         } else {
           thumb.innerHTML = '<div class="placeholder">?</div>';
         }
