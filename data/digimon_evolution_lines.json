@@ -5752,10 +5752,10 @@
       "type": "Exclusive Guild"
     },
     "traits": [
-      "aoe",
+      "bruiser",
       "bleed",
       "debuff",
-      "dps"
+      "aoe"
     ]
   },
   {
