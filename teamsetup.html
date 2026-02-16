@@ -100,7 +100,13 @@
       .modal{max-height:88vh}
       .modal .hd input, .modal select{min-height:44px;font-size:16px}
     }
-  </style>
+  
+/* ===== Patch: kontrol lebar substitusi & wrapping ===== */
+#recSubsBox{display:flex;flex-wrap:wrap;gap:8px;max-width:100%;overflow-wrap:break-word;}
+#recSubsBox .chip{flex-shrink:0;}
+@media (min-width:1000px){ aside.panel-box{max-width:420px;} }
+
+</style>
 </head>
 <body>
   <!-- NAV -->
@@ -396,7 +402,11 @@ function renderSubs(subIds){
     const label = d?.displayName || id;
     return `<a class="chip" href="./digimon.html#${encodeURIComponent(id)}" title="Buka di Digi‑Dex">${label}</a>`;
   }).join(' ');
-  holder.innerHTML = `<div style="display:flex;gap:8px;align-items:center"><b>Substitusi:</b> ${chips}</div>`;
+  holder.innerHTML = `
+  <div style="width:100%; display:flex; flex-wrap:wrap; gap:8px; align-items:center">
+    <b>Substitusi:</b> ${chips}
+  </div>
+`;
 }
 
 function applyTeamRec(rec){
