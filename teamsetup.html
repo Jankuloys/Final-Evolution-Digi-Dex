@@ -350,7 +350,7 @@
         nameEl.textContent = d?.displayName ?? id; 
         // TAMPILKAN GAMBAR SPRITE + FALLBACK KE UNKNOWN JIKA GAGAL LOAD
         if (d) {
-          thumb.innerHTML = `<img src="./images/sprites/sprites_${id}.png" alt="${d.displayName}" class="digimon-sprite" onerror="this.onerror=null;this.src='./images/sprites/sprites_unknown.png'">`;
+          thumb.innerHTML = `<img src="./images/sprites/sprite_${id}.png" alt="${d.displayName}" class="digimon-sprite" onerror="this.onerror=null;this.src='./images/sprites/sprites_unknown.png'">`;
         } else {
           thumb.innerHTML = '<div class="placeholder">?</div>';
         }
