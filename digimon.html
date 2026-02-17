@@ -1,892 +1,876 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Final Evolution: Digi‑Dex</title>
-  <meta name="color-scheme" content="dark light" />
-  <style>
-    :root{
-      --bg:#0b1020; --panel:#101735; --panel-2:#0d1330; --text:#e9ecf7; --muted:#9aa3c4;
-      --brand:#59a6ff; --accent:#ffd166; --chip:#1e2a54; --ring:#1b2547; --ok:#31d0aa; --warn:#ff7a7a;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --shadow-sm: 0 4px 12px rgba(0,0,0,.25);
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,Segoe UI,Roboto,Inter,Arial}
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
-
-    /* NAVBAR (patched: burger + mobile panel) */
-    .nav{position:sticky; top:0; z-index:50; background:linear-gradient(180deg,#0b1020,rgba(11,16,32,.72)); border-bottom:1px solid var(--ring); backdrop-filter: blur(10px);}
-    .nav-inner{max-width:1200px;margin:auto;padding:12px 18px;display:flex;align-items:center;gap:16px;position:relative;}
-    .brand{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.3px}
-    .brand .logo{width:28px;height:28px;border-radius:7px;background:
-      radial-gradient(120% 120% at 20% 20%, #5ac8ff 0%, #2441ff 38%, #0b1020 80%); box-shadow: 0 0 0 1px #2b3772 inset, 0 4px 16px rgba(36,65,255,.35);}
-    .spacer{flex:1}
-
-    /* NEW: tombol burger & menu list */
-    .nav-toggle{
-      display:none; /* tampilkan di mobile */
-      border:1px solid var(--ring);
-      background:var(--panel);
-      color:var(--text);
-      padding:8px 12px;border-radius:8px;cursor:pointer;
-    }
-    .nav-menu{
-      display:flex;align-items:center;gap:8px;list-style:none;margin:0;padding:0;
-    }
-    .nav-menu li{display:inline-flex}
-    .nav a.navlink{color:var(--text);text-decoration:none;opacity:.9;transition:var(--transition);padding:8px 12px;border-radius:8px}
-    .nav a.navlink:hover{opacity:1;color:#cfe0ff;background:rgba(42,61,134,.2)}
-    .nav a.navlink.active{background:rgba(42,61,134,.3);color:#59a6ff}
-
-    /* HERO */
-    .hero{max-width:1200px;margin:20px auto 8px;padding:0 18px;text-align:center}
-    .hero h1{margin:6px 0 6px;font-size:clamp(28px,5vw,48px);background:linear-gradient(90deg,#59a6ff,#ffd166);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
-    .hero p{margin:0;color:var(--muted);font-size:18px}
-
-    /* CONTROLS */
-    .panel{max-width:1200px;margin:14px auto;padding:14px 18px}
-    .controls{
-      background:var(--panel); border:1px solid var(--ring); border-radius:16px;
-      box-shadow:var(--shadow); padding:20px; display:flex; flex-direction:column; gap:16px;
-    }
-    .search-box{ display:flex; gap:10px; align-items:center; }
-    .search-input{
-      flex:1; padding:12px 16px; border-radius:12px; border:1px solid var(--ring);
-      background:var(--panel-2); color:var(--text); font-size:15px; transition:var(--transition);
-    }
-    .search-input:focus{ outline:none; border-color:#2a3d86; box-shadow:0 0 0 2px rgba(42,61,134,.3); }
-    .search-input::placeholder{color:var(--muted)}
-
-    .mode-switch{display:flex; gap:8px; flex-wrap:wrap; justify-content:space-between}
-    .seg-btn{
-      background:var(--panel-2); border:1px solid var(--ring); color:#cfe0ff;
-      padding:10px 16px; border-radius:12px; cursor:pointer; font-weight:700;
-      transition:var(--transition); font-size:14px;
-    }
-    .seg-btn:hover{ transform:translateY(-2px); box-shadow:var(--shadow-sm); }
-    .seg-btn.active{
-      border-color:#2a3d86;
-      background:linear-gradient(135deg, #1a2345, #151e3a);
-      box-shadow:0 0 0 2px rgba(42,61,134,.5);
-    }
-
-    .alpha, .stagebar, .factionbar{display:flex;flex-wrap:wrap;gap:8px}
-    .alpha a, .stagebar a, .factionbar a{
-      display:inline-flex; align-items:center; justify-content:center;
-      min-width:40px; height:40px; padding:0 12px;
-      border-radius:10px; border:1px solid var(--ring);
-      background:var(--panel-2); color:#cfe0ff; text-decoration:none; font-weight:700;
-      transition:var(--transition); font-size:14px;
-    }
-    .alpha a:hover, .stagebar a:hover, .factionbar a:hover{
-      transform:translateY(-2px);
-      border-color:#2a3d86;
-      box-shadow:var(--shadow-sm);
-    }
-    .alpha a.active, .stagebar a.active, .factionbar a.active{
-      border-color:#2a3d86;
-      background:linear-gradient(135deg, #1a2345, #151e3a);
-      box-shadow:0 0 0 2px rgba(42,61,134,.5);
-    }
-
-    /* LAYOUT: name list + card */
-    .wrap{max-width:1200px;margin:0 auto 30px;padding:0 18px; display:grid; grid-template-columns: 1fr 1.2fr; gap:20px}
-    .panel-box{
-      background:var(--panel); border:1px solid var(--ring); border-radius:16px;
-      box-shadow:var(--shadow); padding:20px; transition:var(--transition);
-    }
-    .panel-box:hover{
-      transform:translateY(-4px);
-      box-shadow:0 15px 40px rgba(0,0,0,.4);
-      border-color:#2a3d86;
-    }
-
-    /* NAME LIST */
-    .names{ display:flex; flex-wrap:wrap; gap:10px; }
-    .name-pill{
-      display:inline-flex; padding:8px 14px; border-radius:999px;
-      background:linear-gradient(135deg, #0c1530, #0a1228);
-      border:1px solid var(--ring);
-      color:#b9c6ff; text-decoration:none; font-size:14px;
-      transition:var(--transition); font-weight:600;
-      box-shadow:0 2px 8px rgba(0,0,0,.2);
-    }
-    .name-pill:hover{
-      border-color:#2a3d86;
-      background:linear-gradient(135deg, #121d40, #0e1835);
-      transform:translateY(-2px);
-      box-shadow:0 4px 12px rgba(42,61,134,.3);
-      color:#59a6ff;
-    }
-
-    /* CARD */
-    .card{
-      background:var(--panel); border:1px solid var(--ring); border-radius:16px;
-      overflow:hidden; box-shadow:var(--shadow); transition:var(--transition);
-    }
-    .card:hover{
-      transform:translateY(-4px);
-      box-shadow:0 15px 40px rgba(0,0,0,.4);
-      border-color:#2a3d86;
-    }
-    .card .thumb{
-      aspect-ratio:1/1; background:#0b132b; display:flex; align-items:center;
-      justify-content:center; position:relative; overflow:hidden;
-    }
-    .card .thumb::before{
-      content:""; position:absolute; top:0; left:0; width:100%; height:100%;
-      background:radial-gradient(circle at 50% 50%, rgba(89,166,255,.1), transparent 70%);
-      opacity:0; transition:opacity 0.3s ease;
-    }
-    .card:hover .thumb::before{ opacity:1; }
-    .card .thumb .placeholder{
-      width:100%;height:100%;display:flex;align-items:center;justify-content:center;
-      background:#0b132b;color:#8ea3ff;font-weight:800;font-size:64px; transition:var(--transition);
-    }
-    .card:hover .placeholder{ transform:scale(1.1); }
-    .card .body{ padding:20px }
-    .card h2{ margin:0 0 12px; font-size:28px; color:#cfe0ff }
-    .meta{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px }
-    .chip{
-      background:var(--chip); color:#b9c6ff; padding:6px 12px; border-radius:8px;
-      font-size:13px; font-weight:600; transition:var(--transition);
-      cursor:pointer; display:inline-flex; align-items:center; gap:4px;
-      border:1px solid rgba(255,255,255,.1);
-      text-decoration: none !important;
-    }
-    .chip:hover{
-      background:linear-gradient(135deg, #2a3d86, #243570);
-      transform:translateY(-1px);
-      box-shadow:0 2px 8px rgba(42,61,134,.4);
-      border-color:rgba(255,255,255,.2);
-    }
-    .kv{ display:grid; grid-template-columns:130px 1fr; gap:8px 12px; margin:12px 0 }
-    .kv b{ color:#cfe0ff; font-weight:600; font-size:15px; }
-    .kv span{ color:var(--text); line-height:1.5; }
-    .linkchips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:8px }
-
-    /* FOOTER (patched for mobile) */
-    .empty{max-width:1200px;margin:10px auto 30px;padding:0 18px;color:var(--muted)}
-    footer{border-top:1px solid var(--ring);color:var(--muted);text-align:center;padding:20px 18px; margin-top:20px}
-    .footer-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px 18px;margin:12px 0 8px}
-    .footer-links a{color:var(--muted);text-decoration:none;transition:var(--transition);padding:8px 14px;border-radius:8px}
-    .footer-links a:hover{color:var(--brand);background:rgba(42,61,134,.2)}
-    .disclaimer{font-size:12px;color:#8e96b5}
-
-    /* RESPONSIVE */
-    @media (max-width:900px){
-      .wrap{ grid-template-columns: 1fr; }
-      .mode-switch{ flex-direction:column; }
-      .search-box{ flex-direction:column; }
-    }
-    @media (max-width:768px){
-      .nav-toggle{display:inline-flex;align-items:center;justify-content:center}
-      /* menu collapsed by default */
-      .nav-menu{
-        display:none;
-        position:absolute; left:0; right:0; top:100%;
-        margin:0; padding:8px 12px 12px;
-        background:rgba(11,16,32,.96);
-        backdrop-filter: blur(10px);
-        border-bottom:1px solid var(--ring);
-        box-shadow: 0 10px 20px rgba(0,0,0,.45);
-        flex-direction:column; align-items:stretch; gap:6px;
-        max-height:70vh; overflow:auto;
-      }
-      .nav-menu[aria-expanded="true"], .nav-menu.open{ display:flex; }
-      .nav-menu li{display:block}
-      .nav a.navlink{display:block;padding:12px 12px}
-
-      .footer-links{flex-direction:column;gap:8px}
-      .footer-links a{width:100%;max-width:320px;}
-    }
-  </style>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>Final Evolution: Digi‑Dex</title>
+ <meta name="color-scheme" content="dark light" />
+ <style>
+ :root{
+ --bg:#0b1020; --panel:#101735; --panel-2:#0d1330; --text:#e9ecf7; --muted:#9aa3c4;
+ --brand:#59a6ff; --accent:#ffd166; --chip:#1e2a54; --ring:#1b2547; --ok:#31d0aa; --warn:#ff7a7a;
+ --shadow: 0 10px 30px rgba(0,0,0,.35);
+ --shadow-sm: 0 4px 12px rgba(0,0,0,.25);
+ --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+ *{box-sizing:border-box}
+ html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,Segoe UI,Roboto,Inter,Arial}
+ a{color:var(--brand);text-decoration:none}
+ a:hover{text-decoration:underline}
+ /* NAVBAR (patched: burger + mobile panel) */
+ .nav{position:sticky; top:0; z-index:50; background:linear-gradient(180deg,#0b1020,rgba(11,16,32,.72)); border-bottom:1px solid var(--ring); backdrop-filter: blur(10px);} 
+ .nav-inner{max-width:1200px;margin:auto;padding:12px 18px;display:flex;align-items:center;gap:16px;position:relative;} 
+ .brand{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.3px}
+ .brand .logo{width:28px;height:28px;border-radius:7px;background:
+ radial-gradient(120% 120% at 20% 20%, #5ac8ff 0%, #2441ff 38%, #0b1020 80%); box-shadow: 0 0 0 1px #2b3772 inset, 0 4px 16px rgba(36,65,255,.35);} 
+ .spacer{flex:1}
+ /* NEW: tombol burger & menu list */
+ .nav-toggle{
+  display:none; /* tampilkan di mobile */
+  border:1px solid var(--ring);
+  background:var(--panel);
+  color:var(--text);
+  padding:8px 12px;border-radius:8px;cursor:pointer;
+ }
+ .nav-menu{
+  display:flex;align-items:center;gap:8px;list-style:none;margin:0;padding:0;
+ }
+ .nav-menu li{display:inline-flex}
+ .nav a.navlink{color:var(--text);text-decoration:none;opacity:.9;transition:var(--transition);padding:8px 12px;border-radius:8px}
+ .nav a.navlink:hover{opacity:1;color:#cfe0ff;background:rgba(42,61,134,.2)}
+ .nav a.navlink.active{background:rgba(42,61,134,.3);color:#59a6ff}
+ /* HERO */
+ .hero{max-width:1200px;margin:20px auto 8px;padding:0 18px;text-align:center}
+ .hero h1{margin:6px 0 6px;font-size:clamp(28px,5vw,48px);background:linear-gradient(90deg,#59a6ff,#ffd166);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
+ .hero p{margin:0;color:var(--muted);font-size:18px}
+ /* CONTROLS */
+ .panel{max-width:1200px;margin:14px auto;padding:14px 18px}
+ .controls{
+  background:var(--panel); border:1px solid var(--ring); border-radius:16px;
+  box-shadow:var(--shadow); padding:20px; display:flex; flex-direction:column; gap:16px;
+ }
+ .search-box{ display:flex; gap:10px; align-items:center; }
+ .search-input{
+  flex:1; padding:12px 16px; border-radius:12px; border:1px solid var(--ring);
+  background:var(--panel-2); color:var(--text); font-size:15px; transition:var(--transition);
+ }
+ .search-input:focus{ outline:none; border-color:#2a3d86; box-shadow:0 0 0 2px rgba(42,61,134,.3); }
+ .search-input::placeholder{color:var(--muted)}
+ .mode-switch{display:flex; gap:8px; flex-wrap:wrap; justify-content:space-between}
+ .seg-btn{
+  background:var(--panel-2); border:1px solid var(--ring); color:#cfe0ff;
+  padding:10px 16px; border-radius:12px; cursor:pointer; font-weight:700;
+  transition:var(--transition); font-size:14px;
+ }
+ .seg-btn:hover{ transform:translateY(-2px); box-shadow:var(--shadow-sm); }
+ .seg-btn.active{
+  border-color:#2a3d86;
+  background:linear-gradient(135deg, #1a2345, #151e3a);
+  box-shadow:0 0 0 2px rgba(42,61,134,.5);
+ }
+ .alpha, .stagebar, .factionbar{display:flex;flex-wrap:wrap;gap:8px}
+ .alpha a, .stagebar a, .factionbar a{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-width:40px; height:40px; padding:0 12px;
+  border-radius:10px; border:1px solid var(--ring);
+  background:var(--panel-2); color:#cfe0ff; text-decoration:none; font-weight:700;
+  transition:var(--transition); font-size:14px;
+ }
+ .alpha a:hover, .stagebar a:hover, .factionbar a:hover{
+  transform:translateY(-2px);
+  border-color:#2a3d86;
+  box-shadow:var(--shadow-sm);
+ }
+ .alpha a.active, .stagebar a.active, .factionbar a.active{
+  border-color:#2a3d86;
+  background:linear-gradient(135deg, #1a2345, #151e3a);
+  box-shadow:0 0 0 2px rgba(42,61,134,.5);
+ }
+ /* LAYOUT: name list + card */
+ .wrap{max-width:1200px;margin:0 auto 30px;padding:0 18px; display:grid; grid-template-columns: 1fr 1.2fr; gap:20px}
+ .panel-box{
+  background:var(--panel); border:1px solid var(--ring); border-radius:16px;
+  box-shadow:var(--shadow); padding:20px; transition:var(--transition);
+ }
+ .panel-box:hover{
+  transform:translateY(-4px);
+  box-shadow:0 15px 40px rgba(0,0,0,.4);
+  border-color:#2a3d86;
+ }
+ /* NAME LIST */
+ .names{ display:flex; flex-wrap:wrap; gap:10px; }
+ .name-pill{
+  display:inline-flex; padding:8px 14px; border-radius:999px;
+  background:linear-gradient(135deg, #0c1530, #0a1228);
+  border:1px solid var(--ring);
+  color:#b9c6ff; text-decoration:none; font-size:14px;
+  transition:var(--transition); font-weight:600;
+  box-shadow:0 2px 8px rgba(0,0,0,.2);
+ }
+ .name-pill:hover{
+  border-color:#2a3d86;
+  background:linear-gradient(135deg, #121d40, #0e1835);
+  transform:translateY(-2px);
+  box-shadow:0 4px 12px rgba(42,61,134,.3);
+  color:#59a6ff;
+ }
+ /* CARD */
+ .card{
+  background:var(--panel); border:1px solid var(--ring); border-radius:16px;
+  overflow:hidden; box-shadow:var(--shadow); transition:var(--transition);
+ }
+ .card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 15px 40px rgba(0,0,0,.4);
+  border-color:#2a3d86;
+ }
+ .card .thumb{
+  aspect-ratio:1/1; background:#0b132b; display:flex; align-items:center;
+  justify-content:center; position:relative; overflow:hidden;
+ }
+ .card .thumb::before{
+  content:""; position:absolute; top:0; left:0; width:100%; height:100%;
+  background:radial-gradient(circle at 50% 50%, rgba(89,166,255,.1), transparent 70%);
+  opacity:0; transition:opacity 0.3s ease;
+ }
+ .card:hover .thumb::before{ opacity:1; }
+ .card .thumb .placeholder{
+  width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+  background:#0b132b;color:#8ea3ff;font-weight:800;font-size:64px; transition:var(--transition);
+ }
+ .card:hover .placeholder{ transform:scale(1.1); }
+ /* NEW: styling image di dalam thumb */
+ .card .thumb img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  image-rendering:auto; /* ganti ke 'pixelated' jika sprite pixel-art */
+  background:#0b132b;
+ }
+ .card .body{ padding:20px }
+ .card h2{ margin:0 0 12px; font-size:28px; color:#cfe0ff }
+ .meta{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px }
+ .chip{
+  background:var(--chip); color:#b9c6ff; padding:6px 12px; border-radius:8px;
+  font-size:13px; font-weight:600; transition:var(--transition);
+  cursor:pointer; display:inline-flex; align-items:center; gap:4px;
+  border:1px solid rgba(255,255,255,.1);
+  text-decoration: none !important;
+ }
+ .chip:hover{
+  background:linear-gradient(135deg, #2a3d86, #243570);
+  transform:translateY(-1px);
+  box-shadow:0 2px 8px rgba(42,61,134,.4);
+  border-color:rgba(255,255,255,.2);
+ }
+ .kv{ display:grid; grid-template-columns:130px 1fr; gap:8px 12px; margin:12px 0 }
+ .kv b{ color:#cfe0ff; font-weight:600; font-size:15px; }
+ .kv span{ color:var(--text); line-height:1.5; }
+ .linkchips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:8px }
+ /* FOOTER (patched for mobile) */
+ .empty{max-width:1200px;margin:10px auto 30px;padding:0 18px;color:var(--muted)}
+ footer{border-top:1px solid var(--ring);color:var(--muted);text-align:center;padding:20px 18px; margin-top:20px}
+ .footer-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px 18px;margin:12px 0 8px}
+ .footer-links a{color:var(--muted);text-decoration:none;transition:var(--transition);padding:8px 14px;border-radius:8px}
+ .footer-links a:hover{color:var(--brand);background:rgba(42,61,134,.2)}
+ .disclaimer{font-size:12px;color:#8e96b5}
+ /* RESPONSIVE */
+ @media (max-width:900px){
+ .wrap{ grid-template-columns: 1fr; }
+ .mode-switch{ flex-direction:column; }
+ .search-box{ flex-direction:column; }
+ }
+ @media (max-width:768px){
+ .nav-toggle{display:inline-flex;align-items:center;justify-content:center}
+ /* menu collapsed by default */
+ .nav-menu{
+  display:none;
+  position:absolute; left:0; right:0; top:100%;
+  margin:0; padding:8px 12px 12px;
+  background:rgba(11,16,32,.96);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid var(--ring);
+  box-shadow: 0 10px 20px rgba(0,0,0,.45);
+  flex-direction:column; align-items:stretch; gap:6px;
+  max-height:70vh; overflow:auto;
+ }
+ .nav-menu[aria-expanded="true"], .nav-menu.open{ display:flex; }
+ .nav-menu li{display:block}
+ .nav a.navlink{display:block;padding:12px 12px}
+ .footer-links{flex-direction:column;gap:8px}
+ .footer-links a{width:100%;max-width:320px;}
+ }
+ </style>
 </head>
 <body>
-  <!-- NAV -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <span>Final Evolution: <span style="color:#cfe0ff">Digi‑Dex</span></span>
-      </div>
-      <div class="spacer"></div>
-
-      <!-- NEW: tombol hamburger -->
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="menu" aria-label="Buka menu">☰</button>
-
-      <!-- NEW: menu collapsible -->
-      <ul class="nav-menu" id="menu" aria-expanded="false">
-        <li><a class="navlink" href="./index.html">Home</a></li>
-        <li><a class="navlink active" href="./digimon.html">Digi‑Dex</a></li>
-        <li><a class="navlink" href="./tamers.html">Tamers</a></li>
-        <li><a class="navlink" href="./about.html">About</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <header class="hero">
-    <h1>Final Evolution: Digi‑Dex</h1>
-    <p>The Ultimate Final Evolution: Digi Database for Indonesian Fans</p>
-  </header>
-
-  <!-- CONTROLS (Mode Switch + Bars) -->
-  <section class="panel">
-    <div class="controls">
-      <!-- SEARCH BAR -->
-      <div class="search-box">
-        <input type="text" id="searchInput" class="search-input" placeholder="🔍 Cari Digimon atau Alias (contoh: Beelko, Monarch X, Agumon, dll...)" />
-      </div>
-      <!-- MODE SWITCH -->
-      <div class="mode-switch" role="tablist" aria-label="Mode tampilan">
-        <button id="btnAlpha" class="seg-btn active" data-mode="alphabet" role="tab" aria-selected="true">Alphabet</button>
-        <button id="btnStage" class="seg-btn" data-mode="stage" role="tab" aria-selected="false">Stage</button>
-        <button id="btnGroup" class="seg-btn" data-mode="group" role="tab" aria-selected="false">Group</button>
-        <button id="btnFaction" class="seg-btn" data-mode="faction" role="tab" aria-selected="false">Faction</button>
-        <button id="btnType" class="seg-btn" data-mode="type" role="tab" aria-selected="false">Type</button>
-      </div>
-      <!-- A-Z BAR -->
-      <nav id="alphaBar" class="alpha" aria-label="Filter alfabet"></nav>
-      <!-- STAGE BAR -->
-      <nav id="stageBar" class="stagebar" aria-label="Filter stage" style="display:none">
-        <a href="javascript:void(0)" data-stage="Child">Child</a>
-        <a href="javascript:void(0)" data-stage="Adult">Adult</a>
-        <a href="javascript:void(0)" data-stage="Perfect">Perfect</a>
-        <a href="javascript:void(0)" data-stage="Ultimate">Ultimate</a>
-        <a href="javascript:void(0)" data-stage="Ultimate+">Ultimate+</a>
-      </nav>
-      <!-- GROUP BAR -->
-      <nav id="groupBar" class="stagebar" aria-label="Filter group" style="display:none"></nav>
-      <!-- FACTION BAR -->
-      <nav id="factionBar" class="factionbar" aria-label="Filter faction" style="display:none"></nav>
-      <!-- TYPE BAR -->
-      <nav id="typeBar" class="factionbar" aria-label="Filter type" style="display:none">
-        <a href="javascript:void(0)" data-type="Virus">Virus</a>
-        <a href="javascript:void(0)" data-type="Vaccine">Vaccine</a>
-        <a href="javascript:void(0)" data-type="Data">Data</a>
-      </nav>
-    </div>
-  </section>
-
-  <!-- NAME LIST + CARD -->
-  <section class="wrap">
-    <div class="panel-box">
-      <h3 style="margin:0 0 16px; color:#cfe0ff; font-size:20px; display:flex; align-items:center; gap:8px">
-        📋 Daftar Digimon <span id="alphaTitle" style="color:#9aa3c4; font-size:16px"></span>
-      </h3>
-      <div id="nameList" class="names"></div>
-      <p id="emptyNames" class="empty" hidden>Tidak ada nama untuk filter ini.</p>
-    </div>
-    <div class="panel-box">
-      <h3 style="margin:0 0 16px; color:#cfe0ff; font-size:20px">🎯 Detail Digimon</h3>
-      <article id="card" class="card" aria-live="polite">
-        <div class="thumb"><div class="placeholder">?</div></div>
-        <div class="body">
-          <h2 id="c-name">Pilih nama digimon yang ada di daftar</h2>
-          <div id="c-meta" class="meta"></div>
-          <div class="kv">
-            <b>Stage</b><span id="c-stage">-</span>
-            <b>Aliases</b><span id="c-aliases">-</span>
-            <b>Type / Race</b><span id="c-type">-</span>
-            <b>Faction / Family</b><span id="c-faction">-</span>
-            <b>Traits</b><span id="c-traits">-</span>
-            <b>Group</b><span id="c-group">-</span>
-            <!-- NEW: Soul Stone row -->
-            <b>Soul Stone</b><span id="c-soulstone">-</span>
-          </div>
-          <h4 style="margin:16px 0 10px; color:#cfe0ff; font-size:16px">Previous Digivolution</h4>
-          <div id="c-prev" class="linkchips"></div>
-          <h4 style="margin:16px 0 10px; color:#cfe0ff; font-size:16px">Next Digivolution</h4>
-          <div id="c-next" class="linkchips"></div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div style="font-size:18px;font-weight:700">Final Evolution: Digi</div>
-    <div class="footer-links">
-      <a href="./index.html">Home</a>
-      <a href="./digimon.html">Digi‑Dex</a>
-      <a href="./tamers.html">Tamers</a>
-      <a href="./about.html">About</a>
-      <a href="https://chat.whatsapp.com/Fa28jqgueSs7aZCHh4332y" target="_blank">WhatsApp</a>
-    </div>
-    <div class="disclaimer">
-      Digimon and all related characters are trademarks of Bandai Namco Holdings Inc.<br>
-      This is a non‑commercial fan project created by the Digimon World Indonesia community.<br>
-      © 2026 Final Evolution: Digi • On Progress by Joe • Supported by Digimon World Indonesia
-    </div>
-  </footer>
-
-  <script>
-    /* ====== NAV MENU TOGGLE + AUTO-CLOSE (burger) ====== */
-    const toggleBtn = document.getElementById('navToggle');
-    const menu = document.getElementById('menu');
-
-    function isMenuOpen(){ return toggleBtn?.getAttribute('aria-expanded') === 'true'; }
-    function openMenu(){
-      toggleBtn?.setAttribute('aria-expanded','true');
-      menu?.setAttribute('aria-expanded','true');
-      menu?.classList.add('open');
+ <!-- NAV -->
+ <nav class="nav">
+ <div class="nav-inner">
+ <div class="brand">
+ <div class="logo" aria-hidden="true"></div>
+ <span>Final Evolution: <span style="color:#cfe0ff">Digi‑Dex</span></span>
+ </div>
+ <div class="spacer"></div>
+ <!-- NEW: tombol hamburger -->
+ <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="menu" aria-label="Buka menu">☰</button>
+ <!-- NEW: menu collapsible -->
+ <ul class="nav-menu" id="menu" aria-expanded="false">
+ <li><a class="navlink" href="./index.html">Home</a></li>
+ <li><a class="navlink active" href="./digimon.html">Digi‑Dex</a></li>
+ <li><a class="navlink" href="./tamers.html">Tamers</a></li>
+ <li><a class="navlink" href="./about.html">About</a></li>
+ </ul>
+ </div>
+ </nav>
+ <!-- HERO -->
+ <header class="hero">
+ <h1>Final Evolution: Digi‑Dex</h1>
+ <p>The Ultimate Final Evolution: Digi Database for Indonesian Fans</p>
+ </header>
+ <!-- CONTROLS (Mode Switch + Bars) -->
+ <section class="panel">
+ <div class="controls">
+ <!-- SEARCH BAR -->
+ <div class="search-box">
+ <input type="text" id="searchInput" class="search-input" placeholder="🔍 Cari Digimon atau Alias (contoh: Beelko, Monarch X, Agumon, dll...)" />
+ </div>
+ <!-- MODE SWITCH -->
+ <div class="mode-switch" role="tablist" aria-label="Mode tampilan">
+ <button id="btnAlpha" class="seg-btn active" data-mode="alphabet" role="tab" aria-selected="true">Alphabet</button>
+ <button id="btnStage" class="seg-btn" data-mode="stage" role="tab" aria-selected="false">Stage</button>
+ <button id="btnGroup" class="seg-btn" data-mode="group" role="tab" aria-selected="false">Group</button>
+ <button id="btnFaction" class="seg-btn" data-mode="faction" role="tab" aria-selected="false">Faction</button>
+ <button id="btnType" class="seg-btn" data-mode="type" role="tab" aria-selected="false">Type</button>
+ </div>
+ <!-- A-Z BAR -->
+ <nav id="alphaBar" class="alpha" aria-label="Filter alfabet"></nav>
+ <!-- STAGE BAR -->
+ <nav id="stageBar" class="stagebar" aria-label="Filter stage" style="display:none">
+ <a href="javascript:void(0)" data-stage="Child">Child</a>
+ <a href="javascript:void(0)" data-stage="Adult">Adult</a>
+ <a href="javascript:void(0)" data-stage="Perfect">Perfect</a>
+ <a href="javascript:void(0)" data-stage="Ultimate">Ultimate</a>
+ <a href="javascript:void(0)" data-stage="Ultimate+">Ultimate+</a>
+ </nav>
+ <!-- GROUP BAR -->
+ <nav id="groupBar" class="stagebar" aria-label="Filter group" style="display:none"></nav>
+ <!-- FACTION BAR -->
+ <nav id="factionBar" class="factionbar" aria-label="Filter faction" style="display:none"></nav>
+ <!-- TYPE BAR -->
+ <nav id="typeBar" class="factionbar" aria-label="Filter type" style="display:none">
+ <a href="javascript:void(0)" data-type="Virus">Virus</a>
+ <a href="javascript:void(0)" data-type="Vaccine">Vaccine</a>
+ <a href="javascript:void(0)" data-type="Data">Data</a>
+ </nav>
+ </div>
+ </section>
+ <!-- NAME LIST + CARD -->
+ <section class="wrap">
+ <div class="panel-box">
+ <h3 style="margin:0 0 16px; color:#cfe0ff; font-size:20px; display:flex; align-items:center; gap:8px">
+ 📋 Daftar Digimon <span id="alphaTitle" style="color:#9aa3c4; font-size:16px"></span>
+ </h3>
+ <div id="nameList" class="names"></div>
+ <p id="emptyNames" class="empty" hidden>Tidak ada nama untuk filter ini.</p>
+ </div>
+ <div class="panel-box">
+ <h3 style="margin:0 0 16px; color:#cfe0ff; font-size:20px">🎯 Detail Digimon</h3>
+ <article id="card" class="card" aria-live="polite">
+ <div class="thumb"><div class="placeholder">?</div></div>
+ <div class="body">
+ <h2 id="c-name">Pilih nama digimon yang ada di daftar</h2>
+ <div id="c-meta" class="meta"></div>
+ <div class="kv">
+ <b>Stage</b><span id="c-stage">-</span>
+ <b>Aliases</b><span id="c-aliases">-</span>
+ <b>Type / Race</b><span id="c-type">-</span>
+ <b>Faction / Family</b><span id="c-faction">-</span>
+ <b>Traits</b><span id="c-traits">-</span>
+ <b>Group</b><span id="c-group">-</span>
+ <!-- NEW: Soul Stone row -->
+ <b>Soul Stone</b><span id="c-soulstone">-</span>
+ </div>
+ <h4 style="margin:16px 0 10px; color:#cfe0ff; font-size:16px">Previous Digivolution</h4>
+ <div id="c-prev" class="linkchips"></div>
+ <h4 style="margin:16px 0 10px; color:#cfe0ff; font-size:16px">Next Digivolution</h4>
+ <div id="c-next" class="linkchips"></div>
+ </div>
+ </article>
+ </div>
+ </section>
+ <!-- FOOTER -->
+ <footer>
+ <div style="font-size:18px;font-weight:700">Final Evolution: Digi</div>
+ <div class="footer-links">
+ <a href="./index.html">Home</a>
+ <a href="./digimon.html">Digi‑Dex</a>
+ <a href="./tamers.html">Tamers</a>
+ <a href="./about.html">About</a>
+ <a href="https://chat.whatsapp.com/Fa28jqgueSs7aZCHh4332y" target="_blank">WhatsApp</a>
+ </div>
+ <div class="disclaimer">
+ Digimon and all related characters are trademarks of Bandai Namco Holdings Inc.<br>
+ This is a non‑commercial fan project created by the Digimon World Indonesia community.<br>
+ © 2026 Final Evolution: Digi • On Progress by Joe • Supported by Digimon World Indonesia
+ </div>
+ </footer>
+ <script>
+ /* ====== NAV MENU TOGGLE + AUTO-CLOSE (burger) ====== */
+ const toggleBtn = document.getElementById('navToggle');
+ const menu = document.getElementById('menu');
+ function isMenuOpen(){ return toggleBtn?.getAttribute('aria-expanded') === 'true'; }
+ function openMenu(){
+  toggleBtn?.setAttribute('aria-expanded','true');
+  menu?.setAttribute('aria-expanded','true');
+  menu?.classList.add('open');
+ }
+ function closeMenu(){
+  toggleBtn?.setAttribute('aria-expanded','false');
+  menu?.setAttribute('aria-expanded','false');
+  menu?.classList.remove('open');
+ }
+ // Toggle saat klik tombol
+ toggleBtn?.addEventListener('click', (e)=>{
+  e.stopPropagation();
+  isMenuOpen() ? closeMenu() : openMenu();
+ });
+ // Tutup saat klik link di menu
+ document.querySelectorAll('#menu a').forEach(a => {
+  a.addEventListener('click', closeMenu);
+ });
+ // Tutup saat klik di luar menu/tombol
+ document.addEventListener('pointerdown', (e)=>{
+  if (!isMenuOpen()) return;
+  const target = e.target;
+  const insideMenu = menu?.contains(target);
+  const onToggle = toggleBtn?.contains(target);
+  if (!insideMenu && !onToggle) closeMenu();
+ });
+ // Tutup saat tekan Escape
+ document.addEventListener('keydown', (e)=>{
+  if (e.key === 'Escape' && isMenuOpen()) closeMenu();
+ });
+ // Reset state saat resize ke desktop
+ const mqDesktop = window.matchMedia('(min-width: 769px)');
+ mqDesktop.addEventListener('change', (ev)=>{ if (ev.matches) closeMenu(); });
+ /* ====== KONFIG (HANYA SATU SUMBER) ====== */
+ const JSON_URL = 'data/digimon_evolution_lines.json';
+ const REF_URL = 'data/digimon_reference.json';
+ /* ====== STATE ====== */
+ let DB = [];
+ let REF_DATA = null;
+ let CURRENT_MODE = 'alphabet';
+ let CURRENT_LETTER = 'A';
+ let CURRENT_STAGE = 'Child';
+ let CURRENT_GROUP = null;
+ let CURRENT_FACTION = null;
+ let CURRENT_TYPE = null;
+ let SEARCH_QUERY = '';
+ const STAGE_FILTERS = {
+  'Child': true, 'Adult': true, 'Perfect': true, 'Ultimate': true, 'Ultimate+': true
+ };
+ const $ = (id) => document.getElementById(id);
+ /* ====== HELPERS ====== */
+ function firstLetter(name){
+  if(!name || !name.length) return '#';
+  const c = name.trim().charAt(0).toUpperCase();
+  return c >= 'A' && c <= 'Z' ? c : '#';
+ }
+ function byId(id){
+  const cleanId = id.trim().toLowerCase();
+  return DB.find(x => x.id.trim().toLowerCase() === cleanId);
+ }
+ function chip(label){ return `<span class="chip">${label}</span>`; }
+ function namePill(d){ return `<a class="name-pill" href="#${encodeURIComponent(d.id.trim())}">${d.displayName.trim()}</a>`; }
+ function decodeHash(){ return decodeURIComponent(location.hash || '').replace(/^#/, ''); }
+ // Warna chip untuk tipe Soul Stone
+ function ssColor(type){
+  const t = (type || '').toLowerCase();
+  if (t.includes('rare')) return '#dca0ff';
+  if (t.includes('common')) return '#8fd0ff';
+  if (t.includes('exclusive')) return '#ffd166';
+  if (t.includes('limited')) return '#ff6b6b';
+  if (t.includes('no information')) return '#9aa3c4';
+  if (t.includes('not yet released')) return '#9aa3c4';
+  return '#b9c6ff';
+ }
+ // NEW: Setter gambar thumbnail dengan fallback ke inisial
+ function setThumb(node){
+  const thumbWrap = document.querySelector('#card .thumb');
+  if(!thumbWrap) return;
+  // reset konten thumb
+  thumbWrap.innerHTML = '';
+  // Kalau tidak ada node (misal id tidak valid) -> tampilkan '?'
+  if(!node){
+    const ph0 = document.createElement('div');
+    ph0.className = 'placeholder';
+    ph0.textContent = '?';
+    thumbWrap.appendChild(ph0);
+    return;
+  }
+  const id = (node.id || '').trim().toLowerCase();
+  const imgUrl = `./images/sprites/sprite_${id}.png`;
+  const img = new Image();
+  img.alt = node.displayName || id;
+  img.loading = 'lazy';
+  img.decoding = 'async';
+  img.src = imgUrl;
+  img.onerror = () => {
+    thumbWrap.innerHTML = '';
+    const ph = document.createElement('div');
+    ph.className = 'placeholder';
+    const initial = (node.displayName || '?').trim().charAt(0).toUpperCase() || '?';
+    ph.textContent = initial;
+    thumbWrap.appendChild(ph);
+  };
+  img.onload = () => {
+    thumbWrap.innerHTML = '';
+    thumbWrap.appendChild(img);
+  };
+  // Sisipkan dulu img; kalau error, handler di atas akan mengganti
+  thumbWrap.appendChild(img);
+ }
+ /* ====== SEARCH FUNCTION ====== */
+ function searchDigimon(query){
+  if(!query || query.trim() === ''){
+   SEARCH_QUERY = '';
+   syncList();
+   return;
+  }
+  SEARCH_QUERY = query.toLowerCase().trim();
+  let results = DB.filter(d => {
+   if(d.displayName.toLowerCase().includes(SEARCH_QUERY)) return true;
+   if(d.aliases && d.aliases.some(alias => alias.toLowerCase().includes(SEARCH_QUERY))) return true;
+   return false;
+  });
+  results.sort((a,b) => {
+   const aMatch = a.displayName.toLowerCase().includes(SEARCH_QUERY) ? 0 : 1;
+   const bMatch = b.displayName.toLowerCase().includes(SEARCH_QUERY) ? 0 : 1;
+   if(aMatch !== bMatch) return aMatch - bMatch;
+   return a.displayName.localeCompare(b.displayName);
+  });
+  $('nameList').innerHTML = results.map(namePill).join('');
+  $('emptyNames').hidden = results.length > 0;
+  $('emptyNames').textContent = results.length === 0 ? 'Tidak ada Digimon yang cocok dengan pencarian.' : '';
+  $('alphaTitle').textContent = `(Search: "${query}")`;
+ }
+ /* ====== FILTER BY STAGE ====== */
+ function applyStageFilters(list){
+  if(CURRENT_MODE !== 'alphabet' || SEARCH_QUERY) return list;
+  return list.filter(d => STAGE_FILTERS[d.stage.trim()] === true);
+ }
+ function groupByLetter(list){
+  const map = {};
+  for (let i=65; i<=90; i++) map[String.fromCharCode(i)] = [];
+  map['#'] = [];
+  list.forEach(d => { const L = firstLetter(d.displayName); (map[L] = map[L] ?? []).push(d); });
+  Object.keys(map).forEach(k => map[k].sort((a,b)=> a.displayName.localeCompare(b.displayName)));
+  return map;
+ }
+ function groupByStage(list){
+  const stages = ['Child','Adult','Perfect','Ultimate','Ultimate+'];
+  const map = {}; stages.forEach(s => map[s] = []);
+  list.forEach(d => { (map[d.stage.trim()] = map[d.stage.trim()] ?? []).push(d); });
+  Object.keys(map).forEach(k => map[k].sort((a,b)=> a.displayName.localeCompare(b.displayName)));
+  return map;
+ }
+ /* ====== RENDER: MODE SWITCH ====== */
+ function setMode(mode){
+  CURRENT_MODE = mode;
+  const btnAlpha = $('btnAlpha'), btnStage = $('btnStage'), btnGroup = $('btnGroup'), btnFaction = $('btnFaction'), btnType = $('btnType');
+  btnAlpha.classList.toggle('active', mode==='alphabet'); btnAlpha.setAttribute('aria-selected', mode==='alphabet');
+  btnStage.classList.toggle('active', mode==='stage'); btnStage.setAttribute('aria-selected', mode==='stage');
+  btnGroup.classList.toggle('active', mode==='group'); btnGroup.setAttribute('aria-selected', mode==='group');
+  btnFaction.classList.toggle('active', mode==='faction');btnFaction.setAttribute('aria-selected', mode==='faction');
+  btnType.classList.toggle('active', mode==='type'); btnType.setAttribute('aria-selected', mode==='type');
+  $('alphaBar').style.display = (mode==='alphabet') ? '' : 'none';
+  $('stageBar').style.display = (mode==='stage') ? '' : 'none';
+  $('groupBar').style.display = (mode==='group') ? '' : 'none';
+  $('factionBar').style.display = (mode==='faction') ? '' : 'none';
+  $('typeBar').style.display = (mode==='type') ? '' : 'none';
+  if (mode === 'group') {
+   $('alphaTitle').textContent = `(Group: ${CURRENT_GROUP ?? 'Pilih group'})`;
+   renderGroupBar(); markActiveGroup();
+  } else if (mode === 'stage') {
+   $('alphaTitle').textContent = `(Stage: ${CURRENT_STAGE})`;
+   renderStageBar(); markActiveStage();
+  } else if (mode === 'faction') {
+   $('alphaTitle').textContent = `(Faction: ${CURRENT_FACTION ?? 'Pilih faction'})`;
+   renderFactionBar(); markActiveFaction();
+  } else if (mode === 'type') {
+   $('alphaTitle').textContent = `(Type: ${CURRENT_TYPE ?? 'Pilih type'})`;
+   renderTypeBar(); markActiveType();
+  } else {
+   $('alphaTitle').textContent = `(Alphabet: ${CURRENT_LETTER})`;
+   renderAlphaBar();
+  }
+  syncList();
+ }
+ /* ====== RENDER: A-Z BAR ====== */
+ function renderAlphaBar(){
+  const bar = $('alphaBar');
+  const letters = Array.from({length:26}, (_,i)=> String.fromCharCode(65+i));
+  bar.innerHTML = letters.map(L =>
+   `<a href="javascript:void(0)" data-letter="${L}" class="${L===CURRENT_LETTER?'active':''}">${L}</a>`
+  ).join('') + ` <a href="javascript:void(0)" data-letter="#" class="${CURRENT_LETTER==='#'?'active':''}">#</a>`;
+  bar.querySelectorAll('a').forEach(a=>{
+   a.addEventListener('click', () => {
+    CURRENT_LETTER = a.dataset.letter;
+    syncList(); renderAlphaBar();
+    $('nameList')?.scrollIntoView({behavior:'smooth', block:'start'});
+   });
+  });
+ }
+ /* ====== RENDER: STAGE BAR ====== */
+ function renderStageBar(){
+  const stages = ['Child', 'Adult', 'Perfect', 'Ultimate', 'Ultimate+'];
+  const bar = $('stageBar');
+  bar.innerHTML = stages.map(s =>
+   `<a href="javascript:void(0)" data-stage="${s}" class="${CURRENT_STAGE===s?'active':''}">${s}</a>`
+  ).join('');
+  bar.querySelectorAll('a').forEach(a=>{
+   a.addEventListener('click', (e) => {
+    e.preventDefault();
+    CURRENT_STAGE = a.dataset.stage;
+    markActiveStage(); syncList();
+   });
+  });
+ }
+ function markActiveStage(){
+  document.querySelectorAll('#stageBar a').forEach(a=>{
+   a.classList.toggle('active', a.dataset.stage === CURRENT_STAGE);
+  });
+ }
+ /* ====== RENDER: GROUP BAR ====== */
+ function extractAllGroups(){
+  const set = new Set();
+  DB.forEach(d => (d.groups ?? []).forEach(g => set.add(g.trim())));
+  return Array.from(set).sort();
+ }
+ function renderGroupBar(){
+  const groups = extractAllGroups();
+  const bar = $('groupBar');
+  bar.innerHTML = groups.map(g =>
+   `<a href="javascript:void(0)" data-group="${encodeURIComponent(g)}" class="${CURRENT_GROUP===g?'active':''}">${g}</a>`
+  ).join('');
+  bar.querySelectorAll('a').forEach(a=>{
+   a.addEventListener('click', (e) => {
+    e.preventDefault();
+    CURRENT_GROUP = decodeURIComponent(a.dataset.group);
+    markActiveGroup(); syncList();
+   });
+  });
+ }
+ function markActiveGroup(){
+  document.querySelectorAll('#groupBar a').forEach(a=>{
+   a.classList.toggle('active', decodeURIComponent(a.dataset.group) === CURRENT_GROUP);
+  });
+ }
+ /* ====== RENDER: FACTION BAR ====== */
+ function extractAllFactions(){
+  if(!REF_DATA || !REF_DATA.factions) return [];
+  return REF_DATA.factions.map(f => f.code.trim());
+ }
+ function renderFactionBar(){
+  const factions = extractAllFactions();
+  const bar = $('factionBar');
+  bar.innerHTML = factions.map(f => {
+   const faction = REF_DATA.factions.find(fc => fc.code.trim() === f);
+   const icon = faction ? faction.icon.trim() : '⭐';
+   return `<a href="javascript:void(0)" data-faction="${f}" class="${CURRENT_FACTION===f?'active':''}">${icon} ${f}</a>`;
+  }).join('');
+  bar.querySelectorAll('a').forEach(a=>{
+   a.addEventListener('click', (e) => {
+    e.preventDefault();
+    CURRENT_FACTION = a.dataset.faction;
+    markActiveFaction(); syncList();
+   });
+  });
+ }
+ function markActiveFaction(){
+  document.querySelectorAll('#factionBar a').forEach(a=>{
+   a.classList.toggle('active', a.dataset.faction === CURRENT_FACTION);
+  });
+ }
+ /* ====== RENDER: TYPE BAR ====== */
+ function renderTypeBar(){
+  const types = ['Virus', 'Vaccine', 'Data'];
+  const bar = $('typeBar');
+  bar.innerHTML = types.map(t => {
+   const typeInfo = REF_DATA?.types?.find(tp => tp.name.trim() === t);
+   const icon = typeInfo ? typeInfo.icon.trim() : '❓';
+   return `<a href="javascript:void(0)" data-type="${t}" class="${CURRENT_TYPE===t?'active':''}">${icon} ${t}</a>`;
+  }).join('');
+  bar.querySelectorAll('a').forEach(a=>{
+   a.addEventListener('click', (e) => {
+    e.preventDefault();
+    CURRENT_TYPE = a.dataset.type;
+    markActiveType(); syncList();
+   });
+  });
+ }
+ function markActiveType(){
+  document.querySelectorAll('#typeBar a').forEach(a=>{
+   a.classList.toggle('active', a.dataset.type === CURRENT_TYPE);
+  });
+ }
+ /* ====== RENDER: NAME LIST ====== */
+ let GROUPS_ALPHA = {}, GROUPS_STAGE = {};
+ function syncList(){
+  let arr = [];
+  if(SEARCH_QUERY){ return; } // search ditangani terpisah
+  if (CURRENT_MODE === 'alphabet'){
+   arr = GROUPS_ALPHA[CURRENT_LETTER] ?? [];
+   arr = applyStageFilters(arr);
+   $('alphaTitle').textContent = `(Alphabet: ${CURRENT_LETTER})`;
+  } else if (CURRENT_MODE === 'stage'){
+   arr = GROUPS_STAGE[CURRENT_STAGE] ?? [];
+   $('alphaTitle').textContent = `(Stage: ${CURRENT_STAGE})`;
+  } else if (CURRENT_MODE === 'group'){
+   $('alphaTitle').textContent = `(Group: ${CURRENT_GROUP ?? 'All'})`;
+   arr = CURRENT_GROUP
+   ? DB.filter(d => d.groups && d.groups.some(g => g.trim() === CURRENT_GROUP))
+     .sort((a,b) => a.displayName.localeCompare(b.displayName))
+   : [];
+  } else if (CURRENT_MODE === 'faction'){
+   $('alphaTitle').textContent = `(Faction: ${CURRENT_FACTION ?? 'All'})`;
+   arr = CURRENT_FACTION
+   ? DB.filter(d => d.factions && d.factions.some(f => f.trim() === CURRENT_FACTION))
+     .sort((a,b) => a.displayName.localeCompare(b.displayName))
+   : [];
+  } else if (CURRENT_MODE === 'type'){
+   $('alphaTitle').textContent = `(Type: ${CURRENT_TYPE ?? 'All'})`;
+   arr = CURRENT_TYPE
+   ? DB.filter(d => d.types && d.types.some(t => t.trim() === CURRENT_TYPE))
+     .sort((a,b) => a.displayName.localeCompare(b.displayName))
+   : [];
+  }
+  $('nameList').innerHTML = arr.map(namePill).join('');
+  $('emptyNames').hidden = arr.length > 0;
+  if ((CURRENT_MODE === 'group' && !CURRENT_GROUP)
+   || (CURRENT_MODE === 'faction' && !CURRENT_FACTION)
+   || (CURRENT_MODE === 'type' && !CURRENT_TYPE)) {
+   $('emptyNames').textContent = `Pilih ${CURRENT_MODE} di atas untuk melihat daftar Digimon`;
+   $('emptyNames').hidden = false;
+  }
+ }
+ /* ====== RENDER: CARD (DETAIL) ====== */
+ function renderCard(id){
+  const node = byId(id);
+  const nameEl = $('c-name'), meta = $('c-meta'), stageEl = $('c-stage'), aliasesEl = $('c-aliases');
+  const typeEl = $('c-type'), factionEl = $('c-faction'), traitEl = $('c-traits'), groupEl = $('c-group'), ssEl = $('c-soulstone');
+  const prevBox = $('c-prev'), nextBox = $('c-next');
+  if(!node){
+   nameEl.textContent = 'Tidak ditemukan';
+   stageEl.textContent = '-'; aliasesEl.textContent = '-'; typeEl.textContent = '-';
+   factionEl.textContent = '-'; groupEl.textContent = '-'; ssEl.textContent = '-';
+   prevBox.innerHTML = ''; nextBox.innerHTML = '';
+   setThumb(null); // NEW: tampilkan '?'
+   return;
+  }
+  nameEl.textContent = node.displayName.trim();
+  meta.innerHTML = `<span class="chip">${node.stage.trim()}</span>`;
+  if (node.aliases && node.aliases.length) meta.innerHTML += ` <span class="chip">${node.aliases[0].trim()}</span>`;
+  stageEl.innerHTML = `<a href="javascript:void(0)" class="chip" data-stage="${node.stage.trim()}">${node.stage.trim()}</a>`;
+  if (node.aliases && node.aliases.length) {
+   aliasesEl.innerHTML = node.aliases.map(a =>
+    `<a href="javascript:void(0)" class="chip" data-alias="${encodeURIComponent(a.trim())}">${a.trim()}</a>`
+   ).join(' ');
+  } else { aliasesEl.textContent = '-'; }
+  if (node.types && node.types.length) {
+   const typeStr = node.types[0].trim();
+   const typeInfo = REF_DATA?.types?.find(tp => tp.name.trim() === typeStr);
+   const icon = typeInfo ? typeInfo.icon.trim() : '❓';
+   typeEl.innerHTML = `<a href="javascript:void(0)" class="chip" data-type="${typeStr}">${icon} ${typeStr}</a>`;
+  } else { typeEl.textContent = '-'; }
+  if (node.factions && node.factions.length && REF_DATA) {
+   const factionChips = node.factions.map(code => {
+    const clean = code.trim();
+    const faction = REF_DATA.factions.find(f => f.code.trim() === clean);
+    if (faction) {
+     return `<a href="javascript:void(0)" class="chip" style="background:${faction.color}15;border:1px solid ${faction.color}40;color:${faction.color}" data-faction="${clean}">${faction.icon} [${faction.code.trim()}] ${faction.name.trim()}${(faction.aliases && faction.aliases.length) ? ' - ' + faction.aliases.map(a=>a.trim()).join(', ') : ''}</a>`;
     }
-    function closeMenu(){
-      toggleBtn?.setAttribute('aria-expanded','false');
-      menu?.setAttribute('aria-expanded','false');
-      menu?.classList.remove('open');
-    }
-
-    // Toggle saat klik tombol
-    toggleBtn?.addEventListener('click', (e)=>{
-      e.stopPropagation();
-      isMenuOpen() ? closeMenu() : openMenu();
-    });
-
-    // Tutup saat klik link di menu
-    document.querySelectorAll('#menu a').forEach(a => {
-      a.addEventListener('click', closeMenu);
-    });
-
-    // Tutup saat klik di luar menu/tombol
-    document.addEventListener('pointerdown', (e)=>{
-      if (!isMenuOpen()) return;
-      const target = e.target;
-      const insideMenu = menu?.contains(target);
-      const onToggle  = toggleBtn?.contains(target);
-      if (!insideMenu && !onToggle) closeMenu();
-    });
-
-    // Tutup saat tekan Escape
-    document.addEventListener('keydown', (e)=>{
-      if (e.key === 'Escape' && isMenuOpen()) closeMenu();
-    });
-
-    // Reset state saat resize ke desktop
-    const mqDesktop = window.matchMedia('(min-width: 769px)');
-    mqDesktop.addEventListener('change', (ev)=>{ if (ev.matches) closeMenu(); });
-
-    /* ====== KONFIG (HANYA SATU SUMBER) ====== */
-    const JSON_URL = 'data/digimon_evolution_lines.json';
-    const REF_URL = 'data/digimon_reference.json';
-
-    /* ====== STATE ====== */
-    let DB = [];
-    let REF_DATA = null;
-    let CURRENT_MODE = 'alphabet';
-    let CURRENT_LETTER = 'A';
-    let CURRENT_STAGE = 'Child';
-    let CURRENT_GROUP = null;
-    let CURRENT_FACTION = null;
-    let CURRENT_TYPE = null;
-    let SEARCH_QUERY = '';
-    const STAGE_FILTERS = {
-      'Child': true, 'Adult': true, 'Perfect': true, 'Ultimate': true, 'Ultimate+': true
-    };
-    const $ = (id) => document.getElementById(id);
-
-    /* ====== HELPERS ====== */
-    function firstLetter(name){
-      if(!name || !name.length) return '#';
-      const c = name.trim().charAt(0).toUpperCase();
-      return c >= 'A' && c <= 'Z' ? c : '#';
-    }
-    function byId(id){
-      const cleanId = id.trim().toLowerCase();
-      return DB.find(x => x.id.trim().toLowerCase() === cleanId);
-    }
-    function chip(label){ return `<span class="chip">${label}</span>`; }
-    function namePill(d){ return `<a class="name-pill" href="#${encodeURIComponent(d.id.trim())}">${d.displayName.trim()}</a>`; }
-    function decodeHash(){ return decodeURIComponent(location.hash || '').replace(/^#/, ''); }
-
-    // Warna chip untuk tipe Soul Stone
-    function ssColor(type){
-      const t = (type || '').toLowerCase();
-      if (t.includes('rare')) return '#dca0ff';
-      if (t.includes('common')) return '#8fd0ff';
-      if (t.includes('exclusive')) return '#ffd166';
-      if (t.includes('limited')) return '#ff6b6b';
-      if (t.includes('no information')) return '#9aa3c4';
-      if (t.includes('not yet released')) return '#9aa3c4';
-      return '#b9c6ff';
-    }
-
-    /* ====== SEARCH FUNCTION ====== */
-    function searchDigimon(query){
-      if(!query || query.trim() === ''){
-        SEARCH_QUERY = '';
-        syncList();
-        return;
-      }
-      SEARCH_QUERY = query.toLowerCase().trim();
-      let results = DB.filter(d => {
-        if(d.displayName.toLowerCase().includes(SEARCH_QUERY)) return true;
-        if(d.aliases && d.aliases.some(alias => alias.toLowerCase().includes(SEARCH_QUERY))) return true;
-        return false;
-      });
-      results.sort((a,b) => {
-        const aMatch = a.displayName.toLowerCase().includes(SEARCH_QUERY) ? 0 : 1;
-        const bMatch = b.displayName.toLowerCase().includes(SEARCH_QUERY) ? 0 : 1;
-        if(aMatch !== bMatch) return aMatch - bMatch;
-        return a.displayName.localeCompare(b.displayName);
-      });
-      $('nameList').innerHTML = results.map(namePill).join('');
-      $('emptyNames').hidden = results.length > 0;
-      $('emptyNames').textContent = results.length === 0 ? 'Tidak ada Digimon yang cocok dengan pencarian.' : '';
-      $('alphaTitle').textContent = `(Search: "${query}")`;
-    }
-
-    /* ====== FILTER BY STAGE ====== */
-    function applyStageFilters(list){
-      if(CURRENT_MODE !== 'alphabet' || SEARCH_QUERY) return list;
-      return list.filter(d => STAGE_FILTERS[d.stage.trim()] === true);
-    }
-    function groupByLetter(list){
-      const map = {};
-      for (let i=65; i<=90; i++) map[String.fromCharCode(i)] = [];
-      map['#'] = [];
-      list.forEach(d => { const L = firstLetter(d.displayName); (map[L] = map[L] ?? []).push(d); });
-      Object.keys(map).forEach(k => map[k].sort((a,b)=> a.displayName.localeCompare(b.displayName)));
-      return map;
-    }
-    function groupByStage(list){
-      const stages = ['Child','Adult','Perfect','Ultimate','Ultimate+'];
-      const map = {}; stages.forEach(s => map[s] = []);
-      list.forEach(d => { (map[d.stage.trim()] = map[d.stage.trim()] ?? []).push(d); });
-      Object.keys(map).forEach(k => map[k].sort((a,b)=> a.displayName.localeCompare(b.displayName)));
-      return map;
-    }
-
-    /* ====== RENDER: MODE SWITCH ====== */
-    function setMode(mode){
-      CURRENT_MODE = mode;
-      const btnAlpha = $('btnAlpha'), btnStage = $('btnStage'), btnGroup = $('btnGroup'), btnFaction = $('btnFaction'), btnType = $('btnType');
-      btnAlpha.classList.toggle('active', mode==='alphabet'); btnAlpha.setAttribute('aria-selected', mode==='alphabet');
-      btnStage.classList.toggle('active', mode==='stage'); btnStage.setAttribute('aria-selected', mode==='stage');
-      btnGroup.classList.toggle('active', mode==='group'); btnGroup.setAttribute('aria-selected', mode==='group');
-      btnFaction.classList.toggle('active', mode==='faction');btnFaction.setAttribute('aria-selected', mode==='faction');
-      btnType.classList.toggle('active', mode==='type'); btnType.setAttribute('aria-selected', mode==='type');
-
-      $('alphaBar').style.display = (mode==='alphabet') ? '' : 'none';
-      $('stageBar').style.display = (mode==='stage') ? '' : 'none';
-      $('groupBar').style.display = (mode==='group') ? '' : 'none';
-      $('factionBar').style.display = (mode==='faction') ? '' : 'none';
-      $('typeBar').style.display = (mode==='type') ? '' : 'none';
-
-      if (mode === 'group') {
-        $('alphaTitle').textContent = `(Group: ${CURRENT_GROUP ?? 'Pilih group'})`;
-        renderGroupBar(); markActiveGroup();
-      } else if (mode === 'stage') {
-        $('alphaTitle').textContent = `(Stage: ${CURRENT_STAGE})`;
-        renderStageBar(); markActiveStage();
-      } else if (mode === 'faction') {
-        $('alphaTitle').textContent = `(Faction: ${CURRENT_FACTION ?? 'Pilih faction'})`;
-        renderFactionBar(); markActiveFaction();
-      } else if (mode === 'type') {
-        $('alphaTitle').textContent = `(Type: ${CURRENT_TYPE ?? 'Pilih type'})`;
-        renderTypeBar(); markActiveType();
-      } else {
-        $('alphaTitle').textContent = `(Alphabet: ${CURRENT_LETTER})`;
-        renderAlphaBar();
-      }
-      syncList();
-    }
-
-    /* ====== RENDER: A-Z BAR ====== */
-    function renderAlphaBar(){
-      const bar = $('alphaBar');
-      const letters = Array.from({length:26}, (_,i)=> String.fromCharCode(65+i));
-      bar.innerHTML = letters.map(L =>
-        `<a href="javascript:void(0)" data-letter="${L}" class="${L===CURRENT_LETTER?'active':''}">${L}</a>`
-      ).join('') + ` <a href="javascript:void(0)" data-letter="#" class="${CURRENT_LETTER==='#'?'active':''}">#</a>`;
-      bar.querySelectorAll('a').forEach(a=>{
-        a.addEventListener('click', () => {
-          CURRENT_LETTER = a.dataset.letter;
-          syncList(); renderAlphaBar();
-          $('nameList')?.scrollIntoView({behavior:'smooth', block:'start'});
-        });
-      });
-    }
-
-    /* ====== RENDER: STAGE BAR ====== */
-    function renderStageBar(){
-      const stages = ['Child', 'Adult', 'Perfect', 'Ultimate', 'Ultimate+'];
-      const bar = $('stageBar');
-      bar.innerHTML = stages.map(s =>
-        `<a href="javascript:void(0)" data-stage="${s}" class="${CURRENT_STAGE===s?'active':''}">${s}</a>`
-      ).join('');
-      bar.querySelectorAll('a').forEach(a=>{
-        a.addEventListener('click', (e) => {
-          e.preventDefault();
-          CURRENT_STAGE = a.dataset.stage;
-          markActiveStage(); syncList();
-        });
-      });
-    }
-    function markActiveStage(){
-      document.querySelectorAll('#stageBar a').forEach(a=>{
-        a.classList.toggle('active', a.dataset.stage === CURRENT_STAGE);
-      });
-    }
-
-    /* ====== RENDER: GROUP BAR ====== */
-    function extractAllGroups(){
-      const set = new Set();
-      DB.forEach(d => (d.groups ?? []).forEach(g => set.add(g.trim())));
-      return Array.from(set).sort();
-    }
-    function renderGroupBar(){
-      const groups = extractAllGroups();
-      const bar = $('groupBar');
-      bar.innerHTML = groups.map(g =>
-        `<a href="javascript:void(0)" data-group="${encodeURIComponent(g)}" class="${CURRENT_GROUP===g?'active':''}">${g}</a>`
-      ).join('');
-      bar.querySelectorAll('a').forEach(a=>{
-        a.addEventListener('click', (e) => {
-          e.preventDefault();
-          CURRENT_GROUP = decodeURIComponent(a.dataset.group);
-          markActiveGroup(); syncList();
-        });
-      });
-    }
-    function markActiveGroup(){
-      document.querySelectorAll('#groupBar a').forEach(a=>{
-        a.classList.toggle('active', decodeURIComponent(a.dataset.group) === CURRENT_GROUP);
-      });
-    }
-
-    /* ====== RENDER: FACTION BAR ====== */
-    function extractAllFactions(){
-      if(!REF_DATA || !REF_DATA.factions) return [];
-      return REF_DATA.factions.map(f => f.code.trim());
-    }
-    function renderFactionBar(){
-      const factions = extractAllFactions();
-      const bar = $('factionBar');
-      bar.innerHTML = factions.map(f => {
-        const faction = REF_DATA.factions.find(fc => fc.code.trim() === f);
-        const icon = faction ? faction.icon.trim() : '⭐';
-        return `<a href="javascript:void(0)" data-faction="${f}" class="${CURRENT_FACTION===f?'active':''}">${icon} ${f}</a>`;
-      }).join('');
-      bar.querySelectorAll('a').forEach(a=>{
-        a.addEventListener('click', (e) => {
-          e.preventDefault();
-          CURRENT_FACTION = a.dataset.faction;
-          markActiveFaction(); syncList();
-        });
-      });
-    }
-    function markActiveFaction(){
-      document.querySelectorAll('#factionBar a').forEach(a=>{
-        a.classList.toggle('active', a.dataset.faction === CURRENT_FACTION);
-      });
-    }
-
-    /* ====== RENDER: TYPE BAR ====== */
-    function renderTypeBar(){
-      const types = ['Virus', 'Vaccine', 'Data'];
-      const bar = $('typeBar');
-      bar.innerHTML = types.map(t => {
-        const typeInfo = REF_DATA?.types?.find(tp => tp.name.trim() === t);
-        const icon = typeInfo ? typeInfo.icon.trim() : '❓';
-        return `<a href="javascript:void(0)" data-type="${t}" class="${CURRENT_TYPE===t?'active':''}">${icon} ${t}</a>`;
-      }).join('');
-      bar.querySelectorAll('a').forEach(a=>{
-        a.addEventListener('click', (e) => {
-          e.preventDefault();
-          CURRENT_TYPE = a.dataset.type;
-          markActiveType(); syncList();
-        });
-      });
-    }
-    function markActiveType(){
-      document.querySelectorAll('#typeBar a').forEach(a=>{
-        a.classList.toggle('active', a.dataset.type === CURRENT_TYPE);
-      });
-    }
-
-    /* ====== RENDER: NAME LIST ====== */
-    let GROUPS_ALPHA = {}, GROUPS_STAGE = {};
-    function syncList(){
-      let arr = [];
-      if(SEARCH_QUERY){ return; } // search ditangani terpisah
-      if (CURRENT_MODE === 'alphabet'){
-        arr = GROUPS_ALPHA[CURRENT_LETTER] ?? [];
-        arr = applyStageFilters(arr);
-        $('alphaTitle').textContent = `(Alphabet: ${CURRENT_LETTER})`;
-      } else if (CURRENT_MODE === 'stage'){
-        arr = GROUPS_STAGE[CURRENT_STAGE] ?? [];
-        $('alphaTitle').textContent = `(Stage: ${CURRENT_STAGE})`;
-      } else if (CURRENT_MODE === 'group'){
-        $('alphaTitle').textContent = `(Group: ${CURRENT_GROUP ?? 'All'})`;
-        arr = CURRENT_GROUP
-          ? DB.filter(d => d.groups && d.groups.some(g => g.trim() === CURRENT_GROUP))
-              .sort((a,b) => a.displayName.localeCompare(b.displayName))
-          : [];
-      } else if (CURRENT_MODE === 'faction'){
-        $('alphaTitle').textContent = `(Faction: ${CURRENT_FACTION ?? 'All'})`;
-        arr = CURRENT_FACTION
-          ? DB.filter(d => d.factions && d.factions.some(f => f.trim() === CURRENT_FACTION))
-              .sort((a,b) => a.displayName.localeCompare(b.displayName))
-          : [];
-      } else if (CURRENT_MODE === 'type'){
-        $('alphaTitle').textContent = `(Type: ${CURRENT_TYPE ?? 'All'})`;
-        arr = CURRENT_TYPE
-          ? DB.filter(d => d.types && d.types.some(t => t.trim() === CURRENT_TYPE))
-              .sort((a,b) => a.displayName.localeCompare(b.displayName))
-          : [];
-      }
-      $('nameList').innerHTML = arr.map(namePill).join('');
-      $('emptyNames').hidden = arr.length > 0;
-      if ((CURRENT_MODE === 'group' && !CURRENT_GROUP)
-          || (CURRENT_MODE === 'faction' && !CURRENT_FACTION)
-          || (CURRENT_MODE === 'type' && !CURRENT_TYPE)) {
-        $('emptyNames').textContent = `Pilih ${CURRENT_MODE} di atas untuk melihat daftar Digimon`;
-        $('emptyNames').hidden = false;
-      }
-    }
-
-    /* ====== RENDER: CARD (DETAIL) ====== */
-    function renderCard(id){
-      const node = byId(id);
-      const nameEl = $('c-name'), meta = $('c-meta'), stageEl = $('c-stage'), aliasesEl = $('c-aliases');
-      const typeEl = $('c-type'), factionEl = $('c-faction'), traitEl = $('c-traits'), groupEl = $('c-group'), ssEl = $('c-soulstone');
-      const prevBox = $('c-prev'), nextBox = $('c-next');
-      const thumb = document.querySelector('#card .thumb .placeholder');
-      if(!node){
-        nameEl.textContent = 'Tidak ditemukan';
-        stageEl.textContent = '-'; aliasesEl.textContent = '-'; typeEl.textContent = '-';
-        factionEl.textContent = '-'; groupEl.textContent = '-'; ssEl.textContent = '-';
-        prevBox.innerHTML = ''; nextBox.innerHTML = '';
-        if (thumb) thumb.textContent = '?';
-        return;
-      }
-      nameEl.textContent = node.displayName.trim();
-      meta.innerHTML = `<span class="chip">${node.stage.trim()}</span>`;
-      if (node.aliases && node.aliases.length) meta.innerHTML += ` <span class="chip">${node.aliases[0].trim()}</span>`;
-
-      stageEl.innerHTML = `<a href="javascript:void(0)" class="chip" data-stage="${node.stage.trim()}">${node.stage.trim()}</a>`;
-      if (node.aliases && node.aliases.length) {
-        aliasesEl.innerHTML = node.aliases.map(a =>
-          `<a href="javascript:void(0)" class="chip" data-alias="${encodeURIComponent(a.trim())}">${a.trim()}</a>`
-        ).join(' ');
-      } else { aliasesEl.textContent = '-'; }
-
-      if (node.types && node.types.length) {
-        const typeStr = node.types[0].trim();
-        const typeInfo = REF_DATA?.types?.find(tp => tp.name.trim() === typeStr);
-        const icon = typeInfo ? typeInfo.icon.trim() : '❓';
-        typeEl.innerHTML = `<a href="javascript:void(0)" class="chip" data-type="${typeStr}">${icon} ${typeStr}</a>`;
-      } else { typeEl.textContent = '-'; }
-
-      if (node.factions && node.factions.length && REF_DATA) {
-        const factionChips = node.factions.map(code => {
-          const clean = code.trim();
-          const faction = REF_DATA.factions.find(f => f.code.trim() === clean);
-          if (faction) {
-            return `<a href="javascript:void(0)" class="chip" style="background:${faction.color}15;border:1px solid ${faction.color}40;color:${faction.color}" data-faction="${clean}">${faction.icon} [${faction.code.trim()}] ${faction.name.trim()}${(faction.aliases && faction.aliases.length) ? ' - ' + faction.aliases.map(a=>a.trim()).join(', ') : ''}</a>`;
-          }
-          return `<span class="chip">${clean}</span>`;
-        }).join(' ');
-        factionEl.innerHTML = factionChips;
-      } else { factionEl.textContent = '-'; }
-
-      if (node.traits && node.traits.length && REF_DATA?.traits) {
-        const tchips = node.traits.map(tid => {
-          const t = REF_DATA.traits.find(tr => tr.id.trim() === String(tid).trim());
-          if (t) return `<span class="chip" title="${t.description}">${t.icon} ${t.name}</span>`;
-          return `<span class="chip">${tid}</span>`;
-        }).join(' ');
-        traitEl.innerHTML = tchips;
-      } else { traitEl.textContent = '-'; }
-
-      const groups = node.groups ?? [];
-      groupEl.innerHTML = groups.length
-        ? groups.map(g => `<a href="javascript:void(0)" class="chip" data-group-click="${encodeURIComponent(g.trim())}">${g.trim()}</a>`).join(' ')
-        : '-';
-
-      const ss = node.soulStone ?? null;
-      if (ss && (ss.type || ss.required !== undefined)) {
-        const chips = [];
-        if (ss.type) {
-          const c = ssColor(ss.type);
-          chips.push(`<span class="chip" style="background:${c}15;border:1px solid ${c}40;color:${c}">💎 ${ss.type}</span>`);
-        }
-        if (ss.required !== undefined && ss.required !== null && String(ss.required).trim() !== '') {
-          const isNumber = !isNaN(Number(ss.required));
-          const label = isNumber ? `📦 ${Number(ss.required)}` : `📦 ${ss.required}`;
-          chips.push(`<span class="chip">${label}</span>`);
-        }
-        ssEl.innerHTML = chips.join(' ');
-      } else { ssEl.textContent = '-'; }
-
-      if (thumb) thumb.textContent = (node.displayName.trim() || '?').charAt(0).toUpperCase();
-
-      const from = (node.evolvesFrom ?? []).map(id => byId(id.trim())).filter(Boolean);
-      const to = (node.evolvesTo ?? []).map(id => byId(id.trim())).filter(Boolean);
-      prevBox.innerHTML = from.length
-        ? from.map(n => `<a href="javascript:void(0)" class="chip" data-digimon="${n.id.trim()}">${n.displayName.trim()}</a>`).join(' ')
-        : `<span class="chip">(tidak ada)</span>`;
-      nextBox.innerHTML = to.length
-        ? to.map(n => `<a href="javascript:void(0)" class="chip" data-digimon="${n.id.trim()}">${n.displayName.trim()}</a>`).join(' ')
-        : `<span class="chip">(tidak ada)</span>`;
-    }
-
-    /* ====== CLICK HANDLERS ====== */
-    document.addEventListener('DOMContentLoaded', () => {
-      // Delegasi klik pada card
-      $('card').addEventListener('click', (e) => {
-        const target = e.target.closest('.chip');
-        if (!target) return;
-        e.preventDefault();
-        if (target.dataset.stage) {
-          CURRENT_STAGE = target.dataset.stage.trim();
-          setMode('stage');
-          document.querySelector('.wrap')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-        if (target.dataset.type) {
-          CURRENT_TYPE = target.dataset.type.trim();
-          setMode('type');
-          document.querySelector('.wrap')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-        if (target.dataset.faction) {
-          CURRENT_FACTION = target.dataset.faction.trim();
-          setMode('faction');
-          document.querySelector('.wrap')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-        if (target.dataset.groupClick) {
-          CURRENT_GROUP = decodeURIComponent(target.dataset.groupClick.trim());
-          setMode('group');
-          document.querySelector('.wrap')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-        if (target.dataset.digimon) {
-          const id = target.dataset.digimon.trim();
-          history.pushState(null, null, `#${encodeURIComponent(id)}`);
-          renderCard(id);
-          $('card')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-      });
-
-      // Klik pada daftar nama
-      $('nameList').addEventListener('click', (e) => {
-        const pill = e.target.closest('.name-pill');
-        if (!pill) return;
-        e.preventDefault();
-        const id = decodeURIComponent(pill.getAttribute('href').replace(/^#/, ''));
-        history.pushState(null, null, `#${encodeURIComponent(id)}`);
-        renderCard(id);
-        $('card')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      });
-    });
-
-    /* ====== ROUTER (hash -> card) ====== */
-    function syncRoute(){
-      const hash = decodeHash();
-      if(!hash) return;
-
-      if(hash.startsWith('stage:')){
-        const stageName = hash.replace('stage:', '').trim();
-        if(['Child', 'Adult', 'Perfect', 'Ultimate', 'Ultimate+'].includes(stageName)){
-          CURRENT_STAGE = stageName; setMode('stage'); return;
-        }
-      }
-      if(hash.startsWith('group:')){
-        const groupName = decodeURIComponent(hash.replace('group:', '').trim());
-        CURRENT_GROUP = groupName; setMode('group'); return;
-      }
-      if(hash.startsWith('faction:')){
-        const factionCode = hash.replace('faction:', '').trim();
-        CURRENT_FACTION = factionCode; setMode('faction'); return;
-      }
-      if(hash.startsWith('type:')){
-        const typeStr = hash.replace('type:', '').trim();
-        CURRENT_TYPE = typeStr; setMode('type'); return;
-      }
-      const node = byId(hash);
-      if(node){
-        if (CURRENT_MODE === 'alphabet'){
-          const L = firstLetter(node.displayName);
-          if (L !== CURRENT_LETTER){ CURRENT_LETTER = L; renderAlphaBar(); syncList(); }
-        } else if (CURRENT_MODE === 'stage'){
-          if (node.stage.trim() !== CURRENT_STAGE){ CURRENT_STAGE = node.stage.trim(); markActiveStage(); syncList(); }
-        }
-        renderCard(hash);
-      }
-    }
-    window.addEventListener('hashchange', syncRoute);
-
-    /* ====== INIT ====== */
-    (async function init(){
-      try{
-        const [digimonRes, refRes] = await Promise.all([
-          fetch(JSON_URL, { cache:'no-store' }),
-          fetch(REF_URL, { cache:'no-store' })
-        ]);
-        if(!digimonRes.ok) throw new Error('Gagal memuat data Digimon: ' + digimonRes.status);
-        if(!refRes.ok) throw new Error('Gagal memuat reference data: ' + refRes.status);
-        const rawData = await digimonRes.json();
-        const rawRef = await refRes.json();
-
-        // Normalisasi data (termasuk soulStone & traits)
-        DB = rawData.map(d => ({
-          id: (d.id ?? '').trim(),
-          displayName: (d.displayName ?? '').trim(),
-          aliases: (d.aliases ?? []).map(a => a.trim()),
-          stage: (d.stage ?? '').trim(),
-          factions: (d.factions ?? []).map(f => f.trim()),
-          types: (d.types ?? []).map(t => t.trim()),
-          evolvesFrom: (d.evolvesFrom ?? []).map(e => e.trim()),
-          evolvesTo: (d.evolvesTo ?? []).map(e => e.trim()),
-          groups: (d.groups ?? []).map(g => g.trim()),
-          traits: (d.traits ?? []).map(t => t.trim()),
-          soulStone: d.soulStone ? {
-            type: (d.soulStone.type ?? '').toString().trim(),
-            required: d.soulStone.required
-          } : undefined
-        }));
-
-        // Reference (factions, types, traits)
-        REF_DATA = {
-          factions: (rawRef.factions ?? []).map(f => ({
-            id: (f.id ?? '').trim(), code: (f.code ?? '').trim(), name: (f.name ?? '').trim(),
-            aliases: (f.aliases ?? []).map(a => a.trim()), description: (f.description ?? '').trim(),
-            color: (f.color ?? '').trim(), icon: (f.icon ?? '').trim()
-          })),
-          types: (rawRef.types ?? []).map(t => ({
-            id: (t.id ?? '').trim(), name: (t.name ?? '').trim(), description: (t.description ?? '').trim(),
-            color: (t.color ?? '').trim(), icon: (t.icon ?? '').trim(),
-            weakAgainst: (t.weakAgainst ?? []).map(w => w.trim()),
-            strongAgainst: (t.strongAgainst ?? []).map(s => s.trim())
-          })),
-          traits: (rawRef.traits ?? []).map(t => ({
-            id: (t.id ?? '').trim(), name: (t.name ?? '').trim(), description: (t.description ?? '').trim(), icon: (t.icon ?? '').trim()
-          }))
-        };
-
-        GROUPS_ALPHA = groupByLetter(DB);
-        GROUPS_STAGE = groupByStage(DB);
-
-        $('searchInput').addEventListener('input', (e) => searchDigimon(e.target.value));
-
-        $('btnAlpha').addEventListener('click', () => { SEARCH_QUERY=''; $('searchInput').value=''; setMode('alphabet'); });
-        $('btnStage').addEventListener('click', () => { SEARCH_QUERY=''; $('searchInput').value=''; setMode('stage'); });
-        $('btnGroup').addEventListener('click', () => { SEARCH_QUERY=''; $('searchInput').value=''; CURRENT_GROUP=null; setMode('group'); });
-        $('btnFaction').addEventListener('click', () => { SEARCH_QUERY=''; $('searchInput').value=''; CURRENT_FACTION=null; setMode('faction'); });
-        $('btnType').addEventListener('click', () => { SEARCH_QUERY=''; $('searchInput').value=''; CURRENT_TYPE=null; setMode('type'); });
-
-        renderAlphaBar(); renderStageBar(); renderFactionBar(); renderTypeBar();
-        setMode('alphabet'); syncList(); syncRoute();
-      }catch(e){
-        console.error(e);
-        document.querySelector('.wrap')?.insertAdjacentHTML('beforeend',
-          `<p style="color:#ff9aa2; padding:16px; background:var(--panel-2); border-radius:12px">❌ Error: ${e.message}<br><small>Periksa console (F12) untuk detail error.</small></p>`);
-      }
-    })();
-  </script>
+    return `<span class="chip">${clean}</span>`;
+   }).join(' ');
+   factionEl.innerHTML = factionChips;
+  } else { factionEl.textContent = '-'; }
+  if (node.traits && node.traits.length && REF_DATA?.traits) {
+   const tchips = node.traits.map(tid => {
+    const t = REF_DATA.traits.find(tr => tr.id.trim() === String(tid).trim());
+    if (t) return `<span class="chip" title="${t.description}">${t.icon} ${t.name}</span>`;
+    return `<span class="chip">${tid}</span>`;
+   }).join(' ');
+   traitEl.innerHTML = tchips;
+  } else { traitEl.textContent = '-'; }
+  const groups = node.groups ?? [];
+  groupEl.innerHTML = groups.length
+   ? groups.map(g => `<a href="javascript:void(0)" class="chip" data-group-click="${encodeURIComponent(g.trim())}">${g.trim()}</a>`).join(' ')
+   : '-';
+  const ss = node.soulStone ?? null;
+  if (ss && (ss.type || ss.required !== undefined)) {
+   const chips = [];
+   if (ss.type) {
+    const c = ssColor(ss.type);
+    chips.push(`<span class="chip" style="background:${c}15;border:1px solid ${c}40;color:${c}">💎 ${ss.type}</span>`);
+   }
+   if (ss.required !== undefined && ss.required !== null && String(ss.required).trim() !== '') {
+    const isNumber = !isNaN(Number(ss.required));
+    const label = isNumber ? `📦 ${Number(ss.required)}` : `📦 ${ss.required}`;
+    chips.push(`<span class="chip">${label}</span>`);
+   }
+   ssEl.innerHTML = chips.join(' ');
+  } else { ssEl.textContent = '-'; }
+  // NEW: set thumbnail (gambar -> fallback inisial)
+  setThumb(node);
+  const from = (node.evolvesFrom ?? []).map(id => byId(id.trim())).filter(Boolean);
+  const to = (node.evolvesTo ?? []).map(id => byId(id.trim())).filter(Boolean);
+  prevBox.innerHTML = from.length
+   ? from.map(n => `<a href="javascript:void(0)" class="chip" data-digimon="${n.id.trim()}">${n.displayName.trim()}</a>`).join(' ')
+   : `<span class="chip">(tidak ada)</span>`;
+  nextBox.innerHTML = to.length
+   ? to.map(n => `<a href="javascript:void(0)" class="chip" data-digimon="${n.id.trim()}">${n.displayName.trim()}</a>`).join(' ')
+   : `<span class="chip">(tidak ada)</span>`;
+ }
+ /* ====== CLICK HANDLERS ====== */
+ document.addEventListener('DOMContentLoaded', () => {
+  // Delegasi klik pada card
+  $('card').addEventListener('click', (e) => {
+   const target = e.target.closest('.chip');
+   if (!target) return;
+   e.preventDefault();
+   if (target.dataset.stage) {
+    CURRENT_STAGE = target.dataset.stage.trim();
+    setMode('stage');
+    document.querySelector('.wrap')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+   }
+   if (target.dataset.type) {
+    CURRENT_TYPE = target.dataset.type.trim();
+    setMode('type');
+    document.querySelector('.wrap')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+   }
+   if (target.dataset.faction) {
+    CURRENT_FACTION = target.dataset.faction.trim();
+    setMode('faction');
+    document.querySelector('.wrap')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+   }
+   if (target.dataset.groupClick) {
+    CURRENT_GROUP = decodeURIComponent(target.dataset.groupClick.trim());
+    setMode('group');
+    document.querySelector('.wrap')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+   }
+   if (target.dataset.digimon) {
+    const id = target.dataset.digimon.trim();
+    history.pushState(null, null, `#${encodeURIComponent(id)}`);
+    renderCard(id);
+    $('card')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+   }
+  });
+  // Klik pada daftar nama
+  $('nameList').addEventListener('click', (e) => {
+   const pill = e.target.closest('.name-pill');
+   if (!pill) return;
+   e.preventDefault();
+   const id = decodeURIComponent(pill.getAttribute('href').replace(/^#/, ''));
+   history.pushState(null, null, `#${encodeURIComponent(id)}`);
+   renderCard(id);
+   $('card')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+ });
+ /* ====== ROUTER (hash -> card) ====== */
+ function syncRoute(){
+  const hash = decodeHash();
+  if(!hash) return;
+  if(hash.startsWith('stage:')){
+   const stageName = hash.replace('stage:', '').trim();
+   if(['Child', 'Adult', 'Perfect', 'Ultimate', 'Ultimate+'].includes(stageName)){
+    CURRENT_STAGE = stageName; setMode('stage'); return;
+   }
+  }
+  if(hash.startsWith('group:')){
+   const groupName = decodeURIComponent(hash.replace('group:', '').trim());
+   CURRENT_GROUP = groupName; setMode('group'); return;
+  }
+  if(hash.startsWith('faction:')){
+   const factionCode = hash.replace('faction:', '').trim();
+   CURRENT_FACTION = factionCode; setMode('faction'); return;
+  }
+  if(hash.startsWith('type:')){
+   const typeStr = hash.replace('type:', '').trim();
+   CURRENT_TYPE = typeStr; setMode('type'); return;
+  }
+  const node = byId(hash);
+  if(node){
+   if (CURRENT_MODE === 'alphabet'){
+    const L = firstLetter(node.displayName);
+    if (L !== CURRENT_LETTER){ CURRENT_LETTER = L; renderAlphaBar(); syncList(); }
+   } else if (CURRENT_MODE === 'stage'){
+    if (node.stage.trim() !== CURRENT_STAGE){ CURRENT_STAGE = node.stage.trim(); markActiveStage(); syncList(); }
+   }
+   renderCard(hash);
+  }
+ }
+ window.addEventListener('hashchange', syncRoute);
+ /* ====== INIT ====== */
+ (async function init(){
+  try{
+   const [digimonRes, refRes] = await Promise.all([
+    fetch(JSON_URL, { cache:'no-store' }),
+    fetch(REF_URL, { cache:'no-store' })
+   ]);
+   if(!digimonRes.ok) throw new Error('Gagal memuat data Digimon: ' + digimonRes.status);
+   if(!refRes.ok) throw new Error('Gagal memuat reference data: ' + refRes.status);
+   const rawData = await digimonRes.json();
+   const rawRef = await refRes.json();
+   // Normalisasi data (termasuk soulStone & traits)
+   DB = rawData.map(d => ({
+    id: (d.id ?? '').trim(),
+    displayName: (d.displayName ?? '').trim(),
+    aliases: (d.aliases ?? []).map(a => a.trim()),
+    stage: (d.stage ?? '').trim(),
+    factions: (d.factions ?? []).map(f => f.trim()),
+    types: (d.types ?? []).map(t => t.trim()),
+    evolvesFrom: (d.evolvesFrom ?? []).map(e => e.trim()),
+    evolvesTo: (d.evolvesTo ?? []).map(e => e.trim()),
+    groups: (d.groups ?? []).map(g => g.trim()),
+    traits: (d.traits ?? []).map(t => t.trim()),
+    soulStone: d.soulStone ? {
+     type: (d.soulStone.type ?? '').toString().trim(),
+     required: d.soulStone.required
+    } : undefined
+   }));
+   // Reference (factions, types, traits)
+   REF_DATA = {
+    factions: (rawRef.factions ?? []).map(f => ({
+     id: (f.id ?? '').trim(), code: (f.code ?? '').trim(), name: (f.name ?? '').trim(),
+     aliases: (f.aliases ?? []).map(a => a.trim()), description: (f.description ?? '').trim(),
+     color: (f.color ?? '').trim(), icon: (f.icon ?? '').trim()
+    })),
+    types: (rawRef.types ?? []).map(t => ({
+     id: (t.id ?? '').trim(), name: (t.name ?? '').trim(), description: (t.description ?? '').trim(),
+     color: (t.color ?? '').trim(), icon: (t.icon ?? '').trim(),
+     weakAgainst: (t.weakAgainst ?? []).map(w => w.trim()),
+     strongAgainst: (t.strongAgainst ?? []).map(s => s.trim())
+    })),
+    traits: (rawRef.traits ?? []).map(t => ({
+     id: (t.id ?? '').trim(), name: (t.name ?? '').trim(), description: (t.description ?? '').trim(), icon: (t.icon ?? '').trim()
+    }))
+   };
+   GROUPS_ALPHA = groupByLetter(DB);
+   GROUPS_STAGE = groupByStage(DB);
+   $('searchInput').addEventListener('input', (e) => searchDigimon(e.target.value));
+   $('btnAlpha').addEventListener('click', () => { SEARCH_QUERY=''; $('searchInput').value=''; setMode('alphabet'); });
+   $('btnStage').addEventListener('click', () => { SEARCH_QUERY=''; $('searchInput').value=''; setMode('stage'); });
+   $('btnGroup').addEventListener('click', () => { SEARCH_QUERY=''; $('searchInput').value=''; CURRENT_GROUP=null; setMode('group'); });
+   $('btnFaction').addEventListener('click', () => { SEARCH_QUERY=''; $('searchInput').value=''; CURRENT_FACTION=null; setMode('faction'); });
+   $('btnType').addEventListener('click', () => { SEARCH_QUERY=''; $('searchInput').value=''; CURRENT_TYPE=null; setMode('type'); });
+   renderAlphaBar(); renderStageBar(); renderFactionBar(); renderTypeBar();
+   setMode('alphabet'); syncList(); syncRoute();
+  }catch(e){
+   console.error(e);
+   document.querySelector('.wrap')?.insertAdjacentHTML('beforeend',
+   `<p style="color:#ff9aa2; padding:16px; background:var(--panel-2); border-radius:12px">❌ Error: ${e.message}<br><small>Periksa console (F12) untuk detail error.</small></p>`);
+  }
+ })();
+ </script>
 </body>
 </html>
