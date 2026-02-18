@@ -1,0 +1,76 @@
+[
+  {
+    "id": "blitzgreymon",
+    "options": [
+      {
+        "id": "opt_red",
+        "label": "Opsi 1 (Merah)",
+        "armament": [
+          {
+            "name": "God Erosion",
+            "effect": "Saat digimon yang menggunakan armament ini mendapatkan turn akan otomatis mendapatkan 1 buff Aozhan, 1 buff Aozhan akan memberikan tambahan output damage sebesar 3%, yang bisa di tumpuk 10 kali selama 10 turn berjalan."
+          }
+        ],
+        "type": [
+          {
+            "name": "Judgment",
+            "bonus": "ATK +15%"
+          }
+        ],
+        "chip": "Critical Rate (Crit)",
+        "secondaryAttribute": {
+          "mustHave": [
+            "SPD",
+            "Critical Rate"
+          ],
+          "goodToHave": [
+            "ATK",
+            "Critical Damage"
+          ]
+        },
+        "function": "Menjadi pure damage dealer di tim ME.",
+        "pros": [
+          "Memberikan damage yang masif, critical damage adalah bonus."
+        ],
+        "cons": [
+          "Harus lebih memastikan lawan mati dalam turn yang lebih singkat, karena pemberi crowd control di tim berkurang satu."
+        ]
+      },
+      {
+        "id": "opt_green",
+        "label": "Opsi 2 (Hijau)",
+        "armament": [
+          {
+            "name": "Time Space",
+            "effect": "Setiap serangan dari skill aktif (pasif tidak dihitung), memiliki peluang sebesar 10% untuk memberikan lawan efek petrify 1 turn."
+          }
+        ],
+        "type": [
+          {
+            "name": "Resolution",
+            "bonus": "Critical Rate +5%"
+          }
+        ],
+        "chip": "Critical Rate (Crit)",
+        "secondaryAttribute": {
+          "mustHave": [
+            "SPD",
+            "Critical Rate"
+          ],
+          "goodToHave": [
+            "ATK",
+            "Critical Damage",
+            "E Hit."
+          ]
+        },
+        "function": "Skill 1 BlitzGreymon jika memiliki Electric Shield akan menjadi AoE, dan dengan demikian maka 2 skill aktif BlitzGreymon adalah AoE. Pada tim ME yang rentan terkena efek buruk, penting untuk bisa mengontrol laju permainan dengan banyak efek crowd control (CC). Untuk menebus kurangnya base stat ATK, kita memanfaatkan critical damage yang harus dipicu oleh critical rate yang tinggi.",
+        "pros": [
+          "Tambahan pemberi efek crowd control, permainan dengan turn panjang menjadi lebih aman."
+        ],
+        "cons": [
+          "Critical Rate harus besar, critical damage wajib digunakan."
+        ]
+      }
+    ]
+  }
+]
